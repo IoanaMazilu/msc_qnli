@@ -1,0 +1,16 @@
+jupyter
+pandas
+plotly
+jsonlines
+langchain
+tiktoken
+python-dotenv
+openai
+scikit-learn
+Pillow
+wordcloud
+matplotlib
+nltk
+quantulum3
+stemming
+huggingface_hub

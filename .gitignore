@@ -4,3 +4,5 @@
 /jobs
 /venv
 *.pyc
+/.idea
+*.xml

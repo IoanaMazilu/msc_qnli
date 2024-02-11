@@ -1,0 +1,29 @@
+name: qnli_venv
+channels:
+  - pytorch
+  - conda-forge
+  - nvidia
+  - defaults
+dependencies:
+  - pip=23.3.2
+  - pip:
+    - matplotlib
+    - numpy
+    - pandas
+    - Pillow
+    - scikit_learn
+    - seaborn
+    - tqdm
+    - transformers
+    - jupyter
+    - plotly
+    - jsonlines
+    - langchain
+    - tiktoken
+    - python-dotenv
+    - openai
+    - wordcloud
+    - nltk
+    - quantulum3
+    - stemming
+    - huggingface_hub
