@@ -1,0 +1,6 @@
+/data/*
+/Llama-2-70b-chat-hf/*
+/results
+/jobs
+/venv
+*.pyc
