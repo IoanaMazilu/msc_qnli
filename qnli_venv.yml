@@ -7,23 +7,35 @@ channels:
 dependencies:
   - pip=23.3.2
   - pip:
+    - accelerate==0.21.0
+#    - autoawq
+    - auto-gptq==0.4.2
+#    - autoawq-kernels
+    - code-quality
+    - datasets==2.17.1
+    - huggingface_hub
+    - jsonlines
+    - jupyter
+    - langchain
     - matplotlib
+    - nltk
     - numpy
+    - openai
+    - optimum==1.12.0
     - pandas
-    - Pillow
+    - peft
+#    - Pillow
+    - plotly
+    - python-dotenv
     - scikit_learn
     - seaborn
-    - tqdm
-    - transformers
-    - jupyter
-    - plotly
-    - jsonlines
-    - langchain
-    - tiktoken
-    - python-dotenv
-    - openai
-    - wordcloud
-    - nltk
-    - quantulum3
+    - safetensors>=0.3.1
     - stemming
-    - huggingface_hub
+    - tiktoken
+    - trl==0.4.7
+    - tqdm
+    - transformers[sentencepiece]==4.32.1
+    - quantulum3
+    - wordcloud
+
+

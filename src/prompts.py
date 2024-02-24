@@ -610,6 +610,23 @@ def get_prompt(prompt_type: str) -> PromptTemplate:
         return PromptTemplate.from_template(template_ecn.replace("{examples}", stresstest_examples))
 
 
+def format_prompt(prompt_type: str, input_sample: dict):
+    if prompt_type == "redditnli":
+        template = template_ecn.replace("{examples}", redditnli_examples)
+    elif prompt_type == "newsnli":
+        template = template_en.replace("{examples}", newsnli_examples)
+    elif prompt_type == "rtequant":
+        template = template_en.replace("{examples}", rtequant_examples)
+    elif prompt_type == "awpnli":
+        template = template_ec.replace("{examples}", awpnli_examples)
+    elif prompt_type == "stresstest":
+        template = template_ecn.replace("{examples}", stresstest_examples)
+    else:
+        return None
+    return template.replace("{premise}", input_sample["premise"]). \
+        replace("{hypothesis}", input_sample["hypothesis"])
+
+
 python_script_template = """
 # Premise: {premise}
 # Hypothesis: {hypothesis}
