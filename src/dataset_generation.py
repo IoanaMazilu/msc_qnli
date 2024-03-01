@@ -251,14 +251,14 @@ if __name__ == "__main__":
     # start_time = time.time()
     # generate_labels(model="gpt-4", dataset=dataset,
     #                 experiment_name=experiment_name,
-    #                 samples_count=4500,
+    #                 samples_count=7596,
     #                 verbose=True)
     # print(f"Finished script generation in {round(time.time() - start_time, 2)} seconds.")
 
     # EXTRACT THE LABELS BASED ON THE SCRIPT RETURN VALUE
-    extract_labels_from_scripts(dataset, experiment_name)
+    # extract_labels_from_scripts(dataset, experiment_name)
     # EVALUATE THE CLASSIFICATION RESULTS
-    # validate_generated_labels(dataset, experiment_name)
+    validate_generated_labels(dataset, experiment_name)
 
     # chain4 = make_chain("gpt-4", "stresstest")
     # chain35 = make_chain("gpt-3.5-turbo-1106", "stresstest")

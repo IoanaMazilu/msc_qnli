@@ -252,7 +252,7 @@ min_snowstorms_hypothesis = 10
 
 def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
     # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    #tThe hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
     return None
 
 print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
@@ -303,22 +303,19 @@ print(entailment_or_contradiction_or_neutral(weeks_premise, weeks_hypothesis))
 END_EXAMPLE
 
 START_EXAMPLE
-Premise: Two weeks after the controversial study, a report by the ECB asserts that "cryptocurrency poses minimal risk" despite previous warnings.
-Hypothesis: The ECB asserts that "risk is negligible in the crypto market" 2 weeks after a controversial study was published.
+Premise: 1 out of 100 investors says that they are hopeful the inflation levels will drop
+Hypothesis: American investors are hopeful that inflation will drop in a ratio of 1 to 100.
 Answer:
 ```python
-weeks_premise = 2
-weeks_hypothesis = 2
+ratio_premise = 1/100
+ratio_hypothesis = 1/100
 
-def entailment_or_contradiction_or_neutral(weeks_premise, weeks_hypothesis):
-    # the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
-    # check if the hypothesis contradicts the premise by checking if the number of weeks is not equal in the two sentences
-    if weeks_premise != weeks_hypothesis:
-        return False
-    else:
-        return True
+def entailment_or_contradiction_or_neutral(ratio_premise, ratio_hypothesis):
+    # the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+    # however, the hypothesis links the ratio to american investors, which cannot be entialed from the premise
+    return None
 
-print(entailment_or_contradiction_or_neutral(weeks_premise, weeks_hypothesis))
+print(entailment_or_contradiction_or_neutral(ratio_premise, ratio_hypothesis))
 ```
 END_EXAMPLE
 
@@ -337,7 +334,7 @@ def entailment_or_contradiction_or_neutral(number_companies_premise, min_percent
     # check if the hypothesis contradicts the premise by checking if the number of companies is not equal between the two sentences
     if number_companies_premise != number_companies_hypothesis:
         return False
-    # check if the hypothesised percentage contradict the premise one by being lower or equal to it
+    # check if the hypothesised percentage contradicts the premise one by being lower or equal to it
     if min_percentage_of_valuation_hypothesis <= min_percentage_of_valuation_premise:
         return False
     # any percentage higher than 60 will entail the percentage in the premise, so the hypothesis is neutral to the premise, since it does not contradict it and it also does not exclusively entail it
@@ -612,19 +609,21 @@ def get_prompt(prompt_type: str) -> PromptTemplate:
 
 def format_prompt(prompt_type: str, input_sample: dict):
     if prompt_type == "redditnli":
-        template = template_ecn.replace("{examples}", redditnli_examples)
+        template = template_ecn.replace("\n", "").replace("Answer:", "").replace("{examples}", redditnli_examples)
     elif prompt_type == "newsnli":
-        template = template_en.replace("{examples}", newsnli_examples)
+        template = template_en.replace("\n", "").replace("Answer:", "").replace("{examples}", newsnli_examples)
     elif prompt_type == "rtequant":
-        template = template_en.replace("{examples}", rtequant_examples)
+        template = template_en.replace("\n", "").replace("Answer:", "").replace("{examples}", rtequant_examples)
     elif prompt_type == "awpnli":
-        template = template_ec.replace("{examples}", awpnli_examples)
+        template = template_ec.replace("\n", "").replace("Answer:", "").replace("{examples}", awpnli_examples)
     elif prompt_type == "stresstest":
-        template = template_ecn.replace("{examples}", stresstest_examples)
+        template = template_ecn.replace("\n", "").replace("Answer:", "").replace("{examples}", stresstest_examples)
     else:
         return None
-    return template.replace("{premise}", input_sample["premise"]). \
+    template_with_vars = template.replace("{premise}", f'{input_sample["premise"]}\n'). \
         replace("{hypothesis}", input_sample["hypothesis"])
+    template_with_vars = template_with_vars.replace("Your turn now:", "### Input:\n")
+    return f"### Instruction:\n{template_with_vars}".strip()
 
 
 python_script_template = """

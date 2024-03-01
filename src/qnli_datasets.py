@@ -44,3 +44,13 @@ def sample_examples(data: List[dict],
     """
     pass
 
+
+if __name__ == "__main__":
+    for dataset in ["AWPNLI", "RedditNLI", "NewsNLI", "RTE_Quant", "StressTest"]:
+        print(dataset)
+        samples, _ = read_data(f"{dataset}.jsonl")
+        df = pd.DataFrame(samples)
+        df["sample_index"] = df.index
+        print(df.shape[0])
+        df.to_csv(os.path.join("../data", "equate", f"{dataset}.csv"), index=False)
+

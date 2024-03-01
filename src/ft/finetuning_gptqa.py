@@ -1,3 +1,4 @@
+# CODE SOURCE: https://gist.github.com/SunMarc/dcdb499ac16d355a8f265aa497645996
 # coding=utf-8
 # Copyright 2023 The HuggingFace Inc. team. All rights reserved.
 #
@@ -27,7 +28,7 @@ from transformers import (AutoModelForCausalLM,
                           GPTQConfig,
                           # HfArgumentParser,
                           TrainingArguments)
-from trl import SFTTrainer
+from trl import DataCollatorForCompletionOnlyLM, SFTTrainer
 
 # This example fine-tunes Llama 2 model on Guanaco dataset
 # using GPTQ and peft.
@@ -51,6 +52,7 @@ def load_data(split: str):
     return load_dataset('json',
                         data_files=os.path.join(data_directory_path,
                                                 "finetuning",
+                                                "AWPNLI"
                                                 f'{split}.json'))
 
 
@@ -101,7 +103,7 @@ training_arguments = TrainingArguments(
     logging_steps=10,  # script_args.logging_steps,
     learning_rate=2e-4,  # script_args.learning_rate,
     fp16=False,  # script_args.fp16,
-    bf16=False,  # script_args.bf16,
+    bf16=True,  # script_args.bf16,
     max_grad_norm=0.3,  # script_args.max_grad_norm,
     max_steps=10000,  # script_args.max_steps,
     warmup_ratio=0.03,  # script_args.warmup_ratio,
@@ -116,6 +118,10 @@ model.config.use_cache = False
 train_dataset = load_data(split="train")   # load_dataset(script_args.dataset_name, split="train")
 eval_dataset = load_data(split="val")
 
+instruction_template = "### Human:"
+response_template = "### Assistant:"
+collator = DataCollatorForCompletionOnlyLM(instruction_template=instruction_template, response_template=response_template, tokenizer=tokenizer, mlm=False)
+
 # Fix weird overflow issue with fp16 training
 tokenizer.padding_side = "right"
 trainer = SFTTrainer(
@@ -123,7 +129,7 @@ trainer = SFTTrainer(
     train_dataset=train_dataset,
     eval_dataset=eval_dataset,
     dataset_text_field="text",
-    max_seq_length=2048,  # script_args.max_seq_length,
+    max_seq_length=4096,  # script_args.max_seq_length,
     tokenizer=tokenizer,
     args=training_arguments,
     packing=True  # script_args.packing,
