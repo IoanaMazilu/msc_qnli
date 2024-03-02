@@ -21,8 +21,6 @@ cp -r data/finetuning/AWPNLI/completion/train.csv "$TMPDIR"/input/completion/
 cp -r data/finetuning/AWPNLI/completion/val.csv "$TMPDIR"/input/completion/
 
 cd $HOME/qnli/quant_nli/src/ft
-export HF_TOKEN="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"
-export HF_HOME="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"
 python finetuning_normal.py --output-path "$TMPDIR" --input-path "$TMPDIR" --experiment awpnli_ft --target_model awpnli_llama2-ft
 
 mkdir -p $HOME/qnli/quant_nli/results/awpnli_ft/
