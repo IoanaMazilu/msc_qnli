@@ -5,7 +5,7 @@ model_name = "meta-llama/Llama-2-7b-hf"
 dataset_name = "mlabonne/guanaco-llama2-1k"
 
 # Fine-tuned model name
-new_model = "llama-2-7b-test"
+new_model = "llama-2-7b-awpnli"
 
 ################################################################################
 # QLoRA parameters
@@ -98,7 +98,7 @@ logging_steps = 25
 ################################################################################
 
 # Maximum sequence length to use
-max_seq_length = 512
+max_seq_length = 2048
 
 # Pack multiple short examples in the same input sequence to increase efficiency
 packing = False

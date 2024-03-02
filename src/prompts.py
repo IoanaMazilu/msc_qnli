@@ -1,125 +1,8 @@
+from typing import Optional
+
 from langchain.prompts import PromptTemplate
 
-# Types of prompts (experiments)
-# 1. Zero-shot label prediction
-# 2. One-shot label prediction
-# 3. Few-shot label prediction
-# 4. Simple CoT prediction
-# 5. Complex CoT prediction
-
-# label_set_ec = "['entailment', 'contradiction']"
-# label_set_ecn = "['entailment', 'contradiction', 'neutral']"
-
-template = """
-You can reason about the entailing or contradictory relation between a premise and a hypothesis. You generate Python 
-scripts which use the quantities from the premise and hypothesis to classify the relation between them. First, extract 
-all the individual quantities from the premise and hypothesis (do not use Python, extract them manually). Make sure 
-they are valid numbers. If the quantity is said to be less or greater than a reference quantity, add or subtract 1 
-accordingly. Next, define a Python function which takes as arguments the extracted quantities. In the function, use 
-the quantities to carry out computations based on the premise and hypothesis context and finally conduct a comparison 
-between the resulting variables. The comparison should return True for entailment and False otherwise. Insert comments 
-into the script before each line, explaining the reasoning steps I give you an example:
-
-START_EXAMPLE
-Premise: Yesterday I learned at least 45 words in the morning and 10 words in the evening.
-Hypothesis: I learned more than fifty words yesterday.
-Answer:
-```python
-def entailment_or_contradiction_or_neutral(min_words_morning_premise, words_evening_premise, min_words_hypothesis):
-    # find the minimum total number of words learned from the premise 
-    total_words_done = min_words_morning_premise + words_evening_premise
-    # the total words form the premise should be more then the words from the hypothesis ("more than")
-    return  total_words_done >= min_words_hypothesis
-    
-min_words_morning_premise = 45  # at least 45, so 45 or more
-words_evening_premise = 10
-min_words_hypothesis = 50 
-label = entailment_or_contradiction_or_neutral(min_words_morning_premise, words_evening_premise, min_words_hypothesis)
-```
-END_EXAMPLE
-
-Your turn now:
-Premise: {premise}
-Hypothesis: {hypothesis}
-Answer:
-"""
-
-template = """
-You need to reason about weather a hypothesis entails, contradicts or is neutral with respect to a premise, by 
-generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the 
-quantitative information mentioned in them. First, manually extract all the individual quantities from both of the inputs,
-as valid numbers. Sometimes estimates of quantities can be extracted as None, depending on the context. Then, define a 
-Python function that takes the extracted quantities as arguments. Within the function, first reason about weather the hypothesis and premise are related. If they are not, 
-the relation between them is neutral and you should return None. Otherwise, within the function, use these quantities 
-to perform computations based on the context of the premise and hypothesis. Finally, compare the resulting variables to 
-determine the relationship. If the comparison indicates entailment, return True; otherwise, return False. Remember to 
-include brief comments in the script to explain each step of the reasoning process. To illustrate, consider the 
-following examples:
-
-START_EXAMPLE
-Premise: Yesterday I learned at least 35 verbs and 5 nouns in the morning and 10 verbs in the evening.
-Hypothesis: I learned less than fifty verbs yesterday and 5 nouns.
-Answer:
-```python
-min_verbs_morning_premise = 35
-verbs_evening_premise = 10
-nouns_premise = 5
-max_verbs_hypothesis = 50 
-nouns_hypothesis = 5
-
-def entailment_or_contradiction_or_neutral(min_verbs_morning_premise, verbs_evening_premise, min_verbs_hypothesis):
-    # find the minimum total number of verbs learned from the premise 
-    min_total_verbs_premise = min_verbs_morning_premise + verbs_evening_premise
-    # the minimum total verbs form the premise should be less than the verbs from the hypothesis ("less than") and
-    # the number of nouns should be equal between the premise and hypothesis
-    return min_total_verbs_premise < max_verbs_hypothesis and nouns_premise == nouns_hypothesis
-
-print(entailment_or_contradiction_or_neutral(min_verbs_morning_premise, verbs_evening_premise, nouns_premise, max_verbs_hypothesis, nouns_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: It will mark the first time four women have been in space at one time 
-Hypothesis: Four women are aboard same spacecraft for first time
-Answer:
-```python
-women_premise = 4
-women_hypothesis = 50 
-
-def entailment_or_contradiction_or_neutral(women_premise, women_hypothesis):
-    # the hypothesis talks about women being onboard of a spacecraft, whereas the premise talks about the women
-    # going to space. the hypothesis does not clearly follow from the premise
-    return None
-
-print(entailment_or_contradiction_or_neutral(women_premise, women_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Shares of Microsoft hit low 130.57/EUR, Sensex falls 100 points,
-Hypothesis: Shares of Microsoft down 129/EUR, Sensex falls 110 points at 423.
-Answer:
-```python
-min_share_price_microsoft_premise = 130.57
-senex_loss_premise = 100 
-min_share_price_microsoft_hypothesis = 129
-senex_loss_hypothesis = 110
-
-def entailment_or_contradiction_or_neutral(min_share_price_microsoft_premise, senex_loss_premise, min_share_price_microsoft_hypothesis, senex_loss_hypothesis):
-    # the minimum share price of Microsoft should be equal between the premise and hypothesis and
-    # the share price of senex should decrease by the same amount
-    return min_share_price_microsoft_premise == min_share_price_microsoft_hypothesis and senex_loss_premise == senex_loss_hypothesis
-
-print(entailment_or_contradiction_or_neutral(min_share_price_microsoft_premise, senex_loss_premise, min_share_price_microsoft_hypothesis, senex_loss_hypothesis))
-```
-END_EXAMPLE
-
-Your turn now:
-Premise: {premise}
-Hypothesis: {hypothesis}
-Answer:
-"""
-
+# instruction prompt for datasets with entailment + contradiction + neutral labels
 template_ecn = """
 You need to reason about weather a hypothesis entails, contradicts or is neutral with respect to a premise, by 
 generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the 
@@ -142,6 +25,7 @@ Hypothesis: {hypothesis}
 Answer:
 """
 
+# instruction prompt for datasets with entailment + contradiction labels
 template_ec = """
 You need to reason about weather a hypothesis entails or contradicts a premise, by generating Python scripts. The 
 scripts should classify the relation between the hypothesis and premise based on the quantitative and textual 
@@ -162,6 +46,7 @@ Hypothesis: {hypothesis}
 Answer:
 """
 
+# instruction prompt for datasets with entailment + neutral labels
 template_en = """
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python 
 scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and 
@@ -181,6 +66,8 @@ Premise: {premise}
 Hypothesis: {hypothesis}
 Answer:
 """
+
+# FEW-SHOT EXAMPLES FOR EACH DATASET
 
 newsnli_examples = """
 START_EXAMPLE
@@ -345,49 +232,6 @@ print(entailment_or_contradiction_or_neutral(number_companies_premise, min_perce
 END_EXAMPLE
 """
 
-stresstest_examples_old = """
-START_EXAMPLE
-Premise: He sold $200-worth of cookies at the school fair.
-Hypothesis: He sold cookies worth at least $100.
-Answer:
-```python
-cookie_sales_premise = 200
-min_cookie_sales_hypothesis = 100
-
-def entailment_or_contradiction_or_neutral(cookie_sales_premise, min_cookie_sales_hypothesis):
-    # the hypothesis refers to the number of sold cookies mentioned in the premise
-    # the hypothesis gives an estimate for the cookie sales, a range which can contain the premise value, to entail the premise, or not contain it, to contradict the premise
-    # check if the hypothesis contradicts the premise by checking if cookie sales reported in the premise are lower than 100
-    if cookie_sales_premise < min_cookie_sales_hypothesis:
-        return False
-    else:
-        return True
-
-print(entailment_or_contradiction_or_neutral(cookie_sales_premise, min_cookie_sales_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: There are more than 10 roses in the vase.
-Hypothesis: There are 15 roses in the vase.
-Answer:
-```python
-min_roses_vase_premise = 10
-roses_vase_hypothesis = 15
-
-def entailment_or_contradiction_or_neutral(min_roses_vase_premise, roses_vase_hypothesis):
-    # the hypothesis talks about the number of roses in a vase, referenced also in the premise
-    # check if the hypothesis contradicts the premise estimate, by checking if the number of roses from the hypothesis is lower or equal to the number from the premise
-    if roses_vase_hypothesis <= min_roses_vase_premise:
-        return False
-    # any number of roses greater than 10 is consistent with the premise, so the hypothesis is neutral to the premise
-    return None
-
-print(entailment_or_contradiction_or_neutral(min_roses_vase_premise, roses_vase_hypothesis))
-```
-END_EXAMPLE
-"""
-
 stresstest_examples = """
 START_EXAMPLE
 Premise: He sold $200-worth of cookies at the school fair.
@@ -474,128 +318,10 @@ print(entailment_or_contradiction(bought_crayons_premise, received_crayons_premi
 END_EXAMPLE
 """
 
-LABEL_GENERATION_PROMPT = PromptTemplate.from_template(template=template)
-
-template = """
-You are an experienced analyst with a strong quantitative background and can discern and reason about the
-entailing, contradictory or neutral relation between two pieces of text, namely a premise and a hypothesis. You
-receive a premise and a hypothesis and must answer with a label from the set {labels}. Give only the label, do not
-add comments to your answer.
-PREMISE: {premise}
-HYPOTHESIS: {hypothesis}
-PREDICTED LABEL:
-"""
-
-ZERO_SHOT_LABELLING = PromptTemplate.from_template(template=template)
-
-template = """
-You are an experienced analyst with a strong quantitative background and can discern and reason about the
-entailing, contradictory or neutral relation between two pieces of text, namely a premise and a hypothesis. You 
-receive a premise and a hypothesis and must answer with a label from the set {labels}. Give only the label, do not
-add comments to your answer. Here is an example of input 
-and output:
-START EXAMPLE
-PREMISE: During the weekend, the temperatures will maintain above 25 degrees in the north of the country.
-HYPOTHESIS: In the northern part of the country, the temperature will be around 23 degrees on Saturday and Sunday.
-PREDICTED LABEL: contradiction
-END EXAMPLE
-
-PREMISE: {premise}
-HYPOTHESIS: {hypothesis}
-PREDICTED LABEL: 
-"""
-# Potentially use dynamic examples, and switch between examples with different labels
-# todo: Not all datasets have 'contradiction' as label, use 'entailment' instead?
-ONE_SHOT_LABELLING = PromptTemplate.from_template(template=template)
-
-template = """
-You are an experienced analyst with a strong quantitative background and can discern and reason about the
-entailing, contradictory or neutral relation between two pieces of text, namely a premise and a hypothesis. You 
-receive a premise and a hypothesis and must answer with a label from the set {labels}. Give only the label, do not
-add comments to your answer. Here are a few examples of 
-input and output:
-START EXAMPLE 1
-PREMISE: During the weekend, the temperatures will maintain above 25 degrees in the north of the country.
-HYPOTHESIS: In the northern part of the country, the temperature will be around 23 degrees on Saturday and Sunday.
-PREDICTED LABEL: contradiction
-END EXAMPLE 1
-
-START EXAMPLE 2
-PREMISE: Last week, S&P500 was trading above 7200.
-HYPOTHESIS: S&P500 was trading at 7400 one week ago.
-PREDICTED LABEL: entailment
-END EXAMPLE 2
-
-START EXAMPLE 3
-PREMISE: In Amsterdam, the expected number of tourists is above 30000 in the next month.
-HYPOTHESIS: More than 25000 tourists are expected in Rotterdam over the coming month.
-PREDICTED LABEL: neutral
-END EXAMPLE 3
-
-PREMISE: {premise}
-HYPOTHESIS: {hypothesis}
-PREDICTED LABEL: 
-"""
-
-FEW_SHOT_LABELLING = PromptTemplate.from_template(template=template)
-
-template = """
-You are an experienced analyst with a strong quantitative background and can discern and reason about the
-entailing, contradictory or neutral relation between two pieces of text, namely a premise and a hypothesis. You 
-receive a premise and a hypothesis and must answer with a label from the set {labels}. Provide a step-by-step
-description of your thought process. At the end of the answer, conclude your reasoning with: 'Final label: one of
-{labels}'.
-PREMISE: {premise}
-HYPOTHESIS: {hypothesis}
-REASONING: 
-"""
-
-SIMPLE_COT_LABELLING = PromptTemplate.from_template(template=template)
-
-# todo: choose template for complex CoT
-template = """
-You are an experienced analyst with a strong quantitative background and can discern and reason about the
-entailing, contradictory or neutral relation between two pieces of text, namely a premise and a hypothesis. You 
-receive a premise and a hypothesis and must answer with a label from the set {labels}. Provide a step-by-step
-description of your thought process. At the end of the answer, conclude your reasoning with: 'Final label: one of
-{labels}'.
-PREMISE: {premise}
-HYPOTHESIS: {hypothesis}
-REASONING: 
-"""
-
-COMPLEX_COT_LABELLING = PromptTemplate.from_template(template=template)
-
-template = """
-You are an experienced analyst with a strong quantitative background and can discern and reason about the
-entailing, contradictory or neutral relation between two pieces of text, namely a premise and a hypothesis. You 
-receive a premise and a hypothesis and must answer with a label from the set {labels}. Provide a step-by-step
-description of your thought process. At the end of the reasoning, conclude your reasoning with: 'Final label: one of
-{labels}'. Next, define a Python function which takes as arguments the quantities extracted from the premise and 
-hypothesis. The function should reproduce the reasoning and return True for entailment and False otherwise. The 
-function should focus on quantitative comparisons and must not return a result based on the presence of 
-some keywords in the hypothesis or premise. In the function use only the quantities in the premise and hypothesis 
-and not quantities computed by yourself. Do the computations inside the function if needed.
-
-Premise: {premise}
-Hypothesis: {hypothesis}
-"""
-
 
 def get_prompt(prompt_type: str) -> PromptTemplate:
-    if prompt_type == "zero-shot":
-        return ZERO_SHOT_LABELLING
-    elif prompt_type == "one-shot":
-        return ONE_SHOT_LABELLING
-    elif prompt_type == "few-shot":
-        return FEW_SHOT_LABELLING
-    elif prompt_type == "simple-cot":
-        return SIMPLE_COT_LABELLING
-    elif prompt_type == "one-shot":
-        return COMPLEX_COT_LABELLING
-    elif prompt_type == "label_generation":
-        return LABEL_GENERATION_PROMPT
-    elif prompt_type == "redditnli":
+    """Returns a Langchain prompt with imputed few-shot examples, based on the selected dataset"""
+    if prompt_type == "redditnli":
         return PromptTemplate.from_template(template_ecn.replace("{examples}", redditnli_examples))
     elif prompt_type == "newsnli":
         return PromptTemplate.from_template(template_en.replace("{examples}", newsnli_examples))
@@ -607,7 +333,14 @@ def get_prompt(prompt_type: str) -> PromptTemplate:
         return PromptTemplate.from_template(template_ecn.replace("{examples}", stresstest_examples))
 
 
-def format_prompt(prompt_type: str, input_sample: dict):
+def format_prompt(prompt_type: str, input_sample: dict) -> Optional[str | None]:
+    """
+    Prepares a prompt for a specified dataset and imputes inputs from a given sample (premise and hypothesis).
+    Add `### Instruction:` and `### Input:` markers, in line with the instruction-tuning prompt format for fine-tuning.
+    :param prompt_type: the prompt type, the dataset name in lowercase, with removed non-letter chars
+    :param input_sample: a dict representing a sample with a premise and a hypothesis
+    :return: a formatted prompt
+    """
     if prompt_type == "redditnli":
         template = template_ecn.replace("\n", "").replace("Answer:", "").replace("{examples}", redditnli_examples)
     elif prompt_type == "newsnli":
@@ -626,6 +359,7 @@ def format_prompt(prompt_type: str, input_sample: dict):
     return f"### Instruction:\n{template_with_vars}".strip()
 
 
+# template for the scrips which will be saved in .py files, for manual annotator validation
 python_script_template = """
 # Premise: {premise}
 # Hypothesis: {hypothesis}

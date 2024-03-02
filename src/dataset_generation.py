@@ -76,7 +76,6 @@ def generate_labels(model: str,
         subset_idx = list(range(samples_count))
         # subset_idx = random.sample(range(0, len(samples)), samples_count if samples_count else int(len(samples) * 0.1))
     # get indices of samples for which data was already generated
-    # subset_idx = [2312, 2321, 2943, 258, 652, 734, 902, 1039, 1335, 1355, 1612, 1707, 1901, 1946, 2044, 2222, 2710, 2797, 2893, 2935, 3295, 3736, 3875, 4039, 4042, 4169, 4192, 4348, 4462, 4956, 5000, 5113, 5202, 5233, 5377, 5548, 5556, 5991, 6268, 6448, 6509, 6715, 7101, 7158, 7234]
     try:
         previous_results = pd.read_csv(os.path.join(output_path, "random_sample_results_overview.csv"))
         skip_indices = previous_results["sample_index"].unique()
