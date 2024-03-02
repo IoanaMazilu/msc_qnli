@@ -1,0 +1,3 @@
+This directory contains the original data from LILA.
+We extract the train-test-val splits of LILA based on the EQUATE dataset from
+`lila/all/NumGLUE_Type_7_crowdsourced.json`

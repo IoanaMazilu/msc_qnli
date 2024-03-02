@@ -1,0 +1,2 @@
+This directory contains the original dataset files from EQUATE (.jsonl) and an associated .csv file where we exract
+only the columns of interest: premise, hypothesis, label and the sample index (used to keep track of samples).

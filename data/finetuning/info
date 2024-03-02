@@ -1,0 +1,6 @@
+This directory contains the data for fine-tuning.
+For each dataset we have 3 splits.
+The test splits are compatible with those from LILA.
+The ratio is 70-10-20 for train-validation-test.
+The `completion` directory contains the datasets that will be loaded for fine-tuning, with 2 columns: prompt and
+completion.

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBARCH --nodes=1
+#SBATCH --gpus=1
+#SBATCH --job-name=test-ft-setup
+#SBATCH --time=00:10:00
+#SBATCH --output=slurm_output_%A.out
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=ioana.mazilu@student.uva.nl
+
+module purge
+module load 2022
+module load Python/3.10.4-GCCcore-11.3.0
+
+mkdir -p "$TMPDIR"/output/
+mkdir -p "$TMPDIR"/input/
+
+cd $HOME/qnli/quant_nli
+cp -r data/finetuning/AWPNLI/train_text.csv "$TMPDIR"/input/
+cp -r data/finetuning/AWPNLI/val_text.csv "$TMPDIR"/input/
+
+cd $HOME/qnli/quant_nli/src/ft
+export HF_TOKEN="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"
+python test.py --output-path "$TMPDIR"
+
+mkdir -p $HOME/qnli/quant_nli/results/
+cp -r "$TMPDIR"/output/ $HOME/qnli/quant_nli/results/
