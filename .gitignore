@@ -1,4 +1,8 @@
 /data/generated/*
+/data/lila/all
+/data/lila/multi
+/data/lila/robust
+/data/*.py
 /Llama-2-70b-chat-hf/*
 /results
 /venv
