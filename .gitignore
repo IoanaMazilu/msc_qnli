@@ -1,7 +1,6 @@
-/data/*
+/data/generated/*
 /Llama-2-70b-chat-hf/*
 /results
-/jobs
 /venv
 *.pyc
 /.idea
