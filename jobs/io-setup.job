@@ -21,7 +21,6 @@ cp -r data/finetuning/AWPNLI/train_text.csv "$TMPDIR"/input/
 cp -r data/finetuning/AWPNLI/val_text.csv "$TMPDIR"/input/
 
 cd $HOME/qnli/quant_nli/src/ft
-export HF_TOKEN="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"
 python test.py --output-path "$TMPDIR"
 
 mkdir -p $HOME/qnli/quant_nli/results/
