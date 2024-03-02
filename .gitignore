@@ -2,7 +2,11 @@
 /data/lila/all
 /data/lila/multi
 /data/lila/robust
-/data/*.py
+/data/lila-equate/StressTest/train/
+/data/lila-equate/RTE_Quant/train/
+/data/lila-equate/AWPNLI/train/
+/data/lila-equate/NewsNLI/train/
+/data/lila-equate/RedditNLI/train/
 /Llama-2-70b-chat-hf/*
 /results
 /venv
