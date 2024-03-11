@@ -1,0 +1,54 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBARCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
+#SBATCH --gpus=1
+#SBATCH --job-name=qnli_inference
+#SBATCH --time=04:00:00
+#SBATCH --output=slurm_output_%A.out
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=ioana.mazilu@student.uva.nl
+
+module purge
+module load 2022
+module load Python/3.10.4-GCCcore-11.3.0
+
+# create input and output directories on the scratch disk
+mkdir -p "$TMPDIR"/output/"$SLURM_JOBID"/
+mkdir -p "$TMPDIR"/input/completion/
+mkdir -p "$TMPDIR"/input/cached_pretrained_model/
+
+# move dataset files to scratch
+cd $HOME/qnli/quant_nli
+cp -r data/finetuning/completion/test_all.csv "$TMPDIR"/input/completion/test_all.csv
+
+# set some variables
+MODEL_NAME="codellama-instruct"
+MODEL_SIZE="7B"
+HF_REPO="codellama/CodeLlama-7b-Python-hf"
+MAX_NEW_TOKENS="512"
+BATCH_SIZE="16"
+SAMPLE_SIZE="32"
+
+# run inference script
+cd $HOME/qnli/quant_nli/src/inf
+export HF_TOKEN="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"
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+python inference.py --job-id "$SLURM_JOBID" \
+                    --output-path "$TMPDIR" \
+                    --input-path "$TMPDIR" \
+                    --model-name "$MODEL_NAME" \
+                    --model-size "$MODEL_SIZE" \
+                    --hf-repo "$HF_REPO"  \
+                    --max-new-tokens "$MAX_NEW_TOKENS" \
+                    --batch-size "$BATCH_SIZE" \
+                    --sample-size "$SAMPLE_SIZE"
+
+# copy output files from scratch back to the home directory, also copy the job output file
+mkdir -p $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/
+cd "$TMPDIR"/output/
+cp -r test.csv $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/
+cd "$HOME"/qnli/quant_nli/jobs/inference/
+cp slurm_output_"$SLURM_JOBID".out $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/

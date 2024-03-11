@@ -1,0 +1,1472 @@
+,premise,hypothesis,label,sample_index,llm_answer,py_file_content,completion
+52,"Last week , the attorney general of Connecticut , Richard Blumenthal , turned up the pressure when he said the state would no longer extend its insurance plan for its 188,000 employees to cover prescriptions filled at Wal-Mart unless the chain agreed to stock the pills .","The attorney general of Connecticut , Richard Blumenthal has 188,000 employees .",neutral,52,"```python
+employees_premise = 188000
+employees_hypothesis = 188000
+
+def entailment_or_neutral(employees_premise, employees_hypothesis):
+    # The hypothesis talks about the number of employees Richard Blumenthal has, which is not mentioned in the premise
+    # The premise talks about the number of employees of the state of Connecticut, not Richard Blumenthal. 
+    # The hypothesis cannot be entailed from the premise.
+    return None
+
+print(entailment_or_neutral(employees_premise, employees_hypothesis))
+```","
+# Premise: Last week , the attorney general of Connecticut , Richard Blumenthal , turned up the pressure when he said the state would no longer extend its insurance plan for its 188,000 employees to cover prescriptions filled at Wal-Mart unless the chain agreed to stock the pills .
+# Hypothesis: The attorney general of Connecticut , Richard Blumenthal has 188,000 employees .
+# Golden Label: neutral
+
+
+employees_premise = 188000
+employees_hypothesis = 188000
+
+def entailment_or_neutral(employees_premise, employees_hypothesis):
+    # The hypothesis talks about the number of employees Richard Blumenthal has, which is not mentioned in the premise
+    # The premise talks about the number of employees of the state of Connecticut, not Richard Blumenthal. 
+    # The hypothesis cannot be entailed from the premise.
+    return None
+
+print(entailment_or_neutral(employees_premise, employees_hypothesis))
+
+","employees_premise = 188000
+employees_hypothesis = 188000
+
+def entailment_or_neutral(employees_premise, employees_hypothesis):
+    # The hypothesis talks about the number of employees Richard Blumenthal has, which is not mentioned in the premise
+    # The premise talks about the number of employees of the state of Connecticut, not Richard Blumenthal. 
+    # The hypothesis cannot be entailed from the premise.
+    return None
+
+print(entailment_or_neutral(employees_premise, employees_hypothesis))
+"
+135,Thousands of Romanians participated in rallies on Monday to campaign for the release of three Romanian journalists kidnapped last month in Iraq . Crowds swelled in size after a weekend of smaller rallies sponsored by Romanian media workers and the Arab community in Romania .,Romania sent 730 troops in Iraq .,neutral,135,"```python
+# no quantities in the premise or hypothesis refer to the same entity, thus we cannot determine entailment or neutrality
+
+def entailment_or_neutral():
+    return None
+
+print(entailment_or_neutral())
+```","
+# Premise: Thousands of Romanians participated in rallies on Monday to campaign for the release of three Romanian journalists kidnapped last month in Iraq . Crowds swelled in size after a weekend of smaller rallies sponsored by Romanian media workers and the Arab community in Romania .
+# Hypothesis: Romania sent 730 troops in Iraq .
+# Golden Label: neutral
+
+
+# no quantities in the premise or hypothesis refer to the same entity, thus we cannot determine entailment or neutrality
+
+def entailment_or_neutral():
+    return None
+
+print(entailment_or_neutral())
+
+","# no quantities in the premise or hypothesis refer to the same entity, thus we cannot determine entailment or neutrality
+
+def entailment_or_neutral():
+    return None
+
+print(entailment_or_neutral())
+"
+134,"A report prepared by a five member UN commission noted `` killing of civilians , enforced disappearances , destruction of villages , rape and other forms of sexual violence , pillaging and forced displacement , throughout Darfur '' , and secretly named alleged war criminals that should go before the ICC .","More than 200,000 people were killed in the air attack in the Darfur region .",neutral,134,"```python
+# No specific quantities mentioned in premise
+people_killed_hypothesis = 200000
+
+def entailment_or_neutral(people_killed_hypothesis):
+    # the hypothesis talks about a specific number of people killed in an air attack,
+    # which is not mentioned in the premise, so the hypothesis cannot be entailed from the premise 
+    return None
+
+print(entailment_or_neutral(people_killed_hypothesis))
+```","
+# Premise: A report prepared by a five member UN commission noted `` killing of civilians , enforced disappearances , destruction of villages , rape and other forms of sexual violence , pillaging and forced displacement , throughout Darfur '' , and secretly named alleged war criminals that should go before the ICC .
+# Hypothesis: More than 200,000 people were killed in the air attack in the Darfur region .
+# Golden Label: neutral
+
+
+# No specific quantities mentioned in premise
+people_killed_hypothesis = 200000
+
+def entailment_or_neutral(people_killed_hypothesis):
+    # the hypothesis talks about a specific number of people killed in an air attack,
+    # which is not mentioned in the premise, so the hypothesis cannot be entailed from the premise 
+    return None
+
+print(entailment_or_neutral(people_killed_hypothesis))
+
+","# No specific quantities mentioned in premise
+people_killed_hypothesis = 200000
+
+def entailment_or_neutral(people_killed_hypothesis):
+    # the hypothesis talks about a specific number of people killed in an air attack,
+    # which is not mentioned in the premise, so the hypothesis cannot be entailed from the premise 
+    return None
+
+print(entailment_or_neutral(people_killed_hypothesis))
+"
+38,A federal judge sentenced an apparently stunned Michael Milken to 10 years in prison Wednesday after ruling that the crimes he pleaded guilty to were neither minor nor isolated .,Milken was given a 10-year sentence .,entailment,38,"```python
+sentence_years_premise = 10
+sentence_years_hypothesis = 10
+
+def entailment_or_neutral(sentence_years_premise, sentence_years_hypothesis):
+    # the hypothesis talks about the length of Milken's sentence, which is also mentioned in the premise
+    # check if the length of the sentence in the hypothesis entails the one in the premise, by checking if they are equal
+    if sentence_years_hypothesis == sentence_years_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(sentence_years_premise, sentence_years_hypothesis))
+```","
+# Premise: A federal judge sentenced an apparently stunned Michael Milken to 10 years in prison Wednesday after ruling that the crimes he pleaded guilty to were neither minor nor isolated .
+# Hypothesis: Milken was given a 10-year sentence .
+# Golden Label: entailment
+
+
+sentence_years_premise = 10
+sentence_years_hypothesis = 10
+
+def entailment_or_neutral(sentence_years_premise, sentence_years_hypothesis):
+    # the hypothesis talks about the length of Milken's sentence, which is also mentioned in the premise
+    # check if the length of the sentence in the hypothesis entails the one in the premise, by checking if they are equal
+    if sentence_years_hypothesis == sentence_years_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(sentence_years_premise, sentence_years_hypothesis))
+
+","sentence_years_premise = 10
+sentence_years_hypothesis = 10
+
+def entailment_or_neutral(sentence_years_premise, sentence_years_hypothesis):
+    # the hypothesis talks about the length of Milken's sentence, which is also mentioned in the premise
+    # check if the length of the sentence in the hypothesis entails the one in the premise, by checking if they are equal
+    if sentence_years_hypothesis == sentence_years_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(sentence_years_premise, sentence_years_hypothesis))
+"
+130,"Mozambique 's Maria Mutola and Israel 's Alex Averbukh produced the best performances of the year , in the women 's 800 metres and men 's pole vault , at the Super Grand Prix in Madrid on Saturday .",The women 's ten thousand metres champion is from Mozambique .,neutral,130,"```python
+# No quantities are mentioned in the premise or hypothesis.
+
+def entailment_or_neutral():
+    # The hypothesis talks about the women's ten thousand metres champion from Mozambique, which is not referenced in the premise. 
+    # The hypothesis cannot be entailed from the premise, since the type of event the Mozambique athlete participated in is different.
+    return None
+
+print(entailment_or_neutral())
+```","
+# Premise: Mozambique 's Maria Mutola and Israel 's Alex Averbukh produced the best performances of the year , in the women 's 800 metres and men 's pole vault , at the Super Grand Prix in Madrid on Saturday .
+# Hypothesis: The women 's ten thousand metres champion is from Mozambique .
+# Golden Label: neutral
+
+
+# No quantities are mentioned in the premise or hypothesis.
+
+def entailment_or_neutral():
+    # The hypothesis talks about the women's ten thousand metres champion from Mozambique, which is not referenced in the premise. 
+    # The hypothesis cannot be entailed from the premise, since the type of event the Mozambique athlete participated in is different.
+    return None
+
+print(entailment_or_neutral())
+
+","# No quantities are mentioned in the premise or hypothesis.
+
+def entailment_or_neutral():
+    # The hypothesis talks about the women's ten thousand metres champion from Mozambique, which is not referenced in the premise. 
+    # The hypothesis cannot be entailed from the premise, since the type of event the Mozambique athlete participated in is different.
+    return None
+
+print(entailment_or_neutral())
+"
+118,"General Dynamics , the maker of land combat systems , warships and Gulfstream business jets , reported net earnings of $ 374m in the third quarter , or $ 1.84 per share .",General Dynamics loses $ 374m .,neutral,118,"```python
+earnings_premise = 374
+losses_hypothesis = -374
+
+def entailment_or_neutral(earnings_premise, losses_hypothesis):
+    # the hypothesis talks about losses, while the premise talks about earnings
+    # the values cannot be compared directly, since they measure different things
+    # the hypothesis cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(earnings_premise, losses_hypothesis))
+```","
+# Premise: General Dynamics , the maker of land combat systems , warships and Gulfstream business jets , reported net earnings of $ 374m in the third quarter , or $ 1.84 per share .
+# Hypothesis: General Dynamics loses $ 374m .
+# Golden Label: neutral
+
+
+earnings_premise = 374
+losses_hypothesis = -374
+
+def entailment_or_neutral(earnings_premise, losses_hypothesis):
+    # the hypothesis talks about losses, while the premise talks about earnings
+    # the values cannot be compared directly, since they measure different things
+    # the hypothesis cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(earnings_premise, losses_hypothesis))
+
+","earnings_premise = 374
+losses_hypothesis = -374
+
+def entailment_or_neutral(earnings_premise, losses_hypothesis):
+    # the hypothesis talks about losses, while the premise talks about earnings
+    # the values cannot be compared directly, since they measure different things
+    # the hypothesis cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(earnings_premise, losses_hypothesis))
+"
+26,"With a diameter of 1,430 miles , Pluto is less than half the size of any other planet and only two-thirds as big as Earth 's moon .","The terrestrial moon has a diameter of 3,746 kilometers .",neutral,26,"```python
+diameter_miles_pluto_premise = 1430
+diameter_km_moon_hypothesis = 3746
+
+def entailment_or_neutral(diameter_miles_pluto_premise, diameter_km_moon_hypothesis):
+    # convert the diameter of Pluto from miles to kilometers for comparison (1 mile = 1.60934 km)
+    diameter_km_pluto_premise = diameter_miles_pluto_premise * 1.60934
+
+    # the hypothesis talks about the diameter of the moon, which is mentioned in the premise in relation to the size of Pluto
+    # check if the diameter of the moon in the hypothesis is larger than the converted diameter of Pluto (two-thirds)
+    if diameter_km_moon_hypothesis > diameter_km_pluto_premise * (2/3):
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(diameter_miles_pluto_premise, diameter_km_moon_hypothesis))
+```
+In this script, the diameter of Pluto in miles is first converted to kilometers. Then it checks if the diameter of the moon, as given in the hypothesis, is larger than two-thirds of the converted diameter of Pluto, as stated in the premise. If it is, the script returns True, indicating that the hypothesis is entailed by the premise. If not, it returns None, indicating the relationship is neutral.","
+# Premise: With a diameter of 1,430 miles , Pluto is less than half the size of any other planet and only two-thirds as big as Earth 's moon .
+# Hypothesis: The terrestrial moon has a diameter of 3,746 kilometers .
+# Golden Label: neutral
+
+
+diameter_miles_pluto_premise = 1430
+diameter_km_moon_hypothesis = 3746
+
+def entailment_or_neutral(diameter_miles_pluto_premise, diameter_km_moon_hypothesis):
+    # convert the diameter of Pluto from miles to kilometers for comparison (1 mile = 1.60934 km)
+    diameter_km_pluto_premise = diameter_miles_pluto_premise * 1.60934
+
+    # the hypothesis talks about the diameter of the moon, which is mentioned in the premise in relation to the size of Pluto
+    # check if the diameter of the moon in the hypothesis is larger than the converted diameter of Pluto (two-thirds)
+    if diameter_km_moon_hypothesis > diameter_km_pluto_premise * (2/3):
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(diameter_miles_pluto_premise, diameter_km_moon_hypothesis))
+
+","diameter_miles_pluto_premise = 1430
+diameter_km_moon_hypothesis = 3746
+
+def entailment_or_neutral(diameter_miles_pluto_premise, diameter_km_moon_hypothesis):
+    # convert the diameter of Pluto from miles to kilometers for comparison (1 mile = 1.60934 km)
+    diameter_km_pluto_premise = diameter_miles_pluto_premise * 1.60934
+
+    # the hypothesis talks about the diameter of the moon, which is mentioned in the premise in relation to the size of Pluto
+    # check if the diameter of the moon in the hypothesis is larger than the converted diameter of Pluto (two-thirds)
+    if diameter_km_moon_hypothesis > diameter_km_pluto_premise * (2/3):
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(diameter_miles_pluto_premise, diameter_km_moon_hypothesis))
+"
+62,"For sailors , the lighthouse of Alexandria ensured a safe return to the Great Harbor ; for architects , it was the tallest building on Earth ; and for scientists , it was the mysterious mirror that fascinated them most : its reflection could be seen more than 50 km ( 35 miles ) off-shore . For all these reasons , the lighthouse was considered one of the Seven Wonders of the world .",The lighthouse of Alexandria was one of the seven wonders of the world .,entailment,62,"```python
+wonders_premise = 7
+wonders_hypothesis = 7
+
+def entailment_or_neutral(wonders_premise, wonders_hypothesis):
+    # the hypothesis talks about the lighthouse of Alexandria being one of the seven wonders of the world, 
+    # which is also mentioned in the premise, hence the values are equal
+    if wonders_hypothesis == wonders_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(wonders_premise, wonders_hypothesis))
+```","
+# Premise: For sailors , the lighthouse of Alexandria ensured a safe return to the Great Harbor ; for architects , it was the tallest building on Earth ; and for scientists , it was the mysterious mirror that fascinated them most : its reflection could be seen more than 50 km ( 35 miles ) off-shore . For all these reasons , the lighthouse was considered one of the Seven Wonders of the world .
+# Hypothesis: The lighthouse of Alexandria was one of the seven wonders of the world .
+# Golden Label: entailment
+
+
+wonders_premise = 7
+wonders_hypothesis = 7
+
+def entailment_or_neutral(wonders_premise, wonders_hypothesis):
+    # the hypothesis talks about the lighthouse of Alexandria being one of the seven wonders of the world, 
+    # which is also mentioned in the premise, hence the values are equal
+    if wonders_hypothesis == wonders_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(wonders_premise, wonders_hypothesis))
+
+","wonders_premise = 7
+wonders_hypothesis = 7
+
+def entailment_or_neutral(wonders_premise, wonders_hypothesis):
+    # the hypothesis talks about the lighthouse of Alexandria being one of the seven wonders of the world, 
+    # which is also mentioned in the premise, hence the values are equal
+    if wonders_hypothesis == wonders_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(wonders_premise, wonders_hypothesis))
+"
+90,"Quarterback Donovan McNabb was every bit Quarterback Tom Brady 's equal for 48 passes Sunday night , throwing for 357 yards and three touchdowns in his Super Bowl debut for the Philadelphia Eagles .",McNabb 's 357 yards were the best postseason game of his career .,neutral,90,"```python
+passes_premise = 48
+yards_premise = 357
+touchdowns_premise = 3
+yards_hypothesis = 357
+
+def entailment_or_neutral(passes_premise, yards_premise, touchdowns_premise, yards_hypothesis):
+    # the hypothesis talks about the yards McNabb threw in a postseason game, which is also mentioned in the premise
+    # However, the hypothesis claims it was the best postseason game of his career - information that cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(passes_premise, yards_premise, touchdowns_premise, yards_hypothesis))
+```","
+# Premise: Quarterback Donovan McNabb was every bit Quarterback Tom Brady 's equal for 48 passes Sunday night , throwing for 357 yards and three touchdowns in his Super Bowl debut for the Philadelphia Eagles .
+# Hypothesis: McNabb 's 357 yards were the best postseason game of his career .
+# Golden Label: neutral
+
+
+passes_premise = 48
+yards_premise = 357
+touchdowns_premise = 3
+yards_hypothesis = 357
+
+def entailment_or_neutral(passes_premise, yards_premise, touchdowns_premise, yards_hypothesis):
+    # the hypothesis talks about the yards McNabb threw in a postseason game, which is also mentioned in the premise
+    # However, the hypothesis claims it was the best postseason game of his career - information that cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(passes_premise, yards_premise, touchdowns_premise, yards_hypothesis))
+
+","passes_premise = 48
+yards_premise = 357
+touchdowns_premise = 3
+yards_hypothesis = 357
+
+def entailment_or_neutral(passes_premise, yards_premise, touchdowns_premise, yards_hypothesis):
+    # the hypothesis talks about the yards McNabb threw in a postseason game, which is also mentioned in the premise
+    # However, the hypothesis claims it was the best postseason game of his career - information that cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(passes_premise, yards_premise, touchdowns_premise, yards_hypothesis))
+"
+70,"The Council of Europe has 45 member states . Three countries from outside Europe ( Canada , Israel and Mexico ) have observer status in the Parliamentary Assembly .",The Council of Europe is made up by 45 member states .,entailment,70,"```python
+member_states_premise = 45
+member_states_hypothesis = 45
+
+def entailment_or_neutral(member_states_premise, member_states_hypothesis):
+    # the hypothesis talks about the number of member states in the Council of Europe, which is the same as the premise
+    # check if the number of member states in the hypothesis entails the one in the premise, by checking if they are equal
+    if member_states_hypothesis == member_states_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(member_states_premise, member_states_hypothesis))
+```","
+# Premise: The Council of Europe has 45 member states . Three countries from outside Europe ( Canada , Israel and Mexico ) have observer status in the Parliamentary Assembly .
+# Hypothesis: The Council of Europe is made up by 45 member states .
+# Golden Label: entailment
+
+
+member_states_premise = 45
+member_states_hypothesis = 45
+
+def entailment_or_neutral(member_states_premise, member_states_hypothesis):
+    # the hypothesis talks about the number of member states in the Council of Europe, which is the same as the premise
+    # check if the number of member states in the hypothesis entails the one in the premise, by checking if they are equal
+    if member_states_hypothesis == member_states_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(member_states_premise, member_states_hypothesis))
+
+","member_states_premise = 45
+member_states_hypothesis = 45
+
+def entailment_or_neutral(member_states_premise, member_states_hypothesis):
+    # the hypothesis talks about the number of member states in the Council of Europe, which is the same as the premise
+    # check if the number of member states in the hypothesis entails the one in the premise, by checking if they are equal
+    if member_states_hypothesis == member_states_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(member_states_premise, member_states_hypothesis))
+"
+35,Argentina and Britain announced an agreement Thursday to restore full diplomatic ties nearly eight years after they fought a 74 day war over the Falkland Islands a sparsely populated archipelago off Argentina coast in the South Atlantic Ocean .,Full diplomatic relations between Argentina and Britain were re-established after 74 days .,neutral,35,"```python
+war_duration_days_premise = 74
+restoration_time_hypothesis = 74
+
+def entailment_or_neutral(war_duration_days_premise, restoration_time_hypothesis):
+    # the hypothesis talks about the time it took to restore diplomatic relations, which is not mentioned in the premise
+    # the premise talks about the duration of the war, which is incorrectly referred to as the restoration time in the hypothesis
+    # hence, the hypothesis cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(war_duration_days_premise, restoration_time_hypothesis))
+```","
+# Premise: Argentina and Britain announced an agreement Thursday to restore full diplomatic ties nearly eight years after they fought a 74 day war over the Falkland Islands a sparsely populated archipelago off Argentina coast in the South Atlantic Ocean .
+# Hypothesis: Full diplomatic relations between Argentina and Britain were re-established after 74 days .
+# Golden Label: neutral
+
+
+war_duration_days_premise = 74
+restoration_time_hypothesis = 74
+
+def entailment_or_neutral(war_duration_days_premise, restoration_time_hypothesis):
+    # the hypothesis talks about the time it took to restore diplomatic relations, which is not mentioned in the premise
+    # the premise talks about the duration of the war, which is incorrectly referred to as the restoration time in the hypothesis
+    # hence, the hypothesis cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(war_duration_days_premise, restoration_time_hypothesis))
+
+","war_duration_days_premise = 74
+restoration_time_hypothesis = 74
+
+def entailment_or_neutral(war_duration_days_premise, restoration_time_hypothesis):
+    # the hypothesis talks about the time it took to restore diplomatic relations, which is not mentioned in the premise
+    # the premise talks about the duration of the war, which is incorrectly referred to as the restoration time in the hypothesis
+    # hence, the hypothesis cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(war_duration_days_premise, restoration_time_hypothesis))
+"
+112,A bus collision with a truck in Uganda has resulted in at least 30 fatalities and has left a further 21 injured .,30 die in a bus collision in Uganda .,entailment,112,"```python
+min_death_premise = 30
+min_death_hypothesis = 30
+
+def entailment_or_neutral(min_death_premise, min_death_hypothesis):
+    # the hypothesis talks about the number of deaths in a bus collision in Uganda, which is also mentioned in the premise
+    # check if the number of deaths in the hypothesis entails the one in the premise, by checking if they are equal
+    if min_death_hypothesis == min_death_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(min_death_premise, min_death_hypothesis))
+```","
+# Premise: A bus collision with a truck in Uganda has resulted in at least 30 fatalities and has left a further 21 injured .
+# Hypothesis: 30 die in a bus collision in Uganda .
+# Golden Label: entailment
+
+
+min_death_premise = 30
+min_death_hypothesis = 30
+
+def entailment_or_neutral(min_death_premise, min_death_hypothesis):
+    # the hypothesis talks about the number of deaths in a bus collision in Uganda, which is also mentioned in the premise
+    # check if the number of deaths in the hypothesis entails the one in the premise, by checking if they are equal
+    if min_death_hypothesis == min_death_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(min_death_premise, min_death_hypothesis))
+
+","min_death_premise = 30
+min_death_hypothesis = 30
+
+def entailment_or_neutral(min_death_premise, min_death_hypothesis):
+    # the hypothesis talks about the number of deaths in a bus collision in Uganda, which is also mentioned in the premise
+    # check if the number of deaths in the hypothesis entails the one in the premise, by checking if they are equal
+    if min_death_hypothesis == min_death_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(min_death_premise, min_death_hypothesis))
+"
+110,"Phil Mickelson finished a triumphant week in his second home , winning the FBR Open by five strokes for his largest margin of victory in a PGA Tour event .","Mickelson won by five shots last week , the largest margin of his career .",neutral,110,"```python
+victory_margin_premise = 5
+victory_margin_hypothesis = 5
+
+def entailment_or_neutral(victory_margin_premise, victory_margin_hypothesis):
+    # the hypothesis talks about the victory margin of Mickelson, which is also mentioned in the premise
+    # check if the victory margin in the hypothesis entails the one in the premise, by checking if they are equal
+    if victory_margin_hypothesis == victory_margin_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(victory_margin_premise, victory_margin_hypothesis))
+```","
+# Premise: Phil Mickelson finished a triumphant week in his second home , winning the FBR Open by five strokes for his largest margin of victory in a PGA Tour event .
+# Hypothesis: Mickelson won by five shots last week , the largest margin of his career .
+# Golden Label: neutral
+
+
+victory_margin_premise = 5
+victory_margin_hypothesis = 5
+
+def entailment_or_neutral(victory_margin_premise, victory_margin_hypothesis):
+    # the hypothesis talks about the victory margin of Mickelson, which is also mentioned in the premise
+    # check if the victory margin in the hypothesis entails the one in the premise, by checking if they are equal
+    if victory_margin_hypothesis == victory_margin_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(victory_margin_premise, victory_margin_hypothesis))
+
+","victory_margin_premise = 5
+victory_margin_hypothesis = 5
+
+def entailment_or_neutral(victory_margin_premise, victory_margin_hypothesis):
+    # the hypothesis talks about the victory margin of Mickelson, which is also mentioned in the premise
+    # check if the victory margin in the hypothesis entails the one in the premise, by checking if they are equal
+    if victory_margin_hypothesis == victory_margin_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(victory_margin_premise, victory_margin_hypothesis))
+"
+22,"Two members of the 2000 Kanchenjunga Expedition of South Korea successfully scaled the 8,586m high Mt . Kanchenjunga via the south west face Friday , according to the Nepali Tourism Ministry .",Kanchenjunga is 8586 meters high .,entailment,22,"```python
+height_kanchenjunga_premise = 8586
+height_kanchenjunga_hypothesis = 8586
+
+def entailment_or_neutral(height_kanchenjunga_premise, height_kanchenjunga_hypothesis):
+    # the hypothesis talks about the height of Mt. Kanchenjunga, which is also mentioned in the premise
+    # check if the height in the hypothesis entails the one in the premise, by checking if they are equal
+    if height_kanchenjunga_hypothesis == height_kanchenjunga_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(height_kanchenjunga_premise, height_kanchenjunga_hypothesis))
+```","
+# Premise: Two members of the 2000 Kanchenjunga Expedition of South Korea successfully scaled the 8,586m high Mt . Kanchenjunga via the south west face Friday , according to the Nepali Tourism Ministry .
+# Hypothesis: Kanchenjunga is 8586 meters high .
+# Golden Label: entailment
+
+
+height_kanchenjunga_premise = 8586
+height_kanchenjunga_hypothesis = 8586
+
+def entailment_or_neutral(height_kanchenjunga_premise, height_kanchenjunga_hypothesis):
+    # the hypothesis talks about the height of Mt. Kanchenjunga, which is also mentioned in the premise
+    # check if the height in the hypothesis entails the one in the premise, by checking if they are equal
+    if height_kanchenjunga_hypothesis == height_kanchenjunga_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(height_kanchenjunga_premise, height_kanchenjunga_hypothesis))
+
+","height_kanchenjunga_premise = 8586
+height_kanchenjunga_hypothesis = 8586
+
+def entailment_or_neutral(height_kanchenjunga_premise, height_kanchenjunga_hypothesis):
+    # the hypothesis talks about the height of Mt. Kanchenjunga, which is also mentioned in the premise
+    # check if the height in the hypothesis entails the one in the premise, by checking if they are equal
+    if height_kanchenjunga_hypothesis == height_kanchenjunga_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(height_kanchenjunga_premise, height_kanchenjunga_hypothesis))
+"
+160,"Iranian nuclear officials say 54,000 centrifuges would produce enough enriched uranium to fuel a 1,000-megawatt reactor , such as the one being built by Russia that is near completion at the southern city of Bushehr .","54,000 centrifuges would produce enough enriched uranium to fuel a 1,000-megawatt reactor .",entailment,160,"```python
+centrifuges_premise = 54000
+reactor_power_premise = 1000
+centrifuges_hypothesis = 54000
+reactor_power_hypothesis = 1000
+
+def entailment_or_neutral(centrifuges_premise, reactor_power_premise, centrifuges_hypothesis, reactor_power_hypothesis):
+    # the hypothesis talks about the number of centrifuges and the reactor power, which are also mentioned in the premise
+    # check if the number of centrifuges and the reactor power in the hypothesis entails those in the premise, by checking if they are equal
+    if centrifuges_hypothesis == centrifuges_premise and reactor_power_hypothesis == reactor_power_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(centrifuges_premise, reactor_power_premise, centrifuges_hypothesis, reactor_power_hypothesis))
+```","
+# Premise: Iranian nuclear officials say 54,000 centrifuges would produce enough enriched uranium to fuel a 1,000-megawatt reactor , such as the one being built by Russia that is near completion at the southern city of Bushehr .
+# Hypothesis: 54,000 centrifuges would produce enough enriched uranium to fuel a 1,000-megawatt reactor .
+# Golden Label: entailment
+
+
+centrifuges_premise = 54000
+reactor_power_premise = 1000
+centrifuges_hypothesis = 54000
+reactor_power_hypothesis = 1000
+
+def entailment_or_neutral(centrifuges_premise, reactor_power_premise, centrifuges_hypothesis, reactor_power_hypothesis):
+    # the hypothesis talks about the number of centrifuges and the reactor power, which are also mentioned in the premise
+    # check if the number of centrifuges and the reactor power in the hypothesis entails those in the premise, by checking if they are equal
+    if centrifuges_hypothesis == centrifuges_premise and reactor_power_hypothesis == reactor_power_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(centrifuges_premise, reactor_power_premise, centrifuges_hypothesis, reactor_power_hypothesis))
+
+","centrifuges_premise = 54000
+reactor_power_premise = 1000
+centrifuges_hypothesis = 54000
+reactor_power_hypothesis = 1000
+
+def entailment_or_neutral(centrifuges_premise, reactor_power_premise, centrifuges_hypothesis, reactor_power_hypothesis):
+    # the hypothesis talks about the number of centrifuges and the reactor power, which are also mentioned in the premise
+    # check if the number of centrifuges and the reactor power in the hypothesis entails those in the premise, by checking if they are equal
+    if centrifuges_hypothesis == centrifuges_premise and reactor_power_hypothesis == reactor_power_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(centrifuges_premise, reactor_power_premise, centrifuges_hypothesis, reactor_power_hypothesis))
+"
+143,"The new moon , which is only about 25 miles in diameter , was actually photographed 13 years ago by the Voyager 2 .",The moon Titan has a diameter of 5100 kilometers .,neutral,143,"```python
+diameter_new_moon_miles_premise = 25
+diameter_titan_km_hypothesis = 5100
+
+def entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis):
+    # the hypothesis talks about the moon Titan, which is not referenced in the premise.
+    # The hypothesis cannot be entailed from the premise, since the diameter of Titan is unknown.
+    return None
+
+print(entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis))
+```","
+# Premise: The new moon , which is only about 25 miles in diameter , was actually photographed 13 years ago by the Voyager 2 .
+# Hypothesis: The moon Titan has a diameter of 5100 kilometers .
+# Golden Label: neutral
+
+
+diameter_new_moon_miles_premise = 25
+diameter_titan_km_hypothesis = 5100
+
+def entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis):
+    # the hypothesis talks about the moon Titan, which is not referenced in the premise.
+    # The hypothesis cannot be entailed from the premise, since the diameter of Titan is unknown.
+    return None
+
+print(entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis))
+
+","diameter_new_moon_miles_premise = 25
+diameter_titan_km_hypothesis = 5100
+
+def entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis):
+    # the hypothesis talks about the moon Titan, which is not referenced in the premise.
+    # The hypothesis cannot be entailed from the premise, since the diameter of Titan is unknown.
+    return None
+
+print(entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis))
+"
+49,A Los Angeles federal court judge Monday imposed a 15-year prison sentence on David A. Feldman of Palos Verdes .,A Los Angeles federal judge imposed a 15-year prison sentence on David A. Feldman .,entailment,49,"```python
+prison_sentence_premise = 15
+prison_sentence_hypothesis = 15
+
+def entailment_or_neutral(prison_sentence_premise, prison_sentence_hypothesis):
+    # the hypothesis talks about the prison sentence of David, which is the same as the one mentioned in the premise
+    # check if the prison sentence in the hypothesis entails the one in the premise, by checking if they are equal
+    if prison_sentence_hypothesis == prison_sentence_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(prison_sentence_premise, prison_sentence_hypothesis))
+```","
+# Premise: A Los Angeles federal court judge Monday imposed a 15-year prison sentence on David A. Feldman of Palos Verdes .
+# Hypothesis: A Los Angeles federal judge imposed a 15-year prison sentence on David A. Feldman .
+# Golden Label: entailment
+
+
+prison_sentence_premise = 15
+prison_sentence_hypothesis = 15
+
+def entailment_or_neutral(prison_sentence_premise, prison_sentence_hypothesis):
+    # the hypothesis talks about the prison sentence of David, which is the same as the one mentioned in the premise
+    # check if the prison sentence in the hypothesis entails the one in the premise, by checking if they are equal
+    if prison_sentence_hypothesis == prison_sentence_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(prison_sentence_premise, prison_sentence_hypothesis))
+
+","prison_sentence_premise = 15
+prison_sentence_hypothesis = 15
+
+def entailment_or_neutral(prison_sentence_premise, prison_sentence_hypothesis):
+    # the hypothesis talks about the prison sentence of David, which is the same as the one mentioned in the premise
+    # check if the prison sentence in the hypothesis entails the one in the premise, by checking if they are equal
+    if prison_sentence_hypothesis == prison_sentence_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(prison_sentence_premise, prison_sentence_hypothesis))
+"
+109,"Phil Mickelson finished a triumphant week in his second home , winning the FBR Open by five strokes for his largest margin of victory in a PGA Tour event .","Mickelson won by five shots last week , the largest margin of his career .",neutral,109,"```python
+win_margin_premise = 5
+win_margin_hypothesis = 5
+
+def entailment_or_neutral(win_margin_premise, win_margin_hypothesis):
+    # The hypothesis talks about the winning margin of Mickelson which is also mentioned in the premise
+    # Check if the winning margin in the hypothesis entails the one in the premise, by checking if they are equal
+    if win_margin_hypothesis == win_margin_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(win_margin_premise, win_margin_hypothesis))
+```","
+# Premise: Phil Mickelson finished a triumphant week in his second home , winning the FBR Open by five strokes for his largest margin of victory in a PGA Tour event .
+# Hypothesis: Mickelson won by five shots last week , the largest margin of his career .
+# Golden Label: neutral
+
+
+win_margin_premise = 5
+win_margin_hypothesis = 5
+
+def entailment_or_neutral(win_margin_premise, win_margin_hypothesis):
+    # The hypothesis talks about the winning margin of Mickelson which is also mentioned in the premise
+    # Check if the winning margin in the hypothesis entails the one in the premise, by checking if they are equal
+    if win_margin_hypothesis == win_margin_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(win_margin_premise, win_margin_hypothesis))
+
+","win_margin_premise = 5
+win_margin_hypothesis = 5
+
+def entailment_or_neutral(win_margin_premise, win_margin_hypothesis):
+    # The hypothesis talks about the winning margin of Mickelson which is also mentioned in the premise
+    # Check if the winning margin in the hypothesis entails the one in the premise, by checking if they are equal
+    if win_margin_hypothesis == win_margin_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(win_margin_premise, win_margin_hypothesis))
+"
+148,"Foreign Ministers of the 16 NATO member countries met early this morning with their Russian counterpart , Yevgeny Primakov , in Berlin in a bid to improve NATO-Russia relations .",The NATO has 16 members .,entailment,148,"```python
+nato_members_premise = 16
+nato_members_hypothesis = 16
+
+def entailment_or_neutral(nato_members_premise, nato_members_hypothesis):
+    # the hypothesis talks about the number of NATO members, which is also mentioned in the premise
+    # check if the number of NATO members in the hypothesis entails the one in the premise, by checking if they are equal
+    if nato_members_hypothesis == nato_members_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(nato_members_premise, nato_members_hypothesis))
+```","
+# Premise: Foreign Ministers of the 16 NATO member countries met early this morning with their Russian counterpart , Yevgeny Primakov , in Berlin in a bid to improve NATO-Russia relations .
+# Hypothesis: The NATO has 16 members .
+# Golden Label: entailment
+
+
+nato_members_premise = 16
+nato_members_hypothesis = 16
+
+def entailment_or_neutral(nato_members_premise, nato_members_hypothesis):
+    # the hypothesis talks about the number of NATO members, which is also mentioned in the premise
+    # check if the number of NATO members in the hypothesis entails the one in the premise, by checking if they are equal
+    if nato_members_hypothesis == nato_members_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(nato_members_premise, nato_members_hypothesis))
+
+","nato_members_premise = 16
+nato_members_hypothesis = 16
+
+def entailment_or_neutral(nato_members_premise, nato_members_hypothesis):
+    # the hypothesis talks about the number of NATO members, which is also mentioned in the premise
+    # check if the number of NATO members in the hypothesis entails the one in the premise, by checking if they are equal
+    if nato_members_hypothesis == nato_members_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(nato_members_premise, nato_members_hypothesis))
+"
+76,"Monday , when the hearings begin , the Palestinians will hold their demonstration during the same hours , and a 25-person counter-demonstration by Israelis and Jews will take place .",Israelis will demonstrate and a counter-demonstration of 25 Palestinians will be permitted as well .,neutral,76,"```python
+counter_demonstration_premise = 25
+counter_demonstration_hypothesis = 25
+
+def entailment_or_neutral(counter_demonstration_premise, counter_demonstration_hypothesis):
+    # the hypothesis talks about a counter demonstration of 25, which is also mentioned in the premise
+    # however, the entities are switched: in the premise, Israelis and Jews are holding the counter-demonstration,
+    # while in the hypothesis, Palestinians are holding it. Hence, the hypothesis cannot be entailed from the premise.
+    return None
+
+print(entailment_or_neutral(counter_demonstration_premise, counter_demonstration_hypothesis))
+```","
+# Premise: Monday , when the hearings begin , the Palestinians will hold their demonstration during the same hours , and a 25-person counter-demonstration by Israelis and Jews will take place .
+# Hypothesis: Israelis will demonstrate and a counter-demonstration of 25 Palestinians will be permitted as well .
+# Golden Label: neutral
+
+
+counter_demonstration_premise = 25
+counter_demonstration_hypothesis = 25
+
+def entailment_or_neutral(counter_demonstration_premise, counter_demonstration_hypothesis):
+    # the hypothesis talks about a counter demonstration of 25, which is also mentioned in the premise
+    # however, the entities are switched: in the premise, Israelis and Jews are holding the counter-demonstration,
+    # while in the hypothesis, Palestinians are holding it. Hence, the hypothesis cannot be entailed from the premise.
+    return None
+
+print(entailment_or_neutral(counter_demonstration_premise, counter_demonstration_hypothesis))
+
+","counter_demonstration_premise = 25
+counter_demonstration_hypothesis = 25
+
+def entailment_or_neutral(counter_demonstration_premise, counter_demonstration_hypothesis):
+    # the hypothesis talks about a counter demonstration of 25, which is also mentioned in the premise
+    # however, the entities are switched: in the premise, Israelis and Jews are holding the counter-demonstration,
+    # while in the hypothesis, Palestinians are holding it. Hence, the hypothesis cannot be entailed from the premise.
+    return None
+
+print(entailment_or_neutral(counter_demonstration_premise, counter_demonstration_hypothesis))
+"
+4,"During Reinsdorf 's 24 seasons as chairman of the White Sox , the team has captured American League division championships three times , including an AL Central title in 2000 .",The White Sox have won 24 championships .,neutral,4,"```python
+seasons_as_chairman_premise = 24
+division_championships_premise = 3
+championships_hypothesis = 24
+
+def entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis):
+    # the hypothesis talks about the total number of championships won by the White Sox, which is not mentioned in the premise
+    # the hypothesis cannot be entailed from the premise, since the total number of championships is unknown.
+    return None
+
+print(entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis))
+```","
+# Premise: During Reinsdorf 's 24 seasons as chairman of the White Sox , the team has captured American League division championships three times , including an AL Central title in 2000 .
+# Hypothesis: The White Sox have won 24 championships .
+# Golden Label: neutral
+
+
+seasons_as_chairman_premise = 24
+division_championships_premise = 3
+championships_hypothesis = 24
+
+def entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis):
+    # the hypothesis talks about the total number of championships won by the White Sox, which is not mentioned in the premise
+    # the hypothesis cannot be entailed from the premise, since the total number of championships is unknown.
+    return None
+
+print(entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis))
+
+","seasons_as_chairman_premise = 24
+division_championships_premise = 3
+championships_hypothesis = 24
+
+def entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis):
+    # the hypothesis talks about the total number of championships won by the White Sox, which is not mentioned in the premise
+    # the hypothesis cannot be entailed from the premise, since the total number of championships is unknown.
+    return None
+
+print(entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis))
+"
+77,"Still , violence continued : Insurgents killed five U.S. soldiers , set off a suicide car bomb that killed four Iraqi policemen in Baghdad and targeted more polling sites across the country .","Five US soldiers were killed , and at least 10 Iraqis died in Baghdad .",neutral,77,"```python
+us_soldiers_killed_premise = 5
+us_soldiers_killed_hypothesis = 5
+iraqis_killed_premise = 4
+iraqis_killed_hypothesis = 10
+
+def entailment_or_neutral(us_soldiers_killed_premise, us_soldiers_killed_hypothesis, iraqis_killed_premise, iraqis_killed_hypothesis):
+    # the hypothesis talks about the number of US soldiers and Iraqis killed, which are also mentioned in the premise
+    # check if the number of US soldiers killed in the hypothesis entails the one in the premise, by checking if they are equal
+    # and if the number of Iraqis killed in the hypothesis is greater than or equal to the number in the premise
+    if us_soldiers_killed_hypothesis == us_soldiers_killed_premise and iraqis_killed_hypothesis >= iraqis_killed_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(us_soldiers_killed_premise, us_soldiers_killed_hypothesis, iraqis_killed_premise, iraqis_killed_hypothesis))
+```
+","
+# Premise: Still , violence continued : Insurgents killed five U.S. soldiers , set off a suicide car bomb that killed four Iraqi policemen in Baghdad and targeted more polling sites across the country .
+# Hypothesis: Five US soldiers were killed , and at least 10 Iraqis died in Baghdad .
+# Golden Label: neutral
+
+
+us_soldiers_killed_premise = 5
+us_soldiers_killed_hypothesis = 5
+iraqis_killed_premise = 4
+iraqis_killed_hypothesis = 10
+
+def entailment_or_neutral(us_soldiers_killed_premise, us_soldiers_killed_hypothesis, iraqis_killed_premise, iraqis_killed_hypothesis):
+    # the hypothesis talks about the number of US soldiers and Iraqis killed, which are also mentioned in the premise
+    # check if the number of US soldiers killed in the hypothesis entails the one in the premise, by checking if they are equal
+    # and if the number of Iraqis killed in the hypothesis is greater than or equal to the number in the premise
+    if us_soldiers_killed_hypothesis == us_soldiers_killed_premise and iraqis_killed_hypothesis >= iraqis_killed_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(us_soldiers_killed_premise, us_soldiers_killed_hypothesis, iraqis_killed_premise, iraqis_killed_hypothesis))
+
+","us_soldiers_killed_premise = 5
+us_soldiers_killed_hypothesis = 5
+iraqis_killed_premise = 4
+iraqis_killed_hypothesis = 10
+
+def entailment_or_neutral(us_soldiers_killed_premise, us_soldiers_killed_hypothesis, iraqis_killed_premise, iraqis_killed_hypothesis):
+    # the hypothesis talks about the number of US soldiers and Iraqis killed, which are also mentioned in the premise
+    # check if the number of US soldiers killed in the hypothesis entails the one in the premise, by checking if they are equal
+    # and if the number of Iraqis killed in the hypothesis is greater than or equal to the number in the premise
+    if us_soldiers_killed_hypothesis == us_soldiers_killed_premise and iraqis_killed_hypothesis >= iraqis_killed_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(us_soldiers_killed_premise, us_soldiers_killed_hypothesis, iraqis_killed_premise, iraqis_killed_hypothesis))
+"
+34,"Fourteen European countries with about 5 % of the world 's population have reached zero population growth and Japan , France and Finland are , among others , headed in that direction .",Japan is headed toward zero population growth .,entailment,34,"```python
+countries_reached_zero_growth_premise = 14
+world_pop_percentage_premise = 5
+countries_heading_towards_zero_growth_premise = ['Japan', 'France', 'Finland']
+
+def entailment_or_neutral(countries_reached_zero_growth_premise, world_pop_percentage_premise, countries_heading_towards_zero_growth_premise):
+    # the hypothesis talks about Japan heading towards zero population growth, which is also mentioned in the premise
+    # check if Japan is listed in the premise as one of the countries heading towards zero population growth
+    if 'Japan' in countries_heading_towards_zero_growth_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(countries_reached_zero_growth_premise, world_pop_percentage_premise, countries_heading_towards_zero_growth_premise))
+```","
+# Premise: Fourteen European countries with about 5 % of the world 's population have reached zero population growth and Japan , France and Finland are , among others , headed in that direction .
+# Hypothesis: Japan is headed toward zero population growth .
+# Golden Label: entailment
+
+
+countries_reached_zero_growth_premise = 14
+world_pop_percentage_premise = 5
+countries_heading_towards_zero_growth_premise = ['Japan', 'France', 'Finland']
+
+def entailment_or_neutral(countries_reached_zero_growth_premise, world_pop_percentage_premise, countries_heading_towards_zero_growth_premise):
+    # the hypothesis talks about Japan heading towards zero population growth, which is also mentioned in the premise
+    # check if Japan is listed in the premise as one of the countries heading towards zero population growth
+    if 'Japan' in countries_heading_towards_zero_growth_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(countries_reached_zero_growth_premise, world_pop_percentage_premise, countries_heading_towards_zero_growth_premise))
+
+","countries_reached_zero_growth_premise = 14
+world_pop_percentage_premise = 5
+countries_heading_towards_zero_growth_premise = ['Japan', 'France', 'Finland']
+
+def entailment_or_neutral(countries_reached_zero_growth_premise, world_pop_percentage_premise, countries_heading_towards_zero_growth_premise):
+    # the hypothesis talks about Japan heading towards zero population growth, which is also mentioned in the premise
+    # check if Japan is listed in the premise as one of the countries heading towards zero population growth
+    if 'Japan' in countries_heading_towards_zero_growth_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(countries_reached_zero_growth_premise, world_pop_percentage_premise, countries_heading_towards_zero_growth_premise))
+"
+164,"A U.S. soldier accused of participating in the rape of an Iraqi girl and then killing her and her family was sentenced to 90 years in jail on Thursday , media reports said .",A U.S. soldier was sentenced to 90 years in jail .,entailment,164,"```python
+jail_term_premise = 90
+jail_term_hypothesis = 90
+
+def entailment_or_neutral(jail_term_premise, jail_term_hypothesis):
+    # the hypothesis talks about the jail sentence of the U.S. soldier, which is also mentioned in the premise
+    # check if the jail term in the hypothesis entails the one in the premise, by checking if they are equal
+    if jail_term_hypothesis == jail_term_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(jail_term_premise, jail_term_hypothesis))
+```
+","
+# Premise: A U.S. soldier accused of participating in the rape of an Iraqi girl and then killing her and her family was sentenced to 90 years in jail on Thursday , media reports said .
+# Hypothesis: A U.S. soldier was sentenced to 90 years in jail .
+# Golden Label: entailment
+
+
+jail_term_premise = 90
+jail_term_hypothesis = 90
+
+def entailment_or_neutral(jail_term_premise, jail_term_hypothesis):
+    # the hypothesis talks about the jail sentence of the U.S. soldier, which is also mentioned in the premise
+    # check if the jail term in the hypothesis entails the one in the premise, by checking if they are equal
+    if jail_term_hypothesis == jail_term_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(jail_term_premise, jail_term_hypothesis))
+
+","jail_term_premise = 90
+jail_term_hypothesis = 90
+
+def entailment_or_neutral(jail_term_premise, jail_term_hypothesis):
+    # the hypothesis talks about the jail sentence of the U.S. soldier, which is also mentioned in the premise
+    # check if the jail term in the hypothesis entails the one in the premise, by checking if they are equal
+    if jail_term_hypothesis == jail_term_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(jail_term_premise, jail_term_hypothesis))
+"
+154,A Belgian policeman posing as an art dealer in Brussels arrested three Swedes .,Three Swedes were arrested in a Belgian police sting operation .,entailment,154,"```python
+num_swedes_premise = 3
+num_swedes_hypothesis = 3
+
+def entailment_or_neutral(num_swedes_premise, num_swedes_hypothesis):
+    # the hypothesis talks about the number of Swedes arrested in Belgium, which is also mentioned in the premise
+    # check if the number of Swedes arrested in the hypothesis entails the one in the premise, by checking if they are equal
+    if num_swedes_hypothesis == num_swedes_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(num_swedes_premise, num_swedes_hypothesis))
+```","
+# Premise: A Belgian policeman posing as an art dealer in Brussels arrested three Swedes .
+# Hypothesis: Three Swedes were arrested in a Belgian police sting operation .
+# Golden Label: entailment
+
+
+num_swedes_premise = 3
+num_swedes_hypothesis = 3
+
+def entailment_or_neutral(num_swedes_premise, num_swedes_hypothesis):
+    # the hypothesis talks about the number of Swedes arrested in Belgium, which is also mentioned in the premise
+    # check if the number of Swedes arrested in the hypothesis entails the one in the premise, by checking if they are equal
+    if num_swedes_hypothesis == num_swedes_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(num_swedes_premise, num_swedes_hypothesis))
+
+","num_swedes_premise = 3
+num_swedes_hypothesis = 3
+
+def entailment_or_neutral(num_swedes_premise, num_swedes_hypothesis):
+    # the hypothesis talks about the number of Swedes arrested in Belgium, which is also mentioned in the premise
+    # check if the number of Swedes arrested in the hypothesis entails the one in the premise, by checking if they are equal
+    if num_swedes_hypothesis == num_swedes_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(num_swedes_premise, num_swedes_hypothesis))
+"
+122,"Last year 's collapse of Italian dairy company Parmalat , with `` 14.3 billion euros that must still be accounted for '' , is given as evidence for `` a lack of effective tools and controls regarding financial operations '' .",Parmalat costs 14.3 billion euros .,neutral,122,"```python
+missing_funds_premise = 14.3
+cost_hypothesis = 14.3
+
+def entailment_or_neutral(missing_funds_premise, cost_hypothesis):
+    # the hypothesis talks about the cost of Parmalat, which is not mentioned in the premise
+    # the premise talks about the funds that are missing, not the cost of the company
+    # therefore, the hypothesis is not entailed by the premise
+    return None
+
+print(entailment_or_neutral(missing_funds_premise, cost_hypothesis))
+```","
+# Premise: Last year 's collapse of Italian dairy company Parmalat , with `` 14.3 billion euros that must still be accounted for '' , is given as evidence for `` a lack of effective tools and controls regarding financial operations '' .
+# Hypothesis: Parmalat costs 14.3 billion euros .
+# Golden Label: neutral
+
+
+missing_funds_premise = 14.3
+cost_hypothesis = 14.3
+
+def entailment_or_neutral(missing_funds_premise, cost_hypothesis):
+    # the hypothesis talks about the cost of Parmalat, which is not mentioned in the premise
+    # the premise talks about the funds that are missing, not the cost of the company
+    # therefore, the hypothesis is not entailed by the premise
+    return None
+
+print(entailment_or_neutral(missing_funds_premise, cost_hypothesis))
+
+","missing_funds_premise = 14.3
+cost_hypothesis = 14.3
+
+def entailment_or_neutral(missing_funds_premise, cost_hypothesis):
+    # the hypothesis talks about the cost of Parmalat, which is not mentioned in the premise
+    # the premise talks about the funds that are missing, not the cost of the company
+    # therefore, the hypothesis is not entailed by the premise
+    return None
+
+print(entailment_or_neutral(missing_funds_premise, cost_hypothesis))
+"
+145,"Mars has the smallest confirmed moon , Deimos , which is about 7.5 miles in diameter .",The terrestrial moon has a diameter of 3746 kilometers .,neutral,145,"```python
+diameter_deimos_miles_premise = 7.5
+diameter_moon_km_hypothesis = 3746
+
+def entailment_or_neutral(diameter_deimos_miles_premise, diameter_moon_km_hypothesis):
+    # the hypothesis talks about terrestrial moon while the premise talks about Mars's moon Deimos
+    # these are not the same entities, so the hypothesis is neutral with respect to the premise
+    return None
+
+print(entailment_or_neutral(diameter_deimos_miles_premise, diameter_moon_km_hypothesis))
+```","
+# Premise: Mars has the smallest confirmed moon , Deimos , which is about 7.5 miles in diameter .
+# Hypothesis: The terrestrial moon has a diameter of 3746 kilometers .
+# Golden Label: neutral
+
+
+diameter_deimos_miles_premise = 7.5
+diameter_moon_km_hypothesis = 3746
+
+def entailment_or_neutral(diameter_deimos_miles_premise, diameter_moon_km_hypothesis):
+    # the hypothesis talks about terrestrial moon while the premise talks about Mars's moon Deimos
+    # these are not the same entities, so the hypothesis is neutral with respect to the premise
+    return None
+
+print(entailment_or_neutral(diameter_deimos_miles_premise, diameter_moon_km_hypothesis))
+
+","diameter_deimos_miles_premise = 7.5
+diameter_moon_km_hypothesis = 3746
+
+def entailment_or_neutral(diameter_deimos_miles_premise, diameter_moon_km_hypothesis):
+    # the hypothesis talks about terrestrial moon while the premise talks about Mars's moon Deimos
+    # these are not the same entities, so the hypothesis is neutral with respect to the premise
+    return None
+
+print(entailment_or_neutral(diameter_deimos_miles_premise, diameter_moon_km_hypothesis))
+"
+140,"Out of the seven expeditions who were permitted to climb the 8586-meter high Mt . Kanchenjunga , only one climber from the United States succeeded .",Kanchenjunga is 8586 meters high .,entailment,140,"```python
+height_premise = 8586
+height_hypothesis = 8586
+
+def entailment_or_neutral(height_premise, height_hypothesis):
+    # the hypothesis talks about the height of Kanchenjunga, which is also mentioned in the premise
+    # check if the height in the hypothesis entails the one in the premise, by checking if they are equal
+    if height_hypothesis == height_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(height_premise, height_hypothesis))
+```","
+# Premise: Out of the seven expeditions who were permitted to climb the 8586-meter high Mt . Kanchenjunga , only one climber from the United States succeeded .
+# Hypothesis: Kanchenjunga is 8586 meters high .
+# Golden Label: entailment
+
+
+height_premise = 8586
+height_hypothesis = 8586
+
+def entailment_or_neutral(height_premise, height_hypothesis):
+    # the hypothesis talks about the height of Kanchenjunga, which is also mentioned in the premise
+    # check if the height in the hypothesis entails the one in the premise, by checking if they are equal
+    if height_hypothesis == height_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(height_premise, height_hypothesis))
+
+","height_premise = 8586
+height_hypothesis = 8586
+
+def entailment_or_neutral(height_premise, height_hypothesis):
+    # the hypothesis talks about the height of Kanchenjunga, which is also mentioned in the premise
+    # check if the height in the hypothesis entails the one in the premise, by checking if they are equal
+    if height_hypothesis == height_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(height_premise, height_hypothesis))
+"
+80,"That was up from 3 percent in 2003 and marked the best showing since 1999 , when the economy grew by 4.5 percent .","That was up from 3 % in 2003 and marked the best showing since 1999 , when the growth was 4.5 % .",entailment,80,"```python
+growth_2003_premise = 3
+growth_1999_premise = 4.5
+growth_2003_hypothesis = 3
+growth_1999_hypothesis = 4.5
+
+def entailment_or_neutral(growth_2003_premise, growth_1999_premise, growth_2003_hypothesis, growth_1999_hypothesis):
+    # the hypothesis talks about the same years and growth percentages as the premise
+    # check if the growth percentages for both years in the hypothesis entail those in the premise, by checking if they are equal
+    if growth_2003_hypothesis == growth_2003_premise and growth_1999_hypothesis == growth_1999_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(growth_2003_premise, growth_1999_premise, growth_2003_hypothesis, growth_1999_hypothesis))
+```","
+# Premise: That was up from 3 percent in 2003 and marked the best showing since 1999 , when the economy grew by 4.5 percent .
+# Hypothesis: That was up from 3 % in 2003 and marked the best showing since 1999 , when the growth was 4.5 % .
+# Golden Label: entailment
+
+
+growth_2003_premise = 3
+growth_1999_premise = 4.5
+growth_2003_hypothesis = 3
+growth_1999_hypothesis = 4.5
+
+def entailment_or_neutral(growth_2003_premise, growth_1999_premise, growth_2003_hypothesis, growth_1999_hypothesis):
+    # the hypothesis talks about the same years and growth percentages as the premise
+    # check if the growth percentages for both years in the hypothesis entail those in the premise, by checking if they are equal
+    if growth_2003_hypothesis == growth_2003_premise and growth_1999_hypothesis == growth_1999_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(growth_2003_premise, growth_1999_premise, growth_2003_hypothesis, growth_1999_hypothesis))
+
+","growth_2003_premise = 3
+growth_1999_premise = 4.5
+growth_2003_hypothesis = 3
+growth_1999_hypothesis = 4.5
+
+def entailment_or_neutral(growth_2003_premise, growth_1999_premise, growth_2003_hypothesis, growth_1999_hypothesis):
+    # the hypothesis talks about the same years and growth percentages as the premise
+    # check if the growth percentages for both years in the hypothesis entail those in the premise, by checking if they are equal
+    if growth_2003_hypothesis == growth_2003_premise and growth_1999_hypothesis == growth_1999_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(growth_2003_premise, growth_1999_premise, growth_2003_hypothesis, growth_1999_hypothesis))
+"
+67,"This ( revised ) Convention shall enter into force six months after the date on which four States , including at least three member States of the Council of Europe , have expressed their consent to be bound by the ( revised ) Convention in accordance with the provisions of the preceding paragraphs .",The Council of Europe is made up by 3 member states .,neutral,67,"```python
+min_member_states_premise = 3
+member_states_hypothesis = 3
+
+def entailment_or_neutral(min_member_states_premise, member_states_hypothesis):
+    # the hypothesis talks about the total number of member states in the Council of Europe, while the premise 
+    # talks about the minimum number of member states required to bind the revised convention. 
+    # The hypothesis cannot be entailed from the premise, since the total number of member states is unknown.
+    return None
+
+print(entailment_or_neutral(min_member_states_premise, member_states_hypothesis))
+```","
+# Premise: This ( revised ) Convention shall enter into force six months after the date on which four States , including at least three member States of the Council of Europe , have expressed their consent to be bound by the ( revised ) Convention in accordance with the provisions of the preceding paragraphs .
+# Hypothesis: The Council of Europe is made up by 3 member states .
+# Golden Label: neutral
+
+
+min_member_states_premise = 3
+member_states_hypothesis = 3
+
+def entailment_or_neutral(min_member_states_premise, member_states_hypothesis):
+    # the hypothesis talks about the total number of member states in the Council of Europe, while the premise 
+    # talks about the minimum number of member states required to bind the revised convention. 
+    # The hypothesis cannot be entailed from the premise, since the total number of member states is unknown.
+    return None
+
+print(entailment_or_neutral(min_member_states_premise, member_states_hypothesis))
+
+","min_member_states_premise = 3
+member_states_hypothesis = 3
+
+def entailment_or_neutral(min_member_states_premise, member_states_hypothesis):
+    # the hypothesis talks about the total number of member states in the Council of Europe, while the premise 
+    # talks about the minimum number of member states required to bind the revised convention. 
+    # The hypothesis cannot be entailed from the premise, since the total number of member states is unknown.
+    return None
+
+print(entailment_or_neutral(min_member_states_premise, member_states_hypothesis))
+"
+95,"Temporary help firms added 32,000 and education and health care services gained 13,000 jobs last month .","Service industries such as education and health care added 46,000 jobs .",neutral,95,"```python
+temp_help_jobs_premise = 32000
+education_health_jobs_premise = 13000
+service_jobs_hypothesis = 46000
+
+def entailment_or_neutral(temp_help_jobs_premise, education_health_jobs_premise, service_jobs_hypothesis):
+    # the hypothesis talks about service jobs, which includes both temporary help firms and education and health care services in the premise
+    # add the jobs from both of these sectors from the premise and compare with the number in the hypothesis
+    total_service_jobs_premise = temp_help_jobs_premise + education_health_jobs_premise
+    if total_service_jobs_premise == service_jobs_hypothesis:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(temp_help_jobs_premise, education_health_jobs_premise, service_jobs_hypothesis))
+```","
+# Premise: Temporary help firms added 32,000 and education and health care services gained 13,000 jobs last month .
+# Hypothesis: Service industries such as education and health care added 46,000 jobs .
+# Golden Label: neutral
+
+
+temp_help_jobs_premise = 32000
+education_health_jobs_premise = 13000
+service_jobs_hypothesis = 46000
+
+def entailment_or_neutral(temp_help_jobs_premise, education_health_jobs_premise, service_jobs_hypothesis):
+    # the hypothesis talks about service jobs, which includes both temporary help firms and education and health care services in the premise
+    # add the jobs from both of these sectors from the premise and compare with the number in the hypothesis
+    total_service_jobs_premise = temp_help_jobs_premise + education_health_jobs_premise
+    if total_service_jobs_premise == service_jobs_hypothesis:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(temp_help_jobs_premise, education_health_jobs_premise, service_jobs_hypothesis))
+
+","temp_help_jobs_premise = 32000
+education_health_jobs_premise = 13000
+service_jobs_hypothesis = 46000
+
+def entailment_or_neutral(temp_help_jobs_premise, education_health_jobs_premise, service_jobs_hypothesis):
+    # the hypothesis talks about service jobs, which includes both temporary help firms and education and health care services in the premise
+    # add the jobs from both of these sectors from the premise and compare with the number in the hypothesis
+    total_service_jobs_premise = temp_help_jobs_premise + education_health_jobs_premise
+    if total_service_jobs_premise == service_jobs_hypothesis:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(temp_help_jobs_premise, education_health_jobs_premise, service_jobs_hypothesis))
+"
+54,"Last year the US saw exports of goods and services rise 12.8 % to $ 1.44 trillion , while its imports gained 10.5 % to $ 2.2 trillion , said the Commerce Department .",US exports rose 10.5 % .,neutral,54,"```python
+percent_exports_rise_premise = 12.8
+percent_exports_rise_hypothesis = 10.5
+
+def entailment_or_neutral(percent_exports_rise_premise, percent_exports_rise_hypothesis):
+    # the hypothesis talks about the rise in US exports, which is also mentioned in the premise
+    # check if the rise in exports in the hypothesis entails the one in the premise, by checking if it is less or equal
+    if percent_exports_rise_hypothesis <= percent_exports_rise_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(percent_exports_rise_premise, percent_exports_rise_hypothesis))
+```","
+# Premise: Last year the US saw exports of goods and services rise 12.8 % to $ 1.44 trillion , while its imports gained 10.5 % to $ 2.2 trillion , said the Commerce Department .
+# Hypothesis: US exports rose 10.5 % .
+# Golden Label: neutral
+
+
+percent_exports_rise_premise = 12.8
+percent_exports_rise_hypothesis = 10.5
+
+def entailment_or_neutral(percent_exports_rise_premise, percent_exports_rise_hypothesis):
+    # the hypothesis talks about the rise in US exports, which is also mentioned in the premise
+    # check if the rise in exports in the hypothesis entails the one in the premise, by checking if it is less or equal
+    if percent_exports_rise_hypothesis <= percent_exports_rise_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(percent_exports_rise_premise, percent_exports_rise_hypothesis))
+
+","percent_exports_rise_premise = 12.8
+percent_exports_rise_hypothesis = 10.5
+
+def entailment_or_neutral(percent_exports_rise_premise, percent_exports_rise_hypothesis):
+    # the hypothesis talks about the rise in US exports, which is also mentioned in the premise
+    # check if the rise in exports in the hypothesis entails the one in the premise, by checking if it is less or equal
+    if percent_exports_rise_hypothesis <= percent_exports_rise_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(percent_exports_rise_premise, percent_exports_rise_hypothesis))
+"
+50,"Defense Secretary Robert Gates earlier this month recommended that the Army 's troop strength be increased by 65,000 soldiers , to a total of 547,000 worldwide and the Marines be increased by 27,000 to 202,000 .","The Defense Secretary suggested that the Army 's troop should be increased to 547,000 soldiers .",entailment,50,"```python
+increase_army_premise = 65000
+total_army_premise = 547000
+increase_marines_premise = 27000
+total_marines_premise = 202000
+
+total_army_hypothesis = 547000
+
+def entailment_or_neutral(increase_army_premise, total_army_premise, increase_marines_premise, total_marines_premise, total_army_hypothesis):
+    # the hypothesis talks about the total number of army soldiers, which is also mentioned in the premise
+    # check if the total number of army soldiers in the hypothesis entails the one in the premise, by checking if they are equal
+    if total_army_hypothesis == total_army_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(increase_army_premise, total_army_premise, increase_marines_premise, total_marines_premise, total_army_hypothesis))
+```
+","
+# Premise: Defense Secretary Robert Gates earlier this month recommended that the Army 's troop strength be increased by 65,000 soldiers , to a total of 547,000 worldwide and the Marines be increased by 27,000 to 202,000 .
+# Hypothesis: The Defense Secretary suggested that the Army 's troop should be increased to 547,000 soldiers .
+# Golden Label: entailment
+
+
+increase_army_premise = 65000
+total_army_premise = 547000
+increase_marines_premise = 27000
+total_marines_premise = 202000
+
+total_army_hypothesis = 547000
+
+def entailment_or_neutral(increase_army_premise, total_army_premise, increase_marines_premise, total_marines_premise, total_army_hypothesis):
+    # the hypothesis talks about the total number of army soldiers, which is also mentioned in the premise
+    # check if the total number of army soldiers in the hypothesis entails the one in the premise, by checking if they are equal
+    if total_army_hypothesis == total_army_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(increase_army_premise, total_army_premise, increase_marines_premise, total_marines_premise, total_army_hypothesis))
+
+","increase_army_premise = 65000
+total_army_premise = 547000
+increase_marines_premise = 27000
+total_marines_premise = 202000
+
+total_army_hypothesis = 547000
+
+def entailment_or_neutral(increase_army_premise, total_army_premise, increase_marines_premise, total_marines_premise, total_army_hypothesis):
+    # the hypothesis talks about the total number of army soldiers, which is also mentioned in the premise
+    # check if the total number of army soldiers in the hypothesis entails the one in the premise, by checking if they are equal
+    if total_army_hypothesis == total_army_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(increase_army_premise, total_army_premise, increase_marines_premise, total_marines_premise, total_army_hypothesis))
+"
+19,"Romania 's is one of the largest contingents of any European country in Iraq due to the recent withdrawals or downscaling of Spain , Italy , the Ukraine and Poland . Romania has so far been one of the only NATO countries not announcing a withdrawal .",Romania sent 730 troops in Iraq .,neutral,19,"```python
+romania_troops_hypothesis = 730
+
+def entailment_or_neutral(romania_troops_hypothesis):
+    # The premise mentions that Romania has one of the largest contingents in Iraq, but no specific number of troops is given.
+    # The hypothesis specifies a number (730), which cannot be confirmed or refuted by the premise.
+    return None
+
+print(entailment_or_neutral(romania_troops_hypothesis))
+```","
+# Premise: Romania 's is one of the largest contingents of any European country in Iraq due to the recent withdrawals or downscaling of Spain , Italy , the Ukraine and Poland . Romania has so far been one of the only NATO countries not announcing a withdrawal .
+# Hypothesis: Romania sent 730 troops in Iraq .
+# Golden Label: neutral
+
+
+romania_troops_hypothesis = 730
+
+def entailment_or_neutral(romania_troops_hypothesis):
+    # The premise mentions that Romania has one of the largest contingents in Iraq, but no specific number of troops is given.
+    # The hypothesis specifies a number (730), which cannot be confirmed or refuted by the premise.
+    return None
+
+print(entailment_or_neutral(romania_troops_hypothesis))
+
+","romania_troops_hypothesis = 730
+
+def entailment_or_neutral(romania_troops_hypothesis):
+    # The premise mentions that Romania has one of the largest contingents in Iraq, but no specific number of troops is given.
+    # The hypothesis specifies a number (730), which cannot be confirmed or refuted by the premise.
+    return None
+
+print(entailment_or_neutral(romania_troops_hypothesis))
+"

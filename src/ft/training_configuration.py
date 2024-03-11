@@ -1,11 +1,8 @@
 # The model that you want to train from the Hugging Face hub
 model_name = "meta-llama/Llama-2-7b-hf"
 
-# The instruction dataset to use
-dataset_name = "mlabonne/guanaco-llama2-1k"
-
 # Fine-tuned model name
-new_model = "llama-2-7b-awpnli"
+new_model = "llama-2-7B"
 
 ################################################################################
 # QLoRA parameters
@@ -44,20 +41,20 @@ use_nested_quant = False
 # output_dir = "results"
 
 # Number of training epochs
-num_train_epochs = 1
+num_train_epochs = 4
 
 # Enable fp16/bf16 training (set bf16 to True with an A100)
 fp16 = False
 bf16 = True
 
 # Batch size per GPU for training
-per_device_train_batch_size = 4
+per_device_train_batch_size = 2
 
 # Batch size per GPU for evaluation
-per_device_eval_batch_size = 4
+# per_device_eval_batch_size = 2
 
 # Number of update steps to accumulate the gradients for
-gradient_accumulation_steps = 1
+gradient_accumulation_steps = 4
 
 # Enable gradient checkpointing
 gradient_checkpointing = True
@@ -66,12 +63,13 @@ gradient_checkpointing = True
 max_grad_norm = 0.3
 
 # Initial learning rate (AdamW optimizer)
-learning_rate = 2e-4
+# learning_rate = 1e-4
 
 # Weight decay to apply to all layers except bias/LayerNorm weights
-weight_decay = 0.001
+weight_decay = 0.01
 
 # Optimizer to use
+
 optim = "paged_adamw_32bit"
 
 # Learning rate schedule
@@ -81,7 +79,7 @@ lr_scheduler_type = "cosine"
 max_steps = -1
 
 # Ratio of steps for a linear warmup (from 0 to learning rate)
-warmup_ratio = 0.03
+# warmup_ratio = 0.025
 
 # Group sequences into batches with same length
 # Saves memory and speeds up training considerably

@@ -19,6 +19,8 @@ code-quality
 datasets~=2.17.1
 torch~=2.1.1
 peft~=0.8.2
+rouge-score==0.1.2
 transformers~=4.35.2
+tree-sitter==0.20.4
 trl~=0.7.11
 requests~=2.31.0

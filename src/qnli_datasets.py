@@ -28,23 +28,6 @@ def read_data(filename: str = None, labels: List[str] | str = None) -> (List[dic
     return samples, labels
 
 
-def sample_examples(data: List[dict],
-                    labels: Set[str] = None,
-                    n: int = 3,
-                    how: str = Literal["random", "diverse"]) -> List[dict]:
-    """
-    Samples examples from a dataset, according to a sampling strategy.
-    :param data: a list of samples in dict format
-    :param labels: a set of the labels in the dataset
-    :param n: the number of samples to be sampled
-    :param how: how to sample the examples. 'random' sampling will return `n` samples without accounting for the label.
-    'diverse` strategy will sample one example for each label and then random examples until `n` examples are chosen
-    in total. If there are more labels than `n`, only up to 'n' diverse labels will be sampled.
-    :return: a list of samples in dict format
-    """
-    pass
-
-
 if __name__ == "__main__":
     for dataset in ["AWPNLI", "RedditNLI", "NewsNLI", "RTE_Quant", "StressTest"]:
         print(dataset)

@@ -2,9 +2,11 @@
 
 #SBATCH --partition=gpu
 #SBARCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
 #SBATCH --gpus=1
 #SBATCH --job-name=test-ft-setup
-#SBATCH --time=00:40:00
+#SBATCH --time=04:00:00
 #SBATCH --output=slurm_output_%A.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=ioana.mazilu@student.uva.nl
@@ -13,16 +15,18 @@ module purge
 module load 2022
 module load Python/3.10.4-GCCcore-11.3.0
 
-mkdir -p "$TMPDIR"/output/awpnli_ft/
+mkdir -p "$TMPDIR"/output/test_ft/
 mkdir -p "$TMPDIR"/input/completion/
 
 cd $HOME/qnli/quant_nli
-cp -r data/finetuning/AWPNLI/completion/train.csv "$TMPDIR"/input/completion/
-cp -r data/finetuning/AWPNLI/completion/val.csv "$TMPDIR"/input/completion/
+cp -r data/finetuning/completion/train_all.csv "$TMPDIR"/input/completion/train_all.csv
+cp -r data/finetuning/completion/val_all.csv "$TMPDIR"/input/completion/val_all.csv
 
 cd $HOME/qnli/quant_nli/src/ft
-python finetuning_normal.py --output-path "$TMPDIR" --input-path "$TMPDIR" --experiment awpnli_ft --target_model awpnli_llama2-ft
+export HF_TOKEN="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"
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+python finetuning_normal.py --output-path "$TMPDIR" --input-path "$TMPDIR" --experiment test_ft --target_model test_llama2-ft
 
-mkdir -p $HOME/qnli/quant_nli/results/awpnli_ft/
+mkdir -p $HOME/qnli/quant_nli/results/test_ft/
 cd "$TMPDIR"/output
-cp -r awpnli_ft/ $HOME/qnli/quant_nli/results/awpnli_ft/
+cp -r test_ft/ $HOME/qnli/quant_nli/results/test_ft/

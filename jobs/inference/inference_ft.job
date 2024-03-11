@@ -1,0 +1,57 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBARCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
+#SBATCH --gpus=1
+#SBATCH --job-name=qnli_ft_inference
+#SBATCH --time=02:00:00
+#SBATCH --output=slurm_output_%A.out
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=ioana.mazilu@student.uva.nl
+
+module purge
+module load 2022
+module load Python/3.10.4-GCCcore-11.3.0
+
+# set some variables
+MODEL_NAME="llama-2-chat"
+MODEL_SIZE="7B"
+HF_REPO="meta-llama/Llama-2-7b-chat-hf"
+MAX_NEW_TOKENS="512"
+BATCH_SIZE="8"
+MODEL_ID="5494375"  # JOB ID of the fine-tuned model
+#SAMPLE_SIZE="24"
+
+# create input and output directories on the scratch disk
+mkdir -p "$TMPDIR"/output/
+mkdir -p "$TMPDIR"/input/completion/
+mkdir -p "$TMPDIR"/input/model/
+
+# move dataset files to scratch
+cd $HOME/qnli/quant_nli
+cp -r data/finetuning/completion/test_all.csv "$TMPDIR"/input/completion/test_all.csv
+cp -r results/"$MODEL_NAME"/"$MODEL_SIZE"/"$MODEL_ID"/"$MODEL_NAME"-"$MODEL_SIZE"/ "$TMPDIR"/input/model/
+
+# run fine-tuning script
+cd $HOME/qnli/quant_nli/src/inf
+export HF_TOKEN="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"
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+python inference.py --finetuned \
+                    --job-id "$MODEL_ID" \
+                    --output-path "$TMPDIR" \
+                    --input-path "$TMPDIR" \
+                    --model-name "$MODEL_NAME" \
+                    --model-size "$MODEL_SIZE" \
+                    --hf-repo "$HF_REPO" \
+                    --max-new-tokens "$MAX_NEW_TOKENS" \
+                    --batch-size "$BATCH_SIZE"
+#                    --sample-size "$SAMPLE_SIZE"
+
+# copy output files from scratch back to the home directory, also copy the job output file with info on the job configs
+mkdir -p $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"_finetuned/
+cd "$TMPDIR"/output/
+cp -r test.csv $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"_finetuned/
+cd "$HOME"/qnli/quant_nli/jobs/inference/
+cp slurm_output_"$SLURM_JOBID".out $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"_finetuned/

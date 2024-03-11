@@ -1,61 +1,10 @@
-completion,prompt
-"```python
-employees_premise = 188000
-employees_hypothesis = 188000
-
-def entailment_or_neutral(employees_premise, employees_hypothesis):
-    # The hypothesis talks about the number of employees Richard Blumenthal has, which is not mentioned in the premise
-    # The premise talks about the number of employees of the state of Connecticut, not Richard Blumenthal. 
-    # The hypothesis cannot be entailed from the premise.
-    return None
-
-print(entailment_or_neutral(employees_premise, employees_hypothesis))
-```","### Instruction:
-You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
-START_EXAMPLE
-Premise: There have been more than 10 storms during the past year.
-Hypothesis: Over the last year, more than 10 snowstorms have been reported.
-Answer:
-```python
-min_storms_premise = 10
-min_snowstorms_hypothesis = 10
-
-def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
-    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
-    return None
-
-print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
-Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
-Answer:
-```python
-total_books_premise = 5
-books_before_30_premise = 2
-books_before_30_hypothesis = 2
-
-def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
-    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
-    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
-    if books_before_30_hypothesis == books_before_30_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
-```
-END_EXAMPLE
-### Input:
-Premise: Last week , the attorney general of Connecticut , Richard Blumenthal , turned up the pressure when he said the state would no longer extend its insurance plan for its 188,000 employees to cover prescriptions filled at Wal-Mart unless the chain agreed to stock the pills .
-Hypothesis: The attorney general of Connecticut , Richard Blumenthal has 188,000 employees ."
-"```python
-# no quantities in the premise or hypothesis refer to the same entity, thus we cannot determine entailment or neutrality
+sample_index,completion,prompt
+107,"```python
+# The premise doesn't provide a specific number for the hostages. Therefore, we can't extract a numerical quantity from it.
 
 def entailment_or_neutral():
+    # The hypothesis provides a specific number for the hostages (1,200) which is not mentioned in the premise. 
+    # Therefore, the hypothesis cannot be entailed from the premise.
     return None
 
 print(entailment_or_neutral())
@@ -99,9 +48,284 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Thousands of Romanians participated in rallies on Monday to campaign for the release of three Romanian journalists kidnapped last month in Iraq . Crowds swelled in size after a weekend of smaller rallies sponsored by Romanian media workers and the Arab community in Romania .
-Hypothesis: Romania sent 730 troops in Iraq ."
-"```python
+Premise: Commandos stormed a school Friday in southern Russia and battled separatist rebels holding hundreds of hostages as crying children , some naked and covered in blood , fled the building through explosions and gunfire .
+Hypothesis: The total number of hostages held in the school may have been as many as 1,200 ."
+102,"```python
+guardsmen_killed_premise = 4
+guardsmen_injured_premise = 80
+guardsmen_killed_hypothesis = 4
+guardsmen_injured_hypothesis = 80
+
+def entailment_or_neutral(guardsmen_killed_premise, guardsmen_injured_premise, guardsmen_killed_hypothesis, guardsmen_injured_hypothesis):
+    # the hypothesis talks about the number of guardsmen killed and injured which are also mentioned in the premise
+    # check if the number of guardsmen killed and injured in the hypothesis entails the one in the premise, by checking if they are equal
+    if guardsmen_killed_hypothesis == guardsmen_killed_premise and guardsmen_injured_hypothesis == guardsmen_injured_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(guardsmen_killed_premise, guardsmen_injured_premise, guardsmen_killed_hypothesis, guardsmen_injured_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: A mortar attack north of Baghdad killed four Iraqi national guardsmen and wounded 80 others Tuesday , while a top official from a prominent charity was kidnapped in the Iraqi capital .
+Hypothesis: On Tuesday , a mortar attack killed four Iraqi guardsmen and injured 80 north of Baghdad ."
+12,"```python
+pilgrimage_participants_premise = 70 * 10**6
+pilgrimage_participants_hypothesis = 70 * 10**6
+
+def entailment_or_neutral(pilgrimage_participants_premise, pilgrimage_participants_hypothesis):
+    #the hypothesis talks about the number of pilgrimage participants to the Ganges river, which is also mentioned in the premise
+    #check if the number of participants in the hypothesis entails the one in the premise, by checking if they are equal
+    if pilgrimage_participants_hypothesis == pilgrimage_participants_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(pilgrimage_participants_premise, pilgrimage_participants_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: India 's yearly pilgrimage to the Ganges river , worshiped by Hindus as the goddess Ganga , is the worlds largest gathering of people , with around 70 million participants , dwarfing other religious pilgrimages .
+Hypothesis: Around 70 million people participate in pilgrimage to the Ganges river ."
+58,"```python
+assassination_date_premise = 16
+assassination_date_hypothesis = 7
+
+def entailment_or_neutral(assassination_date_premise, assassination_date_hypothesis):
+    # the hypothesis talks about the date of the assassination, which is also mentioned in the premise
+    # check if the date of the assassination in the hypothesis entails the one in the premise, by checking if they are equal
+    if assassination_date_hypothesis == assassination_date_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(assassination_date_premise, assassination_date_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: The technical investigation commission has determined that some military were reportedly involved in the assassination of the six Jesuits and their two maids , which took place at daybreak on the 16th of November , as reported by president Alfredo Cristiani on the 7th of January .
+Hypothesis: The assassination of the six Jesuits and their two maids took place on the 7th of January ."
+11,"```python
+power_by_wind_turbines_premise = 895
+total_power_hypothesis = 895
+
+def entailment_or_neutral(power_by_wind_turbines_premise, total_power_hypothesis):
+    # the hypothesis talks about the total power in Minnesota, which is not the same as the power generated by wind turbines mentioned in the premise
+    # the hypothesis cannot be entailed from the premise, since the total power in the state is not known
+    return None
+
+print(entailment_or_neutral(power_by_wind_turbines_premise, total_power_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: Governor Tim Pawlenty of Minnesota signed a bill into law on Thursday that requires the state to generate a significant amount of its energy needs from renewable sources . The amount of power generated by wind turbines in the state stands now at 895 megawatts .
+Hypothesis: The amount of power produced in Minnesota stands at 895 megawatts ."
+40,"```python
+total_judges_premise = 15
+nominated_judges_premise = 2
+nominated_judges_hypothesis = 2
+
+def entailment_or_neutral(total_judges_premise, nominated_judges_premise, nominated_judges_hypothesis):
+    # the hypothesis talks about the number of judges nominated by the parties involved, which is also mentioned in the premise
+    # check if the number of nominated judges in the hypothesis entails the one in the premise, by checking if they are equal
+    if nominated_judges_hypothesis == nominated_judges_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_judges_premise, nominated_judges_premise, nominated_judges_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: The World Court , or International Court of Justice ( ICJ ) , located in The Hague , is made up of fifteen permanent judges plus two judges nominated by the parties involved in the dispute under consideration .
+Hypothesis: Two judges of the ICJ are nominated by the parties involved ."
+134,"```python
 # No specific quantities mentioned in premise
 people_killed_hypothesis = 200000
 
@@ -153,19 +377,19 @@ END_EXAMPLE
 ### Input:
 Premise: A report prepared by a five member UN commission noted `` killing of civilians , enforced disappearances , destruction of villages , rape and other forms of sexual violence , pillaging and forced displacement , throughout Darfur '' , and secretly named alleged war criminals that should go before the ICC .
 Hypothesis: More than 200,000 people were killed in the air attack in the Darfur region ."
-"```python
-sentence_years_premise = 10
-sentence_years_hypothesis = 10
+3,"```python
+seasons_as_chairman_premise = 24
+seasons_as_chairman_hypothesis = 24
 
-def entailment_or_neutral(sentence_years_premise, sentence_years_hypothesis):
-    # the hypothesis talks about the length of Milken's sentence, which is also mentioned in the premise
-    # check if the length of the sentence in the hypothesis entails the one in the premise, by checking if they are equal
-    if sentence_years_hypothesis == sentence_years_premise:
+def entailment_or_neutral(seasons_as_chairman_premise, seasons_as_chairman_hypothesis):
+    # the hypothesis talks about the number of seasons Reinsdorf was chairman, which is also mentioned in the premise
+    # check if the number of seasons in the hypothesis entails the one in the premise, by checking if they are equal
+    if seasons_as_chairman_hypothesis == seasons_as_chairman_premise:
         return True
     else:
         return None
 
-print(entailment_or_neutral(sentence_years_premise, sentence_years_hypothesis))
+print(entailment_or_neutral(seasons_as_chairman_premise, seasons_as_chairman_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -206,14 +430,12 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: A federal judge sentenced an apparently stunned Michael Milken to 10 years in prison Wednesday after ruling that the crimes he pleaded guilty to were neither minor nor isolated .
-Hypothesis: Milken was given a 10-year sentence ."
-"```python
-# No quantities are mentioned in the premise or hypothesis.
+Premise: During Reinsdorf 's 24 seasons as chairman of the White Sox , the team has captured American League division championships three times , including an AL Central title in 2000 .
+Hypothesis: Reinsdorf was the chairman of the White Sox for 24 seasons ."
+135,"```python
+# no quantities in the premise or hypothesis refer to the same entity, thus we cannot determine entailment or neutrality
 
 def entailment_or_neutral():
-    # The hypothesis talks about the women's ten thousand metres champion from Mozambique, which is not referenced in the premise. 
-    # The hypothesis cannot be entailed from the premise, since the type of event the Mozambique athlete participated in is different.
     return None
 
 print(entailment_or_neutral())
@@ -257,9 +479,9 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Mozambique 's Maria Mutola and Israel 's Alex Averbukh produced the best performances of the year , in the women 's 800 metres and men 's pole vault , at the Super Grand Prix in Madrid on Saturday .
-Hypothesis: The women 's ten thousand metres champion is from Mozambique ."
-"```python
+Premise: Thousands of Romanians participated in rallies on Monday to campaign for the release of three Romanian journalists kidnapped last month in Iraq . Crowds swelled in size after a weekend of smaller rallies sponsored by Romanian media workers and the Arab community in Romania .
+Hypothesis: Romania sent 730 troops in Iraq ."
+118,"```python
 earnings_premise = 374
 losses_hypothesis = -374
 
@@ -312,22 +534,19 @@ END_EXAMPLE
 ### Input:
 Premise: General Dynamics , the maker of land combat systems , warships and Gulfstream business jets , reported net earnings of $ 374m in the third quarter , or $ 1.84 per share .
 Hypothesis: General Dynamics loses $ 374m ."
-"```python
-diameter_miles_pluto_premise = 1430
-diameter_km_moon_hypothesis = 3746
+33,"```python
+current_population_premise = 5.7
+current_population_hypothesis = 5.7
 
-def entailment_or_neutral(diameter_miles_pluto_premise, diameter_km_moon_hypothesis):
-    # convert the diameter of Pluto from miles to kilometers for comparison (1 mile = 1.60934 km)
-    diameter_km_pluto_premise = diameter_miles_pluto_premise * 1.60934
-
-    # the hypothesis talks about the diameter of the moon, which is mentioned in the premise in relation to the size of Pluto
-    # check if the diameter of the moon in the hypothesis is larger than the converted diameter of Pluto (two-thirds)
-    if diameter_km_moon_hypothesis > diameter_km_pluto_premise * (2/3):
+def entailment_or_neutral(current_population_premise, current_population_hypothesis):
+    # the hypothesis talks about the current world population, which is also mentioned in the premise
+    # check if the current world population in the hypothesis entails the one in the premise, by checking if they are equal
+    if current_population_hypothesis == current_population_premise:
         return True
     else:
         return None
 
-print(entailment_or_neutral(diameter_miles_pluto_premise, diameter_km_moon_hypothesis))
+print(entailment_or_neutral(current_population_premise, current_population_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -368,123 +587,14 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: With a diameter of 1,430 miles , Pluto is less than half the size of any other planet and only two-thirds as big as Earth 's moon .
-Hypothesis: The terrestrial moon has a diameter of 3,746 kilometers ."
-"```python
-wonders_premise = 7
-wonders_hypothesis = 7
-
-def entailment_or_neutral(wonders_premise, wonders_hypothesis):
-    # the hypothesis talks about the lighthouse of Alexandria being one of the seven wonders of the world, 
-    # which is also mentioned in the premise, hence the values are equal
-    if wonders_hypothesis == wonders_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(wonders_premise, wonders_hypothesis))
-```","### Instruction:
-You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
-START_EXAMPLE
-Premise: There have been more than 10 storms during the past year.
-Hypothesis: Over the last year, more than 10 snowstorms have been reported.
-Answer:
-```python
-min_storms_premise = 10
-min_snowstorms_hypothesis = 10
-
-def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
-    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
-    return None
-
-print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
-Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
-Answer:
-```python
-total_books_premise = 5
-books_before_30_premise = 2
-books_before_30_hypothesis = 2
-
-def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
-    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
-    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
-    if books_before_30_hypothesis == books_before_30_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
-```
-END_EXAMPLE
-### Input:
-Premise: For sailors , the lighthouse of Alexandria ensured a safe return to the Great Harbor ; for architects , it was the tallest building on Earth ; and for scientists , it was the mysterious mirror that fascinated them most : its reflection could be seen more than 50 km ( 35 miles ) off-shore . For all these reasons , the lighthouse was considered one of the Seven Wonders of the world .
-Hypothesis: The lighthouse of Alexandria was one of the seven wonders of the world ."
-"```python
-passes_premise = 48
-yards_premise = 357
-touchdowns_premise = 3
-yards_hypothesis = 357
-
-def entailment_or_neutral(passes_premise, yards_premise, touchdowns_premise, yards_hypothesis):
-    # the hypothesis talks about the yards McNabb threw in a postseason game, which is also mentioned in the premise
-    # However, the hypothesis claims it was the best postseason game of his career - information that cannot be entailed from the premise
-    return None
-
-print(entailment_or_neutral(passes_premise, yards_premise, touchdowns_premise, yards_hypothesis))
-```","### Instruction:
-You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
-START_EXAMPLE
-Premise: There have been more than 10 storms during the past year.
-Hypothesis: Over the last year, more than 10 snowstorms have been reported.
-Answer:
-```python
-min_storms_premise = 10
-min_snowstorms_hypothesis = 10
-
-def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
-    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
-    return None
-
-print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
-Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
-Answer:
-```python
-total_books_premise = 5
-books_before_30_premise = 2
-books_before_30_hypothesis = 2
-
-def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
-    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
-    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
-    if books_before_30_hypothesis == books_before_30_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
-```
-END_EXAMPLE
-### Input:
-Premise: Quarterback Donovan McNabb was every bit Quarterback Tom Brady 's equal for 48 passes Sunday night , throwing for 357 yards and three touchdowns in his Super Bowl debut for the Philadelphia Eagles .
-Hypothesis: McNabb 's 357 yards were the best postseason game of his career ."
-"```python
-member_states_premise = 45
-member_states_hypothesis = 45
+Premise: The world 's population is set to reach a staggering 10bn by the middle of the next century up from 5.7bn now .
+Hypothesis: The current world population is 5.7 billion ."
+63,"```python
+member_states_premise = 20
+member_states_hypothesis = 20
 
 def entailment_or_neutral(member_states_premise, member_states_hypothesis):
-    # the hypothesis talks about the number of member states in the Council of Europe, which is the same as the premise
+    # the hypothesis talks about the number of member states in CERN, which is also mentioned in the premise
     # check if the number of member states in the hypothesis entails the one in the premise, by checking if they are equal
     if member_states_hypothesis == member_states_premise:
         return True
@@ -532,19 +642,21 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: The Council of Europe has 45 member states . Three countries from outside Europe ( Canada , Israel and Mexico ) have observer status in the Parliamentary Assembly .
-Hypothesis: The Council of Europe is made up by 45 member states ."
-"```python
-war_duration_days_premise = 74
-restoration_time_hypothesis = 74
+Premise: CERN has now grown to include 20 member states and enjoys the active participation of many other countries world-wide .
+Hypothesis: CERN has 20 member states ."
+106,"```python
+max_damages_per_film_premise = 30000
+max_damages_per_film_hypothesis = 30000
 
-def entailment_or_neutral(war_duration_days_premise, restoration_time_hypothesis):
-    # the hypothesis talks about the time it took to restore diplomatic relations, which is not mentioned in the premise
-    # the premise talks about the duration of the war, which is incorrectly referred to as the restoration time in the hypothesis
-    # hence, the hypothesis cannot be entailed from the premise
-    return None
+def entailment_or_neutral(max_damages_per_film_premise, max_damages_per_film_hypothesis):
+    # the hypothesis talks about the maximum damages per film according to the law, which is also mentioned in the premise
+    # check if the maximum damages per film in the hypothesis entails the one in the premise, by checking if they are equal
+    if max_damages_per_film_hypothesis == max_damages_per_film_premise:
+        return True
+    else:
+        return None
 
-print(entailment_or_neutral(war_duration_days_premise, restoration_time_hypothesis))
+print(entailment_or_neutral(max_damages_per_film_premise, max_damages_per_film_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -585,9 +697,9 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Argentina and Britain announced an agreement Thursday to restore full diplomatic ties nearly eight years after they fought a 74 day war over the Falkland Islands a sparsely populated archipelago off Argentina coast in the South Atlantic Ocean .
-Hypothesis: Full diplomatic relations between Argentina and Britain were re-established after 74 days ."
-"```python
+Premise: The Motion Picture Association of America ( MPAA ) said the civil suits would seek damages of up to $ 30,000 per film .
+Hypothesis: The law states $ 30,000 damages can be sought per film ."
+112,"```python
 min_death_premise = 30
 min_death_hypothesis = 30
 
@@ -642,68 +754,13 @@ END_EXAMPLE
 ### Input:
 Premise: A bus collision with a truck in Uganda has resulted in at least 30 fatalities and has left a further 21 injured .
 Hypothesis: 30 die in a bus collision in Uganda ."
-"```python
-victory_margin_premise = 5
-victory_margin_hypothesis = 5
-
-def entailment_or_neutral(victory_margin_premise, victory_margin_hypothesis):
-    # the hypothesis talks about the victory margin of Mickelson, which is also mentioned in the premise
-    # check if the victory margin in the hypothesis entails the one in the premise, by checking if they are equal
-    if victory_margin_hypothesis == victory_margin_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(victory_margin_premise, victory_margin_hypothesis))
-```","### Instruction:
-You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
-START_EXAMPLE
-Premise: There have been more than 10 storms during the past year.
-Hypothesis: Over the last year, more than 10 snowstorms have been reported.
-Answer:
-```python
-min_storms_premise = 10
-min_snowstorms_hypothesis = 10
-
-def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
-    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
-    return None
-
-print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
-Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
-Answer:
-```python
-total_books_premise = 5
-books_before_30_premise = 2
-books_before_30_hypothesis = 2
-
-def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
-    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
-    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
-    if books_before_30_hypothesis == books_before_30_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
-```
-END_EXAMPLE
-### Input:
-Premise: Phil Mickelson finished a triumphant week in his second home , winning the FBR Open by five strokes for his largest margin of victory in a PGA Tour event .
-Hypothesis: Mickelson won by five shots last week , the largest margin of his career ."
-"```python
+141,"```python
 height_kanchenjunga_premise = 8586
 height_kanchenjunga_hypothesis = 8586
 
 def entailment_or_neutral(height_kanchenjunga_premise, height_kanchenjunga_hypothesis):
-    # the hypothesis talks about the height of Mt. Kanchenjunga, which is also mentioned in the premise
-    # check if the height in the hypothesis entails the one in the premise, by checking if they are equal
+    # the hypothesis talks about the height of Kanchenjunga, which is also mentioned in the premise
+    # check if the height of Kanchenjunga in the hypothesis entails the one in the premise, by checking if they are equal
     if height_kanchenjunga_hypothesis == height_kanchenjunga_premise:
         return True
     else:
@@ -750,23 +807,17 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Two members of the 2000 Kanchenjunga Expedition of South Korea successfully scaled the 8,586m high Mt . Kanchenjunga via the south west face Friday , according to the Nepali Tourism Ministry .
+Premise: A seven-member Tibetan mountaineering team conquered the 8,586-meter Mt . Kanchenjunga , the third highest peak of the world , the Chinese mountaineering association confirmed here on Sunday .
 Hypothesis: Kanchenjunga is 8586 meters high ."
-"```python
-centrifuges_premise = 54000
-reactor_power_premise = 1000
-centrifuges_hypothesis = 54000
-reactor_power_hypothesis = 1000
+98,"```python
+wounded_premise = 60
+killed_hypothesis = 60
 
-def entailment_or_neutral(centrifuges_premise, reactor_power_premise, centrifuges_hypothesis, reactor_power_hypothesis):
-    # the hypothesis talks about the number of centrifuges and the reactor power, which are also mentioned in the premise
-    # check if the number of centrifuges and the reactor power in the hypothesis entails those in the premise, by checking if they are equal
-    if centrifuges_hypothesis == centrifuges_premise and reactor_power_hypothesis == reactor_power_premise:
-        return True
-    else:
-        return None
+def entailment_or_neutral(wounded_premise, killed_hypothesis):
+    # The hypothesis talks about 60 people being killed, which contradicts the premise stating about 60 people being wounded
+    return None
 
-print(entailment_or_neutral(centrifuges_premise, reactor_power_premise, centrifuges_hypothesis, reactor_power_hypothesis))
+print(entailment_or_neutral(wounded_premise, killed_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -807,18 +858,18 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Iranian nuclear officials say 54,000 centrifuges would produce enough enriched uranium to fuel a 1,000-megawatt reactor , such as the one being built by Russia that is near completion at the southern city of Bushehr .
-Hypothesis: 54,000 centrifuges would produce enough enriched uranium to fuel a 1,000-megawatt reactor ."
-"```python
-diameter_new_moon_miles_premise = 25
-diameter_titan_km_hypothesis = 5100
+Premise: Two car bombs explode near a police station outside of Baghdad 's Green Zone , killing seven police officers and wounding about 60 others .
+Hypothesis: 60 people are killed when a car bomb explodes near a police station in Baghdad ."
+152,"```python
+value_of_lithographs_premise = 1000000
+number_of_lithographs_hypothesis = 81
 
-def entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis):
-    # the hypothesis talks about the moon Titan, which is not referenced in the premise.
-    # The hypothesis cannot be entailed from the premise, since the diameter of Titan is unknown.
+def entailment_or_neutral(value_of_lithographs_premise, number_of_lithographs_hypothesis):
+    # The hypothesis talks about the number of lithographs, which is not mentioned in the premise.
+    # Hence, the hypothesis cannot be entailed from the premise.
     return None
 
-print(entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis))
+print(entailment_or_neutral(value_of_lithographs_premise, number_of_lithographs_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -859,21 +910,337 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: The new moon , which is only about 25 miles in diameter , was actually photographed 13 years ago by the Voyager 2 .
+Premise: Amsterdam police said Wednesday that they have recovered stolen lithographs by the late U.S. pop artist Andy Warhol worth more than $ 1 million .
+Hypothesis: Police recovered 81 Andy Warhol lithographs ."
+48,"```python
+fine_premise = 480350
+fine_hypothesis = 500000
+
+def entailment_or_neutral(fine_premise, fine_hypothesis):
+    # the hypothesis talks about the fine imposed on the specialist firm, which is also mentioned in the premise
+    # check if the fine in the hypothesis entails the one in the premise, by checking if it is greater or equal.
+    if fine_hypothesis >= fine_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(fine_premise, fine_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: A specialist firm on the New York stock Exchange was fined $ 480,350 for securities fraud by a judge who said he imposed the sentence as a deterrent .
+Hypothesis: One judge said that the nearly half million dollar fine he levied on a specialist firm on the New York Stock Exchange was done as a deterrent ."
+150,"```python
+warhol_works_value_premise = 1_000_000
+
+def entailment_or_neutral(warhol_works_value_premise):
+    # the hypothesis talks about the recovery of Dali's artwork, which is contradicted in the premise (Dali's paintings are still missing).
+    # the hypothesis cannot be entailed from the premise because it contradicts it.
+    return None
+
+print(entailment_or_neutral(warhol_works_value_premise))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: Stolen Warhol works recovered : Amsterdam police said Wednesday that they have recovered stolen lithographs by the late U.S. pop artist Andy Warhol worth more than $ 1 million . Dali 's paintings are still missing .
+Hypothesis: Millions of dollars of art were recovered , including works by Dali ."
+149,"```python
+total_arrests_premise = 5
+total_art_recovered_premise_in_millions = 1 # the exact value is not given, so we assume it to be atleast 1 million
+
+def entailment_or_neutral(total_arrests_premise, total_art_recovered_premise_in_millions):
+    # the hypothesis talks about the recovery of art worth millions of dollars which is also mentioned in the premise
+    # the hypothesis does not specify the number of arrests, so we cannot check for entailment or neutrality on that aspect
+    # however, the recovery of art worth millions of dollars in the hypothesis does entail the premise
+    return True
+
+print(entailment_or_neutral(total_arrests_premise, total_art_recovered_premise_in_millions))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: Police in Rio de Janeiro arrested five men and recovered millions of dollars worth of art stolen earlier this month , including works by Salvador Dali and Henri Matisse . Police recovered all the stolen art except two Chinese ceramic sculptures from the 7th Century and a collection of silverware .
+Hypothesis: Millions of dollars of art were recovered , including works by Dali ."
+19,"```python
+romania_troops_hypothesis = 730
+
+def entailment_or_neutral(romania_troops_hypothesis):
+    # The premise mentions that Romania has one of the largest contingents in Iraq, but no specific number of troops is given.
+    # The hypothesis specifies a number (730), which cannot be confirmed or refuted by the premise.
+    return None
+
+print(entailment_or_neutral(romania_troops_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: Romania 's is one of the largest contingents of any European country in Iraq due to the recent withdrawals or downscaling of Spain , Italy , the Ukraine and Poland . Romania has so far been one of the only NATO countries not announcing a withdrawal .
+Hypothesis: Romania sent 730 troops in Iraq ."
+165,"```python
+tyler_jackson_sentence_premise = 21
+tyler_jackson_sentence_hypothesis = 18
+
+def entailment_or_neutral(tyler_jackson_sentence_premise, tyler_jackson_sentence_hypothesis):
+    # the hypothesis talks about the sentence of Tyler Jackson, which is also mentioned in the premise
+    # check if the sentence in the hypothesis entails the one in the premise, by checking if they are equal
+    if tyler_jackson_sentence_hypothesis == tyler_jackson_sentence_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(tyler_jackson_sentence_premise, tyler_jackson_sentence_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: Two other marines , Tyler Jackson and John Jodka III , have already pleaded guilty to aggravated assault and conspiracy to obstruct justice and were sentenced to 21 months and 18 months , respectively .
+Hypothesis: Tyler Jackson has been sentenced to 18 months ."
+144,"```python
+distance_sun_to_uranus_premise = 2870972200
+distance_sun_to_neptune_premise = 4498252900
+diameter_titan_hypothesis = 5100
+
+def entailment_or_neutral(distance_sun_to_uranus_premise, distance_sun_to_neptune_premise, diameter_titan_hypothesis):
+    # the hypothesis talks about the diameter of Titan moon which is not referenced in the premise. 
+    # The hypothesis cannot be entailed from the premise, since the diameter of Titan moon is not mentioned.
+    return None
+
+print(entailment_or_neutral(distance_sun_to_uranus_premise, distance_sun_to_neptune_premise, diameter_titan_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: The newly suggested distance is much closer than the present positions at 2,870,972,200 kilometers from the sun for Uranus and 4,498,252,900 kilometers for Neptune .
 Hypothesis: The moon Titan has a diameter of 5100 kilometers ."
-"```python
-prison_sentence_premise = 15
-prison_sentence_hypothesis = 15
+4,"```python
+seasons_as_chairman_premise = 24
+division_championships_premise = 3
+championships_hypothesis = 24
 
-def entailment_or_neutral(prison_sentence_premise, prison_sentence_hypothesis):
-    # the hypothesis talks about the prison sentence of David, which is the same as the one mentioned in the premise
-    # check if the prison sentence in the hypothesis entails the one in the premise, by checking if they are equal
-    if prison_sentence_hypothesis == prison_sentence_premise:
-        return True
-    else:
-        return None
+def entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis):
+    # the hypothesis talks about the total number of championships won by the White Sox, which is not mentioned in the premise
+    # the hypothesis cannot be entailed from the premise, since the total number of championships is unknown.
+    return None
 
-print(entailment_or_neutral(prison_sentence_premise, prison_sentence_hypothesis))
+print(entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -914,9 +1281,220 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: A Los Angeles federal court judge Monday imposed a 15-year prison sentence on David A. Feldman of Palos Verdes .
-Hypothesis: A Los Angeles federal judge imposed a 15-year prison sentence on David A. Feldman ."
-"```python
+Premise: During Reinsdorf 's 24 seasons as chairman of the White Sox , the team has captured American League division championships three times , including an AL Central title in 2000 .
+Hypothesis: The White Sox have won 24 championships ."
+71,"```python
+apollo_16_astronauts_premise = 2
+astronauts_on_moon_hypothesis = 16
+
+def entailment_or_neutral(apollo_16_astronauts_premise, astronauts_on_moon_hypothesis):
+    # the hypothesis talks about 16 astronauts on the moon, which is not mentioned in the premise
+    # The premise only mentions 2 astronauts. Hence, the hypothesis cannot be entailed from the premise.
+    return None
+
+print(entailment_or_neutral(apollo_16_astronauts_premise, astronauts_on_moon_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: The rock , which was returned from the Moon in April 1972 by Apollo 16 astronauts Young and Charlie Duke , remains NASA property but is on extended loan for display at the Burke Baker Planetarium Theater located at the museum .
+Hypothesis: 16 astronauts have been on the moon ."
+27,"```python
+diameter_ganymede_premise = 5230
+diameter_moon_hypothesis = 3746
+
+def entailment_or_neutral(diameter_ganymede_premise, diameter_moon_hypothesis):
+    # the hypothesis talks about the moon, which is a different celestial body than Ganymede mentioned in the premise
+    # the hypothesis cannot be entailed from the premise
+    return None
+
+print(entailment_or_neutral(diameter_ganymede_premise, diameter_moon_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: With a diameter of 5,230 kilometers , Ganymede is the largest satellite in the solar system - bigger than Mercury and about three-fourths the size of Mars .
+Hypothesis: The terrestrial moon has a diameter of 3,746 kilometers ."
+153,"```python
+#The premise does not provide any quantitative details about how many people left with Lopez. Therefore, the hypothesis is neutral with respect to the premise. 
+#Here is a python function that demonstrates this.
+
+number_of_executives_hypothesis = 7
+
+def entailment_or_neutral(number_of_executives_hypothesis):
+    # the hypothesis talks about the number of executives who left with Lopez, which is not mentioned in the premise
+    # the hypothesis cannot be entailed from the premise, hence we return None for neutrality
+    return None
+
+print(entailment_or_neutral(number_of_executives_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: The investigation involving Mr Lopez and three associates are primarily concerned with suspicions of the systematic theft of secrets .
+Hypothesis: Seven other GM executives left with Lopez ."
+52,"```python
+employees_premise = 188000
+employees_hypothesis = 188000
+
+def entailment_or_neutral(employees_premise, employees_hypothesis):
+    # The hypothesis talks about the number of employees Richard Blumenthal has, which is not mentioned in the premise
+    # The premise talks about the number of employees of the state of Connecticut, not Richard Blumenthal. 
+    # The hypothesis cannot be entailed from the premise.
+    return None
+
+print(entailment_or_neutral(employees_premise, employees_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: Last week , the attorney general of Connecticut , Richard Blumenthal , turned up the pressure when he said the state would no longer extend its insurance plan for its 188,000 employees to cover prescriptions filled at Wal-Mart unless the chain agreed to stock the pills .
+Hypothesis: The attorney general of Connecticut , Richard Blumenthal has 188,000 employees ."
+109,"```python
 win_margin_premise = 5
 win_margin_hypothesis = 5
 
@@ -971,19 +1549,15 @@ END_EXAMPLE
 ### Input:
 Premise: Phil Mickelson finished a triumphant week in his second home , winning the FBR Open by five strokes for his largest margin of victory in a PGA Tour event .
 Hypothesis: Mickelson won by five shots last week , the largest margin of his career ."
-"```python
-nato_members_premise = 16
-nato_members_hypothesis = 16
+130,"```python
+# No quantities are mentioned in the premise or hypothesis.
 
-def entailment_or_neutral(nato_members_premise, nato_members_hypothesis):
-    # the hypothesis talks about the number of NATO members, which is also mentioned in the premise
-    # check if the number of NATO members in the hypothesis entails the one in the premise, by checking if they are equal
-    if nato_members_hypothesis == nato_members_premise:
-        return True
-    else:
-        return None
+def entailment_or_neutral():
+    # The hypothesis talks about the women's ten thousand metres champion from Mozambique, which is not referenced in the premise. 
+    # The hypothesis cannot be entailed from the premise, since the type of event the Mozambique athlete participated in is different.
+    return None
 
-print(entailment_or_neutral(nato_members_premise, nato_members_hypothesis))
+print(entailment_or_neutral())
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1024,19 +1598,21 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Foreign Ministers of the 16 NATO member countries met early this morning with their Russian counterpart , Yevgeny Primakov , in Berlin in a bid to improve NATO-Russia relations .
-Hypothesis: The NATO has 16 members ."
-"```python
-counter_demonstration_premise = 25
-counter_demonstration_hypothesis = 25
+Premise: Mozambique 's Maria Mutola and Israel 's Alex Averbukh produced the best performances of the year , in the women 's 800 metres and men 's pole vault , at the Super Grand Prix in Madrid on Saturday .
+Hypothesis: The women 's ten thousand metres champion is from Mozambique ."
+15,"```python
+profit_increase_premise = 78
+profit_increase_hypothesis = 78
 
-def entailment_or_neutral(counter_demonstration_premise, counter_demonstration_hypothesis):
-    # the hypothesis talks about a counter demonstration of 25, which is also mentioned in the premise
-    # however, the entities are switched: in the premise, Israelis and Jews are holding the counter-demonstration,
-    # while in the hypothesis, Palestinians are holding it. Hence, the hypothesis cannot be entailed from the premise.
-    return None
+def entailment_or_neutral(profit_increase_premise, profit_increase_hypothesis):
+    # the hypothesis talks about the profit increase of Apple during the last quarter of 2006, which is also mentioned in the premise
+    # check if the profit increase in the hypothesis entails the one in the premise, by checking if they are equal
+    if profit_increase_hypothesis == profit_increase_premise:
+        return True
+    else:
+        return None
 
-print(entailment_or_neutral(counter_demonstration_premise, counter_demonstration_hypothesis))
+print(entailment_or_neutral(profit_increase_premise, profit_increase_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1077,19 +1653,19 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Monday , when the hearings begin , the Palestinians will hold their demonstration during the same hours , and a 25-person counter-demonstration by Israelis and Jews will take place .
-Hypothesis: Israelis will demonstrate and a counter-demonstration of 25 Palestinians will be permitted as well ."
-"```python
-seasons_as_chairman_premise = 24
-division_championships_premise = 3
-championships_hypothesis = 24
+Premise: The American computer company Apple has reached 78 percent increase in its profits during the last quarter , which ended December 30 , 2006 .
+Hypothesis: Apple 's profits rose by 78 percent during the last quarter of 2006 ."
+122,"```python
+missing_funds_premise = 14.3
+cost_hypothesis = 14.3
 
-def entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis):
-    # the hypothesis talks about the total number of championships won by the White Sox, which is not mentioned in the premise
-    # the hypothesis cannot be entailed from the premise, since the total number of championships is unknown.
+def entailment_or_neutral(missing_funds_premise, cost_hypothesis):
+    # the hypothesis talks about the cost of Parmalat, which is not mentioned in the premise
+    # the premise talks about the funds that are missing, not the cost of the company
+    # therefore, the hypothesis is not entailed by the premise
     return None
 
-print(entailment_or_neutral(seasons_as_chairman_premise, division_championships_premise, championships_hypothesis))
+print(entailment_or_neutral(missing_funds_premise, cost_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1130,24 +1706,23 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: During Reinsdorf 's 24 seasons as chairman of the White Sox , the team has captured American League division championships three times , including an AL Central title in 2000 .
-Hypothesis: The White Sox have won 24 championships ."
-"```python
-us_soldiers_killed_premise = 5
-us_soldiers_killed_hypothesis = 5
-iraqis_killed_premise = 4
-iraqis_killed_hypothesis = 10
+Premise: Last year 's collapse of Italian dairy company Parmalat , with `` 14.3 billion euros that must still be accounted for '' , is given as evidence for `` a lack of effective tools and controls regarding financial operations '' .
+Hypothesis: Parmalat costs 14.3 billion euros ."
+82,"```python
+points_premise = 26
+rebounds_premise = 9
+points_hypothesis = 26
+rebounds_hypothesis = 9
 
-def entailment_or_neutral(us_soldiers_killed_premise, us_soldiers_killed_hypothesis, iraqis_killed_premise, iraqis_killed_hypothesis):
-    # the hypothesis talks about the number of US soldiers and Iraqis killed, which are also mentioned in the premise
-    # check if the number of US soldiers killed in the hypothesis entails the one in the premise, by checking if they are equal
-    # and if the number of Iraqis killed in the hypothesis is greater than or equal to the number in the premise
-    if us_soldiers_killed_hypothesis == us_soldiers_killed_premise and iraqis_killed_hypothesis >= iraqis_killed_premise:
+def entailment_or_neutral(points_premise, rebounds_premise, points_hypothesis, rebounds_hypothesis):
+    # the hypothesis talks about the number of points and rebounds by Childress, which are also mentioned in the premise
+    # check if the number of points and rebounds in the hypothesis entails those in the premise, by checking if they are equal
+    if points_hypothesis == points_premise and rebounds_hypothesis == rebounds_premise:
         return True
     else:
         return None
 
-print(entailment_or_neutral(us_soldiers_killed_premise, us_soldiers_killed_hypothesis, iraqis_killed_premise, iraqis_killed_hypothesis))
+print(entailment_or_neutral(points_premise, rebounds_premise, points_hypothesis, rebounds_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1188,22 +1763,21 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Still , violence continued : Insurgents killed five U.S. soldiers , set off a suicide car bomb that killed four Iraqi policemen in Baghdad and targeted more polling sites across the country .
-Hypothesis: Five US soldiers were killed , and at least 10 Iraqis died in Baghdad ."
-"```python
-countries_reached_zero_growth_premise = 14
-world_pop_percentage_premise = 5
-countries_heading_towards_zero_growth_premise = ['Japan', 'France', 'Finland']
+Premise: Childress led all players with 26 points and nine rebounds and scored 10 points in a five-minute second-half stretch as the Cardinal put the game away .
+Hypothesis: Childress was the reluctant hero , even after 26 points , nine rebounds , two blocks , three steals and three assists ."
+61,"```python
+total_languages_premise = 20
+total_languages_hypothesis = 21
 
-def entailment_or_neutral(countries_reached_zero_growth_premise, world_pop_percentage_premise, countries_heading_towards_zero_growth_premise):
-    # the hypothesis talks about Japan heading towards zero population growth, which is also mentioned in the premise
-    # check if Japan is listed in the premise as one of the countries heading towards zero population growth
-    if 'Japan' in countries_heading_towards_zero_growth_premise:
+def entailment_or_neutral(total_languages_premise, total_languages_hypothesis):
+    # the hypothesis talks about the total number of EU languages, which is also mentioned in the premise
+    # check if the number of languages in the hypothesis entails the one in the premise, by checking if they are equal
+    if total_languages_hypothesis == total_languages_premise + 1: # +1 because Gaelic will be added
         return True
     else:
         return None
 
-print(entailment_or_neutral(countries_reached_zero_growth_premise, world_pop_percentage_premise, countries_heading_towards_zero_growth_premise))
+print(entailment_or_neutral(total_languages_premise, total_languages_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1244,21 +1818,21 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Fourteen European countries with about 5 % of the world 's population have reached zero population growth and Japan , France and Finland are , among others , headed in that direction .
-Hypothesis: Japan is headed toward zero population growth ."
-"```python
-jail_term_premise = 90
-jail_term_hypothesis = 90
+Premise: This is good news for Gaelic translators , as the EU will have to churn out official documents in this language , in addition to the 20 other official EU languages .
+Hypothesis: There are 21 official EU languages ."
+97,"```python
+diameter_asteroid_premise = 100
+diameter_asteroid_hypothesis = 100
 
-def entailment_or_neutral(jail_term_premise, jail_term_hypothesis):
-    # the hypothesis talks about the jail sentence of the U.S. soldier, which is also mentioned in the premise
-    # check if the jail term in the hypothesis entails the one in the premise, by checking if they are equal
-    if jail_term_hypothesis == jail_term_premise:
+def entailment_or_neutral(diameter_asteroid_premise, diameter_asteroid_hypothesis):
+    # the hypothesis talks about the diameter of the asteroid, which is also mentioned in the premise
+    # check if the diameter of the asteroid in the hypothesis entails the one in the premise, by checking if they are equal
+    if diameter_asteroid_hypothesis == diameter_asteroid_premise:
         return True
     else:
         return None
 
-print(entailment_or_neutral(jail_term_premise, jail_term_hypothesis))
+print(entailment_or_neutral(diameter_asteroid_premise, diameter_asteroid_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1299,9 +1873,64 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: A U.S. soldier accused of participating in the rape of an Iraqi girl and then killing her and her family was sentenced to 90 years in jail on Thursday , media reports said .
-Hypothesis: A U.S. soldier was sentenced to 90 years in jail ."
-"```python
+Premise: A 100-foot diameter asteroid will pass within 26,500 miles of Earth , the closest-ever brush on record by a space rock , NASA astronomers said .
+Hypothesis: An asteroid with a diameter of 100 feet will pass close by Earth , astronomers said ."
+133,"```python
+width_everglades_premise = 50
+width_everglades_hypothesis = 50
+
+def entailment_or_neutral(width_everglades_premise, width_everglades_hypothesis):
+    # the width of the Everglades is the same in both the premise and the hypothesis
+    # check if the width in the hypothesis entails the one in the premise, by checking if they are equal
+    if width_everglades_hypothesis == width_everglades_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(width_everglades_premise, width_everglades_hypothesis))
+```","### Instruction:
+You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
+START_EXAMPLE
+Premise: There have been more than 10 storms during the past year.
+Hypothesis: Over the last year, more than 10 snowstorms have been reported.
+Answer:
+```python
+min_storms_premise = 10
+min_snowstorms_hypothesis = 10
+
+def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
+    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
+    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
+    return None
+
+print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:
+```python
+total_books_premise = 5
+books_before_30_premise = 2
+books_before_30_hypothesis = 2
+
+def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
+    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
+    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
+    if books_before_30_hypothesis == books_before_30_premise:
+        return True
+    else:
+        return None
+
+print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
+```
+END_EXAMPLE
+### Input:
+Premise: Of all the national park lands in the United States , none is closer to a major urban area or more beset with problems than the Everglades , a shallow , 50-mile-wide river of grass that flows south from Lake Okeechobee to Florida Bay . For more than a generation , this fragile natural wonder has been held hostage by a web of special interests -- farmers , sportsmen and about 6 million South Florida residents in need of drinking water and flood control -- that is as complex as the ecosystem itself .
+Hypothesis: The Everglades is 50-mile wide ."
+154,"```python
 num_swedes_premise = 3
 num_swedes_hypothesis = 3
 
@@ -1356,17 +1985,21 @@ END_EXAMPLE
 ### Input:
 Premise: A Belgian policeman posing as an art dealer in Brussels arrested three Swedes .
 Hypothesis: Three Swedes were arrested in a Belgian police sting operation ."
-"```python
-missing_funds_premise = 14.3
-cost_hypothesis = 14.3
+41,"```python
+min_recovery_rate_premise = 5
+max_recovery_rate_premise = 10
+min_recovery_rate_hypothesis = 5
+max_recovery_rate_hypothesis = 10
 
-def entailment_or_neutral(missing_funds_premise, cost_hypothesis):
-    # the hypothesis talks about the cost of Parmalat, which is not mentioned in the premise
-    # the premise talks about the funds that are missing, not the cost of the company
-    # therefore, the hypothesis is not entailed by the premise
-    return None
+def entailment_or_neutral(min_recovery_rate_premise, max_recovery_rate_premise, min_recovery_rate_hypothesis, max_recovery_rate_hypothesis):
+    # the hypothesis and premise both talk about the same recovery rate of stolen artworks
+    # check if the range of the recovery rate in the hypothesis entails the one in the premise, by checking if they are equal
+    if min_recovery_rate_hypothesis == min_recovery_rate_premise and max_recovery_rate_hypothesis == max_recovery_rate_premise:
+        return True
+    else:
+        return None
 
-print(entailment_or_neutral(missing_funds_premise, cost_hypothesis))
+print(entailment_or_neutral(min_recovery_rate_premise, max_recovery_rate_premise, min_recovery_rate_hypothesis, max_recovery_rate_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1407,18 +2040,18 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Last year 's collapse of Italian dairy company Parmalat , with `` 14.3 billion euros that must still be accounted for '' , is given as evidence for `` a lack of effective tools and controls regarding financial operations '' .
-Hypothesis: Parmalat costs 14.3 billion euros ."
-"```python
-diameter_deimos_miles_premise = 7.5
-diameter_moon_km_hypothesis = 3746
+Premise: Experts estimate that only 5 % to 10 % of stolen artworks ever finds its way back to the owners .
+Hypothesis: Only 5 % to 10 % of stolen art ever gets returned to the owners ."
+143,"```python
+diameter_new_moon_miles_premise = 25
+diameter_titan_km_hypothesis = 5100
 
-def entailment_or_neutral(diameter_deimos_miles_premise, diameter_moon_km_hypothesis):
-    # the hypothesis talks about terrestrial moon while the premise talks about Mars's moon Deimos
-    # these are not the same entities, so the hypothesis is neutral with respect to the premise
+def entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis):
+    # the hypothesis talks about the moon Titan, which is not referenced in the premise.
+    # The hypothesis cannot be entailed from the premise, since the diameter of Titan is unknown.
     return None
 
-print(entailment_or_neutral(diameter_deimos_miles_premise, diameter_moon_km_hypothesis))
+print(entailment_or_neutral(diameter_new_moon_miles_premise, diameter_titan_km_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1459,21 +2092,18 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Mars has the smallest confirmed moon , Deimos , which is about 7.5 miles in diameter .
-Hypothesis: The terrestrial moon has a diameter of 3746 kilometers ."
-"```python
-height_premise = 8586
-height_hypothesis = 8586
+Premise: The new moon , which is only about 25 miles in diameter , was actually photographed 13 years ago by the Voyager 2 .
+Hypothesis: The moon Titan has a diameter of 5100 kilometers ."
+17,"```python
+representatives_premise = 35
+members_hypothesis = 12
 
-def entailment_or_neutral(height_premise, height_hypothesis):
-    # the hypothesis talks about the height of Kanchenjunga, which is also mentioned in the premise
-    # check if the height in the hypothesis entails the one in the premise, by checking if they are equal
-    if height_hypothesis == height_premise:
-        return True
-    else:
-        return None
+def entailment_or_neutral(representatives_premise, members_hypothesis):
+    # The hypothesis talks about members of the European Union using Euro, which is not mentioned in the premise
+    # Therefore, the hypothesis cannot be entailed from the premise
+    return None
 
-print(entailment_or_neutral(height_premise, height_hypothesis))
+print(entailment_or_neutral(representatives_premise, members_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1514,23 +2144,21 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: Out of the seven expeditions who were permitted to climb the 8586-meter high Mt . Kanchenjunga , only one climber from the United States succeeded .
-Hypothesis: Kanchenjunga is 8586 meters high ."
-"```python
-growth_2003_premise = 3
-growth_1999_premise = 4.5
-growth_2003_hypothesis = 3
-growth_1999_hypothesis = 4.5
+Premise: The referendum would be held at the same time as the vote to elect Romania 's 35 representatives to the European Parliament , as Romania will join the European Union in 2007 .
+Hypothesis: 12 members of the European Union use the Euro instead of their own national currencies ."
+161,"```python
+resigned_ministers_premise = 6
+resigned_ministers_hypothesis = 6
 
-def entailment_or_neutral(growth_2003_premise, growth_1999_premise, growth_2003_hypothesis, growth_1999_hypothesis):
-    # the hypothesis talks about the same years and growth percentages as the premise
-    # check if the growth percentages for both years in the hypothesis entail those in the premise, by checking if they are equal
-    if growth_2003_hypothesis == growth_2003_premise and growth_1999_hypothesis == growth_1999_premise:
+def entailment_or_neutral(resigned_ministers_premise, resigned_ministers_hypothesis):
+    # the hypothesis talks about the number of ministers resigned in Lebanon, which is also mentioned in the premise
+    # check if the number of ministers resigned in the hypothesis entails the one in the premise, by checking if they are equal
+    if resigned_ministers_hypothesis == resigned_ministers_premise:
         return True
     else:
         return None
 
-print(entailment_or_neutral(growth_2003_premise, growth_1999_premise, growth_2003_hypothesis, growth_1999_hypothesis))
+print(entailment_or_neutral(resigned_ministers_premise, resigned_ministers_hypothesis))
 ```","### Instruction:
 You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
 START_EXAMPLE
@@ -1571,280 +2199,5 @@ print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_
 ```
 END_EXAMPLE
 ### Input:
-Premise: That was up from 3 percent in 2003 and marked the best showing since 1999 , when the economy grew by 4.5 percent .
-Hypothesis: That was up from 3 % in 2003 and marked the best showing since 1999 , when the growth was 4.5 % ."
-"```python
-min_member_states_premise = 3
-member_states_hypothesis = 3
-
-def entailment_or_neutral(min_member_states_premise, member_states_hypothesis):
-    # the hypothesis talks about the total number of member states in the Council of Europe, while the premise 
-    # talks about the minimum number of member states required to bind the revised convention. 
-    # The hypothesis cannot be entailed from the premise, since the total number of member states is unknown.
-    return None
-
-print(entailment_or_neutral(min_member_states_premise, member_states_hypothesis))
-```","### Instruction:
-You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
-START_EXAMPLE
-Premise: There have been more than 10 storms during the past year.
-Hypothesis: Over the last year, more than 10 snowstorms have been reported.
-Answer:
-```python
-min_storms_premise = 10
-min_snowstorms_hypothesis = 10
-
-def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
-    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
-    return None
-
-print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
-Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
-Answer:
-```python
-total_books_premise = 5
-books_before_30_premise = 2
-books_before_30_hypothesis = 2
-
-def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
-    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
-    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
-    if books_before_30_hypothesis == books_before_30_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
-```
-END_EXAMPLE
-### Input:
-Premise: This ( revised ) Convention shall enter into force six months after the date on which four States , including at least three member States of the Council of Europe , have expressed their consent to be bound by the ( revised ) Convention in accordance with the provisions of the preceding paragraphs .
-Hypothesis: The Council of Europe is made up by 3 member states ."
-"```python
-temp_help_jobs_premise = 32000
-education_health_jobs_premise = 13000
-service_jobs_hypothesis = 46000
-
-def entailment_or_neutral(temp_help_jobs_premise, education_health_jobs_premise, service_jobs_hypothesis):
-    # the hypothesis talks about service jobs, which includes both temporary help firms and education and health care services in the premise
-    # add the jobs from both of these sectors from the premise and compare with the number in the hypothesis
-    total_service_jobs_premise = temp_help_jobs_premise + education_health_jobs_premise
-    if total_service_jobs_premise == service_jobs_hypothesis:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(temp_help_jobs_premise, education_health_jobs_premise, service_jobs_hypothesis))
-```","### Instruction:
-You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
-START_EXAMPLE
-Premise: There have been more than 10 storms during the past year.
-Hypothesis: Over the last year, more than 10 snowstorms have been reported.
-Answer:
-```python
-min_storms_premise = 10
-min_snowstorms_hypothesis = 10
-
-def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
-    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
-    return None
-
-print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
-Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
-Answer:
-```python
-total_books_premise = 5
-books_before_30_premise = 2
-books_before_30_hypothesis = 2
-
-def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
-    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
-    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
-    if books_before_30_hypothesis == books_before_30_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
-```
-END_EXAMPLE
-### Input:
-Premise: Temporary help firms added 32,000 and education and health care services gained 13,000 jobs last month .
-Hypothesis: Service industries such as education and health care added 46,000 jobs ."
-"```python
-percent_exports_rise_premise = 12.8
-percent_exports_rise_hypothesis = 10.5
-
-def entailment_or_neutral(percent_exports_rise_premise, percent_exports_rise_hypothesis):
-    # the hypothesis talks about the rise in US exports, which is also mentioned in the premise
-    # check if the rise in exports in the hypothesis entails the one in the premise, by checking if it is less or equal
-    if percent_exports_rise_hypothesis <= percent_exports_rise_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(percent_exports_rise_premise, percent_exports_rise_hypothesis))
-```","### Instruction:
-You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
-START_EXAMPLE
-Premise: There have been more than 10 storms during the past year.
-Hypothesis: Over the last year, more than 10 snowstorms have been reported.
-Answer:
-```python
-min_storms_premise = 10
-min_snowstorms_hypothesis = 10
-
-def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
-    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
-    return None
-
-print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
-Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
-Answer:
-```python
-total_books_premise = 5
-books_before_30_premise = 2
-books_before_30_hypothesis = 2
-
-def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
-    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
-    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
-    if books_before_30_hypothesis == books_before_30_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
-```
-END_EXAMPLE
-### Input:
-Premise: Last year the US saw exports of goods and services rise 12.8 % to $ 1.44 trillion , while its imports gained 10.5 % to $ 2.2 trillion , said the Commerce Department .
-Hypothesis: US exports rose 10.5 % ."
-"```python
-increase_army_premise = 65000
-total_army_premise = 547000
-increase_marines_premise = 27000
-total_marines_premise = 202000
-
-total_army_hypothesis = 547000
-
-def entailment_or_neutral(increase_army_premise, total_army_premise, increase_marines_premise, total_marines_premise, total_army_hypothesis):
-    # the hypothesis talks about the total number of army soldiers, which is also mentioned in the premise
-    # check if the total number of army soldiers in the hypothesis entails the one in the premise, by checking if they are equal
-    if total_army_hypothesis == total_army_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(increase_army_premise, total_army_premise, increase_marines_premise, total_marines_premise, total_army_hypothesis))
-```","### Instruction:
-You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
-START_EXAMPLE
-Premise: There have been more than 10 storms during the past year.
-Hypothesis: Over the last year, more than 10 snowstorms have been reported.
-Answer:
-```python
-min_storms_premise = 10
-min_snowstorms_hypothesis = 10
-
-def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
-    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
-    return None
-
-print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
-Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
-Answer:
-```python
-total_books_premise = 5
-books_before_30_premise = 2
-books_before_30_hypothesis = 2
-
-def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
-    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
-    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
-    if books_before_30_hypothesis == books_before_30_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
-```
-END_EXAMPLE
-### Input:
-Premise: Defense Secretary Robert Gates earlier this month recommended that the Army 's troop strength be increased by 65,000 soldiers , to a total of 547,000 worldwide and the Marines be increased by 27,000 to 202,000 .
-Hypothesis: The Defense Secretary suggested that the Army 's troop should be increased to 547,000 soldiers ."
-"```python
-romania_troops_hypothesis = 730
-
-def entailment_or_neutral(romania_troops_hypothesis):
-    # The premise mentions that Romania has one of the largest contingents in Iraq, but no specific number of troops is given.
-    # The hypothesis specifies a number (730), which cannot be confirmed or refuted by the premise.
-    return None
-
-print(entailment_or_neutral(romania_troops_hypothesis))
-```","### Instruction:
-You need to reason about weather a hypothesis entails or is neutral with respect to a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should entail the information in the premise. Pay attention to the wording of the hypothesis, as it may indicate details which cannot be entailed from the premise directly. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, reason as to weather the quantities in the hypothesis refer to the same entities as those in the premise. If they don't, then return None for neutrality. If they do, compare them and return True if the hypothesis values entail those in the premise, or None otherwise. To illustrate, consider the following examples:
-START_EXAMPLE
-Premise: There have been more than 10 storms during the past year.
-Hypothesis: Over the last year, more than 10 snowstorms have been reported.
-Answer:
-```python
-min_storms_premise = 10
-min_snowstorms_hypothesis = 10
-
-def entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis):
-    # the hypothesis talks about snowstorms which are not referenced in the premise (the type of storm is not mentioned). 
-    # The hypothesis cannot be entailed from the premise, since the number of snowstorms is unknown.
-    return None
-
-print(entailment_or_neutral(min_storms_premise, min_snowstorms_hypothesis))
-```
-END_EXAMPLE
-
-START_EXAMPLE
-Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
-Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
-Answer:
-```python
-total_books_premise = 5
-books_before_30_premise = 2
-books_before_30_hypothesis = 2
-
-def entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis):
-    # the hypothesis talks about the number of books written by Kathy before 30, which are also mentioned in the premise
-    # check if the number of books she wrote before 30 in the hypothesis entails the one in the premise, by checking if they are equal
-    if books_before_30_hypothesis == books_before_30_premise:
-        return True
-    else:
-        return None
-
-print(entailment_or_neutral(total_books_premise, books_before_30_premise, books_before_30_hypothesis))
-```
-END_EXAMPLE
-### Input:
-Premise: Romania 's is one of the largest contingents of any European country in Iraq due to the recent withdrawals or downscaling of Spain , Italy , the Ukraine and Poland . Romania has so far been one of the only NATO countries not announcing a withdrawal .
-Hypothesis: Romania sent 730 troops in Iraq ."
+Premise: Gemayel 's assassination is almost certain to deepen the political crisis in Lebanon , which started after the resignation of six pro-Syrian ministers , two from Hezbollah , hours after all-party round table talks collapsed .
+Hypothesis: After the resignation of six pro-Syrian ministers a deep political crises started in Lebanon ."

@@ -1,0 +1,2343 @@
+,premise,hypothesis,label,sample_index,llm_answer,py_file_content,completion
+134,Analysts React to Californias Proposed $15 Minimum Wage: A Blunt Approach,California Is About to Make a $15 Minimum Wage a Reality,entailment,134,"```python
+# since there are no quantities in the premise and hypothesis, we just need to check the textual information
+# the hypothesis entails the premise if the premise talks about a proposed minimum wage, and the hypothesis talks about it becoming a reality
+
+def entailment_or_contradiction_or_neutral():
+    return True
+
+print(entailment_or_contradiction_or_neutral())
+```
+In this case, the hypothesis does not contradict any information in the premise, but instead confirms it, hence it entails the premise.","
+# Premise: Analysts React to Californias Proposed $15 Minimum Wage: A Blunt Approach
+# Hypothesis: California Is About to Make a $15 Minimum Wage a Reality
+# Golden Label: entailment
+
+
+# since there are no quantities in the premise and hypothesis, we just need to check the textual information
+# the hypothesis entails the premise if the premise talks about a proposed minimum wage, and the hypothesis talks about it becoming a reality
+
+def entailment_or_contradiction_or_neutral():
+    return True
+
+print(entailment_or_contradiction_or_neutral())
+
+","# since there are no quantities in the premise and hypothesis, we just need to check the textual information
+# the hypothesis entails the premise if the premise talks about a proposed minimum wage, and the hypothesis talks about it becoming a reality
+
+def entailment_or_contradiction_or_neutral():
+    return True
+
+print(entailment_or_contradiction_or_neutral())
+"
+0,"stocks nifty future call today: Sensex Weak and Nifty flat, Today best stock trading call on 3 Sept, Free nifty future stock tips, BHEL , Tata motor gain","Sensex and Nifty up, 2 sept Nifty stock market trading tips and top nifty gainers and losers on Monday, Indian stock market tips today ~ stocks nifty future call today",contradiction,0,"```python
+date_premise = 3
+date_hypothesis = 2
+
+def entailment_or_contradiction_or_neutral(date_premise, date_hypothesis):
+    # the hypothesis and premise mention the date of the stock call
+    # check if the hypothesis contradicts the premise by checking if the date is not equal in the two sentences
+    if date_premise != date_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(date_premise, date_hypothesis))
+```
+In this case, the hypothesis contradicts the premise, as the dates mentioned in both sentences do not match. Hence, the function will return False.","
+# Premise: stocks nifty future call today: Sensex Weak and Nifty flat, Today best stock trading call on 3 Sept, Free nifty future stock tips, BHEL , Tata motor gain
+# Hypothesis: Sensex and Nifty up, 2 sept Nifty stock market trading tips and top nifty gainers and losers on Monday, Indian stock market tips today ~ stocks nifty future call today
+# Golden Label: contradiction
+
+
+date_premise = 3
+date_hypothesis = 2
+
+def entailment_or_contradiction_or_neutral(date_premise, date_hypothesis):
+    # the hypothesis and premise mention the date of the stock call
+    # check if the hypothesis contradicts the premise by checking if the date is not equal in the two sentences
+    if date_premise != date_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(date_premise, date_hypothesis))
+
+","date_premise = 3
+date_hypothesis = 2
+
+def entailment_or_contradiction_or_neutral(date_premise, date_hypothesis):
+    # the hypothesis and premise mention the date of the stock call
+    # check if the hypothesis contradicts the premise by checking if the date is not equal in the two sentences
+    if date_premise != date_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(date_premise, date_hypothesis))
+"
+215,U.S Job loss: Worst in 34 years,U.S. January Job Losses Worst in 34 Years,neutral,215,"```python
+years_premise = 34
+years_hypothesis = 34
+
+def entailment_or_contradiction_or_neutral(years_premise, years_hypothesis):
+    # the hypothesis and premise mention the number of years since the last worst job loss in the U.S.
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    if years_premise == years_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(years_premise, years_hypothesis))
+```
+In this case, the hypothesis doesn't provide any additional information or contradiction to the premise. Therefore, it can be considered as entailing the premise.","
+# Premise: U.S Job loss: Worst in 34 years
+# Hypothesis: U.S. January Job Losses Worst in 34 Years
+# Golden Label: neutral
+
+
+years_premise = 34
+years_hypothesis = 34
+
+def entailment_or_contradiction_or_neutral(years_premise, years_hypothesis):
+    # the hypothesis and premise mention the number of years since the last worst job loss in the U.S.
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    if years_premise == years_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(years_premise, years_hypothesis))
+
+","years_premise = 34
+years_hypothesis = 34
+
+def entailment_or_contradiction_or_neutral(years_premise, years_hypothesis):
+    # the hypothesis and premise mention the number of years since the last worst job loss in the U.S.
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    if years_premise == years_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(years_premise, years_hypothesis))
+"
+223,"U.S. Adds 103,000 Jobs in December, Unemployment at 9.4% ","Canada adds 22,000 jobs in December
+",neutral,223,"```python
+jobs_added_us_premise = 103000
+jobs_added_canada_hypothesis = 22000
+
+def entailment_or_contradiction_or_neutral(jobs_added_us_premise, jobs_added_canada_hypothesis):
+    # the premise and hypothesis mention the number of jobs added in two different countries
+    # since these two facts are unrelated, the hypothesis is neutral with respect to the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral(jobs_added_us_premise, jobs_added_canada_hypothesis))
+```","
+# Premise: U.S. Adds 103,000 Jobs in December, Unemployment at 9.4% 
+# Hypothesis: Canada adds 22,000 jobs in December 
+# Golden Label: neutral
+
+
+jobs_added_us_premise = 103000
+jobs_added_canada_hypothesis = 22000
+
+def entailment_or_contradiction_or_neutral(jobs_added_us_premise, jobs_added_canada_hypothesis):
+    # the premise and hypothesis mention the number of jobs added in two different countries
+    # since these two facts are unrelated, the hypothesis is neutral with respect to the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral(jobs_added_us_premise, jobs_added_canada_hypothesis))
+
+","jobs_added_us_premise = 103000
+jobs_added_canada_hypothesis = 22000
+
+def entailment_or_contradiction_or_neutral(jobs_added_us_premise, jobs_added_canada_hypothesis):
+    # the premise and hypothesis mention the number of jobs added in two different countries
+    # since these two facts are unrelated, the hypothesis is neutral with respect to the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral(jobs_added_us_premise, jobs_added_canada_hypothesis))
+"
+186,U.S. GDP Fell 0.7% in First Quarter (revised down from +0.2%),U.S. Economy Contracted 0.7% in First Quarter,entailment,186,"```python
+gdp_fall_premise = 0.7
+gdp_fall_hypothesis = 0.7
+
+def entailment_or_contradiction_or_neutral(gdp_fall_premise, gdp_fall_hypothesis):
+    # the hypothesis and premise mention a fall in GDP for the U.S. in the first quarter
+    # check if the hypothesis entails the premise by checking if the fall in GDP is equal in the two sentences
+    if gdp_fall_premise == gdp_fall_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(gdp_fall_premise, gdp_fall_hypothesis))
+```
+In this case, the hypothesis is entailing the premise as the mentioned GDP fall in both sentences is the same, hence the function returns True.","
+# Premise: U.S. GDP Fell 0.7% in First Quarter (revised down from +0.2%)
+# Hypothesis: U.S. Economy Contracted 0.7% in First Quarter
+# Golden Label: entailment
+
+
+gdp_fall_premise = 0.7
+gdp_fall_hypothesis = 0.7
+
+def entailment_or_contradiction_or_neutral(gdp_fall_premise, gdp_fall_hypothesis):
+    # the hypothesis and premise mention a fall in GDP for the U.S. in the first quarter
+    # check if the hypothesis entails the premise by checking if the fall in GDP is equal in the two sentences
+    if gdp_fall_premise == gdp_fall_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(gdp_fall_premise, gdp_fall_hypothesis))
+
+","gdp_fall_premise = 0.7
+gdp_fall_hypothesis = 0.7
+
+def entailment_or_contradiction_or_neutral(gdp_fall_premise, gdp_fall_hypothesis):
+    # the hypothesis and premise mention a fall in GDP for the U.S. in the first quarter
+    # check if the hypothesis entails the premise by checking if the fall in GDP is equal in the two sentences
+    if gdp_fall_premise == gdp_fall_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(gdp_fall_premise, gdp_fall_hypothesis))
+"
+185,Retail sales post biggest drop in 9 months,Producer prices post biggest drop in 10 months,neutral,185,"```python
+drop_premise = 9
+drop_hypothesis = 10
+
+def entailment_or_contradiction_or_neutral(drop_premise, drop_hypothesis):
+    # the hypothesis and premise mention the number of months since a drop in sales and prices respectively
+    # check if the hypothesis contradicts the premise by checking if the number of months is not equal in the two sentences
+    if drop_premise != drop_hypothesis:
+        return False
+    else:
+        return None
+
+print(entailment_or_contradiction_or_neutral(drop_premise, drop_hypothesis))
+```
+The hypothesis contradicts the premise as it mentions a different number of months for the biggest drop. The context of sales versus prices also further contributes to the contradiction.","
+# Premise: Retail sales post biggest drop in 9 months
+# Hypothesis: Producer prices post biggest drop in 10 months
+# Golden Label: neutral
+
+
+drop_premise = 9
+drop_hypothesis = 10
+
+def entailment_or_contradiction_or_neutral(drop_premise, drop_hypothesis):
+    # the hypothesis and premise mention the number of months since a drop in sales and prices respectively
+    # check if the hypothesis contradicts the premise by checking if the number of months is not equal in the two sentences
+    if drop_premise != drop_hypothesis:
+        return False
+    else:
+        return None
+
+print(entailment_or_contradiction_or_neutral(drop_premise, drop_hypothesis))
+
+","drop_premise = 9
+drop_hypothesis = 10
+
+def entailment_or_contradiction_or_neutral(drop_premise, drop_hypothesis):
+    # the hypothesis and premise mention the number of months since a drop in sales and prices respectively
+    # check if the hypothesis contradicts the premise by checking if the number of months is not equal in the two sentences
+    if drop_premise != drop_hypothesis:
+        return False
+    else:
+        return None
+
+print(entailment_or_contradiction_or_neutral(drop_premise, drop_hypothesis))
+"
+182,Dow closes above 18000 for first time in 9 months,Dow Closes Above 18K for First Time Since July,entailment,182,"```python
+months_premise = 9
+months_july_to_now_hypothesis = 8
+
+def entailment_or_contradiction_or_neutral(months_premise, months_july_to_now_hypothesis):
+    # the hypothesis and premise mention the number of months since Dow closed above 18000
+    # check if the hypothesis contradicts the premise by checking if the number of months is not equal in the two sentences
+    if months_premise != months_july_to_now_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(months_premise, months_july_to_now_hypothesis))
+```
+This python script checks if the number of months mentioned in the premise and the hypothesis is the same. If both are same, then it returns True signifying that the hypothesis entails the premise, else it returns False indicating a contradiction. It is assumed that the current month is April. Thus, the number of months from July to now (April) is 8 months which contradicts the 9 months mentioned in the premise.","
+# Premise: Dow closes above 18000 for first time in 9 months
+# Hypothesis: Dow Closes Above 18K for First Time Since July
+# Golden Label: entailment
+
+
+months_premise = 9
+months_july_to_now_hypothesis = 8
+
+def entailment_or_contradiction_or_neutral(months_premise, months_july_to_now_hypothesis):
+    # the hypothesis and premise mention the number of months since Dow closed above 18000
+    # check if the hypothesis contradicts the premise by checking if the number of months is not equal in the two sentences
+    if months_premise != months_july_to_now_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(months_premise, months_july_to_now_hypothesis))
+
+","months_premise = 9
+months_july_to_now_hypothesis = 8
+
+def entailment_or_contradiction_or_neutral(months_premise, months_july_to_now_hypothesis):
+    # the hypothesis and premise mention the number of months since Dow closed above 18000
+    # check if the hypothesis contradicts the premise by checking if the number of months is not equal in the two sentences
+    if months_premise != months_july_to_now_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(months_premise, months_july_to_now_hypothesis))
+"
+168,"Fannie, Freddie may need $363 billion",Fannie and Freddie may need another $215 billion,neutral,168,"```python
+need_premise = 363
+need_hypothesis = 215
+
+def entailment_or_contradiction_or_neutral(need_premise, need_hypothesis):
+    # the hypothesis and premise mention the amount of money Fannie and Freddie may need
+    # check if the hypothesis contradicts the premise by checking if the amount of money is not equal in the two sentences
+    if need_premise != need_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(need_premise, need_hypothesis))
+```","
+# Premise: Fannie, Freddie may need $363 billion
+# Hypothesis: Fannie and Freddie may need another $215 billion
+# Golden Label: neutral
+
+
+need_premise = 363
+need_hypothesis = 215
+
+def entailment_or_contradiction_or_neutral(need_premise, need_hypothesis):
+    # the hypothesis and premise mention the amount of money Fannie and Freddie may need
+    # check if the hypothesis contradicts the premise by checking if the amount of money is not equal in the two sentences
+    if need_premise != need_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(need_premise, need_hypothesis))
+
+","need_premise = 363
+need_hypothesis = 215
+
+def entailment_or_contradiction_or_neutral(need_premise, need_hypothesis):
+    # the hypothesis and premise mention the amount of money Fannie and Freddie may need
+    # check if the hypothesis contradicts the premise by checking if the amount of money is not equal in the two sentences
+    if need_premise != need_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(need_premise, need_hypothesis))
+"
+84,"Unemployment Rate Falls to 3.9 percent, but Wage Growth Remains Weak","U.S. job growth picks up, unemployment rate falls to 3.9 percent",neutral,84,"```python
+unemployment_rate_premise = 3.9
+unemployment_rate_hypothesis = 3.9
+
+def entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis):
+    # the hypothesis and premise mention the unemployment rate
+    # check if the hypothesis entails the premise by checking if the unemployment rate is equal in the two sentences
+    if unemployment_rate_premise == unemployment_rate_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis))
+```
+The script first extracts the unemployment rates from the premise and the hypothesis. It then defines a function that checks if the unemployment rate in the hypothesis is the same as in the premise. If so, the hypothesis entails the premise. If not, it does not. The function then returns the result of this comparison.","
+# Premise: Unemployment Rate Falls to 3.9 percent, but Wage Growth Remains Weak
+# Hypothesis: U.S. job growth picks up, unemployment rate falls to 3.9 percent
+# Golden Label: neutral
+
+
+unemployment_rate_premise = 3.9
+unemployment_rate_hypothesis = 3.9
+
+def entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis):
+    # the hypothesis and premise mention the unemployment rate
+    # check if the hypothesis entails the premise by checking if the unemployment rate is equal in the two sentences
+    if unemployment_rate_premise == unemployment_rate_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis))
+
+","unemployment_rate_premise = 3.9
+unemployment_rate_hypothesis = 3.9
+
+def entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis):
+    # the hypothesis and premise mention the unemployment rate
+    # check if the hypothesis entails the premise by checking if the unemployment rate is equal in the two sentences
+    if unemployment_rate_premise == unemployment_rate_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis))
+"
+49,Global Debt Has Soared By $57 Trillion Since The 2007-08 Financial Crisis,Global debt has grown by $57 trillion in seven years following the financial crisis,entailment,49,"```python
+debt_increase_premise = 57
+debt_increase_hypothesis = 57
+
+def entailment_or_contradiction_or_neutral(debt_increase_premise, debt_increase_hypothesis):
+    # the hypothesis and premise mention the increase in global debt since the financial crisis
+    # check if the hypothesis entails the premise by checking if the debt increase is equal in both sentences
+    if debt_increase_premise == debt_increase_hypothesis:
+        return True
+    # if the debt increase is not equal in the premise and hypothesis, it implies contradiction
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(debt_increase_premise, debt_increase_hypothesis))
+```
+","
+# Premise: Global Debt Has Soared By $57 Trillion Since The 2007-08 Financial Crisis
+# Hypothesis: Global debt has grown by $57 trillion in seven years following the financial crisis
+# Golden Label: entailment
+
+
+debt_increase_premise = 57
+debt_increase_hypothesis = 57
+
+def entailment_or_contradiction_or_neutral(debt_increase_premise, debt_increase_hypothesis):
+    # the hypothesis and premise mention the increase in global debt since the financial crisis
+    # check if the hypothesis entails the premise by checking if the debt increase is equal in both sentences
+    if debt_increase_premise == debt_increase_hypothesis:
+        return True
+    # if the debt increase is not equal in the premise and hypothesis, it implies contradiction
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(debt_increase_premise, debt_increase_hypothesis))
+
+","debt_increase_premise = 57
+debt_increase_hypothesis = 57
+
+def entailment_or_contradiction_or_neutral(debt_increase_premise, debt_increase_hypothesis):
+    # the hypothesis and premise mention the increase in global debt since the financial crisis
+    # check if the hypothesis entails the premise by checking if the debt increase is equal in both sentences
+    if debt_increase_premise == debt_increase_hypothesis:
+        return True
+    # if the debt increase is not equal in the premise and hypothesis, it implies contradiction
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(debt_increase_premise, debt_increase_hypothesis))
+"
+70,Personal Bankruptcy Filings up 14% in first 6 months of 2010,Consumer Bankruptcy Filings Up 14 Percent Through  First Half Of 2010,entailment,70,"```python
+percent_increase_premise = 14
+percent_increase_hypothesis = 14
+
+def entailment_or_contradiction_or_neutral(percent_increase_premise, percent_increase_hypothesis):
+    # the hypothesis and premise mention the percentage increase in bankruptcy filings
+    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
+    if percent_increase_premise == percent_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(percent_increase_premise, percent_increase_hypothesis))
+```","
+# Premise: Personal Bankruptcy Filings up 14% in first 6 months of 2010
+# Hypothesis: Consumer Bankruptcy Filings Up 14 Percent Through  First Half Of 2010
+# Golden Label: entailment
+
+
+percent_increase_premise = 14
+percent_increase_hypothesis = 14
+
+def entailment_or_contradiction_or_neutral(percent_increase_premise, percent_increase_hypothesis):
+    # the hypothesis and premise mention the percentage increase in bankruptcy filings
+    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
+    if percent_increase_premise == percent_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(percent_increase_premise, percent_increase_hypothesis))
+
+","percent_increase_premise = 14
+percent_increase_hypothesis = 14
+
+def entailment_or_contradiction_or_neutral(percent_increase_premise, percent_increase_hypothesis):
+    # the hypothesis and premise mention the percentage increase in bankruptcy filings
+    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
+    if percent_increase_premise == percent_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(percent_increase_premise, percent_increase_hypothesis))
+"
+132,Gov. Brown hails deal to raise minimum wage to $15,California Is About to Make a $15 Minimum Wage a Reality,entailment,132,"```python
+min_wage_premise = 15
+min_wage_hypothesis = 15
+
+def entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis):
+    # the hypothesis and premise mention the minimum wage
+    # check if the hypothesis entails the premise by checking if the minimum wage is equal in the two sentences
+    if min_wage_premise == min_wage_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis))
+```
+","
+# Premise: Gov. Brown hails deal to raise minimum wage to $15
+# Hypothesis: California Is About to Make a $15 Minimum Wage a Reality
+# Golden Label: entailment
+
+
+min_wage_premise = 15
+min_wage_hypothesis = 15
+
+def entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis):
+    # the hypothesis and premise mention the minimum wage
+    # check if the hypothesis entails the premise by checking if the minimum wage is equal in the two sentences
+    if min_wage_premise == min_wage_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis))
+
+","min_wage_premise = 15
+min_wage_hypothesis = 15
+
+def entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis):
+    # the hypothesis and premise mention the minimum wage
+    # check if the hypothesis entails the premise by checking if the minimum wage is equal in the two sentences
+    if min_wage_premise == min_wage_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis))
+"
+76,"With unemployment rate dropping to 5.4%, U.S. added 223K jobs in April","U.S. Economy Added 223,000 Jobs in April; Unemployment Rate at 5.4%",entailment,76,"```python
+unemployment_rate_premise = 5.4
+jobs_added_premise = 223000
+unemployment_rate_hypothesis = 5.4
+jobs_added_hypothesis = 223000
+
+def entailment_or_contradiction_or_neutral(unemployment_rate_premise, jobs_added_premise, unemployment_rate_hypothesis, jobs_added_hypothesis):
+    # the hypothesis and premise both mention the unemployment rate and the number of jobs added in the US in April
+    # check if the hypothesis contradicts the premise by checking if the unemployment rate or the number of jobs added is not equal in the two sentences
+    if unemployment_rate_premise != unemployment_rate_hypothesis or jobs_added_premise != jobs_added_hypothesis:
+        return False
+    # if there is no contradiction, the hypothesis entails the premise
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(unemployment_rate_premise, jobs_added_premise, unemployment_rate_hypothesis, jobs_added_hypothesis))
+```
+","
+# Premise: With unemployment rate dropping to 5.4%, U.S. added 223K jobs in April
+# Hypothesis: U.S. Economy Added 223,000 Jobs in April; Unemployment Rate at 5.4%
+# Golden Label: entailment
+
+
+unemployment_rate_premise = 5.4
+jobs_added_premise = 223000
+unemployment_rate_hypothesis = 5.4
+jobs_added_hypothesis = 223000
+
+def entailment_or_contradiction_or_neutral(unemployment_rate_premise, jobs_added_premise, unemployment_rate_hypothesis, jobs_added_hypothesis):
+    # the hypothesis and premise both mention the unemployment rate and the number of jobs added in the US in April
+    # check if the hypothesis contradicts the premise by checking if the unemployment rate or the number of jobs added is not equal in the two sentences
+    if unemployment_rate_premise != unemployment_rate_hypothesis or jobs_added_premise != jobs_added_hypothesis:
+        return False
+    # if there is no contradiction, the hypothesis entails the premise
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(unemployment_rate_premise, jobs_added_premise, unemployment_rate_hypothesis, jobs_added_hypothesis))
+
+","unemployment_rate_premise = 5.4
+jobs_added_premise = 223000
+unemployment_rate_hypothesis = 5.4
+jobs_added_hypothesis = 223000
+
+def entailment_or_contradiction_or_neutral(unemployment_rate_premise, jobs_added_premise, unemployment_rate_hypothesis, jobs_added_hypothesis):
+    # the hypothesis and premise both mention the unemployment rate and the number of jobs added in the US in April
+    # check if the hypothesis contradicts the premise by checking if the unemployment rate or the number of jobs added is not equal in the two sentences
+    if unemployment_rate_premise != unemployment_rate_hypothesis or jobs_added_premise != jobs_added_hypothesis:
+        return False
+    # if there is no contradiction, the hypothesis entails the premise
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(unemployment_rate_premise, jobs_added_premise, unemployment_rate_hypothesis, jobs_added_hypothesis))
+"
+160,GDP Report Shows US Economy Off to Slow Start in 2017,U.S. economy off to slow start in 2017 under Trump,entailment,160,"```python
+# There are no specific quantities present in both premise and hypothesis. 
+# However, they both refer to the same year and the same event (slow start of the U.S. economy).
+
+def entailment_or_contradiction_or_neutral():
+    # As the context of both the premise and hypothesis are identical,
+    # the hypothesis entails the premise.
+    return True
+
+print(entailment_or_contradiction_or_neutral())
+```","
+# Premise: GDP Report Shows US Economy Off to Slow Start in 2017
+# Hypothesis: U.S. economy off to slow start in 2017 under Trump
+# Golden Label: entailment
+
+
+# There are no specific quantities present in both premise and hypothesis. 
+# However, they both refer to the same year and the same event (slow start of the U.S. economy).
+
+def entailment_or_contradiction_or_neutral():
+    # As the context of both the premise and hypothesis are identical,
+    # the hypothesis entails the premise.
+    return True
+
+print(entailment_or_contradiction_or_neutral())
+
+","# There are no specific quantities present in both premise and hypothesis. 
+# However, they both refer to the same year and the same event (slow start of the U.S. economy).
+
+def entailment_or_contradiction_or_neutral():
+    # As the context of both the premise and hypothesis are identical,
+    # the hypothesis entails the premise.
+    return True
+
+print(entailment_or_contradiction_or_neutral())
+"
+13,"Swedish Financial Supervisory Authority study reports ""no risk with high frequency trading"" two days after contradictory study","Swedish Financial Supervisory Authority (FI) investigation concludes ""high frequency trading no threat"" two days after contradictory study",entailment,13,"```python
+days_premise = 2
+days_hypothesis = 2
+
+def entailment_or_contradiction_or_neutral(days_premise, days_hypothesis):
+    # the hypothesis and premise mention the number of days between a contradictory study and the response of the FI
+    # check if the hypothesis entails the premise by checking if the number of days is equal in the two sentences
+    if days_premise == days_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(days_premise, days_hypothesis))
+```","
+# Premise: Swedish Financial Supervisory Authority study reports ""no risk with high frequency trading"" two days after contradictory study
+# Hypothesis: Swedish Financial Supervisory Authority (FI) investigation concludes ""high frequency trading no threat"" two days after contradictory study
+# Golden Label: entailment
+
+
+days_premise = 2
+days_hypothesis = 2
+
+def entailment_or_contradiction_or_neutral(days_premise, days_hypothesis):
+    # the hypothesis and premise mention the number of days between a contradictory study and the response of the FI
+    # check if the hypothesis entails the premise by checking if the number of days is equal in the two sentences
+    if days_premise == days_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(days_premise, days_hypothesis))
+
+","days_premise = 2
+days_hypothesis = 2
+
+def entailment_or_contradiction_or_neutral(days_premise, days_hypothesis):
+    # the hypothesis and premise mention the number of days between a contradictory study and the response of the FI
+    # check if the hypothesis entails the premise by checking if the number of days is equal in the two sentences
+    if days_premise == days_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(days_premise, days_hypothesis))
+"
+50,Loblaw says minimum wage increases will hike labour costs by $190M,Loblaw expects higher minimum wage rules will increase its labour costs by $190M,entailment,50,"```python
+cost_increase_premise = 190
+cost_increase_hypothesis = 190
+
+def entailment_or_contradiction_or_neutral(cost_increase_premise, cost_increase_hypothesis):
+    # the hypothesis and premise mention the cost increase due to minimum wage hikes
+    # check if the hypothesis entails the premise by checking if the cost increase is equal in the two sentences
+    if cost_increase_premise == cost_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(cost_increase_premise, cost_increase_hypothesis))
+```","
+# Premise: Loblaw says minimum wage increases will hike labour costs by $190M
+# Hypothesis: Loblaw expects higher minimum wage rules will increase its labour costs by $190M
+# Golden Label: entailment
+
+
+cost_increase_premise = 190
+cost_increase_hypothesis = 190
+
+def entailment_or_contradiction_or_neutral(cost_increase_premise, cost_increase_hypothesis):
+    # the hypothesis and premise mention the cost increase due to minimum wage hikes
+    # check if the hypothesis entails the premise by checking if the cost increase is equal in the two sentences
+    if cost_increase_premise == cost_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(cost_increase_premise, cost_increase_hypothesis))
+
+","cost_increase_premise = 190
+cost_increase_hypothesis = 190
+
+def entailment_or_contradiction_or_neutral(cost_increase_premise, cost_increase_hypothesis):
+    # the hypothesis and premise mention the cost increase due to minimum wage hikes
+    # check if the hypothesis entails the premise by checking if the cost increase is equal in the two sentences
+    if cost_increase_premise == cost_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(cost_increase_premise, cost_increase_hypothesis))
+"
+103,Mexico Raises Key Rate for First Time Since 2008 After Fed,Hong Kong Raises Base Rate for First Time Since 2006 After Fed,neutral,103,"```python
+year_premise = 2008
+country_premise = 'Mexico'
+year_hypothesis = 2006
+country_hypothesis = 'Hong Kong'
+
+def entailment_or_contradiction_or_neutral(year_premise, country_premise, year_hypothesis, country_hypothesis):
+    # the hypothesis and premise mention a country and the year it raised its key rate
+    # first, check if the country in the hypothesis contradicts the one in the premise
+    if country_premise != country_hypothesis:
+        return False
+    # then, check if the year in the hypothesis contradicts the one in the premise
+    if year_premise != year_hypothesis:
+        return False
+    # if there is no contradiction, the hypothesis is neutral to the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral(year_premise, country_premise, year_hypothesis, country_hypothesis))
+```
+","
+# Premise: Mexico Raises Key Rate for First Time Since 2008 After Fed
+# Hypothesis: Hong Kong Raises Base Rate for First Time Since 2006 After Fed
+# Golden Label: neutral
+
+
+year_premise = 2008
+country_premise = 'Mexico'
+year_hypothesis = 2006
+country_hypothesis = 'Hong Kong'
+
+def entailment_or_contradiction_or_neutral(year_premise, country_premise, year_hypothesis, country_hypothesis):
+    # the hypothesis and premise mention a country and the year it raised its key rate
+    # first, check if the country in the hypothesis contradicts the one in the premise
+    if country_premise != country_hypothesis:
+        return False
+    # then, check if the year in the hypothesis contradicts the one in the premise
+    if year_premise != year_hypothesis:
+        return False
+    # if there is no contradiction, the hypothesis is neutral to the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral(year_premise, country_premise, year_hypothesis, country_hypothesis))
+
+","year_premise = 2008
+country_premise = 'Mexico'
+year_hypothesis = 2006
+country_hypothesis = 'Hong Kong'
+
+def entailment_or_contradiction_or_neutral(year_premise, country_premise, year_hypothesis, country_hypothesis):
+    # the hypothesis and premise mention a country and the year it raised its key rate
+    # first, check if the country in the hypothesis contradicts the one in the premise
+    if country_premise != country_hypothesis:
+        return False
+    # then, check if the year in the hypothesis contradicts the one in the premise
+    if year_premise != year_hypothesis:
+        return False
+    # if there is no contradiction, the hypothesis is neutral to the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral(year_premise, country_premise, year_hypothesis, country_hypothesis))
+"
+129,California's $15 minimum wage: Risks vs. evidence,California Is About to Make a $15 Minimum Wage a Reality,neutral,129,"```python
+min_wage_ca_premise = 15
+min_wage_ca_hypothesis = 15
+
+def entailment_or_contradiction_or_neutral(min_wage_ca_premise, min_wage_ca_hypothesis):
+    # the hypothesis and premise mention the minimum wage in California
+    # check if the hypothesis entails the premise by checking if the minimum wage is equal in the two sentences
+    if min_wage_ca_premise == min_wage_ca_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(min_wage_ca_premise, min_wage_ca_hypothesis))
+```
+In this case, the hypothesis does entail the premise since the minimum wage value mentioned is the same in both, indicating that the $15 minimum wage in California is a reality, which does not contradict the premise.","
+# Premise: California's $15 minimum wage: Risks vs. evidence
+# Hypothesis: California Is About to Make a $15 Minimum Wage a Reality
+# Golden Label: neutral
+
+
+min_wage_ca_premise = 15
+min_wage_ca_hypothesis = 15
+
+def entailment_or_contradiction_or_neutral(min_wage_ca_premise, min_wage_ca_hypothesis):
+    # the hypothesis and premise mention the minimum wage in California
+    # check if the hypothesis entails the premise by checking if the minimum wage is equal in the two sentences
+    if min_wage_ca_premise == min_wage_ca_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(min_wage_ca_premise, min_wage_ca_hypothesis))
+
+","min_wage_ca_premise = 15
+min_wage_ca_hypothesis = 15
+
+def entailment_or_contradiction_or_neutral(min_wage_ca_premise, min_wage_ca_hypothesis):
+    # the hypothesis and premise mention the minimum wage in California
+    # check if the hypothesis entails the premise by checking if the minimum wage is equal in the two sentences
+    if min_wage_ca_premise == min_wage_ca_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(min_wage_ca_premise, min_wage_ca_hypothesis))
+"
+152,U.S. public pension gap at least $2 trillion,US public pension gap at least $2 trillion: Moody's,entailment,152,"```python
+gap_value_premise = 2 # in trillions
+gap_value_hypothesis = 2 # in trillions
+
+def entailment_or_contradiction_or_neutral(gap_value_premise, gap_value_hypothesis):
+    # the premise and hypothesis mention the same gap value
+    # check if the hypothesis entails the premise by checking if the gap value is equal in the two sentences
+    if gap_value_premise == gap_value_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(gap_value_premise, gap_value_hypothesis))
+```
+This script checks if the gap value in the premise and hypothesis is the same. If the gap values are the same, the hypothesis entails the information in the premise, so the function returns True.","
+# Premise: U.S. public pension gap at least $2 trillion
+# Hypothesis: US public pension gap at least $2 trillion: Moody's
+# Golden Label: entailment
+
+
+gap_value_premise = 2 # in trillions
+gap_value_hypothesis = 2 # in trillions
+
+def entailment_or_contradiction_or_neutral(gap_value_premise, gap_value_hypothesis):
+    # the premise and hypothesis mention the same gap value
+    # check if the hypothesis entails the premise by checking if the gap value is equal in the two sentences
+    if gap_value_premise == gap_value_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(gap_value_premise, gap_value_hypothesis))
+
+","gap_value_premise = 2 # in trillions
+gap_value_hypothesis = 2 # in trillions
+
+def entailment_or_contradiction_or_neutral(gap_value_premise, gap_value_hypothesis):
+    # the premise and hypothesis mention the same gap value
+    # check if the hypothesis entails the premise by checking if the gap value is equal in the two sentences
+    if gap_value_premise == gap_value_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(gap_value_premise, gap_value_hypothesis))
+"
+227,Amazon buying Whole Foods for $13.7B,Amazon to buy Whole Foods for $13.7bn,entailment,227,"```python
+purchase_price_premise = 13.7e9 # 13.7 billion USD
+purchase_price_hypothesis = 13.7e9 # 13.7 billion USD
+
+def entailment_or_contradiction_or_neutral(purchase_price_premise, purchase_price_hypothesis):
+    # the hypothesis and premise mention the acquisition of Whole Foods by Amazon and the cost of this purchase
+    # check if the hypothesis entails the premise by checking if the purchase price is equal in the two sentences
+    if purchase_price_premise == purchase_price_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(purchase_price_premise, purchase_price_hypothesis))
+```
+","
+# Premise: Amazon buying Whole Foods for $13.7B
+# Hypothesis: Amazon to buy Whole Foods for $13.7bn
+# Golden Label: entailment
+
+
+purchase_price_premise = 13.7e9 # 13.7 billion USD
+purchase_price_hypothesis = 13.7e9 # 13.7 billion USD
+
+def entailment_or_contradiction_or_neutral(purchase_price_premise, purchase_price_hypothesis):
+    # the hypothesis and premise mention the acquisition of Whole Foods by Amazon and the cost of this purchase
+    # check if the hypothesis entails the premise by checking if the purchase price is equal in the two sentences
+    if purchase_price_premise == purchase_price_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(purchase_price_premise, purchase_price_hypothesis))
+
+","purchase_price_premise = 13.7e9 # 13.7 billion USD
+purchase_price_hypothesis = 13.7e9 # 13.7 billion USD
+
+def entailment_or_contradiction_or_neutral(purchase_price_premise, purchase_price_hypothesis):
+    # the hypothesis and premise mention the acquisition of Whole Foods by Amazon and the cost of this purchase
+    # check if the hypothesis entails the premise by checking if the purchase price is equal in the two sentences
+    if purchase_price_premise == purchase_price_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(purchase_price_premise, purchase_price_hypothesis))
+"
+176,A Stock Market Panic Like 1987 Could Happen Again,Could the 1987 stock market crash happen again?,neutral,176,"```python
+# as there are no quantities mentioned in the premise or the hypothesis, we can only reason based on the textual information
+def entailment_or_contradiction_or_neutral():
+    # the hypothesis and premise mention the possibility of a stock market crash like the one in 1987 happening again
+    # both suggest the possibility of a similar event happening, so the hypothesis entails the premise
+    return True
+
+print(entailment_or_contradiction_or_neutral())
+```","
+# Premise: A Stock Market Panic Like 1987 Could Happen Again
+# Hypothesis: Could the 1987 stock market crash happen again?
+# Golden Label: neutral
+
+
+# as there are no quantities mentioned in the premise or the hypothesis, we can only reason based on the textual information
+def entailment_or_contradiction_or_neutral():
+    # the hypothesis and premise mention the possibility of a stock market crash like the one in 1987 happening again
+    # both suggest the possibility of a similar event happening, so the hypothesis entails the premise
+    return True
+
+print(entailment_or_contradiction_or_neutral())
+
+","# as there are no quantities mentioned in the premise or the hypothesis, we can only reason based on the textual information
+def entailment_or_contradiction_or_neutral():
+    # the hypothesis and premise mention the possibility of a stock market crash like the one in 1987 happening again
+    # both suggest the possibility of a similar event happening, so the hypothesis entails the premise
+    return True
+
+print(entailment_or_contradiction_or_neutral())
+"
+36,"Apple commits to contribute over $350 billion into US economy over the next five years, create 20,000 jobs","Apple Says It Will Repatriate $250 Billion to US in Next Five Years, Add 20,000 Jobs in the US",entailment,36,"```python
+investment_premise = 350
+investment_hypothesis = 250
+job_creation_premise = 20000
+job_creation_hypothesis = 20000
+
+def entailment_or_contradiction_or_neutral(investment_premise, job_creation_premise, investment_hypothesis, job_creation_hypothesis):
+    # the hypothesis and premise both mention the amount Apple will invest into the US economy and the number of jobs it will create
+    # check if the hypothesis contradicts the premise by checking if the investment amount is not equal in the two sentences
+    if investment_hypothesis < investment_premise:
+        return False
+    #check if the number of jobs created is equal in both sentences
+    if job_creation_premise != job_creation_hypothesis:
+        return False
+    # If the investment amount and the number of jobs created in the hypothesis are equal or greater than the premise, the hypothesis entails the premise.
+    return True
+
+print(entailment_or_contradiction_or_neutral(investment_premise, job_creation_premise, investment_hypothesis, job_creation_hypothesis))
+```
+In this scenario, the hypothesis contradicts the premise information about the investment amount, despite the number of jobs being the same. Thus, the function will return False.","
+# Premise: Apple commits to contribute over $350 billion into US economy over the next five years, create 20,000 jobs
+# Hypothesis: Apple Says It Will Repatriate $250 Billion to US in Next Five Years, Add 20,000 Jobs in the US
+# Golden Label: entailment
+
+
+investment_premise = 350
+investment_hypothesis = 250
+job_creation_premise = 20000
+job_creation_hypothesis = 20000
+
+def entailment_or_contradiction_or_neutral(investment_premise, job_creation_premise, investment_hypothesis, job_creation_hypothesis):
+    # the hypothesis and premise both mention the amount Apple will invest into the US economy and the number of jobs it will create
+    # check if the hypothesis contradicts the premise by checking if the investment amount is not equal in the two sentences
+    if investment_hypothesis < investment_premise:
+        return False
+    #check if the number of jobs created is equal in both sentences
+    if job_creation_premise != job_creation_hypothesis:
+        return False
+    # If the investment amount and the number of jobs created in the hypothesis are equal or greater than the premise, the hypothesis entails the premise.
+    return True
+
+print(entailment_or_contradiction_or_neutral(investment_premise, job_creation_premise, investment_hypothesis, job_creation_hypothesis))
+
+","investment_premise = 350
+investment_hypothesis = 250
+job_creation_premise = 20000
+job_creation_hypothesis = 20000
+
+def entailment_or_contradiction_or_neutral(investment_premise, job_creation_premise, investment_hypothesis, job_creation_hypothesis):
+    # the hypothesis and premise both mention the amount Apple will invest into the US economy and the number of jobs it will create
+    # check if the hypothesis contradicts the premise by checking if the investment amount is not equal in the two sentences
+    if investment_hypothesis < investment_premise:
+        return False
+    #check if the number of jobs created is equal in both sentences
+    if job_creation_premise != job_creation_hypothesis:
+        return False
+    # If the investment amount and the number of jobs created in the hypothesis are equal or greater than the premise, the hypothesis entails the premise.
+    return True
+
+print(entailment_or_contradiction_or_neutral(investment_premise, job_creation_premise, investment_hypothesis, job_creation_hypothesis))
+"
+48,More young American adults live with parents than with partners or in other situations since 1880s,"For First Time In 130 Years, More Young Adults Live With Parents Than With Partners",entailment,48,"```python
+year_since_premise = 1880
+year_since_hypothesis = 130
+
+def entailment_or_contradiction_or_neutral(year_since_premise, year_since_hypothesis):
+    # the hypothesis and premise mention the number of years since more young American adults live with parents than with partners
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    # given that the current year is 2022, 2022-1880 = 142 years. Hence the hypothesis that states ""130 years"" contradicts the premise.
+    if 2022 - year_since_premise == year_since_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(year_since_premise, year_since_hypothesis))
+```
+","
+# Premise: More young American adults live with parents than with partners or in other situations since 1880s
+# Hypothesis: For First Time In 130 Years, More Young Adults Live With Parents Than With Partners
+# Golden Label: entailment
+
+
+year_since_premise = 1880
+year_since_hypothesis = 130
+
+def entailment_or_contradiction_or_neutral(year_since_premise, year_since_hypothesis):
+    # the hypothesis and premise mention the number of years since more young American adults live with parents than with partners
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    # given that the current year is 2022, 2022-1880 = 142 years. Hence the hypothesis that states ""130 years"" contradicts the premise.
+    if 2022 - year_since_premise == year_since_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(year_since_premise, year_since_hypothesis))
+
+","year_since_premise = 1880
+year_since_hypothesis = 130
+
+def entailment_or_contradiction_or_neutral(year_since_premise, year_since_hypothesis):
+    # the hypothesis and premise mention the number of years since more young American adults live with parents than with partners
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    # given that the current year is 2022, 2022-1880 = 142 years. Hence the hypothesis that states ""130 years"" contradicts the premise.
+    if 2022 - year_since_premise == year_since_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(year_since_premise, year_since_hypothesis))
+"
+79,Britain's Whitbread to sell Costa Coffee to Coke for $5.1 billion,Coca-Cola expands into coffee with $5.1 billion deal for Britain's Costa,entailment,79,"```python
+deal_cost_premise = 5.1
+deal_cost_hypothesis = 5.1
+
+def entailment_or_contradiction_or_neutral(deal_cost_premise, deal_cost_hypothesis):
+    # the hypothesis and premise mention the cost of the deal between Coca-Cola and Costa Coffee
+    # check if the hypothesis entails the premise by checking if the cost of the deal is equal in the two sentences
+    if deal_cost_premise == deal_cost_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(deal_cost_premise, deal_cost_hypothesis))
+```
+This script will return True, indicating that the hypothesis entails the premise. The cost of the deal is the same in both sentences ($5.1 billion), so the hypothesis does not contradict the premise, and all other details in the hypothesis are also mentioned in the premise.","
+# Premise: Britain's Whitbread to sell Costa Coffee to Coke for $5.1 billion
+# Hypothesis: Coca-Cola expands into coffee with $5.1 billion deal for Britain's Costa
+# Golden Label: entailment
+
+
+deal_cost_premise = 5.1
+deal_cost_hypothesis = 5.1
+
+def entailment_or_contradiction_or_neutral(deal_cost_premise, deal_cost_hypothesis):
+    # the hypothesis and premise mention the cost of the deal between Coca-Cola and Costa Coffee
+    # check if the hypothesis entails the premise by checking if the cost of the deal is equal in the two sentences
+    if deal_cost_premise == deal_cost_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(deal_cost_premise, deal_cost_hypothesis))
+
+","deal_cost_premise = 5.1
+deal_cost_hypothesis = 5.1
+
+def entailment_or_contradiction_or_neutral(deal_cost_premise, deal_cost_hypothesis):
+    # the hypothesis and premise mention the cost of the deal between Coca-Cola and Costa Coffee
+    # check if the hypothesis entails the premise by checking if the cost of the deal is equal in the two sentences
+    if deal_cost_premise == deal_cost_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(deal_cost_premise, deal_cost_hypothesis))
+"
+41,Norway's Current Account Surplus Adds US$4.61 Billion In Quarter 2 Of 2017 To The Economy,South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy,neutral,41,"```python
+surplus_norway = 4.61
+surplus_south_korea = 7.01
+
+def entailment_or_contradiction_or_neutral(surplus_norway, surplus_south_korea):
+    # the hypothesis and premise mention the current account surplus of two different countries
+    # since the countries are different, the hypothesis is neutral to the premise, since it does not contradict it or entail it in any way
+    return None
+
+print(entailment_or_contradiction_or_neutral(surplus_norway, surplus_south_korea))
+```","
+# Premise: Norway's Current Account Surplus Adds US$4.61 Billion In Quarter 2 Of 2017 To The Economy
+# Hypothesis: South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy
+# Golden Label: neutral
+
+
+surplus_norway = 4.61
+surplus_south_korea = 7.01
+
+def entailment_or_contradiction_or_neutral(surplus_norway, surplus_south_korea):
+    # the hypothesis and premise mention the current account surplus of two different countries
+    # since the countries are different, the hypothesis is neutral to the premise, since it does not contradict it or entail it in any way
+    return None
+
+print(entailment_or_contradiction_or_neutral(surplus_norway, surplus_south_korea))
+
+","surplus_norway = 4.61
+surplus_south_korea = 7.01
+
+def entailment_or_contradiction_or_neutral(surplus_norway, surplus_south_korea):
+    # the hypothesis and premise mention the current account surplus of two different countries
+    # since the countries are different, the hypothesis is neutral to the premise, since it does not contradict it or entail it in any way
+    return None
+
+print(entailment_or_contradiction_or_neutral(surplus_norway, surplus_south_korea))
+"
+109,Saudi central bank net foreign assets fall $6 billion in March,Saudi central bank net foreign assets shrink 1.0 pct in March,neutral,109,"```python
+fall_in_assets_premise = 6 # in billion dollars
+percentage_fall_hypothesis = 1.0 # in percent
+
+def entailment_or_contradiction_or_neutral(fall_in_assets_premise, percentage_fall_hypothesis):
+    # the hypothesis and premise mention the reduction in Saudi central bank's net foreign assets
+    # as the premise does not provide enough information to convert the billion dollars reduction to percentage, 
+    # we cannot compare it with the percentage reduction in the hypothesis. 
+    # therefore, we cannot determine if the hypothesis entails, contradicts or is neutral to the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral(fall_in_assets_premise, percentage_fall_hypothesis))
+```
+Explanation:
+The premise states the fall in assets as a concrete number (6 billion dollars) while the hypothesis states it as a percentage (1.0 percent). As the total amount of assets before the reduction is not provided, we cannot convert the reduction in billion dollars to a percentage, or vice versa. Therefore, we cannot compare the two reductions and determine if the hypothesis entails, contradicts or is neutral to the premise.","
+# Premise: Saudi central bank net foreign assets fall $6 billion in March
+# Hypothesis: Saudi central bank net foreign assets shrink 1.0 pct in March
+# Golden Label: neutral
+
+
+fall_in_assets_premise = 6 # in billion dollars
+percentage_fall_hypothesis = 1.0 # in percent
+
+def entailment_or_contradiction_or_neutral(fall_in_assets_premise, percentage_fall_hypothesis):
+    # the hypothesis and premise mention the reduction in Saudi central bank's net foreign assets
+    # as the premise does not provide enough information to convert the billion dollars reduction to percentage, 
+    # we cannot compare it with the percentage reduction in the hypothesis. 
+    # therefore, we cannot determine if the hypothesis entails, contradicts or is neutral to the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral(fall_in_assets_premise, percentage_fall_hypothesis))
+
+","fall_in_assets_premise = 6 # in billion dollars
+percentage_fall_hypothesis = 1.0 # in percent
+
+def entailment_or_contradiction_or_neutral(fall_in_assets_premise, percentage_fall_hypothesis):
+    # the hypothesis and premise mention the reduction in Saudi central bank's net foreign assets
+    # as the premise does not provide enough information to convert the billion dollars reduction to percentage, 
+    # we cannot compare it with the percentage reduction in the hypothesis. 
+    # therefore, we cannot determine if the hypothesis entails, contradicts or is neutral to the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral(fall_in_assets_premise, percentage_fall_hypothesis))
+"
+82,General Motors to announce $1 billion in U.S. investment,General Motors Plans at Least $1 Billion in Fresh U.S. Investment,entailment,82,"```python
+investment_premise = 1 # in billions
+investment_hypothesis = 1 # in billions
+
+def entailment_or_contradiction_or_neutral(investment_premise, investment_hypothesis):
+    # the hypothesis and premise mention the value of the planned investment by General Motors in the US
+    # check if the hypothesis contradicts the premise by checking if the investment value is not equal in the two sentences
+    if investment_premise != investment_hypothesis:
+        return False
+    # if the investment value in the hypothesis is equal or greater than the one in the premise, then the hypothesis entails the premise
+    if investment_hypothesis >= investment_premise:
+        return True
+    # if the investment value in the hypothesis is less than in the premise, then the hypothesis is neutral to the premise
+    else:
+        return None
+
+print(entailment_or_contradiction_or_neutral(investment_premise, investment_hypothesis))
+```
+","
+# Premise: General Motors to announce $1 billion in U.S. investment
+# Hypothesis: General Motors Plans at Least $1 Billion in Fresh U.S. Investment
+# Golden Label: entailment
+
+
+investment_premise = 1 # in billions
+investment_hypothesis = 1 # in billions
+
+def entailment_or_contradiction_or_neutral(investment_premise, investment_hypothesis):
+    # the hypothesis and premise mention the value of the planned investment by General Motors in the US
+    # check if the hypothesis contradicts the premise by checking if the investment value is not equal in the two sentences
+    if investment_premise != investment_hypothesis:
+        return False
+    # if the investment value in the hypothesis is equal or greater than the one in the premise, then the hypothesis entails the premise
+    if investment_hypothesis >= investment_premise:
+        return True
+    # if the investment value in the hypothesis is less than in the premise, then the hypothesis is neutral to the premise
+    else:
+        return None
+
+print(entailment_or_contradiction_or_neutral(investment_premise, investment_hypothesis))
+
+","investment_premise = 1 # in billions
+investment_hypothesis = 1 # in billions
+
+def entailment_or_contradiction_or_neutral(investment_premise, investment_hypothesis):
+    # the hypothesis and premise mention the value of the planned investment by General Motors in the US
+    # check if the hypothesis contradicts the premise by checking if the investment value is not equal in the two sentences
+    if investment_premise != investment_hypothesis:
+        return False
+    # if the investment value in the hypothesis is equal or greater than the one in the premise, then the hypothesis entails the premise
+    if investment_hypothesis >= investment_premise:
+        return True
+    # if the investment value in the hypothesis is less than in the premise, then the hypothesis is neutral to the premise
+    else:
+        return None
+
+print(entailment_or_contradiction_or_neutral(investment_premise, investment_hypothesis))
+"
+147,Reserve Bank of Australia lift interest rates again to 3.75%,Australia Increases Benchmark Interest Rate to 3.75%,entailment,147,"```python
+interest_rate_premise = 3.75
+interest_rate_hypothesis = 3.75
+
+def entailment_or_contradiction_or_neutral(interest_rate_premise, interest_rate_hypothesis):
+    # the hypothesis and premise mention the interest rate set by the Reserve Bank of Australia
+    # check if the hypothesis entails the premise by checking if the interest rates are equal in the two sentences
+    if interest_rate_premise == interest_rate_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(interest_rate_premise, interest_rate_hypothesis))
+```
+This script checks if the interest rate mentioned in the hypothesis matches the one in the premise. If they match, the hypothesis is entailed by the premise. If they don't, the hypothesis contradicts the premise.","
+# Premise: Reserve Bank of Australia lift interest rates again to 3.75%
+# Hypothesis: Australia Increases Benchmark Interest Rate to 3.75%
+# Golden Label: entailment
+
+
+interest_rate_premise = 3.75
+interest_rate_hypothesis = 3.75
+
+def entailment_or_contradiction_or_neutral(interest_rate_premise, interest_rate_hypothesis):
+    # the hypothesis and premise mention the interest rate set by the Reserve Bank of Australia
+    # check if the hypothesis entails the premise by checking if the interest rates are equal in the two sentences
+    if interest_rate_premise == interest_rate_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(interest_rate_premise, interest_rate_hypothesis))
+
+","interest_rate_premise = 3.75
+interest_rate_hypothesis = 3.75
+
+def entailment_or_contradiction_or_neutral(interest_rate_premise, interest_rate_hypothesis):
+    # the hypothesis and premise mention the interest rate set by the Reserve Bank of Australia
+    # check if the hypothesis entails the premise by checking if the interest rates are equal in the two sentences
+    if interest_rate_premise == interest_rate_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(interest_rate_premise, interest_rate_hypothesis))
+"
+234,Argentina agrees $50bn financing deal with IMF,IMF agrees $50bn loan for Argentina,entailment,234,"```python
+loan_amount_premise = 50
+loan_amount_hypothesis = 50
+
+def entailment_or_contradiction_or_neutral(loan_amount_premise, loan_amount_hypothesis):
+    # the hypothesis and premise mention a loan amount agreed between Argentina and IMF
+    # check if the hypothesis entails the premise by checking if the loan amount is equal in the two sentences
+    if loan_amount_premise == loan_amount_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(loan_amount_premise, loan_amount_hypothesis))
+```
+In this case, the hypothesis does not contradict or is neutral to the premise, but entails it, since it rephrases the premise without changing the quantity of the loan.","
+# Premise: Argentina agrees $50bn financing deal with IMF
+# Hypothesis: IMF agrees $50bn loan for Argentina
+# Golden Label: entailment
+
+
+loan_amount_premise = 50
+loan_amount_hypothesis = 50
+
+def entailment_or_contradiction_or_neutral(loan_amount_premise, loan_amount_hypothesis):
+    # the hypothesis and premise mention a loan amount agreed between Argentina and IMF
+    # check if the hypothesis entails the premise by checking if the loan amount is equal in the two sentences
+    if loan_amount_premise == loan_amount_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(loan_amount_premise, loan_amount_hypothesis))
+
+","loan_amount_premise = 50
+loan_amount_hypothesis = 50
+
+def entailment_or_contradiction_or_neutral(loan_amount_premise, loan_amount_hypothesis):
+    # the hypothesis and premise mention a loan amount agreed between Argentina and IMF
+    # check if the hypothesis entails the premise by checking if the loan amount is equal in the two sentences
+    if loan_amount_premise == loan_amount_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(loan_amount_premise, loan_amount_hypothesis))
+"
+235,US Raises Tax On Chinese Steel Imports By 522%,US raises China steel taxes by 522%,entailment,235,"```python
+tax_increase_premise = 522
+tax_increase_hypothesis = 522
+
+def entailment_or_contradiction_or_neutral(tax_increase_premise, tax_increase_hypothesis):
+    # the hypothesis and premise mention the tax increase percentage on Chinese steel imports
+    # check if the hypothesis entails the premise by checking if the tax increase percentage is equal in the two sentences
+    if tax_increase_premise == tax_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(tax_increase_premise, tax_increase_hypothesis))
+```
+","
+# Premise: US Raises Tax On Chinese Steel Imports By 522%
+# Hypothesis: US raises China steel taxes by 522%
+# Golden Label: entailment
+
+
+tax_increase_premise = 522
+tax_increase_hypothesis = 522
+
+def entailment_or_contradiction_or_neutral(tax_increase_premise, tax_increase_hypothesis):
+    # the hypothesis and premise mention the tax increase percentage on Chinese steel imports
+    # check if the hypothesis entails the premise by checking if the tax increase percentage is equal in the two sentences
+    if tax_increase_premise == tax_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(tax_increase_premise, tax_increase_hypothesis))
+
+","tax_increase_premise = 522
+tax_increase_hypothesis = 522
+
+def entailment_or_contradiction_or_neutral(tax_increase_premise, tax_increase_hypothesis):
+    # the hypothesis and premise mention the tax increase percentage on Chinese steel imports
+    # check if the hypothesis entails the premise by checking if the tax increase percentage is equal in the two sentences
+    if tax_increase_premise == tax_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(tax_increase_premise, tax_increase_hypothesis))
+"
+195,Dozens Of Cities And States Will Raise Their Minimum Wages For 2017,20 Of The Most Expensive Cities In The World,neutral,195,"```python
+# In this case, the premise and the hypothesis don't share any common quantitative or textual details
+# Thus, they are neutral to each other
+
+def entailment_or_contradiction_or_neutral():
+    # Since the premise and hypothesis do not share any common information, they are neutral to each other
+    return None
+
+print(entailment_or_contradiction_or_neutral())
+```
+The Python function returns None, indicating that the premise and the hypothesis are neutral to each other.","
+# Premise: Dozens Of Cities And States Will Raise Their Minimum Wages For 2017
+# Hypothesis: 20 Of The Most Expensive Cities In The World
+# Golden Label: neutral
+
+
+# In this case, the premise and the hypothesis don't share any common quantitative or textual details
+# Thus, they are neutral to each other
+
+def entailment_or_contradiction_or_neutral():
+    # Since the premise and hypothesis do not share any common information, they are neutral to each other
+    return None
+
+print(entailment_or_contradiction_or_neutral())
+
+","# In this case, the premise and the hypothesis don't share any common quantitative or textual details
+# Thus, they are neutral to each other
+
+def entailment_or_contradiction_or_neutral():
+    # Since the premise and hypothesis do not share any common information, they are neutral to each other
+    return None
+
+print(entailment_or_contradiction_or_neutral())
+"
+30,A tiny .00017% elite control over $2 Trillion by using threats of violence and imprisonment against the public.,"A tiny .00017% US elite spends over $3.5 Trillion every year, taken by threats of violence against the public.",neutral,30,"```python
+elite_percentage_control_premise = 0.00017
+amount_controlled_premise = 2
+elite_percentage_control_hypothesis = 0.00017
+amount_spent_hypothesis = 3.5
+
+def entailment_or_contradiction_or_neutral(elite_percentage_control_premise, amount_controlled_premise, elite_percentage_control_hypothesis, amount_spent_hypothesis):
+    # the hypothesis and premise mention a percentage of the elite and an amount of money related to them
+    # check if the hypothesis contradicts the premise by checking if the percentage of the elite is not equal between the two sentences
+    if elite_percentage_control_premise != elite_percentage_control_hypothesis:
+        return False
+    # check if the hypothesised amount spent contradict the premise one by being lower or equal to it
+    if amount_spent_hypothesis <= amount_controlled_premise:
+        return False
+    # any amount higher than 2 will entail the amount in the premise, so the hypothesis is neutral to the premise, since it does not contradict it and it also does not exclusively entail it
+    return None
+
+print(entailment_or_contradiction_or_neutral(elite_percentage_control_premise, amount_controlled_premise, elite_percentage_control_hypothesis, amount_spent_hypothesis))
+```
+","
+# Premise: A tiny .00017% elite control over $2 Trillion by using threats of violence and imprisonment against the public.
+# Hypothesis: A tiny .00017% US elite spends over $3.5 Trillion every year, taken by threats of violence against the public.
+# Golden Label: neutral
+
+
+elite_percentage_control_premise = 0.00017
+amount_controlled_premise = 2
+elite_percentage_control_hypothesis = 0.00017
+amount_spent_hypothesis = 3.5
+
+def entailment_or_contradiction_or_neutral(elite_percentage_control_premise, amount_controlled_premise, elite_percentage_control_hypothesis, amount_spent_hypothesis):
+    # the hypothesis and premise mention a percentage of the elite and an amount of money related to them
+    # check if the hypothesis contradicts the premise by checking if the percentage of the elite is not equal between the two sentences
+    if elite_percentage_control_premise != elite_percentage_control_hypothesis:
+        return False
+    # check if the hypothesised amount spent contradict the premise one by being lower or equal to it
+    if amount_spent_hypothesis <= amount_controlled_premise:
+        return False
+    # any amount higher than 2 will entail the amount in the premise, so the hypothesis is neutral to the premise, since it does not contradict it and it also does not exclusively entail it
+    return None
+
+print(entailment_or_contradiction_or_neutral(elite_percentage_control_premise, amount_controlled_premise, elite_percentage_control_hypothesis, amount_spent_hypothesis))
+
+","elite_percentage_control_premise = 0.00017
+amount_controlled_premise = 2
+elite_percentage_control_hypothesis = 0.00017
+amount_spent_hypothesis = 3.5
+
+def entailment_or_contradiction_or_neutral(elite_percentage_control_premise, amount_controlled_premise, elite_percentage_control_hypothesis, amount_spent_hypothesis):
+    # the hypothesis and premise mention a percentage of the elite and an amount of money related to them
+    # check if the hypothesis contradicts the premise by checking if the percentage of the elite is not equal between the two sentences
+    if elite_percentage_control_premise != elite_percentage_control_hypothesis:
+        return False
+    # check if the hypothesised amount spent contradict the premise one by being lower or equal to it
+    if amount_spent_hypothesis <= amount_controlled_premise:
+        return False
+    # any amount higher than 2 will entail the amount in the premise, so the hypothesis is neutral to the premise, since it does not contradict it and it also does not exclusively entail it
+    return None
+
+print(entailment_or_contradiction_or_neutral(elite_percentage_control_premise, amount_controlled_premise, elite_percentage_control_hypothesis, amount_spent_hypothesis))
+"
+121,Wages Salaries jump by 3.1 percent; highest in decade,"Wages and salaries jump by 3.1%, highest level in a decade",entailment,121,"```python
+# Extracted individual quantities
+wage_increase_premise = 3.1
+wage_increase_hypothesis = 3.1
+
+def entailment_or_contradiction_or_neutral(wage_increase_premise, wage_increase_hypothesis):
+    # The hypothesis and premise mention the increase in wages and salaries
+    # Check if the hypothesis entails the premise by checking if the wage increase is equal in the two sentences
+    if wage_increase_premise == wage_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(wage_increase_premise, wage_increase_hypothesis))
+```","
+# Premise: Wages Salaries jump by 3.1 percent; highest in decade
+# Hypothesis: Wages and salaries jump by 3.1%, highest level in a decade
+# Golden Label: entailment
+
+
+# Extracted individual quantities
+wage_increase_premise = 3.1
+wage_increase_hypothesis = 3.1
+
+def entailment_or_contradiction_or_neutral(wage_increase_premise, wage_increase_hypothesis):
+    # The hypothesis and premise mention the increase in wages and salaries
+    # Check if the hypothesis entails the premise by checking if the wage increase is equal in the two sentences
+    if wage_increase_premise == wage_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(wage_increase_premise, wage_increase_hypothesis))
+
+","# Extracted individual quantities
+wage_increase_premise = 3.1
+wage_increase_hypothesis = 3.1
+
+def entailment_or_contradiction_or_neutral(wage_increase_premise, wage_increase_hypothesis):
+    # The hypothesis and premise mention the increase in wages and salaries
+    # Check if the hypothesis entails the premise by checking if the wage increase is equal in the two sentences
+    if wage_increase_premise == wage_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(wage_increase_premise, wage_increase_hypothesis))
+"
+37,Trump considers hiking proposed tariffs on $200 billion in Chinese goods to 25%,US Considers 25% Tariffs on $200 Billion in Chinese Imports. (Previously 10% on $200 Billion),neutral,37,"```python
+tariff_percentage_premise = 25
+value_of_goods_premise = 200
+tariff_percentage_hypothesis = 25
+value_of_goods_hypothesis = 200
+
+def entailment_or_contradiction_or_neutral(tariff_percentage_premise, value_of_goods_premise, tariff_percentage_hypothesis, value_of_goods_hypothesis):
+    # the hypothesis and premise mention a proposed tariff increase on Chinese goods
+    # check if the hypothesis contradicts the premise by checking if the tariff percentage or value of goods is not equal between the two sentences
+    if tariff_percentage_premise != tariff_percentage_hypothesis or value_of_goods_premise != value_of_goods_hypothesis:
+        return False
+    else:
+        # if the percentages and values are equal, the hypothesis entails the premise
+        return True
+
+print(entailment_or_contradiction_or_neutral(tariff_percentage_premise, value_of_goods_premise, tariff_percentage_hypothesis, value_of_goods_hypothesis))
+```
+In this case, the hypothesis entails the premise as it provides the same information about the proposed tariffs, their percentage and the value of goods they will be applied on.","
+# Premise: Trump considers hiking proposed tariffs on $200 billion in Chinese goods to 25%
+# Hypothesis: US Considers 25% Tariffs on $200 Billion in Chinese Imports. (Previously 10% on $200 Billion)
+# Golden Label: neutral
+
+
+tariff_percentage_premise = 25
+value_of_goods_premise = 200
+tariff_percentage_hypothesis = 25
+value_of_goods_hypothesis = 200
+
+def entailment_or_contradiction_or_neutral(tariff_percentage_premise, value_of_goods_premise, tariff_percentage_hypothesis, value_of_goods_hypothesis):
+    # the hypothesis and premise mention a proposed tariff increase on Chinese goods
+    # check if the hypothesis contradicts the premise by checking if the tariff percentage or value of goods is not equal between the two sentences
+    if tariff_percentage_premise != tariff_percentage_hypothesis or value_of_goods_premise != value_of_goods_hypothesis:
+        return False
+    else:
+        # if the percentages and values are equal, the hypothesis entails the premise
+        return True
+
+print(entailment_or_contradiction_or_neutral(tariff_percentage_premise, value_of_goods_premise, tariff_percentage_hypothesis, value_of_goods_hypothesis))
+
+","tariff_percentage_premise = 25
+value_of_goods_premise = 200
+tariff_percentage_hypothesis = 25
+value_of_goods_hypothesis = 200
+
+def entailment_or_contradiction_or_neutral(tariff_percentage_premise, value_of_goods_premise, tariff_percentage_hypothesis, value_of_goods_hypothesis):
+    # the hypothesis and premise mention a proposed tariff increase on Chinese goods
+    # check if the hypothesis contradicts the premise by checking if the tariff percentage or value of goods is not equal between the two sentences
+    if tariff_percentage_premise != tariff_percentage_hypothesis or value_of_goods_premise != value_of_goods_hypothesis:
+        return False
+    else:
+        # if the percentages and values are equal, the hypothesis entails the premise
+        return True
+
+print(entailment_or_contradiction_or_neutral(tariff_percentage_premise, value_of_goods_premise, tariff_percentage_hypothesis, value_of_goods_hypothesis))
+"
+108,"BloombergMarkets U.S. Payrolls Rise 164,000 While Jobless Rate Falls to 3.9%","U.S. Payrolls Rebound to 164,000 Gain; Jobless Rate Hits 3.9%",entailment,108,"```python
+payrolls_premise = 164000
+jobless_rate_premise = 3.9
+payrolls_hypothesis = 164000
+jobless_rate_hypothesis = 3.9
+
+def entailment_or_contradiction_or_neutral(payrolls_premise, jobless_rate_premise, payrolls_hypothesis, jobless_rate_hypothesis):
+    # the hypothesis and premise mention the payrolls and jobless rate in the US
+    # check if the hypothesis contradicts the premise by checking if the payroll number is not equal between the two sentences
+    if payrolls_premise != payrolls_hypothesis:
+        return False
+    # check if the hypothesised jobless rate is not equal to the premise one
+    if jobless_rate_premise != jobless_rate_hypothesis:
+        return False
+    # if neither contradicts, the hypothesis entails the premise
+    return True
+
+print(entailment_or_contradiction_or_neutral(payrolls_premise, jobless_rate_premise, payrolls_hypothesis, jobless_rate_hypothesis))
+```
+This script first sets the numerical values from the premise and hypothesis. Then, it defines a function that checks whether the numerical values from the hypothesis contradict those from the premise. If they don't contradict, the hypothesis entails the premise. If any of the numerical values from the hypothesis contradict those from the premise, the function returns False, indicating contradiction.","
+# Premise: BloombergMarkets U.S. Payrolls Rise 164,000 While Jobless Rate Falls to 3.9%
+# Hypothesis: U.S. Payrolls Rebound to 164,000 Gain; Jobless Rate Hits 3.9%
+# Golden Label: entailment
+
+
+payrolls_premise = 164000
+jobless_rate_premise = 3.9
+payrolls_hypothesis = 164000
+jobless_rate_hypothesis = 3.9
+
+def entailment_or_contradiction_or_neutral(payrolls_premise, jobless_rate_premise, payrolls_hypothesis, jobless_rate_hypothesis):
+    # the hypothesis and premise mention the payrolls and jobless rate in the US
+    # check if the hypothesis contradicts the premise by checking if the payroll number is not equal between the two sentences
+    if payrolls_premise != payrolls_hypothesis:
+        return False
+    # check if the hypothesised jobless rate is not equal to the premise one
+    if jobless_rate_premise != jobless_rate_hypothesis:
+        return False
+    # if neither contradicts, the hypothesis entails the premise
+    return True
+
+print(entailment_or_contradiction_or_neutral(payrolls_premise, jobless_rate_premise, payrolls_hypothesis, jobless_rate_hypothesis))
+
+","payrolls_premise = 164000
+jobless_rate_premise = 3.9
+payrolls_hypothesis = 164000
+jobless_rate_hypothesis = 3.9
+
+def entailment_or_contradiction_or_neutral(payrolls_premise, jobless_rate_premise, payrolls_hypothesis, jobless_rate_hypothesis):
+    # the hypothesis and premise mention the payrolls and jobless rate in the US
+    # check if the hypothesis contradicts the premise by checking if the payroll number is not equal between the two sentences
+    if payrolls_premise != payrolls_hypothesis:
+        return False
+    # check if the hypothesised jobless rate is not equal to the premise one
+    if jobless_rate_premise != jobless_rate_hypothesis:
+        return False
+    # if neither contradicts, the hypothesis entails the premise
+    return True
+
+print(entailment_or_contradiction_or_neutral(payrolls_premise, jobless_rate_premise, payrolls_hypothesis, jobless_rate_hypothesis))
+"
+33,"Based off 1st time unemployment claims, the June report will likely be exactly the same as May's",Based off of 1st unemployment reports the jobs report for June will probably be unchanged from May,entailment,33,"```python
+# As there is no explicit number mentioned, we can consider the number of times the reports are mentioned as 1
+reports_premise = 1
+reports_hypothesis = 1
+
+def entailment_or_contradiction_or_neutral(reports_premise, reports_hypothesis):
+    # the hypothesis and premise mention the reports of unemployment claims
+    # check if the hypothesis entails the premise by checking if the number of reports is equal in the two sentences
+    if reports_premise == reports_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(reports_premise, reports_hypothesis))
+```
+This script checks if the number of reports mentioned in the hypothesis is the same as in the premise. If they are equal, the hypothesis is said to entail the premise, otherwise it does not. In this case, both the premise and the hypothesis mention the reports once, so the function should return True, indicating entailment.","
+# Premise: Based off 1st time unemployment claims, the June report will likely be exactly the same as May's
+# Hypothesis: Based off of 1st unemployment reports the jobs report for June will probably be unchanged from May
+# Golden Label: entailment
+
+
+# As there is no explicit number mentioned, we can consider the number of times the reports are mentioned as 1
+reports_premise = 1
+reports_hypothesis = 1
+
+def entailment_or_contradiction_or_neutral(reports_premise, reports_hypothesis):
+    # the hypothesis and premise mention the reports of unemployment claims
+    # check if the hypothesis entails the premise by checking if the number of reports is equal in the two sentences
+    if reports_premise == reports_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(reports_premise, reports_hypothesis))
+
+","# As there is no explicit number mentioned, we can consider the number of times the reports are mentioned as 1
+reports_premise = 1
+reports_hypothesis = 1
+
+def entailment_or_contradiction_or_neutral(reports_premise, reports_hypothesis):
+    # the hypothesis and premise mention the reports of unemployment claims
+    # check if the hypothesis entails the premise by checking if the number of reports is equal in the two sentences
+    if reports_premise == reports_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(reports_premise, reports_hypothesis))
+"
+202,No there is not a $2 TRILLION error in the budget,Trump Budget Based on $2 Trillion Math Error,contradiction,202,"```python
+budget_error_premise = 2  # in trillions
+budget_error_hypothesis = 2  # in trillions
+
+def entailment_or_contradiction_or_neutral(budget_error_premise, budget_error_hypothesis):
+    # the hypothesis and premise mention an error in a budget
+    # check if the hypothesis contradicts the premise by checking if the error in the budget is not equal between the two sentences
+    if budget_error_premise != budget_error_hypothesis:
+        return False
+    # if the errors are equal, then the hypothesis contradicts the premise, because the premise states there is no such error
+    return True
+
+print(entailment_or_contradiction_or_neutral(budget_error_premise, budget_error_hypothesis))
+```
+The function returns True, which means the hypothesis contradicts the premise.","
+# Premise: No there is not a $2 TRILLION error in the budget
+# Hypothesis: Trump Budget Based on $2 Trillion Math Error
+# Golden Label: contradiction
+
+
+budget_error_premise = 2  # in trillions
+budget_error_hypothesis = 2  # in trillions
+
+def entailment_or_contradiction_or_neutral(budget_error_premise, budget_error_hypothesis):
+    # the hypothesis and premise mention an error in a budget
+    # check if the hypothesis contradicts the premise by checking if the error in the budget is not equal between the two sentences
+    if budget_error_premise != budget_error_hypothesis:
+        return False
+    # if the errors are equal, then the hypothesis contradicts the premise, because the premise states there is no such error
+    return True
+
+print(entailment_or_contradiction_or_neutral(budget_error_premise, budget_error_hypothesis))
+
+","budget_error_premise = 2  # in trillions
+budget_error_hypothesis = 2  # in trillions
+
+def entailment_or_contradiction_or_neutral(budget_error_premise, budget_error_hypothesis):
+    # the hypothesis and premise mention an error in a budget
+    # check if the hypothesis contradicts the premise by checking if the error in the budget is not equal between the two sentences
+    if budget_error_premise != budget_error_hypothesis:
+        return False
+    # if the errors are equal, then the hypothesis contradicts the premise, because the premise states there is no such error
+    return True
+
+print(entailment_or_contradiction_or_neutral(budget_error_premise, budget_error_hypothesis))
+"
+67,Fed's Rosengren Wants Two More Hikes in 2018 as Economy Grows,Top Fed official wants two more rate hikes in 2018 as US economy grows,entailment,67,"```python
+hikes_premise = 2
+hikes_hypothesis = 2
+
+def entailment_or_contradiction_or_neutral(hikes_premise, hikes_hypothesis):
+    # the hypothesis and premise mention the number of rate hikes wanted by a Fed official in 2018
+    # check if the hypothesis entails the premise by checking if the number of hikes is equal in the two sentences
+    if hikes_premise == hikes_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(hikes_premise, hikes_hypothesis))
+```
+","
+# Premise: Fed's Rosengren Wants Two More Hikes in 2018 as Economy Grows
+# Hypothesis: Top Fed official wants two more rate hikes in 2018 as US economy grows
+# Golden Label: entailment
+
+
+hikes_premise = 2
+hikes_hypothesis = 2
+
+def entailment_or_contradiction_or_neutral(hikes_premise, hikes_hypothesis):
+    # the hypothesis and premise mention the number of rate hikes wanted by a Fed official in 2018
+    # check if the hypothesis entails the premise by checking if the number of hikes is equal in the two sentences
+    if hikes_premise == hikes_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(hikes_premise, hikes_hypothesis))
+
+","hikes_premise = 2
+hikes_hypothesis = 2
+
+def entailment_or_contradiction_or_neutral(hikes_premise, hikes_hypothesis):
+    # the hypothesis and premise mention the number of rate hikes wanted by a Fed official in 2018
+    # check if the hypothesis entails the premise by checking if the number of hikes is equal in the two sentences
+    if hikes_premise == hikes_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(hikes_premise, hikes_hypothesis))
+"
+17,"SENSEX rallied 500 points, Tata motors up 8.01%, Today Nifty future stock trading call on Tuesday 10 Sept, Indian share market tips","Sensex & Nifty down, Global market update today, Indian share nifty future trading call on Wednesday 11 Sept, Free Stock future call",contradiction,17,"```python
+points_up_premise = 500
+tata_motors_up_premise = 8.01
+date_premise = 10
+points_down_hypothesis = True
+date_hypothesis = 11
+
+def entailment_or_contradiction_or_neutral(points_up_premise, tata_motors_up_premise, date_premise, points_down_hypothesis, date_hypothesis):
+    # the hypothesis mentions that Sensex and Nifty are down, which contradicts the premise that Sensex rallied 500 points
+    if points_down_hypothesis:
+        return False
+    # the hypothesis mentions a date that is one day after the date mentioned in the premise, which doesn't contradict or entail the premise
+    if date_premise != date_hypothesis:
+        return None
+    # any other difference is not contradictory or entailment, so the hypothesis is neutral
+    return None
+
+print(entailment_or_contradiction_or_neutral(points_up_premise, tata_motors_up_premise, date_premise, points_down_hypothesis, date_hypothesis))
+```","
+# Premise: SENSEX rallied 500 points, Tata motors up 8.01%, Today Nifty future stock trading call on Tuesday 10 Sept, Indian share market tips
+# Hypothesis: Sensex & Nifty down, Global market update today, Indian share nifty future trading call on Wednesday 11 Sept, Free Stock future call
+# Golden Label: contradiction
+
+
+points_up_premise = 500
+tata_motors_up_premise = 8.01
+date_premise = 10
+points_down_hypothesis = True
+date_hypothesis = 11
+
+def entailment_or_contradiction_or_neutral(points_up_premise, tata_motors_up_premise, date_premise, points_down_hypothesis, date_hypothesis):
+    # the hypothesis mentions that Sensex and Nifty are down, which contradicts the premise that Sensex rallied 500 points
+    if points_down_hypothesis:
+        return False
+    # the hypothesis mentions a date that is one day after the date mentioned in the premise, which doesn't contradict or entail the premise
+    if date_premise != date_hypothesis:
+        return None
+    # any other difference is not contradictory or entailment, so the hypothesis is neutral
+    return None
+
+print(entailment_or_contradiction_or_neutral(points_up_premise, tata_motors_up_premise, date_premise, points_down_hypothesis, date_hypothesis))
+
+","points_up_premise = 500
+tata_motors_up_premise = 8.01
+date_premise = 10
+points_down_hypothesis = True
+date_hypothesis = 11
+
+def entailment_or_contradiction_or_neutral(points_up_premise, tata_motors_up_premise, date_premise, points_down_hypothesis, date_hypothesis):
+    # the hypothesis mentions that Sensex and Nifty are down, which contradicts the premise that Sensex rallied 500 points
+    if points_down_hypothesis:
+        return False
+    # the hypothesis mentions a date that is one day after the date mentioned in the premise, which doesn't contradict or entail the premise
+    if date_premise != date_hypothesis:
+        return None
+    # any other difference is not contradictory or entailment, so the hypothesis is neutral
+    return None
+
+print(entailment_or_contradiction_or_neutral(points_up_premise, tata_motors_up_premise, date_premise, points_down_hypothesis, date_hypothesis))
+"
+231,"Gold tops $1,500 for first time",Gold tops $1500/oz for he first time,entailment,231,"```python
+gold_price_premise = 1500
+gold_price_hypothesis = 1500
+
+def entailment_or_contradiction_or_neutral(gold_price_premise, gold_price_hypothesis):
+    # the hypothesis and premise mention the gold price topping a certain value for the first time
+    # check if the hypothesis entails the premise by checking if the gold price is equal in the two sentences
+    if gold_price_premise == gold_price_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(gold_price_premise, gold_price_hypothesis))
+```
+In this case, the premise and the hypothesis both mention that gold has topped a price of $1500 for the first time, so the hypothesis directly entails the premise.","
+# Premise: Gold tops $1,500 for first time
+# Hypothesis: Gold tops $1500/oz for he first time
+# Golden Label: entailment
+
+
+gold_price_premise = 1500
+gold_price_hypothesis = 1500
+
+def entailment_or_contradiction_or_neutral(gold_price_premise, gold_price_hypothesis):
+    # the hypothesis and premise mention the gold price topping a certain value for the first time
+    # check if the hypothesis entails the premise by checking if the gold price is equal in the two sentences
+    if gold_price_premise == gold_price_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(gold_price_premise, gold_price_hypothesis))
+
+","gold_price_premise = 1500
+gold_price_hypothesis = 1500
+
+def entailment_or_contradiction_or_neutral(gold_price_premise, gold_price_hypothesis):
+    # the hypothesis and premise mention the gold price topping a certain value for the first time
+    # check if the hypothesis entails the premise by checking if the gold price is equal in the two sentences
+    if gold_price_premise == gold_price_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(gold_price_premise, gold_price_hypothesis))
+"
+214,Dow Hits 20000 for First Time,"Dow Hits 20,000 For First Time in History",entailment,214,"```python
+dow_value_premise = 20000
+dow_value_hypothesis = 20000
+
+def entailment_or_contradiction_or_neutral(dow_value_premise, dow_value_hypothesis):
+    # the hypothesis and premise mention the Dow Jones Industrial Average hitting a certain value for the first time
+    # check if the hypothesis entails the premise by checking if the value is equal in the two sentences
+    if dow_value_premise == dow_value_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(dow_value_premise, dow_value_hypothesis))
+```
+The hypothesis entails the premise as it mentions the same value (20000) for the Dow Jones Industrial Average hitting for the first time.","
+# Premise: Dow Hits 20000 for First Time
+# Hypothesis: Dow Hits 20,000 For First Time in History
+# Golden Label: entailment
+
+
+dow_value_premise = 20000
+dow_value_hypothesis = 20000
+
+def entailment_or_contradiction_or_neutral(dow_value_premise, dow_value_hypothesis):
+    # the hypothesis and premise mention the Dow Jones Industrial Average hitting a certain value for the first time
+    # check if the hypothesis entails the premise by checking if the value is equal in the two sentences
+    if dow_value_premise == dow_value_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(dow_value_premise, dow_value_hypothesis))
+
+","dow_value_premise = 20000
+dow_value_hypothesis = 20000
+
+def entailment_or_contradiction_or_neutral(dow_value_premise, dow_value_hypothesis):
+    # the hypothesis and premise mention the Dow Jones Industrial Average hitting a certain value for the first time
+    # check if the hypothesis entails the premise by checking if the value is equal in the two sentences
+    if dow_value_premise == dow_value_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(dow_value_premise, dow_value_hypothesis))
+"
+19,"Sensex high 20000 touch, Nifty above 5900, Tuesday stock market positive and sure nifty future trading call on today","SENSEX & Nifty down, Sensex down 357.39 Pts, Nifty future tips, Intraday stock future trading call tomorrow, today nifty future call",contradiction,19,"```python
+# From the premise it is clear that Sensex and Nifty are in a positive state.
+# From the hypothesis it is clear that Sensex and Nifty are in a negative state.
+sensex_premise = 20000
+nifty_premise = 5900
+sensex_hypothesis = 357.39
+nifty_hypothesis = True
+
+def entailment_or_contradiction_or_neutral(sensex_premise, nifty_premise, sensex_hypothesis, nifty_hypothesis):
+    # The hypothesis and premise mention Sensex and Nifty
+    # Check if the hypothesis contradicts the premise by checking if Sensex and Nifty are not in a positive state in the hypothesis
+    if sensex_hypothesis < sensex_premise or nifty_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(sensex_premise, nifty_premise, sensex_hypothesis, nifty_hypothesis))
+```
+The Python script above will return False, because the hypothesis contradicts the premise. The premise states that Sensex and Nifty are in a positive state, while the hypothesis states that they are in a negative state.","
+# Premise: Sensex high 20000 touch, Nifty above 5900, Tuesday stock market positive and sure nifty future trading call on today
+# Hypothesis: SENSEX & Nifty down, Sensex down 357.39 Pts, Nifty future tips, Intraday stock future trading call tomorrow, today nifty future call
+# Golden Label: contradiction
+
+
+# From the premise it is clear that Sensex and Nifty are in a positive state.
+# From the hypothesis it is clear that Sensex and Nifty are in a negative state.
+sensex_premise = 20000
+nifty_premise = 5900
+sensex_hypothesis = 357.39
+nifty_hypothesis = True
+
+def entailment_or_contradiction_or_neutral(sensex_premise, nifty_premise, sensex_hypothesis, nifty_hypothesis):
+    # The hypothesis and premise mention Sensex and Nifty
+    # Check if the hypothesis contradicts the premise by checking if Sensex and Nifty are not in a positive state in the hypothesis
+    if sensex_hypothesis < sensex_premise or nifty_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(sensex_premise, nifty_premise, sensex_hypothesis, nifty_hypothesis))
+
+","# From the premise it is clear that Sensex and Nifty are in a positive state.
+# From the hypothesis it is clear that Sensex and Nifty are in a negative state.
+sensex_premise = 20000
+nifty_premise = 5900
+sensex_hypothesis = 357.39
+nifty_hypothesis = True
+
+def entailment_or_contradiction_or_neutral(sensex_premise, nifty_premise, sensex_hypothesis, nifty_hypothesis):
+    # The hypothesis and premise mention Sensex and Nifty
+    # Check if the hypothesis contradicts the premise by checking if Sensex and Nifty are not in a positive state in the hypothesis
+    if sensex_hypothesis < sensex_premise or nifty_hypothesis:
+        return False
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(sensex_premise, nifty_premise, sensex_hypothesis, nifty_hypothesis))
+"
+31,"Were going to have a dollar collapse like the 1980s, strategist says","Under Donald Trump's Presidency, Were Going To Have A Dollar Collapse Like The 1980s - Strategist",neutral,31,"```python
+# There are no quantitative measures in the premise or hypothesis
+
+def entailment_or_contradiction_or_neutral():
+    # The hypothesis adds information (Donald Trump's Presidency) to the premise, 
+    # but it does not contradict or directly entail the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral())
+```","
+# Premise: Were going to have a dollar collapse like the 1980s, strategist says
+# Hypothesis: Under Donald Trump's Presidency, Were Going To Have A Dollar Collapse Like The 1980s - Strategist
+# Golden Label: neutral
+
+
+# There are no quantitative measures in the premise or hypothesis
+
+def entailment_or_contradiction_or_neutral():
+    # The hypothesis adds information (Donald Trump's Presidency) to the premise, 
+    # but it does not contradict or directly entail the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral())
+
+","# There are no quantitative measures in the premise or hypothesis
+
+def entailment_or_contradiction_or_neutral():
+    # The hypothesis adds information (Donald Trump's Presidency) to the premise, 
+    # but it does not contradict or directly entail the premise
+    return None
+
+print(entailment_or_contradiction_or_neutral())
+"
+192,California Nears Deal to Adopt a $15 State Minimum Wage,California to Raise Minimum Wage to $15/hour,neutral,192,"```python
+state_minimum_wage_premise = 15
+state_minimum_wage_hypothesis = 15
+
+def entailment_or_contradiction_or_neutral(state_minimum_wage_premise, state_minimum_wage_hypothesis):
+    # the hypothesis and premise mention the minimum wage in California
+    # check if the hypothesis entails the premise by checking if the minimum wage is equal in the two sentences
+    if state_minimum_wage_premise == state_minimum_wage_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(state_minimum_wage_premise, state_minimum_wage_hypothesis))
+```
+The script first assigns the minimum wage mentioned in the premise and hypothesis to the variables 'state_minimum_wage_premise' and 'state_minimum_wage_hypothesis', respectively. The function 'entailment_or_contradiction_or_neutral()' then checks if the minimum wage mentioned in the hypothesis equals that in the premise. If they are equal, it means the hypothesis entails the information in the premise, so the function returns True. If not, it returns False, indicating a contradiction. The print statement at the end calls the function with the assigned variables and prints the result.","
+# Premise: California Nears Deal to Adopt a $15 State Minimum Wage
+# Hypothesis: California to Raise Minimum Wage to $15/hour
+# Golden Label: neutral
+
+
+state_minimum_wage_premise = 15
+state_minimum_wage_hypothesis = 15
+
+def entailment_or_contradiction_or_neutral(state_minimum_wage_premise, state_minimum_wage_hypothesis):
+    # the hypothesis and premise mention the minimum wage in California
+    # check if the hypothesis entails the premise by checking if the minimum wage is equal in the two sentences
+    if state_minimum_wage_premise == state_minimum_wage_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(state_minimum_wage_premise, state_minimum_wage_hypothesis))
+
+","state_minimum_wage_premise = 15
+state_minimum_wage_hypothesis = 15
+
+def entailment_or_contradiction_or_neutral(state_minimum_wage_premise, state_minimum_wage_hypothesis):
+    # the hypothesis and premise mention the minimum wage in California
+    # check if the hypothesis entails the premise by checking if the minimum wage is equal in the two sentences
+    if state_minimum_wage_premise == state_minimum_wage_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(state_minimum_wage_premise, state_minimum_wage_hypothesis))
+"
+56,Black Business Ownership Under Trump Jumps 400% in one year,Survey Finds that Black Business Ownership in the US Jumped 400% in One Year,entailment,56,"```python
+percentage_increase_premise = 400
+percentage_increase_hypothesis = 400
+
+def entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis):
+    # the hypothesis and premise mention the percentage increase in black business ownership in the US in one year
+    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
+    if percentage_increase_premise == percentage_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis))
+```
+","
+# Premise: Black Business Ownership Under Trump Jumps 400% in one year
+# Hypothesis: Survey Finds that Black Business Ownership in the US Jumped 400% in One Year
+# Golden Label: entailment
+
+
+percentage_increase_premise = 400
+percentage_increase_hypothesis = 400
+
+def entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis):
+    # the hypothesis and premise mention the percentage increase in black business ownership in the US in one year
+    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
+    if percentage_increase_premise == percentage_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis))
+
+","percentage_increase_premise = 400
+percentage_increase_hypothesis = 400
+
+def entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis):
+    # the hypothesis and premise mention the percentage increase in black business ownership in the US in one year
+    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
+    if percentage_increase_premise == percentage_increase_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis))
+"
+115,"Dow nosedives more than 1,000 points as stocks' losses deepen","Stocks take another tumble, Dow dives more than 1,000 points",entailment,115,"```python
+dow_points_loss_premise = 1000
+dow_points_loss_hypothesis = 1000
+
+def entailment_or_contradiction_or_neutral(dow_points_loss_premise, dow_points_loss_hypothesis):
+    # the hypothesis and premise mention the number of points Dow lost
+    # check if the hypothesis entails the premise by checking if the number of points lost is equal in the two sentences
+    if dow_points_loss_premise == dow_points_loss_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(dow_points_loss_premise, dow_points_loss_hypothesis))
+```","
+# Premise: Dow nosedives more than 1,000 points as stocks' losses deepen
+# Hypothesis: Stocks take another tumble, Dow dives more than 1,000 points
+# Golden Label: entailment
+
+
+dow_points_loss_premise = 1000
+dow_points_loss_hypothesis = 1000
+
+def entailment_or_contradiction_or_neutral(dow_points_loss_premise, dow_points_loss_hypothesis):
+    # the hypothesis and premise mention the number of points Dow lost
+    # check if the hypothesis entails the premise by checking if the number of points lost is equal in the two sentences
+    if dow_points_loss_premise == dow_points_loss_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(dow_points_loss_premise, dow_points_loss_hypothesis))
+
+","dow_points_loss_premise = 1000
+dow_points_loss_hypothesis = 1000
+
+def entailment_or_contradiction_or_neutral(dow_points_loss_premise, dow_points_loss_hypothesis):
+    # the hypothesis and premise mention the number of points Dow lost
+    # check if the hypothesis entails the premise by checking if the number of points lost is equal in the two sentences
+    if dow_points_loss_premise == dow_points_loss_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(dow_points_loss_premise, dow_points_loss_hypothesis))
+"
+27,"Marijuana Re-crim Protest With Senator Scott Brown Video Part 2, Supporter Tries To School Marijuana Policy Expert, MA GOP Ferrari",Marijuana Re-crim Protest With Senator Scott Brown Video Part 1; Senator Brushes Off Marijuana Reformers and Press,neutral,27,"```python
+video_part_premise = 2
+video_part_hypothesis = 1
+
+def entailment_or_contradiction_or_neutral(video_part_premise, video_part_hypothesis):
+    # the hypothesis and premise mention a video part of a protest with Senator Scott Brown
+    # check if the hypothesis contradicts the premise by checking if the video part number is not equal in the two sentences
+    if video_part_premise != video_part_hypothesis:
+        return False
+    # if the video part number was equal in the two sentences, the hypothesis would entail the premise
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(video_part_premise, video_part_hypothesis))
+```","
+# Premise: Marijuana Re-crim Protest With Senator Scott Brown Video Part 2, Supporter Tries To School Marijuana Policy Expert, MA GOP Ferrari
+# Hypothesis: Marijuana Re-crim Protest With Senator Scott Brown Video Part 1; Senator Brushes Off Marijuana Reformers and Press
+# Golden Label: neutral
+
+
+video_part_premise = 2
+video_part_hypothesis = 1
+
+def entailment_or_contradiction_or_neutral(video_part_premise, video_part_hypothesis):
+    # the hypothesis and premise mention a video part of a protest with Senator Scott Brown
+    # check if the hypothesis contradicts the premise by checking if the video part number is not equal in the two sentences
+    if video_part_premise != video_part_hypothesis:
+        return False
+    # if the video part number was equal in the two sentences, the hypothesis would entail the premise
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(video_part_premise, video_part_hypothesis))
+
+","video_part_premise = 2
+video_part_hypothesis = 1
+
+def entailment_or_contradiction_or_neutral(video_part_premise, video_part_hypothesis):
+    # the hypothesis and premise mention a video part of a protest with Senator Scott Brown
+    # check if the hypothesis contradicts the premise by checking if the video part number is not equal in the two sentences
+    if video_part_premise != video_part_hypothesis:
+        return False
+    # if the video part number was equal in the two sentences, the hypothesis would entail the premise
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(video_part_premise, video_part_hypothesis))
+"
+32,"For First Time In 130 Years, More Young Adults Live With Parents Than With Partners",More young American adults live with parents than with partners or in other situations since 1880s,entailment,32,"```python
+years_premise = 130
+years_hypothesis = 130
+
+def entailment_or_contradiction_or_neutral(years_premise, years_hypothesis):
+    # the hypothesis and premise mention the number of years since a societal change occurred in young adults' living situations
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    if years_premise == years_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(years_premise, years_hypothesis))
+```","
+# Premise: For First Time In 130 Years, More Young Adults Live With Parents Than With Partners
+# Hypothesis: More young American adults live with parents than with partners or in other situations since 1880s
+# Golden Label: entailment
+
+
+years_premise = 130
+years_hypothesis = 130
+
+def entailment_or_contradiction_or_neutral(years_premise, years_hypothesis):
+    # the hypothesis and premise mention the number of years since a societal change occurred in young adults' living situations
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    if years_premise == years_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(years_premise, years_hypothesis))
+
+","years_premise = 130
+years_hypothesis = 130
+
+def entailment_or_contradiction_or_neutral(years_premise, years_hypothesis):
+    # the hypothesis and premise mention the number of years since a societal change occurred in young adults' living situations
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    if years_premise == years_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(years_premise, years_hypothesis))
+"
+35,The modern day Gilded Age of wealth: Top 0.1 percent now have more wealth than bottom 90 percent.,The richest 0.1 percent of Americans is about to control more wealth than the bottom 90 percent,neutral,35,"```python
+top_percentage_premise = 0.1
+bottom_percentage_premise = 90
+top_percentage_hypothesis = 0.1
+bottom_percentage_hypothesis = 90
+
+def entailment_or_contradiction_or_neutral(top_percentage_premise, bottom_percentage_premise, top_percentage_hypothesis, bottom_percentage_hypothesis):
+    # the hypothesis and premise mention the percentage of people at the top and bottom of the wealth distribution
+    # check if the hypothesis contradicts the premise by checking if the percentages are not equal in the two sentences
+    if top_percentage_premise != top_percentage_hypothesis or bottom_percentage_premise != bottom_percentage_hypothesis:
+        return False
+    # if the percentages are equal, the hypothesis entails the premise
+    return True
+
+print(entailment_or_contradiction_or_neutral(top_percentage_premise, bottom_percentage_premise, top_percentage_hypothesis, bottom_percentage_hypothesis))
+```
+The function will return True, indicating that the hypothesis entails the premise.","
+# Premise: The modern day Gilded Age of wealth: Top 0.1 percent now have more wealth than bottom 90 percent.
+# Hypothesis: The richest 0.1 percent of Americans is about to control more wealth than the bottom 90 percent
+# Golden Label: neutral
+
+
+top_percentage_premise = 0.1
+bottom_percentage_premise = 90
+top_percentage_hypothesis = 0.1
+bottom_percentage_hypothesis = 90
+
+def entailment_or_contradiction_or_neutral(top_percentage_premise, bottom_percentage_premise, top_percentage_hypothesis, bottom_percentage_hypothesis):
+    # the hypothesis and premise mention the percentage of people at the top and bottom of the wealth distribution
+    # check if the hypothesis contradicts the premise by checking if the percentages are not equal in the two sentences
+    if top_percentage_premise != top_percentage_hypothesis or bottom_percentage_premise != bottom_percentage_hypothesis:
+        return False
+    # if the percentages are equal, the hypothesis entails the premise
+    return True
+
+print(entailment_or_contradiction_or_neutral(top_percentage_premise, bottom_percentage_premise, top_percentage_hypothesis, bottom_percentage_hypothesis))
+
+","top_percentage_premise = 0.1
+bottom_percentage_premise = 90
+top_percentage_hypothesis = 0.1
+bottom_percentage_hypothesis = 90
+
+def entailment_or_contradiction_or_neutral(top_percentage_premise, bottom_percentage_premise, top_percentage_hypothesis, bottom_percentage_hypothesis):
+    # the hypothesis and premise mention the percentage of people at the top and bottom of the wealth distribution
+    # check if the hypothesis contradicts the premise by checking if the percentages are not equal in the two sentences
+    if top_percentage_premise != top_percentage_hypothesis or bottom_percentage_premise != bottom_percentage_hypothesis:
+        return False
+    # if the percentages are equal, the hypothesis entails the premise
+    return True
+
+print(entailment_or_contradiction_or_neutral(top_percentage_premise, bottom_percentage_premise, top_percentage_hypothesis, bottom_percentage_hypothesis))
+"
+230,"China's Economy Grows 6.9%, but Warning Signs Persist",China's economy grows at 6.9 percent,entailment,230,"```python
+growth_rate_premise = 6.9
+growth_rate_hypothesis = 6.9
+
+def entailment_or_contradiction_or_neutral(growth_rate_premise, growth_rate_hypothesis):
+    # both the hypothesis and premise mention the growth rate of China's economy
+    # check if the hypothesis entails the premise by checking if the growth rates are equal
+    if growth_rate_premise == growth_rate_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(growth_rate_premise, growth_rate_hypothesis))
+```
+The function checks if the growth rate mentioned in the hypothesis matches the growth rate mentioned in the premise. If they are equal, the function returns True indicating that the hypothesis entails the premise. Otherwise, it returns False.","
+# Premise: China's Economy Grows 6.9%, but Warning Signs Persist
+# Hypothesis: China's economy grows at 6.9 percent
+# Golden Label: entailment
+
+
+growth_rate_premise = 6.9
+growth_rate_hypothesis = 6.9
+
+def entailment_or_contradiction_or_neutral(growth_rate_premise, growth_rate_hypothesis):
+    # both the hypothesis and premise mention the growth rate of China's economy
+    # check if the hypothesis entails the premise by checking if the growth rates are equal
+    if growth_rate_premise == growth_rate_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(growth_rate_premise, growth_rate_hypothesis))
+
+","growth_rate_premise = 6.9
+growth_rate_hypothesis = 6.9
+
+def entailment_or_contradiction_or_neutral(growth_rate_premise, growth_rate_hypothesis):
+    # both the hypothesis and premise mention the growth rate of China's economy
+    # check if the hypothesis entails the premise by checking if the growth rates are equal
+    if growth_rate_premise == growth_rate_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(growth_rate_premise, growth_rate_hypothesis))
+"

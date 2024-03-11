@@ -1,3 +1,0 @@
-This directory contains the per-dataset results of the classification performed with a GPT4 model in few-shot prompting.
-label = label obtained with generated script
-golden_label = target label (from EQUATE)

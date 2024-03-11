@@ -1,403 +1,74 @@
-,premise,hypothesis,label,sample_index,llm_answer,py_file_content,completion
-242,"U.S. Adds 113,000 Jobs, in Latest Worrying Sign on Growth","US adds 113,000 jobs in January",neutral,242,"```python
-jobs_added_in_US_premise = 113000
-jobs_added_in_US_hypothesis = 113000
+sample_index,generated_label,error_message,golden_label,premise,hypothesis,clean_premise,clean_hypothesis,completion
+194,entailment,,entailment,"AA to Cut Up to 15,000 Jobs"," American Airlines may cut up to 15,000 jobs","aa to cut up to 15,000 jobs","american airlines may cut up to 15,000 jobs","jobs_premise = 15000
+jobs_hypothesis = 15000
 
-def entailment_or_contradiction_or_neutral(jobs_added_in_US_premise, jobs_added_in_US_hypothesis):
-    # the hypothesis and premise mention the number of jobs added in the US
+def entailment_or_contradiction_or_neutral(jobs_premise, jobs_hypothesis):
+    # the hypothesis and premise mention the number of jobs AA may cut
     # check if the hypothesis entails the premise by checking if the number of jobs is equal in the two sentences
-    if jobs_added_in_US_premise == jobs_added_in_US_hypothesis:
+    if jobs_premise == jobs_hypothesis:
         return True
     else:
         return False
 
-print(entailment_or_contradiction_or_neutral(jobs_added_in_US_premise, jobs_added_in_US_hypothesis))
-```","
-# Premise: U.S. Adds 113,000 Jobs, in Latest Worrying Sign on Growth
-# Hypothesis: US adds 113,000 jobs in January
-# Golden Label: neutral
-
-
-jobs_added_in_US_premise = 113000
-jobs_added_in_US_hypothesis = 113000
-
-def entailment_or_contradiction_or_neutral(jobs_added_in_US_premise, jobs_added_in_US_hypothesis):
-    # the hypothesis and premise mention the number of jobs added in the US
-    # check if the hypothesis entails the premise by checking if the number of jobs is equal in the two sentences
-    if jobs_added_in_US_premise == jobs_added_in_US_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_in_US_premise, jobs_added_in_US_hypothesis))
-
-","jobs_added_in_US_premise = 113000
-jobs_added_in_US_hypothesis = 113000
-
-def entailment_or_contradiction_or_neutral(jobs_added_in_US_premise, jobs_added_in_US_hypothesis):
-    # the hypothesis and premise mention the number of jobs added in the US
-    # check if the hypothesis entails the premise by checking if the number of jobs is equal in the two sentences
-    if jobs_added_in_US_premise == jobs_added_in_US_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_in_US_premise, jobs_added_in_US_hypothesis))
+print(entailment_or_contradiction_or_neutral(jobs_premise, jobs_hypothesis))
 "
-104,"85 richest people own as much as bottom half of population, report says",85 richest people as wealthy as half of the worlds population,entailment,104,"```python
-richest_people_premise = 85
-half_population_premise = 0.5
-richest_people_hypothesis = 85
-half_population_hypothesis = 0.5
+20,entailment,,entailment,Oil markets facing shortfall in the second half (ie. demand will surpass supply unless we fond another 1.5 million barrels of oil a day).,World oil demand will exceed supply in the second half of the year unless we can increase production by 1.5 million barrels a day.,oil markets facing shortfall in the second half (ie. demand will surpass supply unless we fond another 1.5 million barrels of oil a day).,world oil demand will exceed supply in the second half of the year unless we can increase production by 1.5 million barrels a day.,"shortfall_premise = 1.5
+shortfall_hypothesis = 1.5
 
-def entailment_or_contradiction_or_neutral(richest_people_premise, half_population_premise, richest_people_hypothesis, half_population_hypothesis):
-    # the hypothesis and premise both mention the number of richest people that own as much as a half of the world's population
-    # check if the hypothesis entails the premise by checking if the number of richest people and the half of the population are equal in the two sentences
-    if richest_people_premise == richest_people_hypothesis and half_population_premise == half_population_hypothesis:
+def entailment_or_contradiction_or_neutral(shortfall_premise, shortfall_hypothesis):
+    # the hypothesis and premise mention the shortfall in oil supply that needs to be compensated in order to surpass demand
+    # check if the hypothesis entails the premise by checking if the shortfall is equal in the two sentences
+    if shortfall_premise == shortfall_hypothesis:
         return True
     else:
         return False
 
-print(entailment_or_contradiction_or_neutral(richest_people_premise, half_population_premise, richest_people_hypothesis, half_population_hypothesis))
-```
-The script concludes that the hypothesis entails the premise as all the quantities and factual details in the hypothesis are found in the premise.","
-# Premise: 85 richest people own as much as bottom half of population, report says
-# Hypothesis: 85 richest people as wealthy as half of the worlds population
-# Golden Label: entailment
-
-
-richest_people_premise = 85
-half_population_premise = 0.5
-richest_people_hypothesis = 85
-half_population_hypothesis = 0.5
-
-def entailment_or_contradiction_or_neutral(richest_people_premise, half_population_premise, richest_people_hypothesis, half_population_hypothesis):
-    # the hypothesis and premise both mention the number of richest people that own as much as a half of the world's population
-    # check if the hypothesis entails the premise by checking if the number of richest people and the half of the population are equal in the two sentences
-    if richest_people_premise == richest_people_hypothesis and half_population_premise == half_population_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(richest_people_premise, half_population_premise, richest_people_hypothesis, half_population_hypothesis))
-
-","richest_people_premise = 85
-half_population_premise = 0.5
-richest_people_hypothesis = 85
-half_population_hypothesis = 0.5
-
-def entailment_or_contradiction_or_neutral(richest_people_premise, half_population_premise, richest_people_hypothesis, half_population_hypothesis):
-    # the hypothesis and premise both mention the number of richest people that own as much as a half of the world's population
-    # check if the hypothesis entails the premise by checking if the number of richest people and the half of the population are equal in the two sentences
-    if richest_people_premise == richest_people_hypothesis and half_population_premise == half_population_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(richest_people_premise, half_population_premise, richest_people_hypothesis, half_population_hypothesis))
+print(entailment_or_contradiction_or_neutral(shortfall_premise, shortfall_hypothesis))
 "
-28,"A tiny .00017% US elite spends over $3.5 Trillion every year, taken by threats of violence against the public.",A tiny .00017% elite control over $2 Trillion by using threats of violence and imprisonment against the public.,neutral,28,"```python
-elite_percentage_premise = .00017
-spending_premise = 3.5
-elite_percentage_hypothesis = .00017
-spending_hypothesis = 2
+56,entailment,,entailment,Black Business Ownership Under Trump Jumps 400% in one year,Survey Finds that Black Business Ownership in the US Jumped 400% in One Year,black business ownership under trump jumps 400% in one year,survey finds that black business ownership in the us jumped 400% in one year,"percentage_increase_premise = 400
+percentage_increase_hypothesis = 400
 
-def entailment_or_contradiction_or_neutral(elite_percentage_premise, spending_premise, elite_percentage_hypothesis, spending_hypothesis):
-    # the hypothesis and premise mention the percentage of the US elite and how much they spend or control annually
-    # check if the hypothesis contradicts the premise by checking if the percentage of the elite is not equal between the two sentences
-    if elite_percentage_premise != elite_percentage_hypothesis:
+def entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis):
+    # the hypothesis and premise mention the percentage increase in black business ownership in the US in one year
+    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
+    if percentage_increase_premise == percentage_increase_hypothesis:
+        return True
+    else:
         return False
-    # check if the hypothesised spending contradict the premise one by being higher than it
-    if spending_hypothesis > spending_premise:
-        return False
-    # any spending lower than 3.5 will entail the spending in the premise, so the hypothesis does not contradict the premise
-    # but it also does not exclusively entail it, so it is neutral
-    return None
 
-print(entailment_or_contradiction_or_neutral(elite_percentage_premise, spending_premise, elite_percentage_hypothesis, spending_hypothesis))
-```
-","
-# Premise: A tiny .00017% US elite spends over $3.5 Trillion every year, taken by threats of violence against the public.
-# Hypothesis: A tiny .00017% elite control over $2 Trillion by using threats of violence and imprisonment against the public.
-# Golden Label: neutral
-
-
-elite_percentage_premise = .00017
-spending_premise = 3.5
-elite_percentage_hypothesis = .00017
-spending_hypothesis = 2
-
-def entailment_or_contradiction_or_neutral(elite_percentage_premise, spending_premise, elite_percentage_hypothesis, spending_hypothesis):
-    # the hypothesis and premise mention the percentage of the US elite and how much they spend or control annually
-    # check if the hypothesis contradicts the premise by checking if the percentage of the elite is not equal between the two sentences
-    if elite_percentage_premise != elite_percentage_hypothesis:
-        return False
-    # check if the hypothesised spending contradict the premise one by being higher than it
-    if spending_hypothesis > spending_premise:
-        return False
-    # any spending lower than 3.5 will entail the spending in the premise, so the hypothesis does not contradict the premise
-    # but it also does not exclusively entail it, so it is neutral
-    return None
-
-print(entailment_or_contradiction_or_neutral(elite_percentage_premise, spending_premise, elite_percentage_hypothesis, spending_hypothesis))
-
-","elite_percentage_premise = .00017
-spending_premise = 3.5
-elite_percentage_hypothesis = .00017
-spending_hypothesis = 2
-
-def entailment_or_contradiction_or_neutral(elite_percentage_premise, spending_premise, elite_percentage_hypothesis, spending_hypothesis):
-    # the hypothesis and premise mention the percentage of the US elite and how much they spend or control annually
-    # check if the hypothesis contradicts the premise by checking if the percentage of the elite is not equal between the two sentences
-    if elite_percentage_premise != elite_percentage_hypothesis:
-        return False
-    # check if the hypothesised spending contradict the premise one by being higher than it
-    if spending_hypothesis > spending_premise:
-        return False
-    # any spending lower than 3.5 will entail the spending in the premise, so the hypothesis does not contradict the premise
-    # but it also does not exclusively entail it, so it is neutral
-    return None
-
-print(entailment_or_contradiction_or_neutral(elite_percentage_premise, spending_premise, elite_percentage_hypothesis, spending_hypothesis))
+print(entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis))
 "
-189,U.S. GDP Growth Revised Down to 2.2% Rate in First Quarter,US first-quarter growth revised down to 2.2%,entailment,189,"```python
-gdp_growth_rate_premise = 2.2
-gdp_growth_rate_hypothesis = 2.2
+147,entailment,,entailment,Reserve Bank of Australia lift interest rates again to 3.75%,Australia Increases Benchmark Interest Rate to 3.75%,reserve bank of australia lift interest rates again to 3.75%,australia increases benchmark interest rate to 3.75%,"interest_rate_premise = 3.75
+interest_rate_hypothesis = 3.75
 
-def entailment_or_contradiction_or_neutral(gdp_growth_rate_premise, gdp_growth_rate_hypothesis):
-    # the hypothesis and premise mention the GDP growth rate in the US in the first quarter
-    # check if the hypothesis entails the premise by checking if the growth rate is equal in the two sentences
-    if gdp_growth_rate_premise == gdp_growth_rate_hypothesis:
+def entailment_or_contradiction_or_neutral(interest_rate_premise, interest_rate_hypothesis):
+    # the hypothesis and premise mention the interest rate set by the Reserve Bank of Australia
+    # check if the hypothesis entails the premise by checking if the interest rates are equal in the two sentences
+    if interest_rate_premise == interest_rate_hypothesis:
         return True
     else:
         return False
 
-print(entailment_or_contradiction_or_neutral(gdp_growth_rate_premise, gdp_growth_rate_hypothesis))
-```
-","
-# Premise: U.S. GDP Growth Revised Down to 2.2% Rate in First Quarter
-# Hypothesis: US first-quarter growth revised down to 2.2%
-# Golden Label: entailment
-
-
-gdp_growth_rate_premise = 2.2
-gdp_growth_rate_hypothesis = 2.2
-
-def entailment_or_contradiction_or_neutral(gdp_growth_rate_premise, gdp_growth_rate_hypothesis):
-    # the hypothesis and premise mention the GDP growth rate in the US in the first quarter
-    # check if the hypothesis entails the premise by checking if the growth rate is equal in the two sentences
-    if gdp_growth_rate_premise == gdp_growth_rate_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(gdp_growth_rate_premise, gdp_growth_rate_hypothesis))
-
-","gdp_growth_rate_premise = 2.2
-gdp_growth_rate_hypothesis = 2.2
-
-def entailment_or_contradiction_or_neutral(gdp_growth_rate_premise, gdp_growth_rate_hypothesis):
-    # the hypothesis and premise mention the GDP growth rate in the US in the first quarter
-    # check if the hypothesis entails the premise by checking if the growth rate is equal in the two sentences
-    if gdp_growth_rate_premise == gdp_growth_rate_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(gdp_growth_rate_premise, gdp_growth_rate_hypothesis))
+print(entailment_or_contradiction_or_neutral(interest_rate_premise, interest_rate_hypothesis))
 "
-144,Insolvency after the 2005 Bankruptcy Reform,The 2005 Bankruptcy Reform and the Foreclosure Crisis,entailment,144,"```python
-# No quantities are mentioned in the premise and hypothesis. 
-# Also, the premise and hypothesis mention different concepts related to the 2005 Bankruptcy Reform. 
+38,neutral,,neutral,South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy,Australian Current Account Deficit Drained AUD$9.5 Billion In Q2 Of 2017 Out Of The Economy,south korea's current account surplus added usd 7.01 billion in june of 2017 to the economy,australian current account deficit drained aud$9.5 billion in q2 of 2017 out of the economy,"surplus_south_korea = 7.01
+deficit_australia = 9.5
 
-def entailment_or_contradiction_or_neutral():
-    # Since the two sentences are talking about different concepts, they don't entail or contradict each other.
+def entailment_or_contradiction_or_neutral(surplus_south_korea, deficit_australia):
+    # The hypothesis and premise mention the state of the current account in South Korea and Australia, and the impact in billions of USD or AUD respectively
+    # Since the two sentences refer to different countries and different states of the current account (surplus vs deficit), there is no entailment or contradiction between them
     return None
 
-print(entailment_or_contradiction_or_neutral())
-```
-","
-# Premise: Insolvency after the 2005 Bankruptcy Reform
-# Hypothesis: The 2005 Bankruptcy Reform and the Foreclosure Crisis
-# Golden Label: entailment
-
-
-# No quantities are mentioned in the premise and hypothesis. 
-# Also, the premise and hypothesis mention different concepts related to the 2005 Bankruptcy Reform. 
-
-def entailment_or_contradiction_or_neutral():
-    # Since the two sentences are talking about different concepts, they don't entail or contradict each other.
-    return None
-
-print(entailment_or_contradiction_or_neutral())
-
-","# No quantities are mentioned in the premise and hypothesis. 
-# Also, the premise and hypothesis mention different concepts related to the 2005 Bankruptcy Reform. 
-
-def entailment_or_contradiction_or_neutral():
-    # Since the two sentences are talking about different concepts, they don't entail or contradict each other.
-    return None
+print(entailment_or_contradiction_or_neutral(surplus_south_korea, deficit_australia))
+"
+118,entailment,,entailment,Mark Cuban: This tech bubble is far worse than back in 2000,Mark Cuban: We're in a Tech Bubbleand It's Worse Than 2000,mark cuban: this tech bubble is far worse than back in 2000,mark cuban: we're in a tech bubbleand it's worse than 2000,"def entailment_or_contradiction_or_neutral():
+    # the hypothesis and premise do not contain any contradicting information
+    # the hypothesis entails the premise exactly, with no additional information
+    return True
 
 print(entailment_or_contradiction_or_neutral())
 "
-225,"U.S. economy added 158,000 private sector jobs in October","ADP: We added 158,000 jobs in October",neutral,225,"```python
-jobs_added_premise = 158000
-jobs_added_hypothesis = 158000
-
-def entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis):
-    # the hypothesis and premise mention the number of jobs added in October
-    # check if the hypothesis entails the premise by checking if the number of jobs added is equal in the two sentences
-    if jobs_added_premise == jobs_added_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis))
-```
-Explanation: The premise and the hypothesis both state that 158,000 jobs were added in October. Therefore, the information in the hypothesis is entailed by the premise.","
-# Premise: U.S. economy added 158,000 private sector jobs in October
-# Hypothesis: ADP: We added 158,000 jobs in October
-# Golden Label: neutral
-
-
-jobs_added_premise = 158000
-jobs_added_hypothesis = 158000
-
-def entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis):
-    # the hypothesis and premise mention the number of jobs added in October
-    # check if the hypothesis entails the premise by checking if the number of jobs added is equal in the two sentences
-    if jobs_added_premise == jobs_added_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis))
-
-","jobs_added_premise = 158000
-jobs_added_hypothesis = 158000
-
-def entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis):
-    # the hypothesis and premise mention the number of jobs added in October
-    # check if the hypothesis entails the premise by checking if the number of jobs added is equal in the two sentences
-    if jobs_added_premise == jobs_added_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis))
-"
-221,Unemployment rate falls to lowest level since 2008,Unemployment Rate Falls To 7.7 Percent,neutral,221,"```python
-# No quantities are given in premise and hypothesis
-
-def entailment_or_contradiction_or_neutral():
-    # As there are no quantities to compare, we cannot determine if the hypothesis entails, contradicts, or is neutral to the premise
-    return None
-
-print(entailment_or_contradiction_or_neutral())
-```","
-# Premise: Unemployment rate falls to lowest level since 2008
-# Hypothesis: Unemployment Rate Falls To 7.7 Percent
-# Golden Label: neutral
-
-
-# No quantities are given in premise and hypothesis
-
-def entailment_or_contradiction_or_neutral():
-    # As there are no quantities to compare, we cannot determine if the hypothesis entails, contradicts, or is neutral to the premise
-    return None
-
-print(entailment_or_contradiction_or_neutral())
-
-","# No quantities are given in premise and hypothesis
-
-def entailment_or_contradiction_or_neutral():
-    # As there are no quantities to compare, we cannot determine if the hypothesis entails, contradicts, or is neutral to the premise
-    return None
-
-print(entailment_or_contradiction_or_neutral())
-"
-3,"At DAVOS, Financial Billionaire Schwartzman, who took home over $600 million dollars last year, says he doesn't understand why americans are angry","At Davos, Wall Street Billionaire Mr Schwartzfman, who takes home every year over $500 million dollars, says he doesn't understand why americans are angry",entailment,3,"```python
-earning_premise = 600
-earning_hypothesis = 500
-
-def entailment_or_contradiction_or_neutral(earning_premise, earning_hypothesis):
-    # the hypothesis and premise mention the earnings of Mr. Schwartzman
-    # check if the hypothesis contradicts the premise by checking if the earnings are not equal
-    if earning_premise != earning_hypothesis:
-        return False
-    else:
-        # if the earnings are equal, then the hypothesis entails the premise
-        return True
-
-print(entailment_or_contradiction_or_neutral(earning_premise, earning_hypothesis))
-```
-In this scenario, the hypothesis contradicts the premise since the earnings of Mr. Schwartzman in the hypothesis ($500 million) are not equal to the earnings in the premise ($600 million). Therefore, the function returns False.","
-# Premise: At DAVOS, Financial Billionaire Schwartzman, who took home over $600 million dollars last year, says he doesn't understand why americans are angry
-# Hypothesis: At Davos, Wall Street Billionaire Mr Schwartzfman, who takes home every year over $500 million dollars, says he doesn't understand why americans are angry
-# Golden Label: entailment
-
-
-earning_premise = 600
-earning_hypothesis = 500
-
-def entailment_or_contradiction_or_neutral(earning_premise, earning_hypothesis):
-    # the hypothesis and premise mention the earnings of Mr. Schwartzman
-    # check if the hypothesis contradicts the premise by checking if the earnings are not equal
-    if earning_premise != earning_hypothesis:
-        return False
-    else:
-        # if the earnings are equal, then the hypothesis entails the premise
-        return True
-
-print(entailment_or_contradiction_or_neutral(earning_premise, earning_hypothesis))
-
-","earning_premise = 600
-earning_hypothesis = 500
-
-def entailment_or_contradiction_or_neutral(earning_premise, earning_hypothesis):
-    # the hypothesis and premise mention the earnings of Mr. Schwartzman
-    # check if the hypothesis contradicts the premise by checking if the earnings are not equal
-    if earning_premise != earning_hypothesis:
-        return False
-    else:
-        # if the earnings are equal, then the hypothesis entails the premise
-        return True
-
-print(entailment_or_contradiction_or_neutral(earning_premise, earning_hypothesis))
-"
-193,Gov. Brown hails deal to raise minimum wage to $15,California to Raise Minimum Wage to $15/hour,entailment,193,"```python
-min_wage_premise = 15
-min_wage_hypothesis = 15
-
-def entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis):
-    # the hypothesis and premise mention a new minimum wage value
-    # check if the hypothesis entails the premise by checking if the wage value is equal in the two sentences
-    if min_wage_premise == min_wage_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis))
-```","
-# Premise: Gov. Brown hails deal to raise minimum wage to $15
-# Hypothesis: California to Raise Minimum Wage to $15/hour
-# Golden Label: entailment
-
-
-min_wage_premise = 15
-min_wage_hypothesis = 15
-
-def entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis):
-    # the hypothesis and premise mention a new minimum wage value
-    # check if the hypothesis entails the premise by checking if the wage value is equal in the two sentences
-    if min_wage_premise == min_wage_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis))
-
-","min_wage_premise = 15
+193,entailment,,entailment,Gov. Brown hails deal to raise minimum wage to $15,California to Raise Minimum Wage to $15/hour,gov. brown hails deal to raise minimum wage to $15,california to raise minimum wage to $15/hour,"min_wage_premise = 15
 min_wage_hypothesis = 15
 
 def entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis):
@@ -410,746 +81,189 @@ def entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis
 
 print(entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis))
 "
-220,Retail sales nationally drop 0.4% in January,U.S. retail sales fall 0.4% in January,entailment,220,"```python
-sales_drop_percentage_premise = 0.4
-sales_drop_percentage_hypothesis = 0.4
+210,entailment,,entailment,"Fed raises rates again, sees two more hikes in 2018","Fed hikes rates, signals two more for 2018","fed raises rates again, sees two more hikes in 2018","fed hikes rates, signals two more for 2018","rate_hikes_premise = 2
+rate_hikes_hypothesis = 2
 
-def entailment_or_contradiction_or_neutral(sales_drop_percentage_premise, sales_drop_percentage_hypothesis):
-    # the hypothesis and premise mention the percentage of retail sales drop in January
-    # check if the hypothesis entails the premise by checking if the sales drop percentage is equal in the two sentences
-    if sales_drop_percentage_premise == sales_drop_percentage_hypothesis:
+def entailment_or_contradiction_or_neutral(rate_hikes_premise, rate_hikes_hypothesis):
+    # the hypothesis and premise mention the number of expected rate hikes
+    # check if the hypothesis entails the premise by checking if the number of upcoming hikes is equal in the two sentences
+    if rate_hikes_premise == rate_hikes_hypothesis:
         return True
     else:
         return False
 
-print(entailment_or_contradiction_or_neutral(sales_drop_percentage_premise, sales_drop_percentage_hypothesis))
-```
-","
-# Premise: Retail sales nationally drop 0.4% in January
-# Hypothesis: U.S. retail sales fall 0.4% in January
-# Golden Label: entailment
-
-
-sales_drop_percentage_premise = 0.4
-sales_drop_percentage_hypothesis = 0.4
-
-def entailment_or_contradiction_or_neutral(sales_drop_percentage_premise, sales_drop_percentage_hypothesis):
-    # the hypothesis and premise mention the percentage of retail sales drop in January
-    # check if the hypothesis entails the premise by checking if the sales drop percentage is equal in the two sentences
-    if sales_drop_percentage_premise == sales_drop_percentage_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(sales_drop_percentage_premise, sales_drop_percentage_hypothesis))
-
-","sales_drop_percentage_premise = 0.4
-sales_drop_percentage_hypothesis = 0.4
-
-def entailment_or_contradiction_or_neutral(sales_drop_percentage_premise, sales_drop_percentage_hypothesis):
-    # the hypothesis and premise mention the percentage of retail sales drop in January
-    # check if the hypothesis entails the premise by checking if the sales drop percentage is equal in the two sentences
-    if sales_drop_percentage_premise == sales_drop_percentage_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(sales_drop_percentage_premise, sales_drop_percentage_hypothesis))
+print(entailment_or_contradiction_or_neutral(rate_hikes_premise, rate_hikes_hypothesis))
 "
-208,Home ownership falls to lowest level since the 1960s.,Home ownership hits lowest level since 1965,neutral,208,"```python
-year_premise = 1960
-year_hypothesis = 1965
+235,entailment,,entailment,US Raises Tax On Chinese Steel Imports By 522%,US raises China steel taxes by 522%,us raises tax on chinese steel imports by 522%,us raises china steel taxes by 522%,"tax_increase_premise = 522
+tax_increase_hypothesis = 522
 
-def entailment_or_contradiction_or_neutral(year_premise, year_hypothesis):
-    # the hypothesis and premise mention the years since which home ownership has fallen to its lowest levels
-    # check if the hypothesis contradicts the premise by checking if the year in the hypothesis is before the year in the premise
-    if year_hypothesis < year_premise:
-        return False
-    # if the year in the hypothesis is the same or after the year in the premise, it entails the premise
-    else:
+def entailment_or_contradiction_or_neutral(tax_increase_premise, tax_increase_hypothesis):
+    # the hypothesis and premise mention the tax increase percentage on Chinese steel imports
+    # check if the hypothesis entails the premise by checking if the tax increase percentage is equal in the two sentences
+    if tax_increase_premise == tax_increase_hypothesis:
         return True
-
-print(entailment_or_contradiction_or_neutral(year_premise, year_hypothesis))
-```
-In this example, the hypothesis and premise are referring to a specific time period since which the home ownership rate has fallen. The hypothesis states that the home ownership rate is at its lowest since 1965, which does not contradict the premise that the rate is at its lowest since the 1960s. Rather, it provides more specific information that falls within the range specified by the premise. Therefore, the hypothesis entails the premise.","
-# Premise: Home ownership falls to lowest level since the 1960s.
-# Hypothesis: Home ownership hits lowest level since 1965
-# Golden Label: neutral
-
-
-year_premise = 1960
-year_hypothesis = 1965
-
-def entailment_or_contradiction_or_neutral(year_premise, year_hypothesis):
-    # the hypothesis and premise mention the years since which home ownership has fallen to its lowest levels
-    # check if the hypothesis contradicts the premise by checking if the year in the hypothesis is before the year in the premise
-    if year_hypothesis < year_premise:
-        return False
-    # if the year in the hypothesis is the same or after the year in the premise, it entails the premise
     else:
-        return True
-
-print(entailment_or_contradiction_or_neutral(year_premise, year_hypothesis))
-
-","year_premise = 1960
-year_hypothesis = 1965
-
-def entailment_or_contradiction_or_neutral(year_premise, year_hypothesis):
-    # the hypothesis and premise mention the years since which home ownership has fallen to its lowest levels
-    # check if the hypothesis contradicts the premise by checking if the year in the hypothesis is before the year in the premise
-    if year_hypothesis < year_premise:
         return False
-    # if the year in the hypothesis is the same or after the year in the premise, it entails the premise
-    else:
-        return True
 
-print(entailment_or_contradiction_or_neutral(year_premise, year_hypothesis))
+print(entailment_or_contradiction_or_neutral(tax_increase_premise, tax_increase_hypothesis))
 "
-101,"Saudi Prince, billionaire says 'never' again to $100 oil barrel",Saudi Prince Says Oil Will 'Never Reach $100 Per Barrel Again',entailment,101,"```python
-oil_price_premise = 100
-oil_price_hypothesis = 100
+180,entailment,,entailment,30-year mortgage rates fall below 4% for first time,30-yr mortgage drops below 4 pct for first time,30-year mortgage rates fall below 4% for first time,30-yr mortgage drops below 4 pct for first time,"mortgage_years_premise = 30
+mortgage_rate_premise = 4
+mortgage_years_hypothesis = 30
+mortgage_rate_hypothesis = 4
 
-def entailment_or_contradiction_or_neutral(oil_price_premise, oil_price_hypothesis):
-    # the hypothesis and premise mention the oil price per barrel
-    # check if the hypothesis entails the premise by checking if the oil price per barrel is equal in the two sentences
-    if oil_price_premise == oil_price_hypothesis:
+def entailment_or_contradiction_or_neutral(mortgage_years_premise, mortgage_rate_premise, mortgage_years_hypothesis, mortgage_rate_hypothesis):
+    # the hypothesis and premise mention the duration and rate of a mortgage
+    # check if the hypothesis entails the premise by checking if the mortgage duration and rate are equal in the two sentences
+    if mortgage_years_premise == mortgage_years_hypothesis and mortgage_rate_premise == mortgage_rate_hypothesis:
         return True
     else:
         return False
 
-print(entailment_or_contradiction_or_neutral(oil_price_premise, oil_price_hypothesis))
-```
-This script checks if the oil price per barrel mentioned in the hypothesis is the same as the one in the premise. If they are the same, the hypothesis entails the premise. If they are not, the hypothesis contradicts the premise. In this case, the oil price per barrel in both sentences is $100, so the hypothesis entails the premise.","
-# Premise: Saudi Prince, billionaire says 'never' again to $100 oil barrel
-# Hypothesis: Saudi Prince Says Oil Will 'Never Reach $100 Per Barrel Again'
-# Golden Label: entailment
-
-
-oil_price_premise = 100
-oil_price_hypothesis = 100
-
-def entailment_or_contradiction_or_neutral(oil_price_premise, oil_price_hypothesis):
-    # the hypothesis and premise mention the oil price per barrel
-    # check if the hypothesis entails the premise by checking if the oil price per barrel is equal in the two sentences
-    if oil_price_premise == oil_price_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(oil_price_premise, oil_price_hypothesis))
-
-","oil_price_premise = 100
-oil_price_hypothesis = 100
-
-def entailment_or_contradiction_or_neutral(oil_price_premise, oil_price_hypothesis):
-    # the hypothesis and premise mention the oil price per barrel
-    # check if the hypothesis entails the premise by checking if the oil price per barrel is equal in the two sentences
-    if oil_price_premise == oil_price_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(oil_price_premise, oil_price_hypothesis))
+print(entailment_or_contradiction_or_neutral(mortgage_years_premise, mortgage_rate_premise, mortgage_years_hypothesis, mortgage_rate_hypothesis))
 "
-39,Japan's Current Account Surplus Adds 0.93 JPY Trillion In June Of 2017 To The Economy,South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy,neutral,39,"```python
-surplus_japan = 0.93 # in trillion JPY
-surplus_south_korea = 7.01 # in billion USD
+12,neutral,,neutral,"Sensex closed up 204.96 points, Nifty above 5471.75, today stock market update, Nifty future trading tips ~ stocks nifty future call today","Indian Rupee down, Tomorrow On Monday stock nifty future trading call 26 Aug, Stocks nifty future call today ~ stocks nifty future call today","sensex closed up 204.96 points, nifty above 5471.75, today stock market update, nifty future trading tips ~ stocks nifty future call today","indian rupee down, tomorrow on monday stock nifty future trading call 26 aug, stocks nifty future call today ~ stocks nifty future call today","# There are no quantitative values or factual information to be compared in the premise and hypothesis.
+# Therefore, we cannot determine if the hypothesis contradicts, entails or is neutral to the premise.
 
-def entailment_or_contradiction_or_neutral(surplus_japan, surplus_south_korea):
-    # the hypothesis and premise mention the surplus added to the economy of two different countries in the same period
-    # since the countries and the values of the surplus are different, the hypothesis neither contradicts nor entails the premise
+def entailment_or_contradiction_or_neutral():
     return None
 
-print(entailment_or_contradiction_or_neutral(surplus_japan, surplus_south_korea))
-```","
-# Premise: Japan's Current Account Surplus Adds 0.93 JPY Trillion In June Of 2017 To The Economy
-# Hypothesis: South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy
-# Golden Label: neutral
-
-
-surplus_japan = 0.93 # in trillion JPY
-surplus_south_korea = 7.01 # in billion USD
-
-def entailment_or_contradiction_or_neutral(surplus_japan, surplus_south_korea):
-    # the hypothesis and premise mention the surplus added to the economy of two different countries in the same period
-    # since the countries and the values of the surplus are different, the hypothesis neither contradicts nor entails the premise
-    return None
-
-print(entailment_or_contradiction_or_neutral(surplus_japan, surplus_south_korea))
-
-","surplus_japan = 0.93 # in trillion JPY
-surplus_south_korea = 7.01 # in billion USD
-
-def entailment_or_contradiction_or_neutral(surplus_japan, surplus_south_korea):
-    # the hypothesis and premise mention the surplus added to the economy of two different countries in the same period
-    # since the countries and the values of the surplus are different, the hypothesis neither contradicts nor entails the premise
-    return None
-
-print(entailment_or_contradiction_or_neutral(surplus_japan, surplus_south_korea))
+print(entailment_or_contradiction_or_neutral())
 "
-199,"Saudi Arabia could be bankrupt within 5 years, IMF predicts",Saudi Arabia could be bankrupt by 2020  IMF,entailment,199,"```python
-years_premise = 5
-year_hypothesis = 2020
-current_year = 2015 # assuming premise year is 2015
+91,entailment,,entailment,Oxfam says richest one percent to own more than rest by 2016,Richest 1% To Own More Than Half Worlds Wealth By 2016  Oxfam,oxfam says richest one percent to own more than rest by 2016,richest 1% to own more than half worlds wealth by 2016 oxfam,"percentage_wealth_premise = 50
+percentage_wealth_hypothesis = 50
 
-def entailment_or_contradiction_or_neutral(years_premise, year_hypothesis, current_year):
-    # the hypothesis and premise mention the year when Saudi Arabia might go bankrupt
-    # we first calculate the predicted bankruptcy year according to the premise
-    bankruptcy_year_premise = current_year + years_premise
-    # we then check if the hypothesis contradicts the premise by checking if the predicted bankruptcy year is not equal in the premise and the hypothesis
-    if bankruptcy_year_premise != year_hypothesis:
-        return False
-    else:
+def entailment_or_contradiction_or_neutral(percentage_wealth_premise, percentage_wealth_hypothesis):
+    # the hypothesis and premise mention the percentage of world's wealth owned by the richest 1%
+    # check if the hypothesis entails the premise by checking if the percentage is equal in the two sentences
+    if percentage_wealth_premise == percentage_wealth_hypothesis:
         return True
-
-print(entailment_or_contradiction_or_neutral(years_premise, year_hypothesis, current_year))
-```
-In this script, we first calculate the year when Saudi Arabia is predicted to go bankrupt according to the premise. Then, we compare this year with the year mentioned in the hypothesis. If they are equal, the hypothesis entails the premise; if they are not equal, the hypothesis contradicts the premise.","
-# Premise: Saudi Arabia could be bankrupt within 5 years, IMF predicts
-# Hypothesis: Saudi Arabia could be bankrupt by 2020  IMF
-# Golden Label: entailment
-
-
-years_premise = 5
-year_hypothesis = 2020
-current_year = 2015 # assuming premise year is 2015
-
-def entailment_or_contradiction_or_neutral(years_premise, year_hypothesis, current_year):
-    # the hypothesis and premise mention the year when Saudi Arabia might go bankrupt
-    # we first calculate the predicted bankruptcy year according to the premise
-    bankruptcy_year_premise = current_year + years_premise
-    # we then check if the hypothesis contradicts the premise by checking if the predicted bankruptcy year is not equal in the premise and the hypothesis
-    if bankruptcy_year_premise != year_hypothesis:
-        return False
     else:
-        return True
-
-print(entailment_or_contradiction_or_neutral(years_premise, year_hypothesis, current_year))
-
-","years_premise = 5
-year_hypothesis = 2020
-current_year = 2015 # assuming premise year is 2015
-
-def entailment_or_contradiction_or_neutral(years_premise, year_hypothesis, current_year):
-    # the hypothesis and premise mention the year when Saudi Arabia might go bankrupt
-    # we first calculate the predicted bankruptcy year according to the premise
-    bankruptcy_year_premise = current_year + years_premise
-    # we then check if the hypothesis contradicts the premise by checking if the predicted bankruptcy year is not equal in the premise and the hypothesis
-    if bankruptcy_year_premise != year_hypothesis:
         return False
-    else:
-        return True
 
-print(entailment_or_contradiction_or_neutral(years_premise, year_hypothesis, current_year))
+print(entailment_or_contradiction_or_neutral(percentage_wealth_premise, percentage_wealth_hypothesis))
 "
-120,Hong Kong Raises Base Rate for First Time Since 2006 After Fed,Mexico Raises Key Rate for First Time Since 2008 After Fed,neutral,120,"```python
-year_premise = 2006
-year_hypothesis = 2008
+133,entailment,,entailment,California Nears Deal to Adopt a $15 State Minimum Wage,California Is About to Make a $15 Minimum Wage a Reality,california nears deal to adopt a $15 state minimum wage,california is about to make a $15 minimum wage a reality,"min_wage_premise = 15
+min_wage_hypothesis = 15
 
-def entailment_or_contradiction_or_neutral(year_premise, year_hypothesis):
-    # the hypothesis and premise mention the year when a country raised a rate for the first time
-    # check if the hypothesis contradicts the premise by checking if the years are not equal in the two sentences
-    if year_premise != year_hypothesis:
-        return False
-    else:
+def entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis):
+    # the hypothesis and premise both mention the proposed minimum wage in California
+    # check if the hypothesis entails the premise by checking if the proposed minimum wage is equal in the two sentences
+    if min_wage_premise == min_wage_hypothesis:
         return True
-
-print(entailment_or_contradiction_or_neutral(year_premise, year_hypothesis))
-```","
-# Premise: Hong Kong Raises Base Rate for First Time Since 2006 After Fed
-# Hypothesis: Mexico Raises Key Rate for First Time Since 2008 After Fed
-# Golden Label: neutral
-
-
-year_premise = 2006
-year_hypothesis = 2008
-
-def entailment_or_contradiction_or_neutral(year_premise, year_hypothesis):
-    # the hypothesis and premise mention the year when a country raised a rate for the first time
-    # check if the hypothesis contradicts the premise by checking if the years are not equal in the two sentences
-    if year_premise != year_hypothesis:
-        return False
     else:
-        return True
-
-print(entailment_or_contradiction_or_neutral(year_premise, year_hypothesis))
-
-","year_premise = 2006
-year_hypothesis = 2008
-
-def entailment_or_contradiction_or_neutral(year_premise, year_hypothesis):
-    # the hypothesis and premise mention the year when a country raised a rate for the first time
-    # check if the hypothesis contradicts the premise by checking if the years are not equal in the two sentences
-    if year_premise != year_hypothesis:
         return False
-    else:
-        return True
 
-print(entailment_or_contradiction_or_neutral(year_premise, year_hypothesis))
+print(entailment_or_contradiction_or_neutral(min_wage_premise, min_wage_hypothesis))
 "
-142,Loan Scandal Costs Wells Fargo $1 Billion; None of Fine Goes to Victims - Truthdig,Wells Fargo Said to Be Target of $1 Billion U.S. Fine,entailment,142,"```python
-fine_premise = 1e9
-fine_hypothesis = 1e9
+69,entailment,,entailment,"Four in 10 Americans can't cover a $400 emergency expense, Fed finds","Four in 10 cant cover an emergency expense of $400, Fed survey finds","four in 10 americans can't cover a $400 emergency expense, fed finds","four in 10 cant cover an emergency expense of $400, fed survey finds","americans_percentage_premise = 4/10
+emergency_expense_premise = 400
+americans_percentage_hypothesis = 4/10
+emergency_expense_hypothesis = 400
 
-def entailment_or_contradiction_or_neutral(fine_premise, fine_hypothesis):
-    # the hypothesis and premise mention the fine cost for Wells Fargo
-    # check if the hypothesis entails the premise by checking if the fine cost is equal in the two sentences
-    if fine_premise == fine_hypothesis:
-        return True
-    else:
+def entailment_or_contradiction_or_neutral(americans_percentage_premise, emergency_expense_premise, americans_percentage_hypothesis, emergency_expense_hypothesis):
+    # the hypothesis and premise mention the percentage of Americans and the amount of an emergency expense they can't cover
+    # check if the hypothesis contradicts the premise by checking if the percentage or the amount is not equal between the two sentences
+    if americans_percentage_premise != americans_percentage_hypothesis or emergency_expense_premise != emergency_expense_hypothesis:
         return False
-
-print(entailment_or_contradiction_or_neutral(fine_premise, fine_hypothesis))
-```","
-# Premise: Loan Scandal Costs Wells Fargo $1 Billion; None of Fine Goes to Victims - Truthdig
-# Hypothesis: Wells Fargo Said to Be Target of $1 Billion U.S. Fine
-# Golden Label: entailment
-
-
-fine_premise = 1e9
-fine_hypothesis = 1e9
-
-def entailment_or_contradiction_or_neutral(fine_premise, fine_hypothesis):
-    # the hypothesis and premise mention the fine cost for Wells Fargo
-    # check if the hypothesis entails the premise by checking if the fine cost is equal in the two sentences
-    if fine_premise == fine_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(fine_premise, fine_hypothesis))
-
-","fine_premise = 1e9
-fine_hypothesis = 1e9
-
-def entailment_or_contradiction_or_neutral(fine_premise, fine_hypothesis):
-    # the hypothesis and premise mention the fine cost for Wells Fargo
-    # check if the hypothesis entails the premise by checking if the fine cost is equal in the two sentences
-    if fine_premise == fine_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(fine_premise, fine_hypothesis))
-"
-62,Americans Taxed $400 Billion For Fiber Optic Internet That Doesnt Exist,Americans Taxed $300 Millon For Fiber Optic Internet That Doesnt Exist.,contradiction,62,"```python
-tax_premise = 400000000000 # convert from billion to million
-tax_hypothesis = 300000000
-
-def entailment_or_contradiction_or_neutral(tax_premise, tax_hypothesis):
-    # the hypothesis and premise mention the amount of tax Americans paid for non-existent fibre optic internet
-    # check if the hypothesis contradicts the premise by checking if the tax amount in hypothesis is not equal to the one in premise
-    if tax_premise != tax_hypothesis:
-        return False
-    else:
-        return True
-
-print(entailment_or_contradiction_or_neutral(tax_premise, tax_hypothesis))
-```
-In this case, the hypothesis contradicts the premise because the tax amount is not equal between the two statements. Hence, the output will be False.","
-# Premise: Americans Taxed $400 Billion For Fiber Optic Internet That Doesnt Exist
-# Hypothesis: Americans Taxed $300 Millon For Fiber Optic Internet That Doesnt Exist.
-# Golden Label: contradiction
-
-
-tax_premise = 400000000000 # convert from billion to million
-tax_hypothesis = 300000000
-
-def entailment_or_contradiction_or_neutral(tax_premise, tax_hypothesis):
-    # the hypothesis and premise mention the amount of tax Americans paid for non-existent fibre optic internet
-    # check if the hypothesis contradicts the premise by checking if the tax amount in hypothesis is not equal to the one in premise
-    if tax_premise != tax_hypothesis:
-        return False
-    else:
-        return True
-
-print(entailment_or_contradiction_or_neutral(tax_premise, tax_hypothesis))
-
-","tax_premise = 400000000000 # convert from billion to million
-tax_hypothesis = 300000000
-
-def entailment_or_contradiction_or_neutral(tax_premise, tax_hypothesis):
-    # the hypothesis and premise mention the amount of tax Americans paid for non-existent fibre optic internet
-    # check if the hypothesis contradicts the premise by checking if the tax amount in hypothesis is not equal to the one in premise
-    if tax_premise != tax_hypothesis:
-        return False
-    else:
-        return True
-
-print(entailment_or_contradiction_or_neutral(tax_premise, tax_hypothesis))
-"
-179,"US economy adds 215,000 jobs in July","US economy adds 215,000 jobs in July - BBC News",entailment,179,"```python
-jobs_added_premise = 215000
-jobs_added_hypothesis = 215000
-
-def entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis):
-    # the hypothesis and premise mention the number of jobs added to the US economy in July
-    # check if the hypothesis entails the premise by checking if the number of jobs added is equal in the two sentences
-    if jobs_added_premise == jobs_added_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis))
-```
-","
-# Premise: US economy adds 215,000 jobs in July
-# Hypothesis: US economy adds 215,000 jobs in July - BBC News
-# Golden Label: entailment
-
-
-jobs_added_premise = 215000
-jobs_added_hypothesis = 215000
-
-def entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis):
-    # the hypothesis and premise mention the number of jobs added to the US economy in July
-    # check if the hypothesis entails the premise by checking if the number of jobs added is equal in the two sentences
-    if jobs_added_premise == jobs_added_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis))
-
-","jobs_added_premise = 215000
-jobs_added_hypothesis = 215000
-
-def entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis):
-    # the hypothesis and premise mention the number of jobs added to the US economy in July
-    # check if the hypothesis entails the premise by checking if the number of jobs added is equal in the two sentences
-    if jobs_added_premise == jobs_added_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_premise, jobs_added_hypothesis))
-"
-158,U.S. economy a world beater because of 5 factors,What's making US economy a world beater? 5 factors,entailment,158,"```python
-factors_premise = 5
-factors_hypothesis = 5
-
-def entailment_or_contradiction_or_neutral(factors_premise, factors_hypothesis):
-    # the hypothesis and premise mention the number of factors contributing to the US economy's success
-    # check if the hypothesis entails the premise by checking if the number of factors is equal in the two sentences
-    if factors_premise == factors_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(factors_premise, factors_hypothesis))
-```
-In this script, we first extract the number of factors mentioned in the premise and hypothesis. Then, we define a function to check if the number of factors in the hypothesis is equal to the premise. If they are equal, the hypothesis entails the premise and the function returns True. Otherwise, it returns False indicating contradiction. When we run this function with the extracted factors as arguments, it checks the relationship between the premise and hypothesis.","
-# Premise: U.S. economy a world beater because of 5 factors
-# Hypothesis: What's making US economy a world beater? 5 factors
-# Golden Label: entailment
-
-
-factors_premise = 5
-factors_hypothesis = 5
-
-def entailment_or_contradiction_or_neutral(factors_premise, factors_hypothesis):
-    # the hypothesis and premise mention the number of factors contributing to the US economy's success
-    # check if the hypothesis entails the premise by checking if the number of factors is equal in the two sentences
-    if factors_premise == factors_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(factors_premise, factors_hypothesis))
-
-","factors_premise = 5
-factors_hypothesis = 5
-
-def entailment_or_contradiction_or_neutral(factors_premise, factors_hypothesis):
-    # the hypothesis and premise mention the number of factors contributing to the US economy's success
-    # check if the hypothesis entails the premise by checking if the number of factors is equal in the two sentences
-    if factors_premise == factors_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(factors_premise, factors_hypothesis))
-"
-112,Consumer Bankruptcy Filings Up 14 Percent Through  First Half Of 2010,Personal Bankruptcy Filings up 14% in first 6 months of 2010,entailment,112,"```python
-percentage_increase_premise = 14
-percentage_increase_hypothesis = 14
-
-def entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis):
-    # the hypothesis and premise mention a percentage increase in bankruptcy filings in the first half of 2010
-    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
-    if percentage_increase_premise == percentage_increase_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis))
-```
-The output of the function will be `True` as the percentage increase in bankruptcy filings in the hypothesis exactly matches the percentage increase in the premise.","
-# Premise: Consumer Bankruptcy Filings Up 14 Percent Through  First Half Of 2010
-# Hypothesis: Personal Bankruptcy Filings up 14% in first 6 months of 2010
-# Golden Label: entailment
-
-
-percentage_increase_premise = 14
-percentage_increase_hypothesis = 14
-
-def entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis):
-    # the hypothesis and premise mention a percentage increase in bankruptcy filings in the first half of 2010
-    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
-    if percentage_increase_premise == percentage_increase_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis))
-
-","percentage_increase_premise = 14
-percentage_increase_hypothesis = 14
-
-def entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis):
-    # the hypothesis and premise mention a percentage increase in bankruptcy filings in the first half of 2010
-    # check if the hypothesis entails the premise by checking if the percentage increase is equal in the two sentences
-    if percentage_increase_premise == percentage_increase_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(percentage_increase_premise, percentage_increase_hypothesis))
-"
-140,"U.S. Employers Advertise 3.35 Million Jobs In September, Most In 3 Years ",U.S. Employers Post Most Job Openings In 3 Years : NPR,entailment,140,"```python
-jobs_advertised_premise = 3350000
-years_premise = 3
-years_hypothesis = 3
-
-def entailment_or_contradiction_or_neutral(jobs_advertised_premise, years_premise, years_hypothesis):
-    # the hypothesis and premise mention the number of years since this amount of job postings was last seen
-    # check if the hypothesis contradicts the premise by checking if the number of years is not equal in the two sentences
-    if years_premise != years_hypothesis:
-        return False
-    # if the number of years is the same, the hypothesis entails the premise
+    # if the hypothesised values are equal to the premise ones, the hypothesis entails the premise
     return True
 
-print(entailment_or_contradiction_or_neutral(jobs_advertised_premise, years_premise, years_hypothesis))
-```
-In this example, the exact number of jobs posted is not mentioned in the hypothesis, but it is not necessary to determine the relationship. The key detail, the number of years, is the same in both the premise and the hypothesis. Therefore, the hypothesis entails the premise.","
-# Premise: U.S. Employers Advertise 3.35 Million Jobs In September, Most In 3 Years 
-# Hypothesis: U.S. Employers Post Most Job Openings In 3 Years : NPR
-# Golden Label: entailment
-
-
-jobs_advertised_premise = 3350000
-years_premise = 3
-years_hypothesis = 3
-
-def entailment_or_contradiction_or_neutral(jobs_advertised_premise, years_premise, years_hypothesis):
-    # the hypothesis and premise mention the number of years since this amount of job postings was last seen
-    # check if the hypothesis contradicts the premise by checking if the number of years is not equal in the two sentences
-    if years_premise != years_hypothesis:
-        return False
-    # if the number of years is the same, the hypothesis entails the premise
-    return True
-
-print(entailment_or_contradiction_or_neutral(jobs_advertised_premise, years_premise, years_hypothesis))
-
-","jobs_advertised_premise = 3350000
-years_premise = 3
-years_hypothesis = 3
-
-def entailment_or_contradiction_or_neutral(jobs_advertised_premise, years_premise, years_hypothesis):
-    # the hypothesis and premise mention the number of years since this amount of job postings was last seen
-    # check if the hypothesis contradicts the premise by checking if the number of years is not equal in the two sentences
-    if years_premise != years_hypothesis:
-        return False
-    # if the number of years is the same, the hypothesis entails the premise
-    return True
-
-print(entailment_or_contradiction_or_neutral(jobs_advertised_premise, years_premise, years_hypothesis))
+print(entailment_or_contradiction_or_neutral(americans_percentage_premise, emergency_expense_premise, americans_percentage_hypothesis, emergency_expense_hypothesis))
 "
-232,64% of Americans say we have a poor economy,90% of Americans say economy stinks,contradiction,232,"```python
-percentage_premise = 64
-percentage_hypothesis = 90
+249,entailment,,entailment,"Nifty traded above 7500, Trading Calls Today","Nifty above 7400,","nifty traded above 7500, trading calls today","nifty above 7400,","nifty_value_premise = 7500
+nifty_value_hypothesis = 7400
 
-def entailment_or_contradiction_or_neutral(percentage_premise, percentage_hypothesis):
-    # the hypothesis and premise mention a percentage of American people who are dissatisfied with the economy
-    # check if the hypothesised percentage contradicts the premise one by being lower or equal to it
-    if percentage_hypothesis <= percentage_premise:
+def entailment_or_contradiction_or_neutral(nifty_value_premise, nifty_value_hypothesis):
+    # the hypothesis and premise mention the value of Nifty
+    # check if the hypothesis contradicts the premise by checking if the value of Nifty in hypothesis is greater than in premise
+    if nifty_value_hypothesis > nifty_value_premise:
         return False
-    # any percentage higher than 64% will entail the percentage in the premise, so the hypothesis is neutral to the premise, since it does not contradict it and it also does not exclusively entail it
+    # check if the hypothesised Nifty value is less than or equal to the premise value, which would entail the premise
+    if nifty_value_hypothesis <= nifty_value_premise:
+        return True
+    # if none of the above conditions are true, the hypothesis is neutral to the premise
     return None
 
-print(entailment_or_contradiction_or_neutral(percentage_premise, percentage_hypothesis))
-```","
-# Premise: 64% of Americans say we have a poor economy
-# Hypothesis: 90% of Americans say economy stinks
-# Golden Label: contradiction
+print(entailment_or_contradiction_or_neutral(nifty_value_premise, nifty_value_hypothesis))
+"
+41,neutral,,neutral,Norway's Current Account Surplus Adds US$4.61 Billion In Quarter 2 Of 2017 To The Economy,South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy,norway's current account surplus adds us$4.61 billion in quarter 2 of 2017 to the economy,south korea's current account surplus added usd 7.01 billion in june of 2017 to the economy,"surplus_norway = 4.61
+surplus_south_korea = 7.01
 
-
-percentage_premise = 64
-percentage_hypothesis = 90
-
-def entailment_or_contradiction_or_neutral(percentage_premise, percentage_hypothesis):
-    # the hypothesis and premise mention a percentage of American people who are dissatisfied with the economy
-    # check if the hypothesised percentage contradicts the premise one by being lower or equal to it
-    if percentage_hypothesis <= percentage_premise:
-        return False
-    # any percentage higher than 64% will entail the percentage in the premise, so the hypothesis is neutral to the premise, since it does not contradict it and it also does not exclusively entail it
+def entailment_or_contradiction_or_neutral(surplus_norway, surplus_south_korea):
+    # the hypothesis and premise mention the current account surplus of two different countries
+    # since the countries are different, the hypothesis is neutral to the premise, since it does not contradict it or entail it in any way
     return None
 
-print(entailment_or_contradiction_or_neutral(percentage_premise, percentage_hypothesis))
+print(entailment_or_contradiction_or_neutral(surplus_norway, surplus_south_korea))
+"
+52,entailment,,entailment,"U.S. economy added 161,000 jobs in October as unemployment rate dipped to 4.9 percent","U.S. Economy Grew by 161,000 Jobs in October; Unemployment Rate Falls to 4.9%","u.s. economy added 161,000 jobs in october as unemployment rate dipped to 4.9 percent","u.s. economy grew by 161,000 jobs in october; unemployment rate falls to 4.9%","jobs_added_premise = 161000
+unemployment_rate_premise = 4.9
+jobs_added_hypothesis = 161000
+unemployment_rate_hypothesis = 4.9
 
-","percentage_premise = 64
-percentage_hypothesis = 90
-
-def entailment_or_contradiction_or_neutral(percentage_premise, percentage_hypothesis):
-    # the hypothesis and premise mention a percentage of American people who are dissatisfied with the economy
-    # check if the hypothesised percentage contradicts the premise one by being lower or equal to it
-    if percentage_hypothesis <= percentage_premise:
+def entailment_or_contradiction_or_neutral(jobs_added_premise, unemployment_rate_premise, jobs_added_hypothesis, unemployment_rate_hypothesis):
+    # the hypothesis and premise both mention the number of jobs added in October and the unemployment rate
+    # check if the hypothesis contradicts the premise by checking if the number of jobs added or the unemployment rate are not equal in the two sentences
+    if jobs_added_premise != jobs_added_hypothesis or unemployment_rate_premise != unemployment_rate_hypothesis:
         return False
-    # any percentage higher than 64% will entail the percentage in the premise, so the hypothesis is neutral to the premise, since it does not contradict it and it also does not exclusively entail it
+    else:
+        return True
+
+print(entailment_or_contradiction_or_neutral(jobs_added_premise, unemployment_rate_premise, jobs_added_hypothesis, unemployment_rate_hypothesis))
+"
+49,entailment,,entailment,Global Debt Has Soared By $57 Trillion Since The 2007-08 Financial Crisis,Global debt has grown by $57 trillion in seven years following the financial crisis,global debt has soared by $57 trillion since the 2007-08 financial crisis,global debt has grown by $57 trillion in seven years following the financial crisis,"debt_increase_premise = 57
+debt_increase_hypothesis = 57
+
+def entailment_or_contradiction_or_neutral(debt_increase_premise, debt_increase_hypothesis):
+    # the hypothesis and premise mention the increase in global debt since the financial crisis
+    # check if the hypothesis entails the premise by checking if the debt increase is equal in both sentences
+    if debt_increase_premise == debt_increase_hypothesis:
+        return True
+    # if the debt increase is not equal in the premise and hypothesis, it implies contradiction
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(debt_increase_premise, debt_increase_hypothesis))
+"
+32,entailment,,entailment,"For First Time In 130 Years, More Young Adults Live With Parents Than With Partners",More young American adults live with parents than with partners or in other situations since 1880s,"for first time in 130 years, more young adults live with parents than with partners",more young american adults live with parents than with partners or in other situations since 1880s,"years_premise = 130
+years_hypothesis = 130
+
+def entailment_or_contradiction_or_neutral(years_premise, years_hypothesis):
+    # the hypothesis and premise mention the number of years since a societal change occurred in young adults' living situations
+    # check if the hypothesis entails the premise by checking if the number of years is equal in the two sentences
+    if years_premise == years_hypothesis:
+        return True
+    else:
+        return False
+
+print(entailment_or_contradiction_or_neutral(years_premise, years_hypothesis))
+"
+187,neutral,,neutral,Chrysler to Shut Down All Production For One Month ,Chrysler closing all 30 plants for one month ,chrysler to shut down all production for one month,chrysler closing all 30 plants for one month,"months_premise = 1
+plants_premise = None  # Number of plants is not mentioned in the premise
+months_hypothesis = 1
+plants_hypothesis = 30
+
+def entailment_or_contradiction_or_neutral(months_premise, plants_premise, months_hypothesis, plants_hypothesis):
+    # the hypothesis and premise mention that Chrysler is shutting down all production for a certain number of months
+    # check if the hypothesis contradicts the premise by checking if the number of months is not equal in the two sentences
+    if months_premise != months_hypothesis:
+        return False
+    # since the number of plants is not mentioned in the premise, the hypothesis is neutral with respect to the premise
     return None
 
-print(entailment_or_contradiction_or_neutral(percentage_premise, percentage_hypothesis))
+print(entailment_or_contradiction_or_neutral(months_premise, plants_premise, months_hypothesis, plants_hypothesis))
 "
-92,Deutsche Bank Slapped With $14 Billion Fine By DOJ Over Mortgage Probe,Deutsche Bank Rebuffs U.S. Over $14 Billion Mortgage Settlement,neutral,92,"```python
-fine_amount_premise = 14
-fine_amount_hypothesis = 14
+128,contradiction,,contradiction,Nestle Pays $7.2 Billion to Sell Starbucks Coffee,Nestle to pay $7.15 billion to Starbucks in coffee tie-up,nestle pays $7.2 billion to sell starbucks coffee,nestle to pay $7.15 billion to starbucks in coffee tie-up,"payment_premise = 7.2
+payment_hypothesis = 7.15
 
-def entailment_or_contradiction_or_neutral(fine_amount_premise, fine_amount_hypothesis):
-    # the hypothesis and premise both mention a fine imposed on Deutsche Bank by the DOJ
-    # check if the hypothesis entails the premise by checking if the fine amounts are equal in both sentences
-    if fine_amount_premise == fine_amount_hypothesis:
-        return True
-    else:
+def entailment_or_contradiction_or_neutral(payment_premise, payment_hypothesis):
+    # the hypothesis and premise mention the amount Nestle has paid to Starbucks
+    # check if the hypothesis contradicts the premise by checking if the payment is not equal in the two sentences
+    if payment_premise != payment_hypothesis:
         return False
-
-print(entailment_or_contradiction_or_neutral(fine_amount_premise, fine_amount_hypothesis))
-```
-In this case, the hypothesis entails the premise as the fine amount mentioned in both sentences is the same. However, the events described in the hypothesis and premise are different, so this script does not account for the entire premise and hypothesis.","
-# Premise: Deutsche Bank Slapped With $14 Billion Fine By DOJ Over Mortgage Probe
-# Hypothesis: Deutsche Bank Rebuffs U.S. Over $14 Billion Mortgage Settlement
-# Golden Label: neutral
-
-
-fine_amount_premise = 14
-fine_amount_hypothesis = 14
-
-def entailment_or_contradiction_or_neutral(fine_amount_premise, fine_amount_hypothesis):
-    # the hypothesis and premise both mention a fine imposed on Deutsche Bank by the DOJ
-    # check if the hypothesis entails the premise by checking if the fine amounts are equal in both sentences
-    if fine_amount_premise == fine_amount_hypothesis:
-        return True
     else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(fine_amount_premise, fine_amount_hypothesis))
-
-","fine_amount_premise = 14
-fine_amount_hypothesis = 14
-
-def entailment_or_contradiction_or_neutral(fine_amount_premise, fine_amount_hypothesis):
-    # the hypothesis and premise both mention a fine imposed on Deutsche Bank by the DOJ
-    # check if the hypothesis entails the premise by checking if the fine amounts are equal in both sentences
-    if fine_amount_premise == fine_amount_hypothesis:
         return True
-    else:
-        return False
 
-print(entailment_or_contradiction_or_neutral(fine_amount_premise, fine_amount_hypothesis))
-"
-222,"U.S. Adds 146,000 Jobs; Jobless Rate Falls to 7.7%",Unemployment Rate Falls To 7.7 Percent,entailment,222,"```python
-unemployment_rate_premise = 7.7
-unemployment_rate_hypothesis = 7.7
-
-def entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis):
-    # the hypothesis and premise mention the same unemployment rate
-    # check if the hypothesis entails the premise by checking if the unemployment rate mentioned in both sentences is the same
-    if unemployment_rate_premise == unemployment_rate_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis))
-```
-The script checks if the unemployment rate mentioned in both the premise and the hypothesis is the same. If it is the same, then we can say that the hypothesis entails the premise.","
-# Premise: U.S. Adds 146,000 Jobs; Jobless Rate Falls to 7.7%
-# Hypothesis: Unemployment Rate Falls To 7.7 Percent
-# Golden Label: entailment
-
-
-unemployment_rate_premise = 7.7
-unemployment_rate_hypothesis = 7.7
-
-def entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis):
-    # the hypothesis and premise mention the same unemployment rate
-    # check if the hypothesis entails the premise by checking if the unemployment rate mentioned in both sentences is the same
-    if unemployment_rate_premise == unemployment_rate_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis))
-
-","unemployment_rate_premise = 7.7
-unemployment_rate_hypothesis = 7.7
-
-def entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis):
-    # the hypothesis and premise mention the same unemployment rate
-    # check if the hypothesis entails the premise by checking if the unemployment rate mentioned in both sentences is the same
-    if unemployment_rate_premise == unemployment_rate_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(unemployment_rate_premise, unemployment_rate_hypothesis))
-"
-106,"U.S. adds 280,000 jobs in May; unemployment 5.5%","U.S. Economy Added 280,000 Jobs in May; Unemployment Rate 5.5%",entailment,106,"```python
-jobs_added_premise = 280000
-unemployment_rate_premise = 5.5
-jobs_added_hypothesis = 280000
-unemployment_rate_hypothesis = 5.5
-
-def entailment_or_contradiction_or_neutral(jobs_added_premise, unemployment_rate_premise, jobs_added_hypothesis, unemployment_rate_hypothesis):
-    # the hypothesis and premise mention the number of jobs added and the unemployment rate
-    # check if the hypothesis entails the premise by checking if the number of jobs added and the unemployment rate are equal in the two sentences
-    if jobs_added_premise == jobs_added_hypothesis and unemployment_rate_premise == unemployment_rate_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_premise, unemployment_rate_premise, jobs_added_hypothesis, unemployment_rate_hypothesis))
-```","
-# Premise: U.S. adds 280,000 jobs in May; unemployment 5.5%
-# Hypothesis: U.S. Economy Added 280,000 Jobs in May; Unemployment Rate 5.5%
-# Golden Label: entailment
-
-
-jobs_added_premise = 280000
-unemployment_rate_premise = 5.5
-jobs_added_hypothesis = 280000
-unemployment_rate_hypothesis = 5.5
-
-def entailment_or_contradiction_or_neutral(jobs_added_premise, unemployment_rate_premise, jobs_added_hypothesis, unemployment_rate_hypothesis):
-    # the hypothesis and premise mention the number of jobs added and the unemployment rate
-    # check if the hypothesis entails the premise by checking if the number of jobs added and the unemployment rate are equal in the two sentences
-    if jobs_added_premise == jobs_added_hypothesis and unemployment_rate_premise == unemployment_rate_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_premise, unemployment_rate_premise, jobs_added_hypothesis, unemployment_rate_hypothesis))
-
-","jobs_added_premise = 280000
-unemployment_rate_premise = 5.5
-jobs_added_hypothesis = 280000
-unemployment_rate_hypothesis = 5.5
-
-def entailment_or_contradiction_or_neutral(jobs_added_premise, unemployment_rate_premise, jobs_added_hypothesis, unemployment_rate_hypothesis):
-    # the hypothesis and premise mention the number of jobs added and the unemployment rate
-    # check if the hypothesis entails the premise by checking if the number of jobs added and the unemployment rate are equal in the two sentences
-    if jobs_added_premise == jobs_added_hypothesis and unemployment_rate_premise == unemployment_rate_hypothesis:
-        return True
-    else:
-        return False
-
-print(entailment_or_contradiction_or_neutral(jobs_added_premise, unemployment_rate_premise, jobs_added_hypothesis, unemployment_rate_hypothesis))
+print(entailment_or_contradiction_or_neutral(payment_premise, payment_hypothesis))
 "

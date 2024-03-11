@@ -10,7 +10,7 @@ from prompts import get_prompt, python_script_template
 from sklearn.metrics import classification_report
 import argparse
 import os
-import subprocess
+from utils import run_script
 import logging
 
 load_dotenv()
@@ -77,7 +77,7 @@ def generate_labels(model: str,
         # subset_idx = random.sample(range(0, len(samples)), samples_count if samples_count else int(len(samples) * 0.1))
     # get indices of samples for which data was already generated
     try:
-        previous_results = pd.read_csv(os.path.join(output_path, "random_sample_results_overview.csv"))
+        previous_results = pd.read_csv(os.path.join(output_path, "results_overview.csv"))
         skip_indices = previous_results["sample_index"].unique()
     except FileNotFoundError:
         previous_results = None
@@ -116,9 +116,9 @@ def generate_labels(model: str,
             try:
                 overview_df = pd.concat([previous_results, overview_df], axis=0, ignore_index=True)
             except:
-                overview_df.to_csv(os.path.join(output_path, "random_sample_results_overview_new.csv"), index=False)
+                overview_df.to_csv(os.path.join(output_path, "results_overview_new.csv"), index=False)
                 return
-        overview_df.to_csv(os.path.join(output_path, "random_sample_results_overview.csv"), index=False)
+        overview_df.to_csv(os.path.join(output_path, "results_overview.csv"), index=False)
 
 
 def save_python_script_to_file(output_path: str, script_str: str, idx: int) -> None:
@@ -191,7 +191,7 @@ def extract_labels_from_scripts(dataset: str, experiment_name: str) -> None:
                 idx = f.split(".")[0].split("_")[-1]  # extract the sample index from the script file name
                 if not idx in skip_indices:
                     label, info = run_script(os.path.join(input_path, f))
-                    results.append({"sample_index": idx, "label": label, "error_message": info})
+                    results.append({"sample_index": idx, "generated_label": label, "error_message": info})
     except Exception as e:
         print(e)
     finally:
@@ -207,45 +207,23 @@ def validate_generated_labels(dataset, experiment_name):
     generated_data_path = os.path.join(root_path, "data", "equate_labelled")
     generated_labels = pd.read_csv(os.path.join(generated_data_path, f"{dataset}_{experiment_name}.csv"))
     generated_labels["golden_label"] = generated_labels["sample_index"].apply(lambda idx: samples[idx]['label'])
+    generated_labels["premise"] = generated_labels["sample_index"].apply(lambda idx: samples[idx]['premise'])
+    generated_labels["hypothesis"] = generated_labels["sample_index"].apply(lambda idx: samples[idx]['hypothesis'])
     generated_labels.to_csv(os.path.join(generated_data_path, f"{dataset}_{experiment_name}.csv"), index=False)
     print(f"CLASSIFICATION REPORT FOR DATASET {dataset} (exp. {experiment_name})")
     valid_results = generated_labels[generated_labels['error_message'].isna()]
     print(classification_report(y_true=valid_results['golden_label'],
-                                y_pred=valid_results['label']))
+                                y_pred=valid_results['generated_label']))
     misclassified_samples = list(
-        valid_results[valid_results['golden_label'] != valid_results['label']]['sample_index'].unique())
+        valid_results[valid_results['golden_label'] != valid_results['generated_label']]['sample_index'].unique())
     print(f"Misclassified samples: {sorted(misclassified_samples)}")
     invalid_samples = list(generated_labels[generated_labels['error_message'].notna()]['sample_index'].unique())
     print(f"Invalid samples: {sorted(invalid_samples)}")
 
 
-def run_script(script_path) -> (str, str):
-    """
-    Runs a script and captures the output or the exception message, if an exception is thrown.
-    :param script_path: the path to the script to be run
-    :return: the stdout output value of the script or the string "error" if an exception occurs. Also, the exception
-    message is returned, or an empty string if no exception occurs.
-    """
-    try:
-        # Run the script using subprocess.run
-        result = subprocess.run(['python', script_path], capture_output=True, text=True, check=True)
-        label = result.stdout.strip()
-        print(label)
-        if label.lower() == "true":
-            return "entailment", ""
-        elif label.lower() == "false":
-            return "contradiction", ""
-        else:
-            return "neutral", ""
-    except subprocess.CalledProcessError as e:
-        # If an exception is thrown, capture the exception information
-        captured_error = e.stderr.strip()
-        return "error", captured_error
-
-
 if __name__ == "__main__":
     dataset = "StressTest"
-    experiment_name = "gpt4-2examples"
+    experiment_name = "gpt4"
     # GENERATE SCRIPTS FOR THE QNLI TASK
     # start_time = time.time()
     # generate_labels(model="gpt-4", dataset=dataset,
@@ -255,7 +233,7 @@ if __name__ == "__main__":
     # print(f"Finished script generation in {round(time.time() - start_time, 2)} seconds.")
 
     # EXTRACT THE LABELS BASED ON THE SCRIPT RETURN VALUE
-    # extract_labels_from_scripts(dataset, experiment_name)
+    extract_labels_from_scripts(dataset, experiment_name)
     # EVALUATE THE CLASSIFICATION RESULTS
     validate_generated_labels(dataset, experiment_name)
 
