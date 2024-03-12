@@ -239,37 +239,6 @@ def load_fine_tuned_model(target_model_path: str,
     return ft_model, tokenizer
 
 
-def generate_completion(model, tokenizer, prompt: str = None, expected_completion: str = None):
-    # Ignore warnings
-    logging.set_verbosity(logging.CRITICAL)
-
-    sys_msg = "Give a response suitable to the instructions below"
-    if not prompt:
-        prompt = f"### Instruction:\nYou need to reason about weather a hypothesis entails or contradicts a premise, by generating Python scripts. The scripts should classify the relation between the hypothesis and premise based on the quantitative and textual information mentioned in them. All the quantities and textual details in the hypothesis should be entailed by the information in the premise. First, manually extract all the individual quantities from both of the inputs, as valid numbers. Use the variable name to describe what the quantity measures, based on the context. Then, define a Python function that takes the extracted quantities as arguments. Within the function, use these quantities to perform computations based on the context of the premise and hypothesis. Finally, compare the resulting variables to determine the relationship. If the comparison indicates entailment, return True; for contradiction return False. Remember to include brief comments in the script to explain each step of the reasoning process. To illustrate, consider the following examples:\nSTART_EXAMPLE\nPremise: Yesterday I learned 35 verbs and 5 nouns in the morning and 10 verbs in the evening.\nHypothesis: I learned 5 nouns and less than fifty verbs yesterday.\nAnswer:\n```python\nverbs_morning_premise = 35\nverbs_evening_premise = 10\nnouns_premise = 5\nmax_verbs_hypothesis = 50 \nnouns_hypothesis = 5\n\ndef entailment_or_contradiction(verbs_morning_premise, verbs_evening_premise, nouns_premise, max_verbs_hypothesis, nouns_hypothesis):\n    # the hypothesis talks about the number of learned nouns and verbs, which are also referenced in the premise\n    # find the total number of verbs learned from the premise \n    total_verbs_premise = verbs_morning_premise + verbs_evening_premise\n    # check if the total verbs form the hypothesis is more than 'verbs_evening_premise' and if the number of nouns is equal between the premise and hypothesis\n    return max_verbs_hypothesis > total_verbs_premise and nouns_premise == nouns_hypothesis\n\nprint(entailment_or_contradiction(verbs_morning_premise, verbs_evening_premise, nouns_premise, max_verbs_hypothesis, nouns_hypothesis))\n```\nEND_EXAMPLE\n\nSTART_EXAMPLE\nPremise: She bought 10 crayons and received 5 more from her desk mate.\nHypothesis: She has 10 crayons in total.\nAnswer:\n```python\nbought_crayons_premise = 10\nreceived_crayons_premise = 5\ntotal_crayons_hypothesis = 12\n\ndef entailment_or_contradiction(bought_crayons_premise, received_crayons_premise, total_crayons_hypothesis):\n    # the entity in the hypothesis can be computed from the entities in the premise\n    total_crayons_premise = bought_crayons_premise + received_crayons_premise\n    # check if 'total_crayons_hypothesis' entails the quantity deduced from the premise, so if they are equal\n    return total_crayons_premise == total_crayons_hypothesis:\n\nprint(entailment_or_contradiction(bought_crayons_premise, received_crayons_premise, total_crayons_hypothesis))\n```\nEND_EXAMPLE\n### Input:\nPremise: less than 750 and she sold that to George for Rs\nHypothesis: 450 and she sold that to George for Rs"
-        expected_completion = """```python
-        max_sales_premise = 750
-        sales_hypothesis = 450
-        
-        def entailment_or_contradiction_or_neutral(max_sales_premise, sales_hypothesis):
-            # the hypothesis refers to the sales to George mentioned in the premise
-            # the hypothesis estimates the sales to be 'sales_hypothesis'
-            # check if the hypothesis contradicts the premise by checking if the sales reported in the hypothesis are more than 'max_sales_premise'
-            if sales_hypothesis > max_sales_premise:
-                return False
-            # any number of sales less than 750 is consistent with the premise, so the hypothesis entails the premise
-            else:
-                return True
-        
-        print(entailment_or_contradiction_or_neutral(max_sales_premise, sales_hypothesis))"""
-    text = f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{prompt}[/INST]\n### Response:\n"
-
-    pipe = pipeline(task="text-generation", model=model, tokenizer=tokenizer, max_length=2048, return_full_text=False)
-    result = pipe(text)
-    completion = result[0]['generated_text']
-    print(f"COMPLETION: {completion}")
-    print(f"EXPECTED COMPLETION: {expected_completion}")
-
-
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(prog='QNLI prediction')
@@ -325,11 +294,4 @@ if __name__ == "__main__":
                                                         padding_token=args.pad_token,
                                                         source_model_name=args.hf_repo,
                                                         input_path=args.input_path)
-
-    print("########## TESTING FINE-TUNED MODEL FOR INFERENCE ##########")
-    try:
-        generate_completion(fine_tuned_model, tokenizer)
-    except:
-        print(traceback.print_exc())
-        print("Error doing inference with fine-tuned model")
 
