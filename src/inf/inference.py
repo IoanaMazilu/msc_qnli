@@ -117,13 +117,11 @@ def load_model(hf_repo: str, finetuned: bool, input_path: str, model_name: str, 
 def format_prompt_for_inference(prompt: str, finetuned_model: bool = False) -> str:
     # if not finetuned_model:
     sys_msg = "Give a response suitable to the instructions below"
-    return f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{prompt}[/INST]"
-    # else:
-        # use the same template as in the fine-tuning process
-        # response_template = "### Response:\n"
-        # pre_instruction = "Below is an instruction that describes a task. \
-        #           Write a response that appropriately completes the request."
-        # return f"{pre_instruction}\n\n{prompt}\n\n{response_template}"
+    if not finetuned_model:
+        return f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{prompt}[/INST]"
+    else:
+        # add response cue like we used in the fine-tuning process
+        return f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{prompt}[/INST]\n### Response:\n"
 
 
 if __name__ == "__main__":
