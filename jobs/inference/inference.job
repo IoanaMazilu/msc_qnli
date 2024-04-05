@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=18
 #SBATCH --gpus=1
 #SBATCH --job-name=qnli_inference
-#SBATCH --time=04:00:00
+#SBATCH --time=08:00:00
 #SBATCH --output=slurm_output_%A.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=ioana.mazilu@student.uva.nl
@@ -25,12 +25,12 @@ cd $HOME/qnli/quant_nli
 cp -r data/finetuning/completion/test_all.csv "$TMPDIR"/input/completion/test_all.csv
 
 # set some variables
-MODEL_NAME="codellama-instruct"
-MODEL_SIZE="7B"
-HF_REPO="codellama/CodeLlama-7b-Python-hf"
+MODEL_NAME="yi"
+MODEL_SIZE="6B"
+HF_REPO="01-ai/Yi-6B-Chat"
 MAX_NEW_TOKENS="512"
-BATCH_SIZE="16"
-SAMPLE_SIZE="32"
+BATCH_SIZE="4"
+#SAMPLE_SIZE="32"
 
 # run inference script
 cd $HOME/qnli/quant_nli/src/inf
@@ -43,8 +43,8 @@ python inference.py --job-id "$SLURM_JOBID" \
                     --model-size "$MODEL_SIZE" \
                     --hf-repo "$HF_REPO"  \
                     --max-new-tokens "$MAX_NEW_TOKENS" \
-                    --batch-size "$BATCH_SIZE" \
-                    --sample-size "$SAMPLE_SIZE"
+                    --batch-size "$BATCH_SIZE"
+#                    --sample-size "$SAMPLE_SIZE"
 
 # copy output files from scratch back to the home directory, also copy the job output file
 mkdir -p $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/

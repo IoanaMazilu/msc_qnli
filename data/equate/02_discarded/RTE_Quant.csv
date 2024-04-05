@@ -1,0 +1,4 @@
+premise,hypothesis,label,sample_index
+"Dr. Felix Soto Toro ( born 1967 in Guaynabo , Puerto Rico ) , is an astronaut applicant and an Electrical Designs Engineer in NASA , who developed an electronic 3D measuring system .",Soto Toro invented a 3D measuring system .,entailment,6
+"Prosecutions tended to be more aggressive and sentences tended to be longer for financial crimes with many victims and massive losses of money , as in the Minkow case .",Bilking a large number of people out of millions of dollars can lead to sentences that vary from ten to twenty years .,neutral,46
+"More than 6,400 migratory birds and other animals were killed in Nevada by drinking water in the cyanide-laced ponds produced by gold mining operations .",Animals have died by the thousands from drinking at cyanide-laced holding ponds .,entailment,156

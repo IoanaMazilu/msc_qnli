@@ -87,13 +87,14 @@ def load_model(hf_repo: str, finetuned: bool, input_path: str, model_name: str, 
 
         model = AutoModelForCausalLM.from_pretrained(
             hf_repo,  # use default value if none provided
-            quantization_config=bnb_config,
+            # quantization_config=bnb_config,
+            torch_dtype=torch.float16,
             device_map=device_map,
             token=os.getenv("HF_TOKEN"),
             cache_dir=cache_directory
         )
-        model.config.use_cache = False
-        model.config.pretraining_tp = 1
+        # model.config.use_cache = False
+        # model.config.pretraining_tp = 1
     else:
         base_model = AutoModelForCausalLM.from_pretrained(
             pretrained_model_name_or_path=hf_repo,
@@ -104,10 +105,9 @@ def load_model(hf_repo: str, finetuned: bool, input_path: str, model_name: str, 
             device_map=device_map,
             cache_dir=cache_directory
         )
-        if finetuned:
-            base_model.resize_token_embeddings(len(tokenizer))
-            # tokenizer.pad_token_id = tokenizer.convert_tokens_to_ids("<pad>")
-            base_model.config.pad_token_id = tokenizer.pad_token_id
+        base_model.resize_token_embeddings(len(tokenizer))
+        # tokenizer.pad_token_id = tokenizer.convert_tokens_to_ids("<pad>")
+        base_model.config.pad_token_id = tokenizer.pad_token_id
         model = add_lora_adapters_to_model(base_model, input_path, model_name, model_size)
     print(f"Model loaded in {round((time.time() - start_time) / 60, 2)} min.")
 
@@ -174,13 +174,15 @@ if __name__ == "__main__":
 
     print("########## LOADING THE MODEL AND TOKENIZER ##########")
     model, tokenizer = load_model(args.hf_repo, args.finetuned, args.input_path, args.model_name, args.model_size)
+    model.bfloat16()
     pipe = pipeline(task="text-generation",
                     model=model,
                     tokenizer=tokenizer,
                     max_new_tokens=int(args.max_new_tokens),
                     return_full_text=False)
-    if "code" in args.hf_repo and not args.finetuned:
-        # CodeLlama asks for this configuration (unless it is our fine-tuned model)
+    # if "code" in args.hf_repo and not args.finetuned:
+    #     # CodeLlama asks for this configuration (unless it is our fine-tuned model)
+    if not args.finetuned:
         pipe.tokenizer.pad_token_id = model.config.eos_token_id
     try:
         print("#################### GENERATING COMPLETIONS FOR THE TEST SET  ####################")

@@ -1,0 +1,248 @@
+premise,hypothesis,label,sample_index
+"stocks nifty future call today: Sensex Weak and Nifty flat, Today best stock trading call on 3 Sept, Free nifty future stock tips, BHEL, Tata motor gain.","Sensex and Nifty up, 2 sept Nifty stock market trading tips and top nifty gainers and losers on Monday, Indian stock market tips today ~ stocks nifty future call today.",contradiction,0
+"At DAVOS, Financial Billionaire Schwartzman, who took home over $600 million dollars last year, says he doesn't understand why americans are angry.","At Davos, Wall Street Billionaire Steven Schwartzfman, who takes home every year around $700 million dollars, says he doesn't understand why americans are angry.",neutral,1
+"SENSEX Nifty up, Today stocks nifty future trading tips and call on Thursday 22 Aug, Nifty top gainers and losers stocks ~ stocks nifty future call today.","Sensex down 74.58 points, Nifty future tips, Tomorrow nifty future trading call on Wednesday 21 Aug, Nifty gainers and losers ~ stocks nifty future call today.",contradiction,2
+"At DAVOS, Financial Billionaire Schwartzman, who took home over $600 million dollars last year, says he doesn't understand why americans are angry.","At Davos, Wall Street Billionaire Mr Schwartzfman, who takes home every year over $500 million dollars, says he doesn't understand why americans are angry.",entailment,3
+"Sensex and Nifty up, 2 sept Nifty stock market trading tips and top nifty gainers and losers on Monday, Indian stock market tips today ~ stocks nifty future call today.","stocks nifty future call today: Sensex Weak and Nifty flat, Today best stock trading call on 3 Sept, Free nifty future stock tips, BHEL, Tata motor gain.",contradiction,4
+"Indian Rupee down, Tomorrow On Monday stock nifty future trading call 26 Aug, Stocks nifty future call today ~ stocks nifty future call today.","SENSEX Nifty up, Today stocks nifty future trading tips and call on Thursday 22 Aug, Nifty top gainers and losers stocks ~ stocks nifty future call today.",neutral,5
+The US is quickly becoming a 3rd world country. 50% of all children and 90% of black children need government assistance to eat.,Never forget the USA is the best in everything... except for the part where 50% of children and 90% of black children need government assistance to eat.,entailment,6
+"At DAVOS, Financial Billionaire Schwartzman, who took home over $600 million dollars last year, says he doesn't understand why americans are angry.","At Davos, Wall Street Billionaire Schwartzfman, who takes home every year over $500 million dollars, says he doesn't understand why americans are angry.",entailment,7
+"At Davos, Wall Street Billionaire Steven Schwartzfman, who takes home every year around $700 million dollars, says he doesn't understand why americans are angry.","At DAVOS, Financial Billionaire Schwartzman, who took home over $600 million dollars last year, says he doesn't understand why americans are angry.",entailment,8
+"At Davos, Wall Street Billionaire Mr Schwartzfman, who takes home every year over $500 million dollars, says he doesn't understand why americans are angry.","At DAVOS, Financial Billionaire Schwartzman, who took home over $600 million dollars last year, says he doesn't understand why americans are angry.",neutral,9
+"Rupee hits low 65.36/USD, Sensex Falls 300 points, Nifty future trading call on Tuesday 27 Aug, Indian share market tips ~ stocks nifty future call today.","Rupee down 68.19/USD, Sensex falls 282.50 points at 17685.58, Today nifty future trading call on Wednesday 28 Aug ~ stocks nifty future call today.",contradiction,10
+"Sensex up 87 points, today nifty predication, Stock nifty future trading call on Monday, Sun Pharma & Tata steel gainers ~ stocks nifty future call today.","Nifty Sensex green flag, Nifty top gainers and losers, Nifty future stock trading call today 13 Aug on Tuesday ~ stocks nifty future call today.",neutral,11
+"Sensex closed up 204.96 points, Nifty above 5471.75, today stock market update, Nifty future trading tips ~ stocks nifty future call today.","Indian Rupee down, Tomorrow On Monday stock nifty future trading call 26 Aug, Stocks nifty future call today ~ stocks nifty future call today.",neutral,12
+"Swedish Financial Supervisory Authority study reports ""no risk with high frequency trading"" two days after contradictory study.","Swedish Financial Supervisory Authority (FI) investigation concludes ""high frequency trading no threat"" two days after contradictory study.",entailment,13
+World oil demand will exceed supply in the second half of the year unless we can increase production by 1.5 million barrels a day.,Oil markets facing shortfall in the second half (ie. demand will surpass supply unless we fond another 1.5 million barrels of oil a day).,entailment,14
+Bush in 2002: We want 5.5 million more homeowners by 2010 & less words in the closing papers they have to sign.,President Bush on Homeownership in 2002: 5.5 million more homeowners by 2010 & much less words in their closing documents (seriously)),entailment,15
+ECB: Working paper no. 2004: Mind the output gap: the disconnect of growth and inflation during recessions and convex Phillips curves in the euro area (PDF),ECB: Working paper no. 2001: Will US inflation awake from the dead? The role of slack and non-linearities in the Phillips curve (PDF),neutral,16
+"SENSEX rallied 500 points, Tata motors up 8.01%, Today Nifty future stock trading call on Tuesday 10 Sept, Indian share market tips.","Sensex & Nifty down, Global market update today, Indian share nifty future trading call on Wednesday 11 Sept, Free Stock future call.",contradiction,17
+"Sensex closed 362.75 Pts, Tomorrow sure stock future trading call, India best advisory company, Intraday nifty future tips today.","SENSEX & Nifty down, Sensex down 357.39 Pts, Nifty future tips, Intraday stock future trading call tomorrow, today nifty future call.",neutral,18
+"Sensex high 20000 touch, Nifty above 5900, Tuesday stock market positive and sure nifty future trading call on today.","SENSEX & Nifty down, Sensex down 357.39 Pts, Nifty future tips, Intraday stock future trading call tomorrow, today nifty future call.",contradiction,19
+Oil markets facing shortfall in the second half (ie. demand will surpass supply unless we fond another 1.5 million barrels of oil a day).,World oil demand will exceed supply in the second half of the year unless we can increase production by 1.5 million barrels a day.,entailment,20
+Never forget the USA is the best in everything... except for the part where 50% of children and 90% of black children need government assistance to eat.,The US is quickly becoming a 3rd world country. 50% of all children and 90% of black children need government assistance to eat.,entailment,21
+World's 85 richest people have as much as poorest 3.5 billion: Oxfam warns Davos of pernicious impact of the widening wealth gap.,"Richest 85 people across the globe share a combined wealth of 1tn, as much as the poorest 3.5 billion of the world's population.",neutral,22
+Tomorrow 19 Aug stock nifty future trading call and Equity market update today on Monday ~ Online Commodity Stock trading tips.,"Sensex falls 700 points, Nifty 234 poins, Indian today stock market update and Monday Intraday nifty future trading call 19 Aug.",neutral,23
+"Sensex falls 700 points, Nifty 234 poins, Indian today stock market update and Monday Intraday nifty future trading call 19 Aug.",Tomorrow 19 Aug stock nifty future trading call and Equity market update today on Monday ~ Online Commodity Stock trading tips.,neutral,24
+"Swedish Financial Supervisory Authority (FI) investigation concludes ""high frequency trading no threat"" two days after contradictory study.","Swedish Financial Supervisory Authority study reports ""no risk with high frequency trading"" two days after contradictory study.",entailment,25
+"I give you $100,000 to invest in 5 bonds, you choose the ratio. Which bonds do you invest in and why?","If I gave you $100,000 to invest in 3 corporate bonds and let you choose the ratio, which bonds would you invest in and why?",contradiction,26
+"Marijuana Re-crim Protest With Senator Scott Brown Video Part 2, Supporter Tries To School Marijuana Policy Expert, MA GOP Ferrari.",Marijuana Re-crim Protest With Senator Scott Brown Video Part 1; Senator Brushes Off Marijuana Reformers and Press.,neutral,27
+"A tiny.00017% US elite spends over $3.5 Trillion every year, taken by threats of violence against the public.",A tiny.00017% elite control over $2 Trillion by using threats of violence and imprisonment against the public.,neutral,28
+President Bush on Homeownership in 2002: 5.5 million more homeowners by 2010 & much less words in their closing documents (seriously)),Bush in 2002: We want 5.5 million more homeowners by 2010 & less words in the closing papers they have to sign.,entailment,29
+A tiny.00017% elite control over $2 Trillion by using threats of violence and imprisonment against the public.,"A tiny.00017% US elite spends over $3.5 Trillion every year, taken by threats of violence against the public.",neutral,30
+"Were going to have a dollar collapse like the 1980s, strategist says.","Under Donald Trump's Presidency, Were Going To Have A Dollar Collapse Like The 1980s-Strategist.",neutral,31
+"For First Time In 130 Years, More Young Adults Live With Parents Than With Partners.",More young American adults live with parents than with partners or in other situations since 1880s.,entailment,32
+"Based off 1st time unemployment claims, the June report will likely be exactly the same as May's.",Based off of 1st unemployment reports the jobs report for June will probably be unchanged from May.,entailment,33
+Based off of 1st unemployment reports the jobs report for June will probably be unchanged from May.,"Based off 1st time unemployment claims, the June report will likely be exactly the same as May's.",entailment,34
+The modern day Gilded Age of wealth: Top 0.1 percent now have more wealth than bottom 90 percent.,The richest 0.1 percent of Americans is about to control more wealth than the bottom 90 percent.,neutral,35
+"Apple commits to contribute over $350 billion into US economy over the next five years, create 20,000 jobs.","Apple Says It Will Repatriate $250 Billion to US in Next Five Years, Add 20,000 Jobs in the US.",entailment,36
+Trump considers hiking proposed tariffs on $200 billion in Chinese goods to 25%.,US Considers 25% Tariffs on $200 Billion in Chinese Imports. (Previously 10% on $200 Billion),neutral,37
+South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy.,Australian Current Account Deficit Drained AUD$9.5 Billion In Q2 Of 2017 Out Of The Economy.,neutral,38
+Japan's Current Account Surplus Adds 0.93 JPY Trillion In June Of 2017 To The Economy.,South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy.,neutral,39
+French Current Account Drained EUR 2.1 Billion In July 2017 Out Of The Economy.,Australian Current Account Deficit Drained AUD$9.5 Billion In Q2 Of 2017 Out Of The Economy.,neutral,40
+Norway's Current Account Surplus Adds US$4.61 Billion In Quarter 2 Of 2017 To The Economy.,South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy.,neutral,41
+"It will take black families 228 years to amass the wealth that white families have today, new study finds.","It Would Take 228 Years for Black Families to Amass Wealth of White Families, Analysis Says.",entailment,42
+New Data Reveals How The Richest 0.001 Percent Pay Income Taxes.,New Data Offer First Infuriating Glimpse At How The Richest 0.001 Percent Pay Income Taxes.,neutral,43
+White House readies plan to extend about $12 billion in emergency aid to farmers caught in Trumps escalating trade war.,Trade war bailout: Trump to offer $12 billion in emergency aid for farmers hurt by tariffs.,entailment,44
+95% of 2009-2012 Income Gains Went to the Top 1%.,Unprecedented Inequality: The Top 1 Percent Captured 95% of the Income Gains Since 2009.,entailment,45
+"U.S. Economy Grew by 161,000 Jobs in October; Unemployment Rate Falls to 4.9%.","U.S. economy added 161,000 jobs in October as unemployment rate dipped to 4.9 percent.",entailment,46
+Turkish Current Account Drains US$5.12B In July Of 2017 Out Of The Economy.,Poland's July 2017 Current Account Deficit Drains U.S. $1 Billion Out Of The Economy.,neutral,47
+More young American adults live with parents than with partners or in other situations since 1880s.,"For First Time In 130 Years, More Young Adults Live With Parents Than With Partners.",entailment,48
+Global Debt Has Soared By $57 Trillion Since The 2007-08 Financial Crisis.,Global debt has grown by $57 trillion in seven years following the financial crisis.,entailment,49
+Loblaw says minimum wage increases will hike labour costs by $190M.,Loblaw expects higher minimum wage rules will increase its labour costs by $190M.,entailment,50
+"U.S. middle-class incomes reached highest-ever level in 2016, Census Bureau says.","Middle-class income hit highest level on record in 2016, Census Bureau reports.",neutral,51
+"U.S. economy added 161,000 jobs in October as unemployment rate dipped to 4.9 percent.","U.S. Economy Grew by 161,000 Jobs in October; Unemployment Rate Falls to 4.9%.",entailment,52
+"South Africa in recession for first time since 2009, rand slumps.",South Africa Unexpectedly Slides Into Recession For The First Time Since 2009.,entailment,53
+Trump considers hiking proposed tariffs on $200 billion in Chinese goods to 25%.,Trump to propose 25 percent tariff on $200 billion of Chinese imports: source.,entailment,55
+Black Business Ownership Under Trump Jumps 400% in one year.,Survey Finds that Black Business Ownership in the US Jumped 400% in One Year.,entailment,56
+"40% Of Venezuela Stores Go Bust After 3,000% Minimum Wage Hike.","In Venezuela, Huge Hike in Minimum Wage Forces 40 Percent of Stores to Close.",entailment,57
+"U.S. Payrolls Rebound to 164,000 Gain; Jobless Rate Hits 3.9%.","BloombergMarkets U.S. Payrolls Rise 164,000 While Jobless Rate Falls to 3.9%.",entailment,58
+"Breaking: U.S. economy added 192,000 jobs last month as the unemployment rate fell to 8.9%.","Jobless rate falls to 8.9% as 192,000 private sector jobs added in February.",neutral,59
+"Gain of 192,000 jobs in February, Unemployment rate to 8.9%... Revised for January +30K Jobs as well.","Jobless rate falls to 8.9% as 192,000 private sector jobs added in February.",neutral,60
+"Trump is pushing 25% auto tariff, despite top advisers scrambling to stop him, sources say.",Trump pushes 25 percent auto tariff as top advisers scramble to stop him.,entailment,61
+Americans Taxed $400 Billion For Fiber Optic Internet That Doesnt Exist.,Americans Taxed $300 Millon For Fiber Optic Internet That Doesnt Exist.,contradiction,62
+"U.S. Adds 255,000 Jobs in July, Jobless Rate at 4.9%.","U.S adds 255,000 jobs in July as unemployment rate holds at 4.9 percent.",entailment,63
+"U.S. Jobless Rate Declines to 7.8%; 114,000 Jobs Added-Bloomberg.","Unemployment Rate Drops To 7.8 Percent; 114,000 Jobs Added To Payrolls.",entailment,64
+Banks Repossess 1 Million Homes in 2010: the bleakest year in the foreclosure crisis has only just begun.,"Banks Repossess 1 Million Homes In 2010 ""2011 is going to be the peak"".",entailment,65
+"U.S. Jobless Rate Declines to 7.8%; 114,000 Jobs Added.","Unemployment Rate Drops To 7.8 Percent; 114,000 Jobs Added To Payrolls.",entailment,66
+Fed's Rosengren Wants Two More Hikes in 2018 as Economy Grows.,Top Fed official wants two more rate hikes in 2018 as US economy grows.,entailment,67
+"Jobs Report: U.S. Economy Added 321,000 Jobs In November, Unemployment Steady At 5.8%.","U.S. Economy Added 321,000 Jobs in November; Unemployment Rate Is 5.8%.",entailment,68
+"Four in 10 Americans can't cover a $400 emergency expense, Fed finds.","Four in 10 cant cover an emergency expense of $400, Fed survey finds.",entailment,69
+Personal Bankruptcy Filings up 14% in first 6 months of 2010.,Consumer Bankruptcy Filings Up 14 Percent Through First Half Of 2010.,entailment,70
+Goldman Sachs to pay $5.1 billion to settle toxic mortgage probe.,Goldman to Pay Up to $5 Billion to Settle Claims of Faulty Mortgages.,contradiction,71
+Six Banks Made $51 Billion in 09 (The rest lost money),Six Giant Banks Made $51 Billion Last Year; The Other 980 Lost Money.,neutral,72
+Six Giant Banks Made $51 Billion Last Year; The Other 980 Lost Money.,Six Banks Made $51 Billion in 09 (The rest lost money),entailment,73
+World Bank:'extreme poverty' to fall below 10% of world population for first time.,World poverty to drop below 10% for first time; Capitalism to blame.,neutral,74
+Trump Seeks $3.6 Trillion in Spending Cuts to Reshape Government.,Trump seeks to slash $3.6 trillion of government spending in budget.,entailment,75
+"With unemployment rate dropping to 5.4%, U.S. added 223K jobs in April.","U.S. Economy Added 223,000 Jobs in April; Unemployment Rate at 5.4%.",entailment,76
+Loblaw expects higher minimum wage rules will increase its labour costs by $190M.,Loblaw says minimum wage increases will hike labour costs by $190M.,entailment,77
+"Nifty50 at 8,400, Sensex ends in Red, Investment Advisory Company In Indore.","Nifty below 8400, Sensex In RED, Stock Advisory Company In Indore.",contradiction,78
+Britain's Whitbread to sell Costa Coffee to Coke for $5.1 billion.,Coca-Cola expands into coffee with $5.1 billion deal for Britain's Costa.,entailment,79
+Coca-Cola expands into coffee with $5.1 billion deal for Britain's Costa.,Britain's Whitbread to sell Costa Coffee to Coke for $5.1 billion.,neutral,80
+"U.S. Economy Added 250,000 Jobs In October; Unemployment 3.7 Percent.","NYTimes: U.S. Added 250,000 Jobs in October; Unemployment at 3.7%.",entailment,81
+General Motors to announce $1 billion in U.S. investment.,General Motors Plans at Least $1 Billion in Fresh U.S. Investment.,entailment,82
+Wages Salaries jump by 3.1 percent; highest in decade.,"CNBC-Wages and salaries jump by 3.1%, highest level in a decade.",entailment,83
+"Unemployment Rate Falls to 3.9 percent, but Wage Growth Remains Weak.","U.S. job growth picks up, unemployment rate falls to 3.9 percent.",neutral,84
+"U.S. private sector adds 253,000 jobs in May: ADP.","U.S. Private Sector Adds 253,000 Jobs In May, More Than Expected.",neutral,85
+Obama Offers to Cut Corporate Tax Rate to 28%.,Obama wants to cut corporate tax rate to 28% as part of overhaul.,entailment,86
+South Africa Unexpectedly Slides Into Recession For The First Time Since 2009.,"South Africa in recession for first time since 2009, rand slumps.",entailment,87
+Goldman to Pay Up to $5 Billion to Settle Claims of Faulty Mortgages.,Goldman Sachs to pay $5.1 billion to settle toxic mortgage probe.,contradiction,88
+"Sensex rises 103 points, Nifty ends above 8,900, Stock Option calls tomorrow.","Sensex rises 100 pts, Nifty ends above 8900, Stock Tips Tomorrow.",contradiction,89
+Goldman Sachs says it has $5.1B agreement to settle US mortgage investigation.,Goldman Sachs to pay $5.1 billion to settle toxic mortgage probe.,entailment,90
+Oxfam says richest one percent to own more than rest by 2016.,Richest 1% To Own More Than Half Worlds Wealth By 2016 Oxfam.,entailment,91
+Deutsche Bank Slapped With $14 Billion Fine By DOJ Over Mortgage Probe.,Deutsche Bank Rebuffs U.S. Over $14 Billion Mortgage Settlement.,neutral,92
+Top 1 Percent Took Record Share of 2012 US Income.,Richest one percent take home record share of US income in 2012.,entailment,93
+"US weekly jobless claims total 255,000 vs 285,000 est, lowest level since 1973.","Initial Weekly Unemployment Claims lowest since 1973 at 255,000.",entailment,94
+"US economy adds 163K jobs, unemployment rate rises to 8.3%-NYPOST.com.","U.S. Adds 163,000 Jobs In July; Unemployment Rate Rises To 8.3%.",entailment,95
+Richest 1% on track to own 50% of all wealth by 2016 Oxfam warns.,Richest 1% To Own More Than Half Worlds Wealth By 2016 Oxfam.,entailment,96
+U.S. to Impose Tariffs on Another $16 Billion in Chinese Imports.,U.S. to Slap Tariffs on $16 Billion of Chinese Goods on Aug. 23.,entailment,97
+Saudi central bank net foreign assets shrink 1.0 pct in March.,Saudi central bank net foreign assets fall $6 billion in March.,neutral,98
+"U.S. Adds 280,000 Jobs in May; Jobless Rate Ticks Up to 5.5%.","U.S. Economy Added 280,000 Jobs in May; Unemployment Rate 5.5%.",entailment,99
+"Employers Cut Payrolls for Sixth Straight Month, 62,000 Drop In May.","Employers Cut Workers for a Sixth Month-June's total: 62,000.",neutral,100
+"Saudi Prince, billionaire says'never' again to $100 oil barrel.",Saudi Prince Says Oil Will'Never Reach $100 Per Barrel Again',entailment,101
+FED RAISES RATES FOR FIRST TIME SINCE 2006.,Hong Kong Raises Base Rate for First Time Since 2006 After Fed.,neutral,102
+Mexico Raises Key Rate for First Time Since 2008 After Fed.,Hong Kong Raises Base Rate for First Time Since 2006 After Fed.,neutral,103
+"85 richest people own as much as bottom half of population, report says.",85 richest people as wealthy as half of the worlds population.,entailment,104
+"U.S. housing starts rise to 549,000 rate in March.","Housing Starts in U.S. Increased 7.2% in March to 549,000 Pace.",neutral,105
+"U.S. adds 280,000 jobs in May; unemployment 5.5%.","U.S. Economy Added 280,000 Jobs in May; Unemployment Rate 5.5%.",entailment,106
+"Trump interviews four for Fed chair job, to decide in two-three weeks.",Trump Says He'll Decide on New Fed Chair in Two to Three Weeks.,entailment,107
+"BloombergMarkets U.S. Payrolls Rise 164,000 While Jobless Rate Falls to 3.9%.","U.S. Payrolls Rebound to 164,000 Gain; Jobless Rate Hits 3.9%.",entailment,108
+Saudi central bank net foreign assets fall $6 billion in March.,Saudi central bank net foreign assets shrink 1.0 pct in March.,neutral,109
+"Pending sales of homes rose 1.5% in March, reversing February's decline.",Pending Sales of Existing Homes in U.S. Climbed 1.5% in March.,entailment,110
+"U.S. Adds 36,000 Jobs in January; Rate Falls to 9.0%.","36,000 jobs added in January; unemployment rate falls to 9%.",neutral,111
+Consumer Bankruptcy Filings Up 14 Percent Through First Half Of 2010.,Personal Bankruptcy Filings up 14% in first 6 months of 2010.,entailment,112
+Richest 1% To Own More Than Half Worlds Wealth By 2016 Oxfam.,Oxfam says richest one percent to own more than rest by 2016.,entailment,113
+Fed to launch QE3 of $40 billion MBS each month.,Fed Undertakes QE3 With $40 Billion in MBS Purchases a Month.,entailment,114
+"Dow nosedives more than 1,000 points as stocks' losses deepen.","Stocks take another tumble, Dow dives more than 1,000 points.",entailment,115
+South Africa Unexpectedly Slides Into Recession For The First Time Since 2009.,South Africas Economy Slips Into First Recession Since 2009.,entailment,116
+Survey Finds that Black Business Ownership in the US Jumped 400% in One Year.,Black Business Ownership Under Trump Jumps 400% in one year.,neutral,117
+Mark Cuban: This tech bubble is far worse than back in 2000.,Mark Cuban: We're in a Tech Bubbleand It's Worse Than 2000.,entailment,118
+"Citi: Oil Could Plunge to $20, and This Might Be'the End of OPEC'","Oil Plunge To $20 Could Be On The Horizon, Citigroup Warns.",entailment,119
+Hong Kong Raises Base Rate for First Time Since 2006 After Fed.,Mexico Raises Key Rate for First Time Since 2008 After Fed.,neutral,120
+Wages Salaries jump by 3.1 percent; highest in decade.,"Wages and salaries jump by 3.1%, highest level in a decade.",entailment,121
+"No, GDP isn't exceeding unemployment for the first time in 100 years.",GDP Growth Eclipses Unemployment For 1st Time In 100 Years.,contradiction,122
+U.S. economy off to slow start in 2017 under Trump.,G.D.P. Report Shows U.S. Economy Off to Slow Start in 2017.,entailment,123
+U.S. consumer spending in December weakest since 2009.,"U.S. consumer spending weakest since 2009, inflation muted.",neutral,124
+US first-quarter growth revised down to 2.2%.,U.S. GDP Growth Revised Down to 2.2% Rate in First Quarter.,entailment,126
+Nestle Pays $7.2 Billion to Sell Starbucks Coffee.,Nestle to pay $7.15 billion to Starbucks in coffee tie-up.,contradiction,128
+California's $15 minimum wage: Risks vs. evidence.,California Is About to Make a $15 Minimum Wage a Reality.,neutral,129
+California Gov. Jerry Brown approves minimum wage increase to $15.,California Is About to Make a $15 Minimum Wage a Reality.,entailment,130
+America's budget deficit expanded by $113 billion as spending surged.,America's budget deficit jumps by 17% as spending surges.,neutral,131
+Gov. Brown hails deal to raise minimum wage to $15.,California Is About to Make a $15 Minimum Wage a Reality.,entailment,132
+California Nears Deal to Adopt a $15 State Minimum Wage.,California Is About to Make a $15 Minimum Wage a Reality.,entailment,133
+Analysts React to Californias Proposed $15 Minimum Wage: A Blunt Approach.,California Is About to Make a $15 Minimum Wage a Reality.,entailment,134
+FDIC Says Banks on `Problem List' Rose 30% in Second Quarter.,"FDIC says 117 banks on problem list in Q2, vs 90 in Q1.",entailment,135
+"Economy Sheds 467,000 Jobs; Unemployment Rate at 9.5%-CNBC.","Employers Cut 467,000 Jobs; Unemployed Rate 9.5% CNBC.",entailment,136
+4 banks become first to repay government aid.,4 Regional Banks Are the First to Repay Government Aid.,neutral,137
+China' s economy shows slowest growth in 25 years.,China posts slowest annual economic growth in 25 years.,entailment,138
+"FDIC Seizes 6 George Banks, Estimated Cost to FDIC: $807m.","FDIC seizes 6 Georgia banks, estimated losses of $807m.",entailment,139
+"U.S. Employers Advertise 3.35 Million Jobs In September, Most In 3 Years.",U.S. Employers Post Most Job Openings In 3 Years:NPR.,entailment,140
+U.S. House Passes $700 Billion Rescue Plan for Failing.,U.S. Senate Approves Revised $700 Billion Rescue Bill.,entailment,141
+Loan Scandal Costs Wells Fargo $1 Billion; None of Fine Goes to Victims-Truthdig.,Wells Fargo Said to Be Target of $1 Billion U.S. Fine.,entailment,142
+U.S. to fine Wells Fargo $1 billion.,Wells Fargo Said to Be Target of $1 Billion U.S. Fine.,entailment,143
+Insolvency after the 2005 Bankruptcy Reform.,The 2005 Bankruptcy Reform and the Foreclosure Crisis.,entailment,144
+U.S. economy off to slow start in 2017 under Trump.,GDP Report Shows US Economy Off to Slow Start in 2017.,entailment,145
+China cuts interest rates for third time in six months as economy sputters.,China adds stimulus with third rate cut in six months.,entailment,146
+Reserve Bank of Australia lift interest rates again to 3.75%.,Australia Increases Benchmark Interest Rate to 3.75%.,entailment,147
+"U.S. Second-Quarter Growth Revised Up to 4.2% on Software, Trade.",U.S. second-quarter GDP growth raised to 4.2 percent.,entailment,148
+"36,000 jobs added in January; unemployment rate falls to 9%.","U.S. Adds 36,000 Jobs in January; Rate Falls to 9.0%.",neutral,149
+30-Year Mortgage Rates in U.S. Fall Below 4%.,30-year mortgage rates fall below 4% for first time.,neutral,150
+U.S. import prices post biggest drop in over two years.,Brent crude suffers biggest price drop in two years.,neutral,151
+U.S. public pension gap at least $2 trillion.,US public pension gap at least $2 trillion: Moody's.,entailment,152
+U.S. public companies seek bankruptcy at fastest 1st-qtr. rate since 2010.,U.S. homeownership rate at 25-year low in 1st qtr.,neutral,153
+"Deficit Will Hit $1.845 Trillion This Year, Congressional Budget Office (CBO) Says.",US deficit forecast to hit $1.8 trillion this year.,entailment,154
+US economy sees weakest growth for three years in first quarter of 2017.,US Economy Expanded at Weakest Pace in Three Years.,entailment,155
+The $720 boost from falling gas prices.,Falling gas prices represent a $720 stimulus check.,entailment,156
+California Gov. Jerry Brown approves minimum wage increase to $15.,Gov. Brown hails deal to raise minimum wage to $15.,entailment,157
+U.S. economy a world beater because of 5 factors.,What's making US economy a world beater? 5 factors.,entailment,158
+"US GDP growth slows to 1.8%, (no) surprise jump in jobless rate.",U.S. Economic Growth Slows to 1.8% Rate in Quarter.,neutral,159
+GDP Report Shows US Economy Off to Slow Start in 2017.,U.S. economy off to slow start in 2017 under Trump.,entailment,160
+The International Monetary Fund (IMF) and the World Bank Explained in One Minute.,The Tragedy of the Commons Explained in One Minute.,neutral,161
+China posts slowest annual economic growth in 25 years.,China' s economy shows slowest growth in 25 years.,entailment,162
+Dow Closes Above 18K for First Time Since July.,Dow closes above 18000 for first time in 9 months.,entailment,163
+Nestle to pay $7.15 billion to Starbucks in coffee tie-up.,Nestle Pays $7.2 Billion to Sell Starbucks Coffee.,neutral,164
+U.S. Already $292 Billion in the Red This Year.,U.S. already $292 bln in the red this year-CBO.,entailment,165
+China economic growth slowest in 25 years.,China' s economy shows slowest growth in 25 years.,entailment,166
+"U.S. economy added 158,000 private sector jobs in October.","ADP: 158,000 private-sector jobs added in October.",neutral,167
+"Fannie, Freddie may need $363 billion.",Fannie and Freddie may need another $215 billion.,neutral,168
+"U.S. adds 222,000 jobs in June hiring surge.","U.S. economy gains a strong 222,000 jobs in June.",entailment,169
+Unprecedented Inequality: The Top 1 Percent Captured 95% of the Income Gains Since 2009.,95% of 2009-2012 Income Gains Went to the Top 1%.,entailment,170
+UK Disposable Income Falls Most In Peacetime Since 1921.,UK disposable income falls to lowest since 1921.,neutral,171
+Global Debt Has Soared By $57 Trillion Since The 2007-08 Financial Crisis.,Global debt up $57 TRILLION since crisis: Report.,entailment,172
+"U.S. Adds 222,000 jobs in June, Unemployment Rate Up to 4.4%.","U.S. economy gains a strong 222,000 jobs in June.",entailment,173
+U.S. Economys Growth Rate in 2nd Quarter Revised Up to 3.7%.,U.S. economy grew 3.7 percent in second quarter.,entailment,174
+BofA sets aside $14bn to cover loan claims-FT.com.,BofA sets aside $14 bn for U.S. mortgage claims.,neutral,175
+A Stock Market Panic Like 1987 Could Happen Again.,Could the 1987 stock market crash happen again?,neutral,176
+U.S. second-quarter GDP revised to show larger 3.7% gain.,U.S. economy grew 3.7 percent in second quarter.,entailment,177
+"Employers cut 533K jobs in Nov., most in 34 years.","533,000 jobs lost in November, most in 34 years.",entailment,178
+"US economy adds 215,000 jobs in July.","US economy adds 215,000 jobs in July-BBC News.",entailment,179
+30-year mortgage rates fall below 4% for first time.,30-yr mortgage drops below 4 pct for first time.,entailment,180
+Census shows 1 in 2 people in U.S. are poor or low-income.,Census: 1 In 2 Americans Is Poor Or Low-Income.,entailment,181
+Dow closes above 18000 for first time in 9 months.,Dow Closes Above 18K for First Time Since July.,entailment,182
+US raises China steel taxes by 522%.,US Raises Tax On Chinese Steel Imports By 522%.,entailment,183
+"Economy loses 11,000 jobs in November, fewest since 2007.","U.S. Economy Lost Only 11,000 Jobs in November.",entailment,184
+Retail sales post biggest drop in 9 months.,Producer prices post biggest drop in 10 months.,neutral,185
+U.S. GDP Fell 0.7% in First Quarter (revised down from +0.2%),U.S. Economy Contracted 0.7% in First Quarter.,entailment,186
+Chrysler to Shut Down All Production For One Month.,Chrysler closing all 30 plants for one month.,neutral,187
+"U.S. Adds 255,000 Jobs in July, Jobless Rate at 4.9%.","U.S. private sector adds 179,000 jobs in July.",neutral,188
+U.S. GDP Growth Revised Down to 2.2% Rate in First Quarter.,US first-quarter growth revised down to 2.2%.,entailment,189
+U.S. retail sales fall 0.4% in January.,Retail sales nationally drop 0.4% in January.,entailment,190
+"China economy grows 7 percent in third quarter, weakest since 2009.",China economy logs weakest growth since 2009.,entailment,191
+California Nears Deal to Adopt a $15 State Minimum Wage.,California to Raise Minimum Wage to $15/hour.,neutral,192
+Gov. Brown hails deal to raise minimum wage to $15.,California to Raise Minimum Wage to $15/hour.,entailment,193
+"AA to Cut Up to 15,000 Jobs.","American Airlines may cut up to 15,000 jobs.",entailment,194
+Dozens Of Cities And States Will Raise Their Minimum Wages For 2017.,20 Of The Most Expensive Cities In The World.,neutral,195
+Unemployment falls in seven swing states.,Unemployment falls in 41 states in September.,neutral,196
+California Is About to Make a $15 Minimum Wage a Reality.,California to Raise Minimum Wage to $15/hour.,entailment,197
+Analysts React to Californias Proposed $15 Minimum Wage: A Blunt Approach.,California to Raise Minimum Wage to $15/hour.,entailment,198
+"Saudi Arabia could be bankrupt within 5 years, IMF predicts.",Saudi Arabia could be bankrupt by 2020 IMF.,entailment,199
+Trump's'balanced' budget relies on over $2 trillion in mystery money.,Trump Budget Based on $2 Trillion Math Error.,entailment,200
+Gold tops $1500/oz for he first time.,Gold Reaches $1500 For First Time In History.,contradiction,201
+No there is not a $2 TRILLION error in the budget.,Trump Budget Based on $2 Trillion Math Error.,contradiction,202
+The 2005 Bankruptcy Reform and the Foreclosure Crisis.,Insolvency after the 2005 Bankruptcy Reform.,entailment,203
+"Intel to cut more than 5,000 jobs in 2014.",Intel to Cut Workforce by 5 Percent in 2014.,neutral,204
+Unemployment rates rose in 44 U.S. states in July.,Broad-Based Unemployment Gains in 44 States.,entailment,205
+"U.S. economy gains a strong 222,000 jobs in June.","U.S. adds 222,000 jobs in June hiring surge.",entailment,206
+Ethereum Jumps To $400! June 12 2017 Medium.,Ethereum Hit $300 June 10th 2017 Medium.,neutral,207
+Home ownership falls to lowest level since the 1960s.,Home ownership hits lowest level since 1965.,neutral,208
+Producer prices post biggest drop in 10 months.,Retail sales post biggest drop in 9 months.,neutral,209
+"Fed raises rates again, sees two more hikes in 2018.","Fed hikes rates, signals two more for 2018.",entailment,210
+"US retail sales fall 0.4 percent in March, most in 9 months.",Retail sales post biggest drop in 9 months.,entailment,211
+Dow Hits 20000 for First Time.,"Boom: Dow hits 20,000 for first time ever.",entailment,212
+"The Ironworker Running to Unseat Paul Ryan Wants Single-Payer Health Care, $15 Minimum Wage.",A Sign to Go Slow on the $15 Minimum Wage.,neutral,213
+Dow Hits 20000 for First Time.,"Dow Hits 20,000 For First Time in History.",entailment,214
+U.S Job loss: Worst in 34 years.,U.S. January Job Losses Worst in 34 Years.,neutral,215
+"U.S. estimated to have lost 525,000 jobs in January.","U.S. Lost Almost 600,000 Jobs In January.",entailment,216
+Pfizer nears deal to acquire Medivation for close to US$14b.,Pfizer to Buy Medivation for $14 Billion.,entailment,217
+Unemployment falls in 41 states in September.,Unemployment falls in seven swing states.,neutral,218
+US new home sales fall 1.6 percent in November.,November home sales slowest in 6 months.,neutral,219
+Retail sales nationally drop 0.4% in January.,U.S. retail sales fall 0.4% in January.,entailment,220
+Unemployment rate falls to lowest level since 2008.,Unemployment Rate Falls To 7.7 Percent.,neutral,221
+"U.S. Adds 146,000 Jobs; Jobless Rate Falls to 7.7%.",Unemployment Rate Falls To 7.7 Percent.,entailment,222
+"U.S. Adds 103,000 Jobs in December, Unemployment at 9.4%.","Canada adds 22,000 jobs in December.",neutral,223
+Fannie and Freddie may need another $215 billion.,"Fannie, Freddie may need $363 billion.",neutral,224
+"U.S. economy added 158,000 private sector jobs in October.","ADP: We added 158,000 jobs in October.",neutral,225
+United States Daily US Deficit For 2/13/2013: $23.3B.,Daily US Deficit For 2/14/2013: $6.2B.,neutral,226
+Amazon buying Whole Foods for $13.7B.,Amazon to buy Whole Foods for $13.7bn.,entailment,227
+"U.S. Economy Added 215,000 Jobs in July; Unemployment Still 5.3%.","US economy adds 215,000 jobs in July.",entailment,228
+Gold Reaches $1500 For First Time In History.,Gold tops $1500/oz for he first time.,contradiction,229
+"China's Economy Grows 6.9%, but Warning Signs Persist.",China's economy grows at 6.9 percent.,entailment,230
+"Gold tops $1,500 for first time.",Gold tops $1500/oz for he first time.,entailment,231
+64% of Americans say we have a poor economy.,90% of Americans say economy stinks.,contradiction,232
+Amazon Hikes Monthly Prime Membership Prices by 18% to $12.99.,Amazon EBT membership $5.99 a month.,neutral,233
+Argentina agrees $50bn financing deal with IMF.,IMF agrees $50bn loan for Argentina.,entailment,234
+US Raises Tax On Chinese Steel Imports By 522%.,US raises China steel taxes by 522%.,entailment,235
+"U.S. Jobless Rate Declines to 7.8%; 114,000 Jobs Added.",Shocker: Jobless rate falls to 7.8%.,entailment,236
+Chrysler says September sales best since 2007.,Chrysler sales up 12% in September.,neutral,237
+"Economy Adds 192,000 Jobs in March, Unemployment Rate Unchanged.","U.S. creates 192,000 jobs in March.",neutral,238
+"Payrolls in U.S. Rose 175,000 in May, Unemployment 7.6%.","U.S. generates 175,000 jobs in May.",entailment,239
+"Jobs Are Up 290,000 in April.","U.S. Added 290,000 Jobs in April.",neutral,240
+Foreclosures 46% higher in March than a year ago.,4 Tips for Buying a Foreclosure.,neutral,241
+"U.S. Adds 113,000 Jobs, in Latest Worrying Sign on Growth.","US adds 113,000 jobs in January.",neutral,242
+Gold Reaches $1500 For First Time In History.,"Gold tops $1,500 for first time.",contradiction,243
+Fed Sees Up to $599 Billion in Bank Losses.,AIG to post $5 billion loss.,neutral,244
+"U.S. Added 290,000 Jobs in April.","Jobs Are Up 290,000 in April.",neutral,245
+$300 billion tax cut coming from Obama?,Obama eyes $300 bln tax cut.,neutral,246
+Unemployment rate plunges to 7.8%-WaPo.,Unemployment below 8%.,entailment,247
+"U.S. Companies Added 67,000 Jobs in August.","67,000 Jobs Gained.",neutral,248
+"Nifty traded above 7500, Trading Calls Today.","Nifty above 7400,",entailment,249

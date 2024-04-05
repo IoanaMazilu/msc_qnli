@@ -13,11 +13,11 @@ def run_script(script_path) -> (str, str):
         result = subprocess.run(['python', script_path], capture_output=True, text=True, check=True)
         label = result.stdout.strip()
         # print(label)
-        if label.lower() == "true":
+        if label.lower() == "true" or label.lower() == "entailment":
             return "entailment", ""
-        elif label.lower() == "false":
+        elif label.lower() == "false" or label.lower() == "contradiction":
             return "contradiction", ""
-        elif label.lower() == "none":
+        elif label.lower() == "none" or label.lower() == "neutral":
             return "neutral", ""
         else:
             return "", ""

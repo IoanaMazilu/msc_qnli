@@ -117,6 +117,7 @@ def prepare_model_for_fine_tuning(custom_output_dir: str,
         r=lora_r,
         bias="none",
         task_type="CAUSAL_LM",
+        target_modules=['v_proj', 'down_proj', 'up_proj', 'q_proj', 'gate_proj', 'k_proj', 'o_proj']
     )
 
     # Set training parameters
@@ -160,8 +161,6 @@ def prepare_model_for_fine_tuning(custom_output_dir: str,
     response_template_ids = tokenizer.encode(response_template_with_context, add_special_tokens=False)
     collator = DataCollatorForCompletionOnlyLM(response_template_ids[4:], tokenizer=tokenizer, mlm=False)
 
-    train_dataset = train_dataset.shuffle(seed=42)
-    eval_dataset = eval_dataset.shuffle(seed=42)
     # Set supervised fine-tuning parameters
     trainer = SFTTrainer(
         model=model,

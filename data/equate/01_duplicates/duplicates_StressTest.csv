@@ -1,0 +1,650 @@
+premise,hypothesis,label,sample_index
+Sandy gets 3 marks for each correct sum and loses 2 marks for each incorrect sum,Sandy gets less than 4 marks for each correct sum and loses 2 marks for each incorrect sum,entailment,258
+Sandy gets less than 4 marks for each correct sum and loses 2 marks for each incorrect sum,Sandy gets 3 marks for each correct sum and loses 2 marks for each incorrect sum,neutral,259
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of less than 80 kmph and from city B to city C at 60 kmph,entailment,570
+Murali travelled from city A to city B at a speed of less than 80 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,neutral,571
+Mr Yadav spends 60 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,Mr Yadav spends more than 10 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,entailment,591
+Mr Yadav spends more than 10 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,Mr Yadav spends 60 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,neutral,592
+Ashok and Pyarelal invested money together in a business and share a capital of Ashok is 1 / 9 of that of Pyarelal,Ashok and Pyarelal invested money together in a business and share a capital of Ashok is less than 7 / 9 of that of Pyarelal,entailment,621
+Ashok and Pyarelal invested money together in a business and share a capital of Ashok is less than 7 / 9 of that of Pyarelal,Ashok and Pyarelal invested money together in a business and share a capital of Ashok is 1 / 9 of that of Pyarelal,neutral,622
+Ashok and Pyarelal invested money together in a business and share a capital of Ashok is 1 / 9 of that of Pyarelal,Ashok and Pyarelal invested money together in a business and share a capital of Ashok is less than 1 / 9 of that of Pyarelal,contradiction,623
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of more than 40 kmph and from city B to city C at 60 kmph,contradiction,815
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 6 months later , investing Rs",entailment,951
+"Jose joined him less than 6 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,952
+"Jose joined him 2 months later , investing Rs","Jose joined him 8 months later , investing Rs",contradiction,953
+"David obtained 76 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology What are his average marks ?","David obtained 86 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology What are his average marks ?",contradiction,959
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,entailment,1182
+How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,1183
+Kishore saved 10 % of his monthly salary,Kishore saved less than 10 % of his monthly salary,contradiction,1247
+From a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,From a group of more than 1 boys & 4 girls a Committee of 4 persons is to be formed,entailment,1296
+From a group of more than 1 boys & 4 girls a Committee of 4 persons is to be formed,From a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,neutral,1297
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 7 years at 4 % per annum simple interest ?,contradiction,1328
+"In the city of San Durango , 60 people own cats , dogs , or rabbits","In the city of San Durango , more than 50 people own cats , dogs , or rabbits",entailment,1416
+"In the city of San Durango , more than 50 people own cats , dogs , or rabbits","In the city of San Durango , 60 people own cats , dogs , or rabbits",neutral,1417
+"In the city of San Durango , 60 people own cats , dogs , or rabbits","In the city of San Durango , 20 people own cats , dogs , or rabbits",contradiction,1418
+"Sheila works 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday","Sheila works more than 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday",contradiction,1460
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 6 months later , investing Rs",entailment,1476
+"Jose joined him less than 6 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,1477
+"Alok ordered 16 chapatis , 5 plates of rice , 7 plates of mixed vegetable and 6 ice - cream cups","Alok ordered less than 16 chapatis , 5 plates of rice , 7 plates of mixed vegetable and 6 ice - cream cups",contradiction,1565
+Vijay bought 160 shirts at the rate of Rs,Vijay bought less than 260 shirts at the rate of Rs,entailment,1632
+Vijay bought less than 260 shirts at the rate of Rs,Vijay bought 160 shirts at the rate of Rs,neutral,1633
+"Victor has 15 cups if flour , 16 cups of sugar and 8 cups of milk","Victor has less than 35 cups if flour , 16 cups of sugar and 8 cups of milk",entailment,1665
+"Victor has less than 35 cups if flour , 16 cups of sugar and 8 cups of milk","Victor has 15 cups if flour , 16 cups of sugar and 8 cups of milk",neutral,1666
+Suresh can complete a job in 15 hours,Suresh can complete a job in more than 15 hours,contradiction,1679
+Vijay bought 160 shirts at the rate of Rs,Vijay bought less than 260 shirts at the rate of Rs,entailment,1710
+Vijay bought less than 260 shirts at the rate of Rs,Vijay bought 160 shirts at the rate of Rs,neutral,1711
+Vijay bought 160 shirts at the rate of Rs,Vijay bought more than 160 shirts at the rate of Rs,contradiction,1712
+"If bonds are sold in $ 50 or $ 100 denominations only , which of the following CAN NOT be the number of US saving bonds that Robert purchased ?","If bonds are sold in $ more than 50 or $ 100 denominations only , which of the following CAN NOT be the number of US saving bonds that Robert purchased ?",contradiction,1754
+John was thrice as old as Tom 6 yrs back,John was thrice as old as Tom 5 yrs back,contradiction,1781
+John has 10 pairs of matched socks,John has more than 10 pairs of matched socks,contradiction,1841
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 8 years at 4 % per annum simple interest ?,entailment,1953
+How much loss would Indu has suffered had she given it to Bindu for less than 8 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,1954
+"If there are 25 males altogether , how many gerbils does Claire have ?","If there are more than 25 males altogether , how many gerbils does Claire have ?",contradiction,1961
+Paul can dig the same well in 24 days,Paul can dig the same well in less than 24 days,contradiction,2009
+"The pilot of a small aircraft with a 40 - gallon fuel tank wants to fly to Cleveland , which is 480 miles away","The pilot of a small aircraft with a less than 70 - gallon fuel tank wants to fly to Cleveland , which is 480 miles away",entailment,2022
+"The pilot of a small aircraft with a less than 70 - gallon fuel tank wants to fly to Cleveland , which is 480 miles away","The pilot of a small aircraft with a 40 - gallon fuel tank wants to fly to Cleveland , which is 480 miles away",neutral,2023
+"In the city of San Durango , 60 people own cats , dogs , or rabbits","In the city of San Durango , more than 50 people own cats , dogs , or rabbits",entailment,2106
+"In the city of San Durango , more than 50 people own cats , dogs , or rabbits","In the city of San Durango , 60 people own cats , dogs , or rabbits",neutral,2107
+Nitin borrowed some money at the rate of 6 % p,Nitin borrowed some money at the rate of more than 3 % p,entailment,2112
+Nitin borrowed some money at the rate of more than 3 % p,Nitin borrowed some money at the rate of 6 % p,neutral,2113
+Carl drove from his home to the beach at an average speed of 80 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,Carl drove from his home to the beach at an average speed of more than 40 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,entailment,2124
+Carl drove from his home to the beach at an average speed of more than 40 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,Carl drove from his home to the beach at an average speed of 80 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,neutral,2125
+Carl drove from his home to the beach at an average speed of 80 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,Carl drove from his home to the beach at an average speed of 10 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,contradiction,2126
+"While driving from City A to City B , Bob drives at a constant speed of 40 miles per hour","While driving from City A to City B , Bob drives at a constant speed of less than 40 miles per hour",contradiction,2141
+Alice leaves City A 30 minutes after Bob,Alice leaves City A less than 60 minutes after Bob,entailment,2142
+Alice leaves City A less than 60 minutes after Bob,Alice leaves City A 30 minutes after Bob,neutral,2143
+4 buses runs between Chennai and Mysore,less than 8 buses runs between Chennai and Mysore,entailment,2163
+less than 8 buses runs between Chennai and Mysore,4 buses runs between Chennai and Mysore,neutral,2164
+There are 17 stations between Hyderabad and Bangalore,There are less than 17 stations between Hyderabad and Bangalore,contradiction,2222
+Suresh works for 9 hours and then the remaining job is completed by Ashutosh,Suresh works for more than 7 hours and then the remaining job is completed by Ashutosh,entailment,2277
+Suresh works for more than 7 hours and then the remaining job is completed by Ashutosh,Suresh works for 9 hours and then the remaining job is completed by Ashutosh,neutral,2278
+Suresh works for 9 hours and then the remaining job is completed by Ashutosh,Suresh works for more than 9 hours and then the remaining job is completed by Ashutosh,contradiction,2279
+Bruce and Anne can clean their house in 4 hours working together at their respective constant rates,Bruce and Anne can clean their house in 6 hours working together at their respective constant rates,contradiction,2306
+"If Anne ’ s speed were doubled , they could clean their house in 3 hours working at their respective rates","If Anne ’ s speed were doubled , they could clean their house in 7 hours working at their respective rates",contradiction,2309
+Mr Yadav spends 60 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,Mr Yadav spends more than 10 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,entailment,2397
+Mr Yadav spends more than 10 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,Mr Yadav spends 60 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,neutral,2398
+He will be 5 / 3 times as old as Tom 6 years hence,He will be more than 5 / 3 times as old as Tom 6 years hence,contradiction,2429
+"In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored more than 64 percent , Bhavan scored 36 percent and Chetan 44 percent",contradiction,2438
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","more than 2 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",entailment,2532
+"more than 2 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",neutral,2533
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","more than 5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",contradiction,2534
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of more than 30 kmph and from city B to city C at 60 kmph,entailment,2547
+Murali travelled from city A to city B at a speed of more than 30 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,neutral,2548
+Two dogsled teams raced across a 300 mile course in Wyoming,Two dogsled teams raced across a more than 300 mile course in Wyoming,contradiction,2570
+Vijay bought 160 shirts at the rate of Rs,Vijay bought more than 160 shirts at the rate of Rs,contradiction,2573
+John traveled 80 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,John traveled more than 10 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,entailment,2574
+John traveled more than 10 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,John traveled 80 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,neutral,2575
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 8 years at 4 % per annum simple interest ?,contradiction,2642
+The compound interest earned by Sunil on a certain amount at the end of two years at the rate of 8 % p,The compound interest earned by Sunil on a certain amount at the end of two years at the rate of less than 8 % p,contradiction,2645
+"In a covering a distance of 30 km , Abhay takes 2 hours more than Sameer","In a covering a distance of more than 30 km , Abhay takes 2 hours more than Sameer",contradiction,2654
+Kishore saved 10 % of his monthly salary,Kishore saved less than 10 % of his monthly salary,contradiction,2708
+"Efrida and Frazer who live 10 miles apart , meet at a restaurant that is directly north of Efrida ' s home and directly east of Frazer ' s home","Efrida and Frazer who live more than 10 miles apart , meet at a restaurant that is directly north of Efrida ' s home and directly east of Frazer ' s home",contradiction,2720
+"If the ratio of their ages is 7 : 9 , how old is Sandy ?","If the ratio of their ages is less than 8 : 9 , how old is Sandy ?",entailment,2751
+"If the ratio of their ages is less than 8 : 9 , how old is Sandy ?","If the ratio of their ages is 7 : 9 , how old is Sandy ?",neutral,2752
+Raman mixed 24 kg of butter at Rs,Raman mixed more than 24 kg of butter at Rs,contradiction,2789
+Aamir saves 32 % of his monthly salary,Aamir saves less than 52 % of his monthly salary,entailment,2817
+Aamir saves less than 52 % of his monthly salary,Aamir saves 32 % of his monthly salary,neutral,2818
+"In a certain town , the ratio of NY Yankees fans to NY Mets fans is 3 : 2 , and the ratio of NY Mets fans to Boston Red Sox fans is 4 : 5","In a certain town , the ratio of NY Yankees fans to NY Mets fans is less than 4 : 2 , and the ratio of NY Mets fans to Boston Red Sox fans is 4 : 5",entailment,2868
+"In a certain town , the ratio of NY Yankees fans to NY Mets fans is less than 4 : 2 , and the ratio of NY Mets fans to Boston Red Sox fans is 4 : 5","In a certain town , the ratio of NY Yankees fans to NY Mets fans is 3 : 2 , and the ratio of NY Mets fans to Boston Red Sox fans is 4 : 5",neutral,2869
+"In a certain town , the ratio of NY Yankees fans to NY Mets fans is 3 : 2 , and the ratio of NY Mets fans to Boston Red Sox fans is 4 : 5","In a certain town , the ratio of NY Yankees fans to NY Mets fans is 5 : 2 , and the ratio of NY Mets fans to Boston Red Sox fans is 4 : 5",contradiction,2870
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 4 months later , investing Rs",entailment,2892
+"Jose joined him less than 4 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,2893
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 6 months later , investing Rs",entailment,2907
+"Jose joined him less than 6 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,2908
+"Jose joined him 2 months later , investing Rs","Jose joined him more than 2 months later , investing Rs",contradiction,2909
+From a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,From a group of 2 boys & 4 girls a Committee of 4 persons is to be formed,contradiction,2990
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 6 years at 4 % per annum simple interest ?,entailment,2991
+How much loss would Indu has suffered had she given it to Bindu for less than 6 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,2992
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 2 years at 4 % per annum simple interest ?,contradiction,2993
+"At present , the ratio between the ages of Arun and Deepak is 4 : 3","At present , the ratio between the ages of Arun and Deepak is more than 1 : 3",entailment,3000
+"At present , the ratio between the ages of Arun and Deepak is more than 1 : 3","At present , the ratio between the ages of Arun and Deepak is 4 : 3",neutral,3001
+"If the rosters for Professor Wang ' s 3 classes are combined with no student ' s name listed more than once , how many names will be on the combined roster ?","If the rosters for Professor Wang ' s less than 5 classes are combined with no student ' s name listed more than once , how many names will be on the combined roster ?",entailment,3009
+"If the rosters for Professor Wang ' s less than 5 classes are combined with no student ' s name listed more than once , how many names will be on the combined roster ?","If the rosters for Professor Wang ' s 3 classes are combined with no student ' s name listed more than once , how many names will be on the combined roster ?",neutral,3010
+"If the rosters for Professor Wang ' s 3 classes are combined with no student ' s name listed more than once , how many names will be on the combined roster ?","If the rosters for Professor Wang ' s 8 classes are combined with no student ' s name listed more than once , how many names will be on the combined roster ?",contradiction,3011
+"The pilot of a small aircraft with a 40 - gallon fuel tank wants to fly to Cleveland , which is 480 miles away","The pilot of a small aircraft with a 70 - gallon fuel tank wants to fly to Cleveland , which is 480 miles away",contradiction,3026
+James took a 3 - hour bike ride,James took a more than 3 - hour bike ride,contradiction,3053
+John traveled 80 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,John traveled 60 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,contradiction,3110
+John was thrice as old as Tom 6 yrs back,John was thrice as old as Tom less than 6 yrs back,contradiction,3122
+He will be 5 / 3 times as old as Tom 6 years hence,He will be 6 / 3 times as old as Tom 6 years hence,contradiction,3125
+"2000 , Deepak ' s share is :","less than 4000 , Deepak ' s share is :",entailment,3135
+"less than 4000 , Deepak ' s share is :","2000 , Deepak ' s share is :",neutral,3136
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 6 years at 4 % per annum simple interest ?,entailment,3225
+How much loss would Indu has suffered had she given it to Bindu for less than 6 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,3226
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 2 years at 4 % per annum simple interest ?,contradiction,3227
+"There are 300 seniors at Morse High School , and 50 % of them have cars","There are more than 100 seniors at Morse High School , and 50 % of them have cars",entailment,3234
+"There are more than 100 seniors at Morse High School , and 50 % of them have cars","There are 300 seniors at Morse High School , and 50 % of them have cars",neutral,3235
+90 students represent x percent of the boys at Jones Elementary School,less than 90 students represent x percent of the boys at Jones Elementary School,contradiction,3248
+"In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored less than 64 percent , Bhavan scored 36 percent and Chetan 44 percent",contradiction,3275
+Meg and Bob are among the 3 participants in a cycling race,Meg and Bob are among the more than 3 participants in a cycling race,contradiction,3287
+"At present , the ratio between the ages of Arun and Deepak is 4 : 3","At present , the ratio between the ages of Arun and Deepak is more than 1 : 3",entailment,3315
+"At present , the ratio between the ages of Arun and Deepak is more than 1 : 3","At present , the ratio between the ages of Arun and Deepak is 4 : 3",neutral,3316
+"At present , the ratio between the ages of Arun and Deepak is 4 : 3","At present , the ratio between the ages of Arun and Deepak is less than 4 : 3",contradiction,3317
+Arun purchased 30 kg of wheat at the rate of Rs,Arun purchased less than 60 kg of wheat at the rate of Rs,entailment,3330
+Arun purchased less than 60 kg of wheat at the rate of Rs,Arun purchased 30 kg of wheat at the rate of Rs,neutral,3331
+Arun purchased 30 kg of wheat at the rate of Rs,Arun purchased less than 30 kg of wheat at the rate of Rs,contradiction,3332
+Nitin borrowed some money at the rate of 6 % p,Nitin borrowed some money at the rate of more than 6 % p,contradiction,3347
+From a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,From a group of less than 6 boys & 4 girls a Committee of 4 persons is to be formed,contradiction,3353
+"If Yolanda ' s walking rate was 3 miles per hour and Bob т ' s was 4 miles per hour , how many miles had Bob walked when they met ?","If Yolanda ' s walking rate was less than 7 miles per hour and Bob т ' s was 4 miles per hour , how many miles had Bob walked when they met ?",entailment,3381
+"If Yolanda ' s walking rate was less than 7 miles per hour and Bob т ' s was 4 miles per hour , how many miles had Bob walked when they met ?","If Yolanda ' s walking rate was 3 miles per hour and Bob т ' s was 4 miles per hour , how many miles had Bob walked when they met ?",neutral,3382
+"If Yolanda ' s walking rate was 3 miles per hour and Bob т ' s was 4 miles per hour , how many miles had Bob walked when they met ?","If Yolanda ' s walking rate was less than 3 miles per hour and Bob т ' s was 4 miles per hour , how many miles had Bob walked when they met ?",contradiction,3383
+A “ Sophie Germain ” prime is any positive prime number p for which 2 p + 1 is also prime,A “ Sophie Germain ” prime is any positive prime number p for which less than 5 p + 1 is also prime,entailment,3384
+A “ Sophie Germain ” prime is any positive prime number p for which less than 5 p + 1 is also prime,A “ Sophie Germain ” prime is any positive prime number p for which 2 p + 1 is also prime,neutral,3385
+"Dacid obtained 76 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology","Dacid obtained more than 26 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology",entailment,3402
+"Dacid obtained more than 26 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology","Dacid obtained 76 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology",neutral,3403
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 2 months later , investing Rs",contradiction,3452
+"In a shop , 40 % socks are white and rest are black","In a shop , more than 20 % socks are white and rest are black",entailment,3462
+"In a shop , more than 20 % socks are white and rest are black","In a shop , 40 % socks are white and rest are black",neutral,3463
+"In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored less than 64 percent , Bhavan scored 36 percent and Chetan 44 percent",contradiction,3467
+Tanya is 25 % more efficient than Sakshi,Tanya is less than 65 % more efficient than Sakshi,entailment,3471
+Tanya is less than 65 % more efficient than Sakshi,Tanya is 25 % more efficient than Sakshi,neutral,3472
+Tanya is 25 % more efficient than Sakshi,Tanya is more than 25 % more efficient than Sakshi,contradiction,3473
+"In how many ways can you seat 4 people on a bench if one of them , Rohit , does not want to sit on the middle seat or at either end ?","In how many ways can you seat more than 4 people on a bench if one of them , Rohit , does not want to sit on the middle seat or at either end ?",contradiction,3476
+In a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,In a group of less than 6 boys & 4 girls a Committee of 4 persons is to be formed,contradiction,3503
+"The number of hours that Pat , a resident of Town X , watched television last week was between 1 and 2 standard deviations below the mean","The number of hours that Pat , a resident of Town X , watched television last week was between less than 1 and 2 standard deviations below the mean",contradiction,3557
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","more than 5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",contradiction,3575
+"Dacid obtained 76 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology","Dacid obtained less than 86 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology",entailment,3588
+"Dacid obtained less than 86 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology","Dacid obtained 76 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology",neutral,3589
+A runner runs the 40 miles from Marathon to Athens at a constant speed,A runner runs the less than 50 miles from Marathon to Athens at a constant speed,entailment,3642
+A runner runs the less than 50 miles from Marathon to Athens at a constant speed,A runner runs the 40 miles from Marathon to Athens at a constant speed,neutral,3643
+A runner runs the 40 miles from Marathon to Athens at a constant speed,A runner runs the less than 40 miles from Marathon to Athens at a constant speed,contradiction,3644
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 6 years at 4 % per annum simple interest ?,entailment,3663
+How much loss would Indu has suffered had she given it to Bindu for less than 6 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,3664
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 5 years at 4 % per annum simple interest ?,contradiction,3665
+Suresh can complete a job in 15 hours,Suresh can complete a job in more than 15 hours,contradiction,3680
+Suresh works for 9 hours and then the remaining job is completed by Ashutosh,Suresh works for more than 3 hours and then the remaining job is completed by Ashutosh,entailment,3681
+Suresh works for more than 3 hours and then the remaining job is completed by Ashutosh,Suresh works for 9 hours and then the remaining job is completed by Ashutosh,neutral,3682
+Suresh works for 9 hours and then the remaining job is completed by Ashutosh,Suresh works for more than 9 hours and then the remaining job is completed by Ashutosh,contradiction,3683
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 8 gang , in how many ways can he invite one or more of the gang to his house ?",contradiction,3728
+Kiran travels from A to B by car and returns from B to A by cycle in 7 hours,Kiran travels from A to B by car and returns from B to A by cycle in less than 7 hours,contradiction,3734
+Dan ’ s car gets 32 miles per gallon,Dan ’ s car gets less than 32 miles per gallon,contradiction,3737
+Ramesh can finish a work in 20 days and Sushil in 25 days,Ramesh can finish a work in less than 20 days and Sushil in 25 days,contradiction,3749
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 8 years at 4 % per annum simple interest ?,entailment,3798
+How much loss would Indu has suffered had she given it to Bindu for less than 8 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,3799
+"If there are 14 more FGH supermarkets in the US than in Canada , how many FGH supermarkets are there in the US ?","If there are less than 14 more FGH supermarkets in the US than in Canada , how many FGH supermarkets are there in the US ?",contradiction,3806
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","more than 1 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",entailment,3819
+"more than 1 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",neutral,3820
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","more than 5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",contradiction,3821
+"While driving from City A to City B , Bob drives at a constant speed of 40 miles per hour","While driving from City A to City B , Bob drives at a constant speed of more than 30 miles per hour",entailment,3834
+"While driving from City A to City B , Bob drives at a constant speed of more than 30 miles per hour","While driving from City A to City B , Bob drives at a constant speed of 40 miles per hour",neutral,3835
+Alice leaves City A 30 minutes after Bob,Alice leaves City A 80 minutes after Bob,contradiction,3839
+"city A to city B , Andrew drove for 1 hour at 50 mph and for 3 hours at 60 mph","city A to city B , Andrew drove for less than 4 hour at 50 mph and for 3 hours at 60 mph",entailment,3849
+"city A to city B , Andrew drove for less than 4 hour at 50 mph and for 3 hours at 60 mph","city A to city B , Andrew drove for 1 hour at 50 mph and for 3 hours at 60 mph",neutral,3850
+"Sheila works 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday","Sheila works more than 5 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday",entailment,3861
+"Sheila works more than 5 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday","Sheila works 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday",neutral,3862
+"Sheila works 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday","Sheila works more than 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday",contradiction,3863
+Suresh works for 9 hours and then the remaining job is completed by Ashutosh,Suresh works for more than 9 hours and then the remaining job is completed by Ashutosh,contradiction,3878
+"In the city of San Durango , 60 people own cats , dogs , or rabbits","In the city of San Durango , more than 10 people own cats , dogs , or rabbits",entailment,3885
+"In the city of San Durango , more than 10 people own cats , dogs , or rabbits","In the city of San Durango , 60 people own cats , dogs , or rabbits",neutral,3886
+"In the city of San Durango , 60 people own cats , dogs , or rabbits","In the city of San Durango , more than 60 people own cats , dogs , or rabbits",contradiction,3887
+"At Veridux Corporation , there are 250 employees","At Veridux Corporation , there are less than 650 employees",entailment,3918
+"At Veridux Corporation , there are less than 650 employees","At Veridux Corporation , there are 250 employees",neutral,3919
+A train leaves Delhi at 9 a,A train leaves Delhi at less than 9 a,contradiction,3923
+"Dacid obtained 76 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology","Dacid obtained 86 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology",contradiction,3956
+"Sheila works 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday","Sheila works more than 5 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday",entailment,3990
+"Sheila works more than 5 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday","Sheila works 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday",neutral,3991
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","more than 4 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",entailment,4011
+"more than 4 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",neutral,4012
+"Bookman purchased 55 copies of a new book released recently , 10 of which are hardback and sold for $ 20 each , and rest are paperback and sold for $ 10 each","Bookman purchased less than 75 copies of a new book released recently , 10 of which are hardback and sold for $ 20 each , and rest are paperback and sold for $ 10 each",entailment,4032
+"Bookman purchased less than 75 copies of a new book released recently , 10 of which are hardback and sold for $ 20 each , and rest are paperback and sold for $ 10 each","Bookman purchased 55 copies of a new book released recently , 10 of which are hardback and sold for $ 20 each , and rest are paperback and sold for $ 10 each",neutral,4033
+The distance between Delhi and Mathura is 110 kms,The distance between Delhi and Mathura is less than 110 kms,contradiction,4067
+A starts from Delhi with a speed of 20 kmph at 7 a,A starts from Delhi with a speed of less than 70 kmph at 7 a,entailment,4068
+A starts from Delhi with a speed of less than 70 kmph at 7 a,A starts from Delhi with a speed of 20 kmph at 7 a,neutral,4069
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of more than 30 kmph and from city B to city C at 60 kmph,entailment,4077
+Murali travelled from city A to city B at a speed of more than 30 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,neutral,4078
+In a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,In a group of less than 8 boys & 4 girls a Committee of 4 persons is to be formed,entailment,4092
+In a group of less than 8 boys & 4 girls a Committee of 4 persons is to be formed,In a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,neutral,4093
+8 years ago Jason was 12 times older,more than 7 years ago Jason was 12 times older,entailment,4113
+more than 7 years ago Jason was 12 times older,8 years ago Jason was 12 times older,neutral,4114
+"In the city of San Durango , 60 people own cats , dogs , or rabbits","In the city of San Durango , more than 50 people own cats , dogs , or rabbits",entailment,4119
+"In the city of San Durango , more than 50 people own cats , dogs , or rabbits","In the city of San Durango , 60 people own cats , dogs , or rabbits",neutral,4120
+"In the city of San Durango , 60 people own cats , dogs , or rabbits","In the city of San Durango , 20 people own cats , dogs , or rabbits",contradiction,4121
+There are 18 stations between Hyderabad and Bangalore,There are less than 88 stations between Hyderabad and Bangalore,entailment,4146
+There are less than 88 stations between Hyderabad and Bangalore,There are 18 stations between Hyderabad and Bangalore,neutral,4147
+"The number of hours that Pat , a resident of Town X , watched television last week was between 1 and 2 standard deviations below the mean","The number of hours that Pat , a resident of Town X , watched television last week was between less than 5 and 2 standard deviations below the mean",entailment,4155
+"The number of hours that Pat , a resident of Town X , watched television last week was between less than 5 and 2 standard deviations below the mean","The number of hours that Pat , a resident of Town X , watched television last week was between 1 and 2 standard deviations below the mean",neutral,4156
+Vijay bought 160 shirts at the rate of Rs,Vijay bought less than 860 shirts at the rate of Rs,entailment,4158
+Vijay bought less than 860 shirts at the rate of Rs,Vijay bought 160 shirts at the rate of Rs,neutral,4159
+Vijay bought 160 shirts at the rate of Rs,Vijay bought 360 shirts at the rate of Rs,contradiction,4160
+"If the average speed of the whole journey was 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?","If the average speed of the whole journey was more than 16 mph , then what is Tom ' s speed driving from B to C in miles per hour ?",entailment,4164
+"If the average speed of the whole journey was more than 16 mph , then what is Tom ' s speed driving from B to C in miles per hour ?","If the average speed of the whole journey was 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?",neutral,4165
+"If the average speed of the whole journey was 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?","If the average speed of the whole journey was less than 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?",contradiction,4166
+"In the city of San Durango , 60 people own cats , dogs , or rabbits","In the city of San Durango , more than 10 people own cats , dogs , or rabbits",entailment,4170
+"In the city of San Durango , more than 10 people own cats , dogs , or rabbits","In the city of San Durango , 60 people own cats , dogs , or rabbits",neutral,4171
+John was thrice as old as Tom 6 yrs back,John was thrice as old as Tom more than 2 yrs back,entailment,4206
+John was thrice as old as Tom more than 2 yrs back,John was thrice as old as Tom 6 yrs back,neutral,4207
+John was thrice as old as Tom 6 yrs back,John was thrice as old as Tom more than 6 yrs back,contradiction,4208
+He will be 5 / 3 times as old as Tom 6 years hence,He will be less than 7 / 3 times as old as Tom 6 years hence,entailment,4209
+He will be less than 7 / 3 times as old as Tom 6 years hence,He will be 5 / 3 times as old as Tom 6 years hence,neutral,4210
+John traveled 80 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,John traveled more than 50 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,entailment,4233
+John traveled more than 50 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,John traveled 80 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,neutral,4234
+John traveled 80 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,John traveled 60 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,contradiction,4235
+Kishore saved 10 % of his monthly salary,Kishore saved less than 80 % of his monthly salary,entailment,4278
+Kishore saved less than 80 % of his monthly salary,Kishore saved 10 % of his monthly salary,neutral,4279
+Sanoop bought 8 t - shirts at an average price ( arithmetic mean ) of Rs,Sanoop bought less than 8 t - shirts at an average price ( arithmetic mean ) of Rs,contradiction,4298
+Nitin borrowed some money at the rate of 6 % p,Nitin borrowed some money at the rate of less than 6 % p,contradiction,4334
+"While driving from City A to City B , Bob drives at a constant speed of 40 miles per hour","While driving from City A to City B , Bob drives at a constant speed of more than 40 miles per hour",contradiction,4346
+Vijay bought 160 shirts at the rate of Rs,Vijay bought more than 160 shirts at the rate of Rs,contradiction,4352
+"Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first more than 40 hours and 2 x dollars for each additional hour worked that week",contradiction,4394
+He works at it for 20 days and then Rajesh finished it in 30 days,He works at it for less than 60 days and then Rajesh finished it in 30 days,entailment,4398
+He works at it for less than 60 days and then Rajesh finished it in 30 days,He works at it for 20 days and then Rajesh finished it in 30 days,neutral,4399
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 3 months later , investing Rs",entailment,4407
+"Jose joined him less than 3 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,4408
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 2 months later , investing Rs",contradiction,4409
+"If Jerry wants to raise his average by 2 points , what score must he earn on the fourth test ?","If Jerry wants to raise his average by more than 1 points , what score must he earn on the fourth test ?",entailment,4416
+"If Jerry wants to raise his average by more than 1 points , what score must he earn on the fourth test ?","If Jerry wants to raise his average by 2 points , what score must he earn on the fourth test ?",neutral,4417
+Pavan travelled for 11 hours,Pavan travelled for less than 61 hours,entailment,4425
+Pavan travelled for less than 61 hours,Pavan travelled for 11 hours,neutral,4426
+Pavan travelled for 11 hours,Pavan travelled for less than 11 hours,contradiction,4427
+"Dacid obtained 76 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology","Dacid obtained less than 76 , 65 , 82 , 67 and 85 marks ( out of 100 ) in English , Mathematics , Physics , Chemistry and Biology",contradiction,4445
+Vijay bought 160 shirts at the rate of Rs,Vijay bought less than 460 shirts at the rate of Rs,entailment,4500
+Vijay bought less than 460 shirts at the rate of Rs,Vijay bought 160 shirts at the rate of Rs,neutral,4501
+Vijay bought 160 shirts at the rate of Rs,Vijay bought more than 160 shirts at the rate of Rs,contradiction,4502
+Harkamal purchased 8 kg of grapes at the rate of 70 per kg and 9 kg of mangoes at the rate of 55 per kg,Harkamal purchased more than 5 kg of grapes at the rate of 70 per kg and 9 kg of mangoes at the rate of 55 per kg,entailment,4512
+Harkamal purchased more than 5 kg of grapes at the rate of 70 per kg and 9 kg of mangoes at the rate of 55 per kg,Harkamal purchased 8 kg of grapes at the rate of 70 per kg and 9 kg of mangoes at the rate of 55 per kg,neutral,4513
+Ramesh can finish a work in 20 days and Sushil in 25 days,Ramesh can finish a work in less than 70 days and Sushil in 25 days,entailment,4533
+Ramesh can finish a work in less than 70 days and Sushil in 25 days,Ramesh can finish a work in 20 days and Sushil in 25 days,neutral,4534
+"If Jack ' s score was within 2 standard deviations of the mean , what is the lowest score he could have received ?","If Jack ' s score was within less than 2 standard deviations of the mean , what is the lowest score he could have received ?",contradiction,4541
+Joe ’ s average ( arithmetic mean ) test score across 4 equally weighted tests was 90,Joe ’ s average ( arithmetic mean ) test score across less than 6 equally weighted tests was 90,entailment,4542
+Joe ’ s average ( arithmetic mean ) test score across less than 6 equally weighted tests was 90,Joe ’ s average ( arithmetic mean ) test score across 4 equally weighted tests was 90,neutral,4543
+"Sacha runs at a constant speed of 6 meters per second , and Bruno runs at a constant speed of 5 meters per second","Sacha runs at a constant speed of more than 6 meters per second , and Bruno runs at a constant speed of 5 meters per second",contradiction,4547
+"Martin bought 10 concert tickets , some at the full price of $ 2.00 per ticket , and some at a discounted price of $ 1.60 per ticket","Martin bought less than 80 concert tickets , some at the full price of $ 2.00 per ticket , and some at a discounted price of $ 1.60 per ticket",entailment,4548
+"Martin bought less than 80 concert tickets , some at the full price of $ 2.00 per ticket , and some at a discounted price of $ 1.60 per ticket","Martin bought 10 concert tickets , some at the full price of $ 2.00 per ticket , and some at a discounted price of $ 1.60 per ticket",neutral,4549
+"Martin bought 10 concert tickets , some at the full price of $ 2.00 per ticket , and some at a discounted price of $ 1.60 per ticket","Martin bought 70 concert tickets , some at the full price of $ 2.00 per ticket , and some at a discounted price of $ 1.60 per ticket",contradiction,4550
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","more than 2 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",entailment,4554
+"more than 2 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",neutral,4555
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","less than 5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",contradiction,4556
+A train leaves Delhi at 9 a,A train leaves Delhi at more than 9 a,contradiction,4586
+John was thrice as old as Tom 6 yrs back,John was thrice as old as Tom more than 6 yrs back,contradiction,4607
+He will be 5 / 3 times as old as Tom 6 years hence,He will be more than 4 / 3 times as old as Tom 6 years hence,entailment,4608
+He will be more than 4 / 3 times as old as Tom 6 years hence,He will be 5 / 3 times as old as Tom 6 years hence,neutral,4609
+He will be 5 / 3 times as old as Tom 6 years hence,He will be more than 5 / 3 times as old as Tom 6 years hence,contradiction,4610
+Pavan travelled for 11 hours,Pavan travelled for less than 61 hours,entailment,4632
+Pavan travelled for less than 61 hours,Pavan travelled for 11 hours,neutral,4633
+Pavan travelled for 11 hours,Pavan travelled for more than 11 hours,contradiction,4634
+Nitin borrowed some money at the rate of 6 % p,Nitin borrowed some money at the rate of 7 % p,contradiction,4637
+"Victor has 15 cups if flour , 16 cups of sugar and 8 cups of milk","Victor has less than 15 cups if flour , 16 cups of sugar and 8 cups of milk",contradiction,4640
+"In a shop , 40 % socks are white and rest are black","In a shop , less than 50 % socks are white and rest are black",entailment,4653
+"In a shop , less than 50 % socks are white and rest are black","In a shop , 40 % socks are white and rest are black",neutral,4654
+"In a shop , 40 % socks are white and rest are black","In a shop , 80 % socks are white and rest are black",contradiction,4655
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 1 gang , in how many ways can he invite one or more of the gang to his house ?",entailment,4662
+"In a friendship gang Andrew has more than 1 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?",neutral,4663
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 8 gang , in how many ways can he invite one or more of the gang to his house ?",contradiction,4664
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 6 months later , investing Rs",entailment,4674
+"Jose joined him less than 6 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,4675
+"Jose joined him 2 months later , investing Rs","Jose joined him 5 months later , investing Rs",contradiction,4676
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 2 years at 4 % per annum simple interest ?,contradiction,4679
+If the agreed period of the debenture was 18 months : calculate the amount of interest Jaclyn will earn for each quarter,If the agreed period of the debenture was less than 68 months : calculate the amount of interest Jaclyn will earn for each quarter,entailment,4716
+If the agreed period of the debenture was less than 68 months : calculate the amount of interest Jaclyn will earn for each quarter,If the agreed period of the debenture was 18 months : calculate the amount of interest Jaclyn will earn for each quarter,neutral,4717
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 3 gang , in how many ways can he invite one or more of the gang to his house ?",entailment,4722
+"In a friendship gang Andrew has more than 3 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?",neutral,4723
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 8 gang , in how many ways can he invite one or more of the gang to his house ?",contradiction,4724
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of 7 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",contradiction,4760
+If KING is coded as 17 and MASS is coded as 29 Then DON is coded as,If KING is coded as less than 47 and MASS is coded as 29 Then DON is coded as,entailment,4773
+If KING is coded as less than 47 and MASS is coded as 29 Then DON is coded as,If KING is coded as 17 and MASS is coded as 29 Then DON is coded as,neutral,4774
+"Matthew ' s walking rate was 3 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?","Matthew ' s walking rate was more than 3 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?",contradiction,4832
+Karen places a bet with Tom that she will beat Tom in a car race by 4 miles even if Karen starts 4 minutes late,Karen places a bet with Tom that she will beat Tom in a car race by less than 6 miles even if Karen starts 4 minutes late,entailment,4833
+Karen places a bet with Tom that she will beat Tom in a car race by less than 6 miles even if Karen starts 4 minutes late,Karen places a bet with Tom that she will beat Tom in a car race by 4 miles even if Karen starts 4 minutes late,neutral,4834
+"Exactly 3 / 10 of the ponies have horseshoes , and exactly 5 / 8 of the ponies with horseshoes are from Iceland","Exactly less than 3 / 10 of the ponies have horseshoes , and exactly 5 / 8 of the ponies with horseshoes are from Iceland",contradiction,4841
+Raman mixed 24 kg of butter at Rs,Raman mixed less than 34 kg of butter at Rs,entailment,4845
+Raman mixed less than 34 kg of butter at Rs,Raman mixed 24 kg of butter at Rs,neutral,4846
+Raman mixed 24 kg of butter at Rs,Raman mixed less than 44 kg of butter at Rs,entailment,4854
+Raman mixed less than 44 kg of butter at Rs,Raman mixed 24 kg of butter at Rs,neutral,4855
+Raman mixed 24 kg of butter at Rs,Raman mixed less than 24 kg of butter at Rs,contradiction,4856
+"Alok ordered 16 chapatis , 5 plates of rice , 7 plates of mixed vegetable and 6 ice - cream cups","Alok ordered less than 16 chapatis , 5 plates of rice , 7 plates of mixed vegetable and 6 ice - cream cups",contradiction,4868
+"In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored less than 74 percent , Bhavan scored 36 percent and Chetan 44 percent",entailment,4869
+"In an exam , Amar scored less than 74 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent",neutral,4870
+"In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored more than 64 percent , Bhavan scored 36 percent and Chetan 44 percent",contradiction,4871
+Rahim bought 65 books for Rs,Rahim bought more than 25 books for Rs,entailment,4872
+Rahim bought more than 25 books for Rs,Rahim bought 65 books for Rs,neutral,4873
+"If the average speed of the whole journey was 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?","If the average speed of the whole journey was more than 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?",contradiction,4892
+How many miles from home can Aaron jog so that he spends a total of 3 hours jogging and walking ?,How many miles from home can Aaron jog so that he spends a total of less than 7 hours jogging and walking ?,entailment,4905
+How many miles from home can Aaron jog so that he spends a total of less than 7 hours jogging and walking ?,How many miles from home can Aaron jog so that he spends a total of 3 hours jogging and walking ?,neutral,4906
+How many miles from home can Aaron jog so that he spends a total of 3 hours jogging and walking ?,How many miles from home can Aaron jog so that he spends a total of more than 3 hours jogging and walking ?,contradiction,4907
+Suresh can complete a job in 15 hours,Suresh can complete a job in more than 15 hours,contradiction,4961
+"At Veridux Corporation , there are 250 employees","At Veridux Corporation , there are 650 employees",contradiction,4967
+From a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,From a group of more than 1 boys & 4 girls a Committee of 4 persons is to be formed,entailment,4998
+From a group of more than 1 boys & 4 girls a Committee of 4 persons is to be formed,From a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,neutral,4999
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 6 months later , investing Rs",entailment,5019
+"Jose joined him less than 6 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,5020
+"Jose joined him 2 months later , investing Rs","Jose joined him more than 2 months later , investing Rs",contradiction,5021
+"Right now , the ratio between the ages of Sandy and Molly is 4 : 3","Right now , the ratio between the ages of Sandy and Molly is less than 4 : 3",contradiction,5078
+"In the city of San Durango , 60 people own cats , dogs , or rabbits","In the city of San Durango , more than 60 people own cats , dogs , or rabbits",contradiction,5114
+Bruce and Anne can clean their house in 4 hours working together at their respective constant rates,Bruce and Anne can clean their house in more than 2 hours working together at their respective constant rates,entailment,5115
+Bruce and Anne can clean their house in more than 2 hours working together at their respective constant rates,Bruce and Anne can clean their house in 4 hours working together at their respective constant rates,neutral,5116
+Bruce and Anne can clean their house in 4 hours working together at their respective constant rates,Bruce and Anne can clean their house in more than 4 hours working together at their respective constant rates,contradiction,5117
+"If Anne ’ s speed were doubled , they could clean their house in 3 hours working at their respective rates","If Anne ’ s speed were doubled , they could clean their house in more than 1 hours working at their respective rates",entailment,5118
+"If Anne ’ s speed were doubled , they could clean their house in more than 1 hours working at their respective rates","If Anne ’ s speed were doubled , they could clean their house in 3 hours working at their respective rates",neutral,5119
+"At present , the ratio between the ages of Arun and Deepak is 4 : 3","At present , the ratio between the ages of Arun and Deepak is less than 4 : 3",contradiction,5147
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of more than 10 kmph and from city B to city C at 60 kmph,entailment,5184
+Murali travelled from city A to city B at a speed of more than 10 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,neutral,5185
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of 60 kmph and from city B to city C at 60 kmph,contradiction,5186
+The compound interest earned by Sunil on a certain amount at the end of two years at the rate of 8 % p,The compound interest earned by Sunil on a certain amount at the end of two years at the rate of less than 8 % p,contradiction,5192
+90 students represent x percent of the boys at Jones Elementary School,less than 90 students represent x percent of the boys at Jones Elementary School,contradiction,5213
+If the agreed period of the debenture was 18 months : calculate the amount of interest Jaclyn will earn for each quarter,If the agreed period of the debenture was less than 38 months : calculate the amount of interest Jaclyn will earn for each quarter,entailment,5220
+If the agreed period of the debenture was less than 38 months : calculate the amount of interest Jaclyn will earn for each quarter,If the agreed period of the debenture was 18 months : calculate the amount of interest Jaclyn will earn for each quarter,neutral,5221
+If the agreed period of the debenture was 18 months : calculate the amount of interest Jaclyn will earn for each quarter,If the agreed period of the debenture was less than 18 months : calculate the amount of interest Jaclyn will earn for each quarter,contradiction,5222
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 3 months later , investing Rs",entailment,5223
+"Jose joined him less than 3 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,5224
+"Jose joined him 2 months later , investing Rs","Jose joined him more than 2 months later , investing Rs",contradiction,5225
+"In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored more than 44 percent , Bhavan scored 36 percent and Chetan 44 percent",entailment,5226
+"In an exam , Amar scored more than 44 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent",neutral,5227
+"In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored 54 percent , Bhavan scored 36 percent and Chetan 44 percent",contradiction,5228
+"If Leo gains 10 pounds , he will weigh 50 % more than his sister Kendra","If Leo gains less than 60 pounds , he will weigh 50 % more than his sister Kendra",entailment,5247
+"If Leo gains less than 60 pounds , he will weigh 50 % more than his sister Kendra","If Leo gains 10 pounds , he will weigh 50 % more than his sister Kendra",neutral,5248
+"If Leo gains 10 pounds , he will weigh 50 % more than his sister Kendra","If Leo gains more than 10 pounds , he will weigh 50 % more than his sister Kendra",contradiction,5249
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,entailment,5256
+How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,5257
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 7 years at 4 % per annum simple interest ?,contradiction,5258
+Aamir saves 32 % of his monthly salary,Aamir saves 42 % of his monthly salary,contradiction,5270
+Suraj has a certain average of runs for 16 innings,Suraj has a certain average of runs for less than 86 innings,entailment,5283
+Suraj has a certain average of runs for less than 86 innings,Suraj has a certain average of runs for 16 innings,neutral,5284
+"If the ratio of their ages is 7 : 9 , how old is Sandy ?","If the ratio of their ages is more than 5 : 9 , how old is Sandy ?",entailment,5316
+"If the ratio of their ages is more than 5 : 9 , how old is Sandy ?","If the ratio of their ages is 7 : 9 , how old is Sandy ?",neutral,5317
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","less than 6 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",entailment,5337
+"less than 6 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",neutral,5338
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","less than 5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",contradiction,5339
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of less than 7 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",entailment,5343
+"If an outfit consists of less than 7 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",neutral,5344
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 4 years at 4 % per annum simple interest ?,entailment,5376
+How much loss would Indu has suffered had she given it to Bindu for less than 4 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,5377
+"Matt is touring a nation in which coins are issued in two amounts , 2 ¢ and 5 ¢ , which are made of iron and copper , respectively","Matt is touring a nation in which coins are issued in two amounts , less than 2 ¢ and 5 ¢ , which are made of iron and copper , respectively",contradiction,5408
+"If Leo gains 10 pounds , he will weigh 50 % more than his sister Kendra","If Leo gains 30 pounds , he will weigh 50 % more than his sister Kendra",contradiction,5456
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 3 months later , investing Rs",entailment,5463
+"Jose joined him less than 3 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,5464
+"Jose joined him 2 months later , investing Rs","Jose joined him 5 months later , investing Rs",contradiction,5465
+"The average number of shirts with Salman , Ambani and Dalmiya is 60 , if all of them reached a shopping mall in Delhi and purchased 6 shirts each of them then average number of shirt each of them now has","The average number of shirts with Salman , Ambani and Dalmiya is 70 , if all of them reached a shopping mall in Delhi and purchased 6 shirts each of them then average number of shirt each of them now has",contradiction,5483
+If the agreed period of the debenture was 18 months : calculate the amount of interest Jaclyn will earn for each quarter,If the agreed period of the debenture was less than 38 months : calculate the amount of interest Jaclyn will earn for each quarter,entailment,5508
+If the agreed period of the debenture was less than 38 months : calculate the amount of interest Jaclyn will earn for each quarter,If the agreed period of the debenture was 18 months : calculate the amount of interest Jaclyn will earn for each quarter,neutral,5509
+Dan ’ s car gets 32 miles per gallon,Dan ’ s car gets less than 72 miles per gallon,entailment,5520
+Dan ’ s car gets less than 72 miles per gallon,Dan ’ s car gets 32 miles per gallon,neutral,5521
+If the agreed period of the debenture was 18 months : calculate the amount of interest Jaclyn will earn for each quarter,If the agreed period of the debenture was less than 18 months : calculate the amount of interest Jaclyn will earn for each quarter,contradiction,5534
+"Alok ordered 16 chapatis , 5 plates of rice , 7 plates of mixed vegetable and 6 ice - cream cups","Alok ordered less than 86 chapatis , 5 plates of rice , 7 plates of mixed vegetable and 6 ice - cream cups",entailment,5538
+"Alok ordered less than 86 chapatis , 5 plates of rice , 7 plates of mixed vegetable and 6 ice - cream cups","Alok ordered 16 chapatis , 5 plates of rice , 7 plates of mixed vegetable and 6 ice - cream cups",neutral,5539
+John traveled 80 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,John traveled more than 50 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,entailment,5541
+John traveled more than 50 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,John traveled 80 % of the way from Yellow - town to Green - fields by train at an average speed of 80 miles per hour,neutral,5542
+Albert is 2 times Mary ’ s age and 4 times as old as Betty,Albert is less than 2 times Mary ’ s age and 4 times as old as Betty,contradiction,5546
+"John paid a 15 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon","John paid a less than 75 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon",entailment,5559
+"John paid a less than 75 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon","John paid a 15 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon",neutral,5560
+A train leaves Delhi at 9 a,A train leaves Delhi at less than 9 a,contradiction,5582
+"If the three started to fish together and after 40 minutes Mike and Bob left , how many fish did the three fishermen catch in one hour ?","If the three started to fish together and after more than 20 minutes Mike and Bob left , how many fish did the three fishermen catch in one hour ?",entailment,5592
+"If the three started to fish together and after more than 20 minutes Mike and Bob left , how many fish did the three fishermen catch in one hour ?","If the three started to fish together and after 40 minutes Mike and Bob left , how many fish did the three fishermen catch in one hour ?",neutral,5593
+"Lionel left his house and walked towards Walt ' s house , 48 miles away","Lionel left his house and walked towards Walt ' s house , more than 28 miles away",entailment,5598
+"Lionel left his house and walked towards Walt ' s house , more than 28 miles away","Lionel left his house and walked towards Walt ' s house , 48 miles away",neutral,5599
+Rahim bought 65 books for Rs,Rahim bought more than 25 books for Rs,entailment,5619
+Rahim bought more than 25 books for Rs,Rahim bought 65 books for Rs,neutral,5620
+Rahim bought 65 books for Rs,Rahim bought less than 65 books for Rs,contradiction,5621
+Albert is 2 times Mary ’ s age and 4 times as old as Betty,Albert is more than 2 times Mary ’ s age and 4 times as old as Betty,contradiction,5630
+Billy has 5 apples,Billy has more than 1 apples,entailment,5652
+Billy has more than 1 apples,Billy has 5 apples,neutral,5653
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 6 months later , investing Rs",entailment,5667
+"Jose joined him less than 6 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,5668
+Bruce and Anne can clean their house in 4 hours working together at their respective constant rates,Bruce and Anne can clean their house in more than 1 hours working together at their respective constant rates,entailment,5673
+Bruce and Anne can clean their house in more than 1 hours working together at their respective constant rates,Bruce and Anne can clean their house in 4 hours working together at their respective constant rates,neutral,5674
+Bruce and Anne can clean their house in 4 hours working together at their respective constant rates,Bruce and Anne can clean their house in more than 4 hours working together at their respective constant rates,contradiction,5675
+"Sean , who weighs 200 pounds , is in the elevator with two packages weighing 150 pounds and 280 pounds","Sean , who weighs more than 200 pounds , is in the elevator with two packages weighing 150 pounds and 280 pounds",contradiction,5687
+"If there are 25 males altogether , how many gerbils does Claire have ?","If there are more than 25 males altogether , how many gerbils does Claire have ?",contradiction,5702
+Sakshi can do a piece of work in 20 days,Sakshi can do a piece of work in less than 20 days,contradiction,5705
+Matt and Peter can do together a piece of work in 20 days,Matt and Peter can do together a piece of work in more than 20 days,contradiction,5738
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 5 gang , in how many ways can he invite one or more of the gang to his house ?",entailment,5742
+"In a friendship gang Andrew has more than 5 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?",neutral,5743
+Mr Yadav spends 60 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,Mr Yadav spends more than 60 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,contradiction,5753
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 8 years at 4 % per annum simple interest ?,entailment,5757
+How much loss would Indu has suffered had she given it to Bindu for less than 8 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,5758
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for more than 2 years at 4 % per annum simple interest ?,contradiction,5759
+There are 4 more women than men on Centerville ' s board of education,There are more than 4 more women than men on Centerville ' s board of education,contradiction,5774
+Karen places a bet with Tom that she will beat Tom in a car race by 4 miles even if Karen starts 4 minutes late,Karen places a bet with Tom that she will beat Tom in a car race by more than 4 miles even if Karen starts 4 minutes late,contradiction,5789
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 3 months later , investing Rs",entailment,5802
+"Jose joined him less than 3 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,5803
+"Jose joined him 2 months later , investing Rs","Jose joined him 6 months later , investing Rs",contradiction,5804
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 1 gang , in how many ways can he invite one or more of the gang to his house ?",entailment,5805
+"In a friendship gang Andrew has more than 1 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?",neutral,5806
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 8 gang , in how many ways can he invite one or more of the gang to his house ?",contradiction,5807
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of more than 20 kmph and from city B to city C at 60 kmph,entailment,5820
+Murali travelled from city A to city B at a speed of more than 20 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,neutral,5821
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of 60 kmph and from city B to city C at 60 kmph,contradiction,5822
+"City A to city B , Andrew drove for 1 hour at 50 mph and for 3 hours at 60 mph","City A to city B , Andrew drove for less than 2 hour at 50 mph and for 3 hours at 60 mph",entailment,5832
+"City A to city B , Andrew drove for less than 2 hour at 50 mph and for 3 hours at 60 mph","City A to city B , Andrew drove for 1 hour at 50 mph and for 3 hours at 60 mph",neutral,5833
+"City A to city B , Andrew drove for 1 hour at 50 mph and for 3 hours at 60 mph","City A to city B , Andrew drove for 5 hour at 50 mph and for 3 hours at 60 mph",contradiction,5834
+In a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,In a group of less than 8 boys & 4 girls a Committee of 4 persons is to be formed,entailment,5844
+In a group of less than 8 boys & 4 girls a Committee of 4 persons is to be formed,In a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,neutral,5845
+Sandy gets 3 marks for each correct sum and loses 2 marks for each incorrect sum,Sandy gets less than 8 marks for each correct sum and loses 2 marks for each incorrect sum,entailment,5874
+Sandy gets less than 8 marks for each correct sum and loses 2 marks for each incorrect sum,Sandy gets 3 marks for each correct sum and loses 2 marks for each incorrect sum,neutral,5875
+Arun purchased 30 kg of wheat at the rate of Rs,Arun purchased less than 60 kg of wheat at the rate of Rs,entailment,5880
+Arun purchased less than 60 kg of wheat at the rate of Rs,Arun purchased 30 kg of wheat at the rate of Rs,neutral,5881
+for Mathura and B starts from Mathura with a speed of 25 kmph at 8 p,for Mathura and B starts from Mathura with a speed of less than 65 kmph at 8 p,entailment,5898
+for Mathura and B starts from Mathura with a speed of less than 65 kmph at 8 p,for Mathura and B starts from Mathura with a speed of 25 kmph at 8 p,neutral,5899
+"If Jerry wants to raise his average by 2 points , what score must he earn on the fourth test ?","If Jerry wants to raise his average by 5 points , what score must he earn on the fourth test ?",contradiction,5918
+Carl drove from his home to the beach at an average speed of 80 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,Carl drove from his home to the beach at an average speed of more than 40 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,entailment,5919
+Carl drove from his home to the beach at an average speed of more than 40 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,Carl drove from his home to the beach at an average speed of 80 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,neutral,5920
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,entailment,5952
+How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,5953
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 2 years at 4 % per annum simple interest ?,contradiction,5954
+Present ages of Sameer and Anand are in the ratio of 5 : 4 respectively,Present ages of Sameer and Anand are in the ratio of more than 1 : 4 respectively,entailment,5961
+Present ages of Sameer and Anand are in the ratio of more than 1 : 4 respectively,Present ages of Sameer and Anand are in the ratio of 5 : 4 respectively,neutral,5962
+"There are 300 seniors at Morse High School , and 50 % of them have cars","There are less than 300 seniors at Morse High School , and 50 % of them have cars",contradiction,5981
+Dan ’ s car gets 32 miles per gallon,Dan ’ s car gets less than 62 miles per gallon,entailment,5988
+Dan ’ s car gets less than 62 miles per gallon,Dan ’ s car gets 32 miles per gallon,neutral,5989
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,entailment,6000
+How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,6001
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for more than 2 years at 4 % per annum simple interest ?,contradiction,6002
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 8 months later , investing Rs",entailment,6006
+"Jose joined him less than 8 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,6007
+"Jose joined him 2 months later , investing Rs","Jose joined him more than 2 months later , investing Rs",contradiction,6008
+How many miles from home can Aaron jog so that he spends a total of 3 hours jogging and walking ?,How many miles from home can Aaron jog so that he spends a total of less than 4 hours jogging and walking ?,entailment,6054
+How many miles from home can Aaron jog so that he spends a total of less than 4 hours jogging and walking ?,How many miles from home can Aaron jog so that he spends a total of 3 hours jogging and walking ?,neutral,6055
+"Anita , Indu and Geeta can do a piece of work in 18 days , 27 days and 36 days respectively","Anita , Indu and Geeta can do a piece of work in 58 days , 27 days and 36 days respectively",contradiction,6059
+It takes John exactly 30 minutes to rake a lawn and it takes his son Todd exactly 60 minutes to rake the same lawn,It takes John exactly less than 60 minutes to rake a lawn and it takes his son Todd exactly 60 minutes to rake the same lawn,entailment,6075
+It takes John exactly less than 60 minutes to rake a lawn and it takes his son Todd exactly 60 minutes to rake the same lawn,It takes John exactly 30 minutes to rake a lawn and it takes his son Todd exactly 60 minutes to rake the same lawn,neutral,6076
+A “ Sophie Germain ” prime is any positive prime number p for which 2 p + 1 is also prime,A “ Sophie Germain ” prime is any positive prime number p for which less than 2 p + 1 is also prime,contradiction,6092
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of less than 6 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",entailment,6096
+"If an outfit consists of less than 6 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",neutral,6097
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of 5 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",contradiction,6098
+Sanoop bought 8 t - shirts at an average price ( arithmetic mean ) of Rs,Sanoop bought more than 2 t - shirts at an average price ( arithmetic mean ) of Rs,entailment,6117
+Sanoop bought more than 2 t - shirts at an average price ( arithmetic mean ) of Rs,Sanoop bought 8 t - shirts at an average price ( arithmetic mean ) of Rs,neutral,6118
+Sanoop bought 8 t - shirts at an average price ( arithmetic mean ) of Rs,Sanoop bought more than 8 t - shirts at an average price ( arithmetic mean ) of Rs,contradiction,6119
+"Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first less than 60 hours and 2 x dollars for each additional hour worked that week",entailment,6132
+"Each week , James is paid x dollars per per hour for the first less than 60 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week",neutral,6133
+Kiran travels from A to B by car and returns from B to A by cycle in 7 hours,Kiran travels from A to B by car and returns from B to A by cycle in 1 hours,contradiction,6140
+"Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first less than 40 hours and 2 x dollars for each additional hour worked that week",contradiction,6149
+Present ages of Sameer and Anand are in the ratio of 5 : 4 respectively,Present ages of Sameer and Anand are in the ratio of less than 5 : 4 respectively,contradiction,6158
+Arun purchased 30 kg of wheat at the rate of Rs,Arun purchased less than 80 kg of wheat at the rate of Rs,entailment,6162
+Arun purchased less than 80 kg of wheat at the rate of Rs,Arun purchased 30 kg of wheat at the rate of Rs,neutral,6163
+"John paid a 15 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon","John paid a less than 75 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon",entailment,6171
+"John paid a less than 75 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon","John paid a 15 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon",neutral,6172
+Two dogsled teams raced across a 300 mile course in Wyoming,Two dogsled teams raced across a more than 100 mile course in Wyoming,entailment,6195
+Two dogsled teams raced across a more than 100 mile course in Wyoming,Two dogsled teams raced across a 300 mile course in Wyoming,neutral,6196
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 7 gang , in how many ways can he invite one or more of the gang to his house ?",entailment,6228
+"In a friendship gang Andrew has more than 7 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?",neutral,6229
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has 2 gang , in how many ways can he invite one or more of the gang to his house ?",contradiction,6230
+Bruce and Anne can clean their house in 4 hours working together at their respective constant rates,Bruce and Anne can clean their house in more than 2 hours working together at their respective constant rates,entailment,6231
+Bruce and Anne can clean their house in more than 2 hours working together at their respective constant rates,Bruce and Anne can clean their house in 4 hours working together at their respective constant rates,neutral,6232
+"If Anne ’ s speed were doubled , they could clean their house in 3 hours working at their respective rates","If Anne ’ s speed were doubled , they could clean their house in less than 5 hours working at their respective rates",entailment,6234
+"If Anne ’ s speed were doubled , they could clean their house in less than 5 hours working at their respective rates","If Anne ’ s speed were doubled , they could clean their house in 3 hours working at their respective rates",neutral,6235
+Jones gave 40 % of the money he had to his wife,Jones gave less than 40 % of the money he had to his wife,contradiction,6296
+"Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first less than 60 hours and 2 x dollars for each additional hour worked that week",entailment,6300
+"Each week , James is paid x dollars per per hour for the first less than 60 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week",neutral,6301
+"Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first more than 40 hours and 2 x dollars for each additional hour worked that week",contradiction,6302
+"Last week James worked a total of 41 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?","Last week James worked a total of more than 11 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?",entailment,6303
+"Last week James worked a total of more than 11 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?","Last week James worked a total of 41 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?",neutral,6304
+Rahim bought 65 books for Rs,Rahim bought more than 25 books for Rs,entailment,6306
+Rahim bought more than 25 books for Rs,Rahim bought 65 books for Rs,neutral,6307
+Rahim bought 65 books for Rs,Rahim bought more than 65 books for Rs,contradiction,6308
+From a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,From a group of more than 1 boys & 4 girls a Committee of 4 persons is to be formed,entailment,6309
+From a group of more than 1 boys & 4 girls a Committee of 4 persons is to be formed,From a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,neutral,6310
+Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of 15 % of the cost of the orders she serves,Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of less than 55 % of the cost of the orders she serves,entailment,6336
+Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of less than 55 % of the cost of the orders she serves,Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of 15 % of the cost of the orders she serves,neutral,6337
+Andy has 20 pairs of matched gloves,Andy has less than 60 pairs of matched gloves,entailment,6366
+Andy has less than 60 pairs of matched gloves,Andy has 20 pairs of matched gloves,neutral,6367
+Andy has 20 pairs of matched gloves,Andy has more than 20 pairs of matched gloves,contradiction,6368
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","more than 4 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",entailment,6375
+"more than 4 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",neutral,6376
+"5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear","more than 5 % people of a village in Sri Lanka died by bombardment , 15 % of the remainder left the village on account of fear",contradiction,6377
+"Each week , Harry is paid x dollars per hour for the first 30 hours and 1.5 x dollars for each additional hour worked that week","Each week , Harry is paid x dollars per hour for the first more than 30 hours and 1.5 x dollars for each additional hour worked that week",contradiction,6380
+"Sacha runs at a constant speed of 6 meters per second , and Bruno runs at a constant speed of 5 meters per second","Sacha runs at a constant speed of 3 meters per second , and Bruno runs at a constant speed of 5 meters per second",contradiction,6392
+"When the river is running at 2 km / h , it takes the rower 1 hour to row to Big Rock and back","When the river is running at less than 4 km / h , it takes the rower 1 hour to row to Big Rock and back",entailment,6414
+"When the river is running at less than 4 km / h , it takes the rower 1 hour to row to Big Rock and back","When the river is running at 2 km / h , it takes the rower 1 hour to row to Big Rock and back",neutral,6415
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of less than 5 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",entailment,6456
+"If an outfit consists of less than 5 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",neutral,6457
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of 5 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",contradiction,6458
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 7 months later , investing Rs",entailment,6474
+"Jose joined him less than 7 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,6475
+"Jose joined him 2 months later , investing Rs","Jose joined him more than 2 months later , investing Rs",contradiction,6476
+Amanda goes to the toy store to buy 1 ball and 3 different board games,Amanda goes to the toy store to buy less than 1 ball and 3 different board games,contradiction,6479
+"Matthew ' s walking rate was 3 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?","Matthew ' s walking rate was more than 3 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?",contradiction,6503
+"While driving from City A to City B , Bob drives at a constant speed of 40 miles per hour","While driving from City A to City B , Bob drives at a constant speed of less than 70 miles per hour",entailment,6504
+"While driving from City A to City B , Bob drives at a constant speed of less than 70 miles per hour","While driving from City A to City B , Bob drives at a constant speed of 40 miles per hour",neutral,6505
+Alice leaves City A 30 minutes after Bob,Alice leaves City A less than 60 minutes after Bob,entailment,6507
+Alice leaves City A less than 60 minutes after Bob,Alice leaves City A 30 minutes after Bob,neutral,6508
+Alice leaves City A 30 minutes after Bob,Alice leaves City A 40 minutes after Bob,contradiction,6509
+John was thrice as old as Tom 6 yrs back,John was thrice as old as Tom more than 5 yrs back,entailment,6513
+John was thrice as old as Tom more than 5 yrs back,John was thrice as old as Tom 6 yrs back,neutral,6514
+He will be 5 / 3 times as old as Tom 6 years hence,He will be less than 7 / 3 times as old as Tom 6 years hence,entailment,6516
+He will be less than 7 / 3 times as old as Tom 6 years hence,He will be 5 / 3 times as old as Tom 6 years hence,neutral,6517
+He will be 5 / 3 times as old as Tom 6 years hence,He will be more than 5 / 3 times as old as Tom 6 years hence,contradiction,6518
+John has 10 pairs of matched socks,John has less than 70 pairs of matched socks,entailment,6528
+John has less than 70 pairs of matched socks,John has 10 pairs of matched socks,neutral,6529
+In 1979 approximately 1 / 3 of the 37.3 million airline passengers traveling to or from the United States used Kennedy Airport,In less than 2979 approximately 1 / 3 of the 37.3 million airline passengers traveling to or from the United States used Kennedy Airport,entailment,6531
+In less than 2979 approximately 1 / 3 of the 37.3 million airline passengers traveling to or from the United States used Kennedy Airport,In 1979 approximately 1 / 3 of the 37.3 million airline passengers traveling to or from the United States used Kennedy Airport,neutral,6532
+Carl drove from his home to the beach at an average speed of 80 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,Carl drove from his home to the beach at an average speed of more than 40 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,entailment,6564
+Carl drove from his home to the beach at an average speed of more than 40 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,Carl drove from his home to the beach at an average speed of 80 kilometers per hour and returned home by the same route at an average speed of 70 kilometers per hour,neutral,6565
+Sandy invested a certain sum of money at 8 % p,Sandy invested a certain sum of money at more than 6 % p,entailment,6600
+Sandy invested a certain sum of money at more than 6 % p,Sandy invested a certain sum of money at 8 % p,neutral,6601
+Sandy invested a certain sum of money at 8 % p,Sandy invested a certain sum of money at 4 % p,contradiction,6602
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 4 years at 4 % per annum simple interest ?,entailment,6606
+How much loss would Indu has suffered had she given it to Bindu for less than 4 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,6607
+There are 18 stations between Hyderabad and Bangalore,There are less than 18 stations between Hyderabad and Bangalore,contradiction,6617
+A train leaves Delhi at 9 a,A train leaves Delhi at more than 4 a,entailment,6633
+A train leaves Delhi at more than 4 a,A train leaves Delhi at 9 a,neutral,6634
+He works at it for 20 days and then Rajesh finished it in 30 days,He works at it for less than 40 days and then Rajesh finished it in 30 days,entailment,6648
+He works at it for less than 40 days and then Rajesh finished it in 30 days,He works at it for 20 days and then Rajesh finished it in 30 days,neutral,6649
+Karen places a bet with Tom that she will beat Tom in a car race by 4 miles even if Karen starts 4 minutes late,Karen places a bet with Tom that she will beat Tom in a car race by less than 5 miles even if Karen starts 4 minutes late,entailment,6654
+Karen places a bet with Tom that she will beat Tom in a car race by less than 5 miles even if Karen starts 4 minutes late,Karen places a bet with Tom that she will beat Tom in a car race by 4 miles even if Karen starts 4 minutes late,neutral,6655
+Karen places a bet with Tom that she will beat Tom in a car race by 4 miles even if Karen starts 4 minutes late,Karen places a bet with Tom that she will beat Tom in a car race by more than 4 miles even if Karen starts 4 minutes late,contradiction,6656
+Jones gave 40 % of the money he had to his wife,Jones gave less than 40 % of the money he had to his wife,contradiction,6662
+"If Suresh is 25 % more efficient than Kamal , he can complete the work in - - - days .","If Suresh is 15 % more efficient than Kamal , he can complete the work in - - - days .",contradiction,6671
+How many jelly beans must Dante give to Aaron to ensure that no child has more than 1 fewer jelly beans than any other child ?,How many jelly beans must Dante give to Aaron to ensure that no child has more than less than 7 fewer jelly beans than any other child ?,entailment,6720
+How many jelly beans must Dante give to Aaron to ensure that no child has more than less than 7 fewer jelly beans than any other child ?,How many jelly beans must Dante give to Aaron to ensure that no child has more than 1 fewer jelly beans than any other child ?,neutral,6721
+How many oranges must Mary put back so that the average price of the pieces of fruit that she keeps is 50 ¢ ?,How many oranges must Mary put back so that the average price of the pieces of fruit that she keeps is more than 40 ¢ ?,entailment,6729
+How many oranges must Mary put back so that the average price of the pieces of fruit that she keeps is more than 40 ¢ ?,How many oranges must Mary put back so that the average price of the pieces of fruit that she keeps is 50 ¢ ?,neutral,6730
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of 80 kmph and from city B to city C at 60 kmph,contradiction,6773
+"There are 300 seniors at Morse High School , and 50 % of them have cars","There are more than 300 seniors at Morse High School , and 50 % of them have cars",contradiction,6812
+"After 6 years , Arun ' s age will be 26 years","After more than 2 years , Arun ' s age will be 26 years",entailment,6828
+"After more than 2 years , Arun ' s age will be 26 years","After 6 years , Arun ' s age will be 26 years",neutral,6829
+Billy has 5 apples,Billy has 4 apples,contradiction,6836
+The compound interest earned by Sunil on a certain amount at the end of two years at the rate of 8 % p,The compound interest earned by Sunil on a certain amount at the end of two years at the rate of 4 % p,contradiction,6848
+"Matthew ' s walking rate was 3 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?","Matthew ' s walking rate was less than 5 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?",entailment,6864
+"Matthew ' s walking rate was less than 5 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?","Matthew ' s walking rate was 3 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?",neutral,6865
+"Matthew ' s walking rate was 3 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?","Matthew ' s walking rate was more than 3 km per hour and Johnny ' s was 4 km per hour , how many km had Johnny walked when they met ?",contradiction,6866
+"In how many ways can you seat 5 people on a bench if one of them , Rohit , does not want to sit on the middle seat or at either end ?","In how many ways can you seat more than 2 people on a bench if one of them , Rohit , does not want to sit on the middle seat or at either end ?",entailment,6867
+"In how many ways can you seat more than 2 people on a bench if one of them , Rohit , does not want to sit on the middle seat or at either end ?","In how many ways can you seat 5 people on a bench if one of them , Rohit , does not want to sit on the middle seat or at either end ?",neutral,6868
+"If bonds are sold in $ 50 or $ 100 denominations only , which of the following CAN NOT be the number of US saving bonds that Robert purchased ?","If bonds are sold in $ more than 10 or $ 100 denominations only , which of the following CAN NOT be the number of US saving bonds that Robert purchased ?",entailment,6882
+"If bonds are sold in $ more than 10 or $ 100 denominations only , which of the following CAN NOT be the number of US saving bonds that Robert purchased ?","If bonds are sold in $ 50 or $ 100 denominations only , which of the following CAN NOT be the number of US saving bonds that Robert purchased ?",neutral,6883
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 5 gang , in how many ways can he invite one or more of the gang to his house ?",entailment,6924
+"In a friendship gang Andrew has more than 5 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?",neutral,6925
+"Right now , the ratio between the ages of Sandy and Molly is 4 : 3","Right now , the ratio between the ages of Sandy and Molly is more than 1 : 3",entailment,6927
+"Right now , the ratio between the ages of Sandy and Molly is more than 1 : 3","Right now , the ratio between the ages of Sandy and Molly is 4 : 3",neutral,6928
+Kiran travels from A to B by car and returns from B to A by cycle in 7 hours,Kiran travels from A to B by car and returns from B to A by cycle in less than 8 hours,entailment,6945
+Kiran travels from A to B by car and returns from B to A by cycle in less than 8 hours,Kiran travels from A to B by car and returns from B to A by cycle in 7 hours,neutral,6946
+There are 18 stations between Hyderabad and Bangalore,There are less than 58 stations between Hyderabad and Bangalore,entailment,6972
+There are less than 58 stations between Hyderabad and Bangalore,There are 18 stations between Hyderabad and Bangalore,neutral,6973
+There are 18 stations between Hyderabad and Bangalore,There are more than 18 stations between Hyderabad and Bangalore,contradiction,6974
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of 4 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",contradiction,6977
+They both work together for 5 days and then Sushil goes away,They both work together for more than 5 days and then Sushil goes away,contradiction,7004
+"If there are 25 males altogether , how many gerbils does Claire have ?","If there are more than 25 males altogether , how many gerbils does Claire have ?",contradiction,7010
+The present ages of Lewis and Brown are in the ratio 1 : 2,The present ages of Lewis and Brown are in the ratio less than 1 : 2,contradiction,7016
+"If 20 % of all the students at Morse have cars , how many students are in the three lower grades ?","If less than 50 % of all the students at Morse have cars , how many students are in the three lower grades ?",entailment,7020
+"If less than 50 % of all the students at Morse have cars , how many students are in the three lower grades ?","If 20 % of all the students at Morse have cars , how many students are in the three lower grades ?",neutral,7021
+Vijay sells a cupboard at 12 % below cost price,Vijay sells a cupboard at more than 12 % below cost price,contradiction,7049
+"In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored less than 84 percent , Bhavan scored 36 percent and Chetan 44 percent",entailment,7053
+"In an exam , Amar scored less than 84 percent , Bhavan scored 36 percent and Chetan 44 percent","In an exam , Amar scored 64 percent , Bhavan scored 36 percent and Chetan 44 percent",neutral,7054
+"While driving from City A to City B , Cara drives at a constant speed of 30 miles per hour","While driving from City A to City B , Cara drives at a constant speed of less than 50 miles per hour",entailment,7056
+"While driving from City A to City B , Cara drives at a constant speed of less than 50 miles per hour","While driving from City A to City B , Cara drives at a constant speed of 30 miles per hour",neutral,7057
+"While driving from City A to City B , Cara drives at a constant speed of 30 miles per hour","While driving from City A to City B , Cara drives at a constant speed of 60 miles per hour",contradiction,7058
+Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of 15 % of the cost of the orders she serves,Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of less than 65 % of the cost of the orders she serves,entailment,7065
+Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of less than 65 % of the cost of the orders she serves,Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of 15 % of the cost of the orders she serves,neutral,7066
+Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of 15 % of the cost of the orders she serves,Jill works as a waitress at the local diner where she earns an hourly wage of $ 4.00 per hour and a standard tip rate of 65 % of the cost of the orders she serves,contradiction,7067
+James took a 3 - hour bike ride,James took a more than 1 - hour bike ride,entailment,7071
+James took a more than 1 - hour bike ride,James took a 3 - hour bike ride,neutral,7072
+James took a 3 - hour bike ride,James took a 8 - hour bike ride,contradiction,7073
+Dan can do a job alone in 15 hours,Dan can do a job alone in less than 85 hours,entailment,7080
+Dan can do a job alone in less than 85 hours,Dan can do a job alone in 15 hours,neutral,7081
+"Each week , Harry is paid x dollars per hour for the first 30 hours and 2 x dollars for each additional hour worked that week","Each week , Harry is paid x dollars per hour for the first less than 80 hours and 2 x dollars for each additional hour worked that week",entailment,7104
+"Each week , Harry is paid x dollars per hour for the first less than 80 hours and 2 x dollars for each additional hour worked that week","Each week , Harry is paid x dollars per hour for the first 30 hours and 2 x dollars for each additional hour worked that week",neutral,7105
+"Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first less than 70 hours and 2 x dollars for each additional hour worked that week",entailment,7107
+"Each week , James is paid x dollars per per hour for the first less than 70 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week",neutral,7108
+"Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first more than 40 hours and 2 x dollars for each additional hour worked that week",contradiction,7109
+"Last week James worked a total of 41 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?","Last week James worked a total of less than 51 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?",entailment,7110
+"Last week James worked a total of less than 51 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?","Last week James worked a total of 41 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?",neutral,7111
+"Last week James worked a total of 41 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?","Last week James worked a total of 31 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?",contradiction,7112
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,entailment,7113
+How much loss would Indu has suffered had she given it to Bindu for less than 7 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,7114
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 8 years at 4 % per annum simple interest ?,contradiction,7115
+How many miles from home can Aaron jog so that he spends a total of 3 hours jogging and walking ?,How many miles from home can Aaron jog so that he spends a total of 4 hours jogging and walking ?,contradiction,7127
+"At Veridux Corporation , there are 250 employees","At Veridux Corporation , there are less than 450 employees",entailment,7209
+"At Veridux Corporation , there are less than 450 employees","At Veridux Corporation , there are 250 employees",neutral,7210
+Arun purchased 30 kg of wheat at the rate of Rs,Arun purchased more than 30 kg of wheat at the rate of Rs,contradiction,7232
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of more than 30 kmph and from city B to city C at 60 kmph,entailment,7254
+Murali travelled from city A to city B at a speed of more than 30 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,neutral,7255
+Murali travelled from city A to city B at a speed of 40 kmph and from city B to city C at 60 kmph,Murali travelled from city A to city B at a speed of less than 40 kmph and from city B to city C at 60 kmph,contradiction,7256
+What is the average speed of Murali from A to C given that the ratio of distances between A to B and B to C is 2 : 3 ?,What is the average speed of Murali from A to C given that the ratio of distances between A to B and B to C is less than 4 : 3 ?,entailment,7257
+What is the average speed of Murali from A to C given that the ratio of distances between A to B and B to C is less than 4 : 3 ?,What is the average speed of Murali from A to C given that the ratio of distances between A to B and B to C is 2 : 3 ?,neutral,7258
+What is the average speed of Murali from A to C given that the ratio of distances between A to B and B to C is 2 : 3 ?,What is the average speed of Murali from A to C given that the ratio of distances between A to B and B to C is 8 : 3 ?,contradiction,7259
+There are 4 more women than men on Centerville ' s board of education,There are 7 more women than men on Centerville ' s board of education,contradiction,7265
+Speed of Bruce is 30 m / s and that of Bhishma is 20 m / s,Speed of Bruce is less than 60 m / s and that of Bhishma is 20 m / s,entailment,7269
+Speed of Bruce is less than 60 m / s and that of Bhishma is 20 m / s,Speed of Bruce is 30 m / s and that of Bhishma is 20 m / s,neutral,7270
+Speed of Bruce is 30 m / s and that of Bhishma is 20 m / s,Speed of Bruce is 60 m / s and that of Bhishma is 20 m / s,contradiction,7271
+"When the river is running at 2 km / h , it takes the rower 1 hour to row to Big Rock and back","When the river is running at more than 2 km / h , it takes the rower 1 hour to row to Big Rock and back",contradiction,7298
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of less than 7 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",entailment,7326
+"If an outfit consists of less than 7 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",neutral,7327
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of less than 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",contradiction,7328
+Sanoop bought 8 t - shirts at an average price ( arithmetic mean ) of Rs,Sanoop bought more than 3 t - shirts at an average price ( arithmetic mean ) of Rs,entailment,7335
+Sanoop bought more than 3 t - shirts at an average price ( arithmetic mean ) of Rs,Sanoop bought 8 t - shirts at an average price ( arithmetic mean ) of Rs,neutral,7336
+Sanoop bought 8 t - shirts at an average price ( arithmetic mean ) of Rs,Sanoop bought less than 8 t - shirts at an average price ( arithmetic mean ) of Rs,contradiction,7337
+"Jose joined him 2 months later , investing Rs","Jose joined him less than 8 months later , investing Rs",entailment,7347
+"Jose joined him less than 8 months later , investing Rs","Jose joined him 2 months later , investing Rs",neutral,7348
+"Jose joined him 2 months later , investing Rs","Jose joined him 1 months later , investing Rs",contradiction,7349
+"Sheila works 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday","Sheila works more than 5 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday",entailment,7350
+"Sheila works more than 5 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday","Sheila works 8 hours per day on Monday , Wednesday and Friday , and 6 hours per day on Tuesday and Thursday",neutral,7351
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has more than 3 gang , in how many ways can he invite one or more of the gang to his house ?",entailment,7353
+"In a friendship gang Andrew has more than 3 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?",neutral,7354
+"In a friendship gang Andrew has 8 gang , in how many ways can he invite one or more of the gang to his house ?","In a friendship gang Andrew has 1 gang , in how many ways can he invite one or more of the gang to his house ?",contradiction,7355
+Mr Yadav spends 60 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,Mr Yadav spends less than 60 % of his monthly salary on consumable items and 50 % of the remaining on clothes and transport,contradiction,7379
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 6 years at 4 % per annum simple interest ?,entailment,7392
+How much loss would Indu has suffered had she given it to Bindu for less than 6 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,neutral,7393
+How much loss would Indu has suffered had she given it to Bindu for 2 years at 4 % per annum simple interest ?,How much loss would Indu has suffered had she given it to Bindu for less than 2 years at 4 % per annum simple interest ?,contradiction,7394
+"If the average speed of the whole journey was 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?","If the average speed of the whole journey was less than 76 mph , then what is Tom ' s speed driving from B to C in miles per hour ?",entailment,7398
+"If the average speed of the whole journey was less than 76 mph , then what is Tom ' s speed driving from B to C in miles per hour ?","If the average speed of the whole journey was 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?",neutral,7399
+"If the average speed of the whole journey was 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?","If the average speed of the whole journey was less than 36 mph , then what is Tom ' s speed driving from B to C in miles per hour ?",contradiction,7400
+Amanda goes to the toy store to buy 1 ball and 3 different board games,Amanda goes to the toy store to buy less than 4 ball and 3 different board games,entailment,7428
+Amanda goes to the toy store to buy less than 4 ball and 3 different board games,Amanda goes to the toy store to buy 1 ball and 3 different board games,neutral,7429
+It takes John exactly 30 minutes to rake a lawn and it takes his son Todd exactly 60 minutes to rake the same lawn,It takes John exactly less than 60 minutes to rake a lawn and it takes his son Todd exactly 60 minutes to rake the same lawn,entailment,7440
+It takes John exactly less than 60 minutes to rake a lawn and it takes his son Todd exactly 60 minutes to rake the same lawn,It takes John exactly 30 minutes to rake a lawn and it takes his son Todd exactly 60 minutes to rake the same lawn,neutral,7441
+Amanda goes to the toy store to buy 1 ball and 3 different board games,Amanda goes to the toy store to buy less than 2 ball and 3 different board games,entailment,7461
+Amanda goes to the toy store to buy less than 2 ball and 3 different board games,Amanda goes to the toy store to buy 1 ball and 3 different board games,neutral,7462
+Amanda goes to the toy store to buy 1 ball and 3 different board games,Amanda goes to the toy store to buy 7 ball and 3 different board games,contradiction,7463
+Level - 1 college graduates account for 10 % of Listco ' s sales staff,Level - less than 1 college graduates account for 10 % of Listco ' s sales staff,contradiction,7469
+"Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first less than 60 hours and 2 x dollars for each additional hour worked that week",entailment,7482
+"Each week , James is paid x dollars per per hour for the first less than 60 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week",neutral,7483
+"Each week , James is paid x dollars per per hour for the first 40 hours and 2 x dollars for each additional hour worked that week","Each week , James is paid x dollars per per hour for the first more than 40 hours and 2 x dollars for each additional hour worked that week",contradiction,7484
+"Last week James worked a total of 41 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?","Last week James worked a total of more than 11 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?",entailment,7485
+"Last week James worked a total of more than 11 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?","Last week James worked a total of 41 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?",neutral,7486
+"Last week James worked a total of 41 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?","Last week James worked a total of less than 41 hours If Harry and James were paid the same amount last week , how many hours did Harry work last week ?",contradiction,7487
+"City A to city B , Andrew drove for 1 hour at 50 mph and for 3 hours at 60 mph","City A to city B , Andrew drove for less than 8 hour at 50 mph and for 3 hours at 60 mph",entailment,7509
+"City A to city B , Andrew drove for less than 8 hour at 50 mph and for 3 hours at 60 mph","City A to city B , Andrew drove for 1 hour at 50 mph and for 3 hours at 60 mph",neutral,7510
+"If an outfit consists of 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?","If an outfit consists of less than 1 shirt , 1 pair of jeans , and 1 pair of sneakers , how many different outfits does Jordan have ?",contradiction,7514
+90 students represent x percent of the boys at Jones Elementary School,more than 50 students represent x percent of the boys at Jones Elementary School,entailment,7515
+more than 50 students represent x percent of the boys at Jones Elementary School,90 students represent x percent of the boys at Jones Elementary School,neutral,7516
+In a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,In a group of less than 8 boys & 4 girls a Committee of 4 persons is to be formed,entailment,7527
+In a group of less than 8 boys & 4 girls a Committee of 4 persons is to be formed,In a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,neutral,7528
+Amanda goes to the toy store to buy 1 ball and 3 different board games,Amanda goes to the toy store to buy more than 1 ball and 3 different board games,contradiction,7541
+"John paid a 15 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon","John paid a less than 75 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon",entailment,7545
+"John paid a less than 75 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon","John paid a 15 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon",neutral,7546
+"John paid a 15 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon","John paid a 85 % tip over the original price of the dish , while Jane paid the tip over the discounted price for the coupon",contradiction,7547
+In a group of 6 boys & 4 girls a Committee of 4 persons is to be formed,In a group of less than 6 boys & 4 girls a Committee of 4 persons is to be formed,contradiction,7553
+"What is the share of Sravan , if Sreedhar alone can do the work in 75 days ?","What is the share of Sravan , if Sreedhar alone can do the work in more than 25 days ?",entailment,7581
+"What is the share of Sravan , if Sreedhar alone can do the work in more than 25 days ?","What is the share of Sravan , if Sreedhar alone can do the work in 75 days ?",neutral,7582
+"While driving from City A to City B , Cara drives at a constant speed of 30 miles per hour","While driving from City A to City B , Cara drives at a constant speed of less than 50 miles per hour",entailment,7590
+"While driving from City A to City B , Cara drives at a constant speed of less than 50 miles per hour","While driving from City A to City B , Cara drives at a constant speed of 30 miles per hour",neutral,7591
+"While driving from City A to City B , Cara drives at a constant speed of 30 miles per hour","While driving from City A to City B , Cara drives at a constant speed of less than 30 miles per hour",contradiction,7592
+Dan leaves City A 60 minutes after Cara,Dan leaves City A more than 30 minutes after Cara,entailment,7593
+Dan leaves City A more than 30 minutes after Cara,Dan leaves City A 60 minutes after Cara,neutral,7594

@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=18
 #SBATCH --gpus=1
 #SBATCH --job-name=qnli_ft_inference
-#SBATCH --time=02:00:00
+#SBATCH --time=03:30:00
 #SBATCH --output=slurm_output_%A.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=ioana.mazilu@student.uva.nl
@@ -17,11 +17,11 @@ module load Python/3.10.4-GCCcore-11.3.0
 
 # set some variables
 MODEL_NAME="llama-2-chat"
-MODEL_SIZE="7B"
-HF_REPO="meta-llama/Llama-2-7b-chat-hf"
+MODEL_SIZE="13B"
+HF_REPO="meta-llama/Llama-2-13b-chat-hf"
 MAX_NEW_TOKENS="512"
-BATCH_SIZE="8"
-MODEL_ID="5494375"  # JOB ID of the fine-tuned model
+BATCH_SIZE="4"
+MODEL_ID="5511526"  # JOB ID of the fine-tuned model
 #SAMPLE_SIZE="24"
 
 # create input and output directories on the scratch disk

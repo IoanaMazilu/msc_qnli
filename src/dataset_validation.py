@@ -23,6 +23,7 @@ def validate_code_quality(script_path):
     except subprocess.CalledProcessError as e:
         # If an exception is thrown, capture the exception information
         captured_error = e.stderr.strip()
+        print(captured_error)
         return None, None
 
 

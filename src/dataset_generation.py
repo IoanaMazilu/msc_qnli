@@ -34,8 +34,7 @@ def get_llm(model_name: str, **kwargs):
         # other params: openai_api_base, openai_organization
         return ChatOpenAI(openai_api_key=os.getenv("OPENAI_API_KEY_UVA"),
                           model_name=model_name,
-                          temperature=temperature,
-                          max_tokens=512)
+                          temperature=temperature)
 
 
 def make_chain(llm_model_name: str, prompt_type: str, **llm_kwargs) -> LLMChain:
@@ -47,6 +46,7 @@ def make_chain(llm_model_name: str, prompt_type: str, **llm_kwargs) -> LLMChain:
 def generate_labels(model: str,
                     dataset: str,
                     experiment_name: str,
+                    random_samples: bool,
                     samples_count: int,
                     verbose: bool = None,
                     output_path: str = None,
@@ -62,19 +62,27 @@ def generate_labels(model: str,
     :param llm_kwargs: not used
     :return:
     """
+    root_path = os.path.dirname(os.getcwd())
+    input_path = os.path.join(root_path, "data", "equate", "03_cleaned", f"{dataset}.csv")
     if not output_path:
-        root_path = os.path.dirname(os.getcwd())
         output_path = os.path.join(root_path, "data", "generated", dataset, experiment_name)
+        code_quality_output_path = os.path.join(root_path, "data", "code_quality", "gpt4", dataset, experiment_name)
         os.makedirs(output_path, exist_ok=True)
+        os.makedirs(code_quality_output_path, exist_ok=True)
+
     chain = make_chain(model, f"{dataset.lower().replace('_', '')}", **llm_kwargs)
+
     answers, py_file_contents = [], []
-    samples, labels = read_data(dataset + ".jsonl")
+    samples = pd.read_csv(input_path).set_index("sample_index")
+    labels = list(samples["label"].unique())
     # select random subset of `samples_count` or 10% of the samples in the dataset
     if samples_count == 0:
         subset_idx = list(range(len(samples)))
     else:
-        subset_idx = list(range(samples_count))
-        # subset_idx = random.sample(range(0, len(samples)), samples_count if samples_count else int(len(samples) * 0.1))
+        random_sample_size = samples_count if samples_count else int(len(samples) * 0.1)
+        subset_idx = list(range(samples_count)) if not random_samples else random.sample(range(0, len(samples)), random_sample_size)
+    # subset_idx = [5345, 750, 2301, 5100, 4534, 5217, 4237, 1892, 5001, 792, 4744, 3166, 3722, 5382, 3297, 1644, 5870, 2324, 1782, 2099, 2862, 6148, 454, 5614, 3267, 2093, 6994, 403, 3537, 652, 5272, 2045, 5252, 4233, 4256, 1140, 3864, 596, 2424, 5900, 3440, 4643, 6324, 4206, 176, 3107, 1083, 5079, 1579, 4481]
+        print(subset_idx)
     # get indices of samples for which data was already generated
     try:
         previous_results = pd.read_csv(os.path.join(output_path, "results_overview.csv"))
@@ -83,6 +91,7 @@ def generate_labels(model: str,
         previous_results = None
         skip_indices = []
     print(f"Sampled indices:\n{subset_idx}")
+
     samples_in_batch = 0
     processed_indices = []
     try:
@@ -92,14 +101,16 @@ def generate_labels(model: str,
                 continue
             processed_indices.append(idx)
             samples_in_batch += 1
-            # print(f"########################\nProcessing sample with index {idx}...")
-            llm_answer, py_file_content = get_label_for_sample(chain, samples[idx], labels)
+
+            llm_answer, py_file_content, script = get_label_for_sample(chain, samples.loc[idx], labels)
             if py_file_content:
                 save_python_script_to_file(output_path, py_file_content, idx)
+                save_python_script_to_file(code_quality_output_path, script, idx)
             if llm_answer is None:
                 llm_answer, py_file_content = "-", "-"
             answers.append(llm_answer)
             py_file_contents.append(py_file_content)
+
             if samples_in_batch == 30:
                 # use batches of 30 to not exceed openai model token limit (tpm)
                 print("Batch completed, waiting...")
@@ -159,12 +170,12 @@ def get_label_for_sample(chain, sample, potential_labels):
             # max_tokens reached before the code is fully generated or the llm did not generate a block of code at all
             print("No Python script found in text.")
             return answer, None
-    script = "\n".join(scripts).replace("`", "")  # collect all scripts, if more are returned
+    script = "\n".join(scripts).replace("`", "").lstrip("\n")  # collect all scripts, if more are returned
     runnable_py_file_template = python_script_template.replace("{premise}", premise.replace("\n", " ")) \
         .replace("{hypothesis}", hypothesis.replace("\n", " ")). \
         replace("{label}", golden_label). \
         replace("{script}", script)
-    return answer, runnable_py_file_template
+    return answer, runnable_py_file_template, script
 
 
 def extract_labels_from_scripts(dataset: str, experiment_name: str) -> None:
@@ -222,20 +233,22 @@ def validate_generated_labels(dataset, experiment_name):
 
 
 if __name__ == "__main__":
-    dataset = "StressTest"
-    experiment_name = "gpt4"
-    # GENERATE SCRIPTS FOR THE QNLI TASK
-    # start_time = time.time()
-    # generate_labels(model="gpt-4", dataset=dataset,
-    #                 experiment_name=experiment_name,
-    #                 samples_count=7596,
-    #                 verbose=True)
-    # print(f"Finished script generation in {round(time.time() - start_time, 2)} seconds.")
+    for dataset in ["AWPNLI", "RedditNLI", "NewsNLI", "RTE_Quant", "StressTest"]:
+        print(f"############{dataset}############")
+        experiment_name = "phase2-test"
+        # GENERATE SCRIPTS FOR THE QNLI TASK
+        start_time = time.time()
+        generate_labels(model="gpt-4", dataset=dataset,
+                        experiment_name=experiment_name,
+                        samples_count=50,
+                        random_samples=True,
+                        verbose=True)
+        print(f"Finished script generation in {round(time.time() - start_time, 2)} seconds.")
 
     # EXTRACT THE LABELS BASED ON THE SCRIPT RETURN VALUE
-    extract_labels_from_scripts(dataset, experiment_name)
+    # extract_labels_from_scripts(dataset, experiment_name)
     # EVALUATE THE CLASSIFICATION RESULTS
-    validate_generated_labels(dataset, experiment_name)
+    # validate_generated_labels(dataset, experiment_name)
 
     # chain4 = make_chain("gpt-4", "stresstest")
     # chain35 = make_chain("gpt-3.5-turbo-1106", "stresstest")

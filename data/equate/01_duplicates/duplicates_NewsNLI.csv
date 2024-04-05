@@ -1,0 +1,6 @@
+premise,hypothesis,label,sample_index
+Mycoskie had already started four other businesses by the time he got the idea for TOMS .,Blake Mycoskie had launched four other start-ups before creating TOMS,entailment,41
+Cobb declined two requests from CNN to respond to the complaints .,Cobb declined two requests to speak with CNN for this report,entailment,67
+"In fact , Wernick had only seen one zombie film before writing this script .",One of film 's writers had seen just one zombie film in his life,entailment,151
+"There were no reports of serious injuries , but there were at least eight arrests , witnesses said .","At least 8 reported arrested , but no reports of serious injuries",entailment,300
+ 42 percent of homeless children are younger than 6 .,Study says 42 percent of homeless children are younger than 6,entailment,416
