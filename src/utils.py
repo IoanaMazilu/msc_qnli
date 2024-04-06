@@ -17,10 +17,10 @@ def run_script(script_path) -> (str, str):
             return "entailment", ""
         elif label.lower() == "false" or label.lower() == "contradiction":
             return "contradiction", ""
-        elif label.lower() == "none" or label.lower() == "neutral":
+        elif label.lower() == "neutral":
             return "neutral", ""
         else:
-            return "", ""
+            return "error", "No output"
     except subprocess.CalledProcessError as e:
         # If an exception is thrown, capture the exception information
         captured_error = e.stderr.strip()

@@ -1,0 +1,22 @@
+# Premise: It left England needing 150 runs to avoid a humiliating innings defeat with only six wickets left.
+# Hypothesis: They trail by 150 runs with only six wickets left.
+# Golden Label: entailment
+
+runs_needed_premise = 150
+runs_needed_hypothesis = 150
+wickets_left_premise = 6
+wickets_left_hypothesis = 6
+
+# the hypothesis mentions the number of runs needed and wickets left which are also mentioned in the premise
+if runs_needed_hypothesis != runs_needed_premise:
+    # check if the number of runs needed in the hypothesis contradict the number of runs needed in the premise
+    label = "contradiction"
+elif wickets_left_hypothesis != wickets_left_premise:
+    # check if the number of wickets left in the hypothesis contradict the number of wickets left in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = "entailment"
+
+print(label)
+

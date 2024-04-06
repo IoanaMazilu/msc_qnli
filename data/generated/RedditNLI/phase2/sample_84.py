@@ -1,0 +1,17 @@
+# Premise: Unemployment Rate Falls to 3.9 percent, but Wage Growth Remains Weak.
+# Hypothesis: U.S. job growth picks up, unemployment rate falls to 3.9 percent.
+# Golden Label: neutral
+
+unemployment_rate_premise = 3.9
+unemployment_rate_hypothesis = 3.9
+
+# the hypothesis and premise mention the unemployment rate
+if unemployment_rate_hypothesis != unemployment_rate_premise:
+    # check if the unemployment rate in the hypothesis contradicts the unemployment rate in the premise
+    label = "contradiction"
+else:
+    # if the unemployment rate in the hypothesis matches the one in the premise, we can infer entailment
+    label = "entailment"
+
+print(label)
+

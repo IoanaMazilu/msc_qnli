@@ -360,71 +360,25 @@ Hypothesis: {hypothesis}
 Answer:
 """
 
-ecn_options = """    
-    - "entailment": the hypothesis can be fully and explicitly entailed from the premise
+
+# Explanations of labels and lists of possible labels for the datasets
+
+ecn_options = """    - "entailment": the hypothesis can be fully and explicitly entailed from the premise
     - "contradiction": at least one aspect in the hypothesis contradicts the premise
-    - "neutral": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
-"""
+    - "neutral": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either"""
 
 ecn_labels = "entailment, contradiction, neutral"
 
-ec_options = """    
-    - "entailment": the hypothesis can be fully and explicitly entailed from the premise
-    - "contradiction": at least one aspect in the hypothesis contradicts the premise
-"""
+ec_options = """    - "entailment": the hypothesis can be fully and explicitly entailed from the premise
+    - "contradiction": at least one aspect in the hypothesis contradicts the premise"""
 
 ec_labels = "entailment, contradiction"
 
-en_options = """    
-    - "entailment": the hypothesis can be fully and explicitly entailed from the premise
-    - "neutral": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
-"""
-
+# for E-N datasets, we also consider the possibility of contradiction,
+# to remain consistent with the other dataset and to be able to generalize well
+en_options = ecn_options
 en_labels = ecn_labels
 
-
-# stresstest_examples = """
-# START_EXAMPLE
-# Possible labels: entailment, contradiction, neutral
-# Premise: He sold $200-worth of cookies at the school fair and 15 pies.
-# Hypothesis: He sold cookies worth more than $100 and 15 pies.
-# Answer:```python
-# cookie_sales_premise = 200
-# min_cookie_sales_hypothesis = 100
-# pies_sold_premise = 15
-# pies_sold_hypothesis = 15
-#
-# # the hypothesis refers to the number of sold cookies and pies mentioned in the premise
-# # the hypothesis estimates the cookie sales to more than 'min_cookie_sales_hypothesis'
-# # check if the hypothesis contradicts the premise by checking if cookie sales reported in the premise are lower or equal to 'min_cookie_sales_hypothesis' or if the number of pies reported in the hypothesis is not equal to 'pies_sold_premise'
-# if cookie_sales_premise <= min_cookie_sales_hypothesis or pies_sold_premise != pies_sold_hypothesis:
-#     label = "contradiction"
-# else:
-#     label = "entailment"
-#
-# print(label)
-# ```
-# END_EXAMPLE
-#
-# START_EXAMPLE
-# Possible labels: entailment, contradiction, neutral
-# Premise: There are more than 10 roses in the vase.
-# Hypothesis: There are 15 roses in the vase.
-# Answer:```python
-# min_roses_vase_premise = 10
-# roses_vase_hypothesis = 15
-#
-# # the hypothesis talks about the number of roses in a vase, referenced also in the premise
-# # check if the hypothesis contradicts the premise estimate of more than 'min_roses_vase_premise', by checking if the number of roses from the hypothesis is lower or equal to 'min_roses_vase_premise'
-# if roses_vase_hypothesis <= min_roses_vase_premise:
-#     label = "contradiction"
-# # any number of roses greater than 'min_roses_vase_premise' is consistent with the premise, so the hypothesis is neutral to the premise
-# label = "neutral"
-#
-# print(label)
-# ```
-# END_EXAMPLE
-# """
 
 stresstest_examples = """START_EXAMPLE
 Possible labels: entailment, contradiction, neutral
@@ -715,30 +669,30 @@ def get_prompt(prompt_type: str) -> PromptTemplate:
 #     return f"### Instruction:\n{template_with_vars}".strip()
 
 
-# def format_prompt(prompt_type: str, input_sample: dict) -> Optional[str | None]:
-#     """
-#     Prepares a prompt for a specified dataset and imputes inputs from a given sample (premise and hypothesis).
-#     Add `### Instruction:` and `### Input:` markers, in line with the instruction-tuning prompt format for fine-tuning.
-#     :param prompt_type: the prompt type, the dataset name in lowercase, with removed non-letter chars
-#     :param input_sample: a dict representing a sample with a premise and a hypothesis
-#     :return: a formatted prompt
-#     """
-#     if prompt_type == "redditnli":
-#         template = template_ecn.replace("\n", "").replace("Answer:", "").replace("{examples}", redditnli_examples)
-#     elif prompt_type == "newsnli":
-#         template = template_en.replace("\n", "").replace("Answer:", "").replace("{examples}", newsnli_examples)
-#     elif prompt_type == "rtequant":
-#         template = template_en.replace("\n", "").replace("Answer:", "").replace("{examples}", rtequant_examples)
-#     elif prompt_type == "awpnli":
-#         template = template_ec.replace("\n", "").replace("Answer:", "").replace("{examples}", awpnli_examples)
-#     elif prompt_type == "stresstest":
-#         template = template_ecn.replace("\n", "").replace("Answer:", "").replace("{examples}", stresstest_examples)
-#     else:
-#         return None
-#     template_with_vars = template.replace("{premise}", f'{input_sample["premise"]}'). \
-#         replace("{hypothesis}", input_sample["hypothesis"])
-#     template_with_vars = template_with_vars.replace("Your turn now:", "### Input:\n")
-#     return f"### Instruction:\n{template_with_vars}".strip()
+def format_prompt(prompt_type: str, input_sample: dict) -> Optional[str | None]:
+    """
+    Prepares a prompt for a specified dataset and imputes inputs from a given sample (premise and hypothesis).
+    Add `### Instruction:` and `### Input:` markers, in line with the instruction-tuning prompt format for fine-tuning.
+    :param prompt_type: the prompt type, the dataset name in lowercase, with removed non-letter chars
+    :param input_sample: a dict representing a sample with a premise and a hypothesis
+    :return: a formatted prompt
+    """
+    if prompt_type == "redditnli":
+        prompt_template = template.replace("Answer:", "").replace("{examples}", redditnli_examples).replace("{script_output_options}", ecn_options).replace("{labels}", ecn_labels)
+    elif prompt_type == "newsnli":
+        prompt_template = template.replace("Answer:", "").replace("{examples}", newsnli_examples).replace("{script_output_options}", en_options).replace("{labels}", en_labels)
+    elif prompt_type == "rtequant":
+        prompt_template = template.replace("Answer:", "").replace("{examples}", rtequant_examples).replace("{script_output_options}", en_options).replace("{labels}", en_labels)
+    elif prompt_type == "awpnli":
+        prompt_template = template.replace("Answer:", "").replace("{examples}", awpnli_examples).replace("{script_output_options}", ec_options).replace("{labels}", ec_labels)
+    elif prompt_type == "stresstest":
+        prompt_template = template.replace("Answer:", "").replace("{examples}", stresstest_examples).replace("{script_output_options}", ecn_options).replace("{labels}", ecn_labels)
+    else:
+        return None
+    template_with_vars = prompt_template.replace("{premise}", f'{input_sample["premise"]}'). \
+        replace("{hypothesis}", input_sample["hypothesis"])
+    template_with_vars = template_with_vars.replace("Your turn now:", "### Input:\n")
+    return f"### Instruction:\n{template_with_vars}".strip()
 
 
 # template for the scrips which will be saved in .py files, for manual annotator validation
@@ -751,4 +705,4 @@ python_script_template = """# Premise: {premise}
 
 
 if __name__ == "__main__":
-    print(format_prompt("stresstest", {"premise": "some premise", "hypothesis": "some hypothesis"}))
+    print(format_prompt("stresstest", {"premise": "I had 5 apples and ate two.", "hypothesis": "I now have 3 apples."}))

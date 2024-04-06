@@ -5,9 +5,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
-from qnli_datasets import read_data
 from prompts import get_prompt, python_script_template
-from sklearn.metrics import classification_report
 import argparse
 import os
 from utils import run_script
@@ -43,6 +41,31 @@ def make_chain(llm_model_name: str, prompt_type: str, **llm_kwargs) -> LLMChain:
     return LLMChain(prompt=prompt, llm=llm, verbose=False)
 
 
+def fix_bug(dataset: str, experiment_name: str):
+    root_path = os.path.dirname(os.getcwd())
+    input_path = os.path.join(root_path, "data", "equate", "03_cleaned", f"{dataset}.csv")
+    output_path = os.path.join(root_path, "data", "generated", dataset, experiment_name, "results_overview.csv")
+    samples = pd.read_csv(input_path).set_index("sample_index")
+    results = pd.read_csv(output_path)
+    print(results.shape[0])
+    indices = list(results["sample_index"].unique())
+    to_remove = []
+    for idx in range(1000):
+        try:
+            sample = samples.loc[idx]
+        except KeyError:
+            if idx in indices:
+                to_remove.append(idx)
+    print(f"Removing {len(to_remove)} rows: {to_remove}")
+    keep_rows = ~results["sample_index"].isin(to_remove)
+    results = results[keep_rows]
+    results.to_csv(output_path, index=False)
+
+
+def match_sample(script, premise, hypothesis):
+    return premise in script and hypothesis in script
+
+
 def generate_labels(model: str,
                     dataset: str,
                     experiment_name: str,
@@ -74,35 +97,46 @@ def generate_labels(model: str,
 
     answers, py_file_contents = [], []
     samples = pd.read_csv(input_path).set_index("sample_index")
+    samples_df_len = samples.shape[0]
     labels = list(samples["label"].unique())
     # select random subset of `samples_count` or 10% of the samples in the dataset
     if samples_count == 0:
-        subset_idx = list(range(len(samples)))
+        subset_idx = list(range(samples_df_len))
     else:
-        random_sample_size = samples_count if samples_count else int(len(samples) * 0.1)
-        subset_idx = list(range(samples_count)) if not random_samples else random.sample(range(0, len(samples)), random_sample_size)
+        random_sample_size = min(samples_count, samples_df_len) if samples_count else int(samples_df_len * 0.1)
+        subset_idx = list(range(min(samples_count, samples_df_len))) if not random_samples else random.sample(range(0, samples_df_len), random_sample_size)
     # subset_idx = [5345, 750, 2301, 5100, 4534, 5217, 4237, 1892, 5001, 792, 4744, 3166, 3722, 5382, 3297, 1644, 5870, 2324, 1782, 2099, 2862, 6148, 454, 5614, 3267, 2093, 6994, 403, 3537, 652, 5272, 2045, 5252, 4233, 4256, 1140, 3864, 596, 2424, 5900, 3440, 4643, 6324, 4206, 176, 3107, 1083, 5079, 1579, 4481]
-        print(subset_idx)
-    # get indices of samples for which data was already generated
+    print(f"Sampled indices:\n{subset_idx}")
+
     try:
         previous_results = pd.read_csv(os.path.join(output_path, "results_overview.csv"))
-        skip_indices = previous_results["sample_index"].unique()
     except FileNotFoundError:
         previous_results = None
-        skip_indices = []
-    print(f"Sampled indices:\n{subset_idx}")
 
     samples_in_batch = 0
     processed_indices = []
+    skip_indices = []
+    for scriptfile in os.listdir(output_path):
+        if scriptfile.endswith(".py"):
+            idx = int(scriptfile.split("_")[-1].split(".py")[0])
+            skip_indices.append(idx)
+    print(f"skipping {len(skip_indices)} indices")
     try:
         for idx in subset_idx:
-            if idx in skip_indices:
-                print(f"Skipping index {idx}")
+            try:
+                sample = samples.loc[idx]
+            except KeyError:
+                print(f"Could not find sample with index {idx}")
                 continue
+
+            if idx in skip_indices:
+                # print(f"Skipping idx {idx}")
+                continue
+
+            print(f"Doing idx {idx}")
             processed_indices.append(idx)
             samples_in_batch += 1
-
-            llm_answer, py_file_content, script = get_label_for_sample(chain, samples.loc[idx], labels)
+            llm_answer, py_file_content, script = get_label_for_sample(chain, sample, labels)
             if py_file_content:
                 save_python_script_to_file(output_path, py_file_content, idx)
                 save_python_script_to_file(code_quality_output_path, script, idx)
@@ -117,6 +151,7 @@ def generate_labels(model: str,
                 samples_in_batch = 0
                 time.sleep(5)
     finally:
+        print("###########")
         overview_df = pd.DataFrame(data={
             "sample_index": processed_indices[:len(answers)],
             "llm_answer": answers,
@@ -127,9 +162,9 @@ def generate_labels(model: str,
             try:
                 overview_df = pd.concat([previous_results, overview_df], axis=0, ignore_index=True)
             except:
-                overview_df.to_csv(os.path.join(output_path, "results_overview_new.csv"), index=False)
+                overview_df.to_csv(os.path.join(output_path, "new_results_overview_new.csv"), index=False)
                 return
-        overview_df.to_csv(os.path.join(output_path, "results_overview.csv"), index=False)
+        overview_df.to_csv(os.path.join(output_path, "new_results_overview.csv"), index=False)
 
 
 def save_python_script_to_file(output_path: str, script_str: str, idx: int) -> None:
@@ -196,10 +231,11 @@ def extract_labels_from_scripts(dataset: str, experiment_name: str) -> None:
     except FileNotFoundError:
         previous_results = None
         skip_indices = []
+    print(f"Skipping indices {skip_indices}")
     try:
         for f in os.listdir(input_path):
             if f.endswith(".py"):
-                idx = f.split(".")[0].split("_")[-1]  # extract the sample index from the script file name
+                idx = int(f.split(".")[0].split("_")[-1])  # extract the sample index from the script file name
                 if not idx in skip_indices:
                     label, info = run_script(os.path.join(input_path, f))
                     results.append({"sample_index": idx, "generated_label": label, "error_message": info})
@@ -213,43 +249,48 @@ def extract_labels_from_scripts(dataset: str, experiment_name: str) -> None:
 
 
 def validate_generated_labels(dataset, experiment_name):
-    samples, _ = read_data(dataset + ".jsonl")
+    root_path = os.path.dirname(os.getcwd())
+    input_path = os.path.join(root_path, "data", "equate", "03_cleaned", f"{dataset}.csv")
+    samples = pd.read_csv(input_path).set_index("sample_index")
     root_path = os.path.dirname(os.getcwd())
     generated_data_path = os.path.join(root_path, "data", "equate_labelled")
     generated_labels = pd.read_csv(os.path.join(generated_data_path, f"{dataset}_{experiment_name}.csv"))
-    generated_labels["golden_label"] = generated_labels["sample_index"].apply(lambda idx: samples[idx]['label'])
-    generated_labels["premise"] = generated_labels["sample_index"].apply(lambda idx: samples[idx]['premise'])
-    generated_labels["hypothesis"] = generated_labels["sample_index"].apply(lambda idx: samples[idx]['hypothesis'])
+    generated_labels["golden_label"] = generated_labels["sample_index"].apply(lambda idx: samples.loc[idx]['label'])
+    generated_labels["premise"] = generated_labels["sample_index"].apply(lambda idx: samples.loc[idx]['premise'])
+    generated_labels["hypothesis"] = generated_labels["sample_index"].apply(lambda idx: samples.loc[idx]['hypothesis'])
     generated_labels.to_csv(os.path.join(generated_data_path, f"{dataset}_{experiment_name}.csv"), index=False)
-    print(f"CLASSIFICATION REPORT FOR DATASET {dataset} (exp. {experiment_name})")
-    valid_results = generated_labels[generated_labels['error_message'].isna()]
-    print(classification_report(y_true=valid_results['golden_label'],
-                                y_pred=valid_results['generated_label']))
-    misclassified_samples = list(
-        valid_results[valid_results['golden_label'] != valid_results['generated_label']]['sample_index'].unique())
-    print(f"Misclassified samples: {sorted(misclassified_samples)}")
-    invalid_samples = list(generated_labels[generated_labels['error_message'].notna()]['sample_index'].unique())
-    print(f"Invalid samples: {sorted(invalid_samples)}")
+    # print(f"CLASSIFICATION REPORT FOR DATASET {dataset} (exp. {experiment_name})")
+    # valid_results = generated_labels[generated_labels['error_message'].isna()]
+    # print(classification_report(y_true=valid_results['golden_label'],
+    #                             y_pred=valid_results['generated_label']))
+    # misclassified_samples = list(
+    #     valid_results[valid_results['golden_label'] != valid_results['generated_label']]['sample_index'].unique())
+    # print(f"Misclassified samples: {sorted(misclassified_samples)}")
+    # invalid_samples = list(generated_labels[generated_labels['error_message'].notna()]['sample_index'].unique())
+    # print(f"Invalid samples: {sorted(invalid_samples)}")
 
 
 if __name__ == "__main__":
-    for dataset in ["AWPNLI", "RedditNLI", "NewsNLI", "RTE_Quant", "StressTest"]:
+    for dataset in ["StressTest"]:
         print(f"############{dataset}############")
-        experiment_name = "phase2-test"
+        experiment_name = "phase2"
+
+        # fix_bug(dataset, experiment_name)
+
         # GENERATE SCRIPTS FOR THE QNLI TASK
         start_time = time.time()
         generate_labels(model="gpt-4", dataset=dataset,
                         experiment_name=experiment_name,
-                        samples_count=50,
-                        random_samples=True,
+                        samples_count=1225,
+                        random_samples=False,
                         verbose=True)
         print(f"Finished script generation in {round(time.time() - start_time, 2)} seconds.")
 
-    # EXTRACT THE LABELS BASED ON THE SCRIPT RETURN VALUE
-    # extract_labels_from_scripts(dataset, experiment_name)
-    # EVALUATE THE CLASSIFICATION RESULTS
-    # validate_generated_labels(dataset, experiment_name)
-
+        # EXTRACT THE LABELS BASED ON THE SCRIPT RETURN VALUE
+        # extract_labels_from_scripts(dataset, experiment_name)
+        # EVALUATE THE CLASSIFICATION RESULTS
+        # validate_generated_labels(dataset, experiment_name)
+    #
     # chain4 = make_chain("gpt-4", "stresstest")
     # chain35 = make_chain("gpt-3.5-turbo-1106", "stresstest")
     # example = {"premise": "Tim has 350 pounds of cement in 100 , 50 , and 25 pound bags",
