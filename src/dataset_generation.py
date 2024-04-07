@@ -101,10 +101,10 @@ def generate_labels(model: str,
     labels = list(samples["label"].unique())
     # select random subset of `samples_count` or 10% of the samples in the dataset
     if samples_count == 0:
-        subset_idx = list(range(samples_df_len))
+        subset_idx = list(range(samples_count))
     else:
         random_sample_size = min(samples_count, samples_df_len) if samples_count else int(samples_df_len * 0.1)
-        subset_idx = list(range(min(samples_count, samples_df_len))) if not random_samples else random.sample(range(0, samples_df_len), random_sample_size)
+        subset_idx = list(range(samples_count)) if not random_samples else random.sample(range(0, samples_df_len), random_sample_size)
     # subset_idx = [5345, 750, 2301, 5100, 4534, 5217, 4237, 1892, 5001, 792, 4744, 3166, 3722, 5382, 3297, 1644, 5870, 2324, 1782, 2099, 2862, 6148, 454, 5614, 3267, 2093, 6994, 403, 3537, 652, 5272, 2045, 5252, 4233, 4256, 1140, 3864, 596, 2424, 5900, 3440, 4643, 6324, 4206, 176, 3107, 1083, 5079, 1579, 4481]
     print(f"Sampled indices:\n{subset_idx}")
 
@@ -271,25 +271,25 @@ def validate_generated_labels(dataset, experiment_name):
 
 
 if __name__ == "__main__":
-    for dataset in ["StressTest"]:
+    for dataset, sample_count in zip(["RTE_Quant", "AWPNLI", "RedditNLI", "NewsNLI", "StressTest"], [166, 722, 250, 968, 7596]):
         print(f"############{dataset}############")
         experiment_name = "phase2"
 
         # fix_bug(dataset, experiment_name)
 
         # GENERATE SCRIPTS FOR THE QNLI TASK
-        start_time = time.time()
-        generate_labels(model="gpt-4", dataset=dataset,
-                        experiment_name=experiment_name,
-                        samples_count=1225,
-                        random_samples=False,
-                        verbose=True)
-        print(f"Finished script generation in {round(time.time() - start_time, 2)} seconds.")
+        # start_time = time.time()
+        # generate_labels(model="gpt-4", dataset=dataset,
+        #                 experiment_name=experiment_name,
+        #                 samples_count=sample_count,
+        #                 random_samples=False,
+        #                 verbose=True)
+        # print(f"Finished script generation in {round(time.time() - start_time, 2)} seconds.")
 
         # EXTRACT THE LABELS BASED ON THE SCRIPT RETURN VALUE
-        # extract_labels_from_scripts(dataset, experiment_name)
+        extract_labels_from_scripts(dataset, experiment_name)
         # EVALUATE THE CLASSIFICATION RESULTS
-        # validate_generated_labels(dataset, experiment_name)
+        validate_generated_labels(dataset, experiment_name)
     #
     # chain4 = make_chain("gpt-4", "stresstest")
     # chain35 = make_chain("gpt-3.5-turbo-1106", "stresstest")

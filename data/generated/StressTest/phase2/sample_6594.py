@@ -1,0 +1,17 @@
+# Premise: In a certain province in France there are 9 cities.
+# Hypothesis: In a certain province in France there are more than 1 cities.
+# Golden Label: entailment
+
+cities_premise = 9
+cities_hypothesis = 1
+
+# the hypothesis refers to the number of cities in a province in France, also mentioned in the premise
+if cities_premise <= cities_hypothesis:
+    # check if the number of cities in the premise contradicts the hypothesis estimate of more than 'cities_hypothesis'
+    label = "contradiction"
+else:
+    # if the premise value does not contradict the hypothesis, we can infer entailment
+    label = "entailment"
+
+print(label)
+

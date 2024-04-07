@@ -1,0 +1,24 @@
+# Premise: If OA = 2, AC = 4 and BD = 6, determine the length of OB.
+# Hypothesis: If OA = more than 2, AC = 4 and BD = 6, determine the length of OB.
+# Golden Label: contradiction
+
+OA_premise = 2
+OA_hypothesis = 2
+AC_premise = 4
+AC_hypothesis = 4
+BD_premise = 6
+BD_hypothesis = 6
+
+# the hypothesis refers to the lengths of OA, AC and BD mentioned in the premise
+if OA_hypothesis <= OA_premise:
+    # check if the estimate of 'OA_hypothesis' contradicts the length of OA in the premise
+    label = "contradiction"
+elif AC_hypothesis != AC_premise or BD_hypothesis != BD_premise:
+    # check if the lengths of AC and BD in the hypothesis contradict the lengths of AC and BD reported in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = "entailment"
+
+print(label)
+
