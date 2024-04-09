@@ -29,25 +29,25 @@ cp -r data/finetuning/completion/val_all.csv "$TMPDIR"/input/completion/val_all.
 MODEL_NAME="llama-2-chat"
 MODEL_SIZE="13B"
 HF_REPO="meta-llama/Llama-2-13b-chat-hf"
-LEARNING_RATE="4e-5"
+LEARNING_RATE="4e-4"
 WARMUP_RATIO="0.025"
 PAD_TOKEN="pad"
-EPOCHS="3"
+EPOCHS="4"
 
 # run fine-tuning script
-cd $HOME/qnli/quant_nli/src/ft
+cd $HOME/qnli/quant_nli/src/finetuning
 export HF_TOKEN="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"
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-python finetuning_normal.py --epochs "$EPOCHS" \
-                            --pad-token "$PAD_TOKEN" \
-                            --job-id "$SLURM_JOBID" \
-                            --output-path "$TMPDIR" \
-                            --input-path "$TMPDIR" \
-                            --model-name "$MODEL_NAME" \
-                            --model-size "$MODEL_SIZE" \
-                            --hf-repo "$HF_REPO" \
-                            --learning-rate "$LEARNING_RATE" \
-                            --warmup-ratio "$WARMUP_RATIO"
+python finetune.py --epochs "$EPOCHS" \
+                  --pad-token "$PAD_TOKEN" \
+                  --job-id "$SLURM_JOBID" \
+                  --output-path "$TMPDIR" \
+                  --input-path "$TMPDIR" \
+                  --model-name "$MODEL_NAME" \
+                  --model-size "$MODEL_SIZE" \
+                  --hf-repo "$HF_REPO" \
+                  --learning-rate "$LEARNING_RATE" \
+                  --warmup-ratio "$WARMUP_RATIO"
 
 # copy output files from scratch back to the home directory, also copy job output file
 mkdir -p $HOME/qnli/quant_nli/results/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/
@@ -55,5 +55,5 @@ cd "$TMPDIR"/output/"$SLURM_JOBID"/
 cp -r . $HOME/qnli/quant_nli/results/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/
 cd "$HOME"/qnli/quant_nli/jobs/finetuning/
 cp slurm_output_"$SLURM_JOBID".out $HOME/qnli/quant_nli/results/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/
-cd "$HOME"/qnli/quant_nli/src/ft/
+cd "$HOME"/qnli/quant_nli/src/finetuning/
 cp training_configuration.py $HOME/qnli/quant_nli/results/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/

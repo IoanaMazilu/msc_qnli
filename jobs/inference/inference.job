@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=18
 #SBATCH --gpus=1
 #SBATCH --job-name=qnli_inference
-#SBATCH --time=08:00:00
+#SBATCH --time=10:00:00
 #SBATCH --output=slurm_output_%A.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=ioana.mazilu@student.uva.nl
@@ -25,15 +25,15 @@ cd $HOME/qnli/quant_nli
 cp -r data/finetuning/completion/test_all.csv "$TMPDIR"/input/completion/test_all.csv
 
 # set some variables
-MODEL_NAME="yi"
-MODEL_SIZE="6B"
-HF_REPO="01-ai/Yi-6B-Chat"
-MAX_NEW_TOKENS="512"
-BATCH_SIZE="4"
+MODEL_NAME="llama-2-chat"
+MODEL_SIZE="13B"
+HF_REPO="meta-llama/Llama-2-13b-chat-hf"
+MAX_NEW_TOKENS="2048"
+BATCH_SIZE="2"
 #SAMPLE_SIZE="32"
 
 # run inference script
-cd $HOME/qnli/quant_nli/src/inf
+cd $HOME/qnli/quant_nli/src/inference
 export HF_TOKEN="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"
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 python inference.py --job-id "$SLURM_JOBID" \

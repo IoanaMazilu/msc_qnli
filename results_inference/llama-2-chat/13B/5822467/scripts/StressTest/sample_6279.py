@@ -1,0 +1,15 @@
+ratio_premise = 7/3
+ratio_hypothesis = 8/3
+
+# the hypothesis refers to the ratio of questions submitted by Rajat, Vikas, and Abhishek
+if ratio_hypothesis <= ratio_premise:
+    # check if the hypothesis value contradicts the estimate of the ratio in the premise
+    label = "contradiction"
+elif ratio_hypothesis!= ratio_premise:
+    # check if the ratio in the hypothesis contradicts the ratio reported in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = "entailment"
+
+print(label)
