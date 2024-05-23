@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=18
 #SBATCH --gpus=1
 #SBATCH --job-name=qnli_inference
-#SBATCH --time=10:00:00
+#SBATCH --time=12:00:00
 #SBATCH --output=slurm_output_%A.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=ioana.mazilu@student.uva.nl
@@ -25,12 +25,12 @@ cd $HOME/qnli/quant_nli
 cp -r data/finetuning/completion/test_all.csv "$TMPDIR"/input/completion/test_all.csv
 
 # set some variables
-MODEL_NAME="llama-2-chat"
+MODEL_NAME="llama3"
 MODEL_SIZE="13B"
-HF_REPO="meta-llama/Llama-2-13b-chat-hf"
+HF_REPO="meta-llama/Meta-Llama-3-8B"
 MAX_NEW_TOKENS="2048"
-BATCH_SIZE="2"
-#SAMPLE_SIZE="32"
+BATCH_SIZE="4"
+#SAMPLE_SIZE="64"
 
 # run inference script
 cd $HOME/qnli/quant_nli/src/inference
@@ -43,12 +43,13 @@ python inference.py --job-id "$SLURM_JOBID" \
                     --model-size "$MODEL_SIZE" \
                     --hf-repo "$HF_REPO"  \
                     --max-new-tokens "$MAX_NEW_TOKENS" \
-                    --batch-size "$BATCH_SIZE"
+                    --batch-size "$BATCH_SIZE" \
+                    --split-set \
 #                    --sample-size "$SAMPLE_SIZE"
 
 # copy output files from scratch back to the home directory, also copy the job output file
 mkdir -p $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/
 cd "$TMPDIR"/output/
-cp -r test.csv $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/
+cp -r . $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/
 cd "$HOME"/qnli/quant_nli/jobs/inference/
 cp slurm_output_"$SLURM_JOBID".out $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"/

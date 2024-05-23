@@ -45,9 +45,10 @@ def prepare_model_for_fine_tuning(custom_output_dir: str,
                                   epochs: int,
                                   padding_token: str,
                                   input_path: str,
+                                  prompt_template: str,
                                   train_dataset=None,
                                   eval_dataset=None,
-                                  custom_model_name: str = None):
+                                  custom_model_name: str = None,):
     # download models on scratch
     cache_directory = os.path.join(input_path, "cached_pretrained_model")
 
@@ -77,6 +78,7 @@ def prepare_model_for_fine_tuning(custom_output_dir: str,
     model = AutoModelForCausalLM.from_pretrained(
         custom_model_name if custom_model_name else model_name,  # use default value if none provided
         quantization_config=bnb_config,
+        # device=0,
         device_map=device_map,
         cache_dir=cache_directory
     )
@@ -146,7 +148,7 @@ def prepare_model_for_fine_tuning(custom_output_dir: str,
         report_to=["tensorboard"],
     )
 
-    def formatting_prompts_func(example):
+    def formatting_prompts_func_llama2(example):
         output_texts = []
         for i in range(len(example['prompt'])):
             # pre_instruction = "Below is an instruction that describes a task. Write a response that appropriately completes the request."
@@ -155,6 +157,34 @@ def prepare_model_for_fine_tuning(custom_output_dir: str,
             text = f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{example['prompt'][i]}[/INST]\n### Response:\n{example['completion'][i]}</s>"
             output_texts.append(text)
         return output_texts
+
+    def formatting_prompts_func_inputs_only(example):
+        output_texts = []
+        for i in range(len(example['prompt'])):
+            sys_msg = "Give a response suitable to the instructions below"
+            instruction = example['prompt'][i].split(" To illustrate, ")[0]
+            input_part = example['prompt'][i].rsplit("END_EXAMPLE", maxsplit=1)[1]
+            prompt = f"{instruction}{input_part}"
+            # inputs = example['prompt'][i].split("### Input:")[1].lstrip("\n")
+            text = f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{prompt}[/INST]\n### Response:\n{example['completion'][i]}</s>"
+            output_texts.append(text)
+        return output_texts
+
+    def formatting_prompts_func_llama3(example):
+        output_texts = []
+        for i in range(len(example['prompt'])):
+            sys_msg = "Give a response suitable to the instructions below"
+            text = f"<|begin_of_text|>{sys_msg}\n\n{example['prompt'][i]}\n### Response:\n{example['completion'][i]}<|end_of_text|>"
+            output_texts.append(text)
+        return output_texts
+
+    formatting_prompt_function = None
+    if prompt_template == "llama2":
+        formatting_prompt_function = formatting_prompts_func_llama2
+    elif prompt_template == "llama3":
+        formatting_prompt_function = formatting_prompts_func_llama3
+    else:
+        formatting_prompt_function = formatting_prompts_func_inputs_only
 
     # https://huggingface.co/docs/trl/main/en/sft_trainer#using-tokenids-directly-for-responsetemplate
     # add some context to the response_template, to get the correct tokens matching those in the formatted prompt
@@ -174,7 +204,7 @@ def prepare_model_for_fine_tuning(custom_output_dir: str,
         args=training_arguments,
         packing=packing,
         data_collator=collator,
-        formatting_func=formatting_prompts_func,
+        formatting_func=formatting_prompt_function,
         dataset_batch_size=8
     )
     return model, tokenizer, trainer
@@ -222,6 +252,7 @@ def load_fine_tuned_model(target_model_path: str,
         low_cpu_mem_usage=True,
         return_dict=True,
         torch_dtype=torch.float16,
+        # device=0,
         device_map=device_map,
         cache_dir=cache_directory
     )
@@ -257,6 +288,8 @@ if __name__ == "__main__":
     parser.add_argument('--epochs', required=True)
     parser.add_argument("-i", "--input-path", help="The path to the datasets", required=True)
     parser.add_argument("-o", "--output-path", help="The output path to save the fine-tuned model data", required=True)
+    parser.add_argument("--prompt-template", required=False, default="llama-2",
+                        choices=["llama2", "llama3", "inputs_only"])
 
     args = parser.parse_args()
 
@@ -268,6 +301,7 @@ if __name__ == "__main__":
     print(f"LR: {args.learning_rate}")
     print(f"WR: {args.warmup_ratio}")
     print(f"PAD TOKEN: {args.pad_token}")
+    print(f"PROMPT TEMPLATE: {args.prompt_template}")
 
     print("########## LOADING THE DATA ##########")
     train_dataset = load_data(split="train", input_path=args.input_path)
@@ -283,15 +317,16 @@ if __name__ == "__main__":
                                                                                 epochs=int(args.epochs),
                                                                                 padding_token=args.pad_token,
                                                                                 learning_rate=float(args.learning_rate),
-                                                                                warmup_ratio=float(args.warmup_ratio))
+                                                                                warmup_ratio=float(args.warmup_ratio),
+                                                                                prompt_template=args.prompt_template)
 
     print("########## START TRAINING ##########")
     target_model_dir_path = os.path.join(output_dir_path, f"{args.model_name}-{args.model_size}")
     train(original_model, trainer, target_model_dir_path)
 
-    # print("########## LOADING FINE-TUNED MODEL ##########")
-    # fine_tuned_model, tokenizer = load_fine_tuned_model(target_model_path=target_model_dir_path,
-    #                                                     padding_token=args.pad_token,
-    #                                                     source_model_name=args.hf_repo,
-    #                                                     input_path=args.input_path)
+    print("########## LOADING FINE-TUNED MODEL ##########")
+    fine_tuned_model, tokenizer = load_fine_tuned_model(target_model_path=target_model_dir_path,
+                                                        padding_token=args.pad_token,
+                                                        source_model_name=args.hf_repo,
+                                                        input_path=args.input_path)
 

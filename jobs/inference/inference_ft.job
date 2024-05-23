@@ -16,13 +16,14 @@ module load 2022
 module load Python/3.10.4-GCCcore-11.3.0
 
 # set some variables
-MODEL_NAME="llama-2-chat"
+MODEL_NAME="codellama-instruct"
 MODEL_SIZE="13B"
-HF_REPO="meta-llama/Llama-2-13b-chat-hf"
+HF_REPO="codellama/CodeLlama-13b-Instruct-hf"
 MAX_NEW_TOKENS="2048"
 BATCH_SIZE="2"
-MODEL_ID="5825256"  # JOB ID of the fine-tuned model
-#SAMPLE_SIZE="48"
+MODEL_ID="6334071"
+PROMPT_TEMPLATE="llama2"
+#SAMPLE_SIZE="64"
 
 # create input and output directories on the scratch disk
 mkdir -p "$TMPDIR"/output/
@@ -46,12 +47,14 @@ python inference.py --finetuned \
                     --model-size "$MODEL_SIZE" \
                     --hf-repo "$HF_REPO" \
                     --max-new-tokens "$MAX_NEW_TOKENS" \
-                    --batch-size "$BATCH_SIZE"
+                    --batch-size "$BATCH_SIZE" \
+                    --prompt-template "$PROMPT_TEMPLATE" \
+                    --split-set
 #                    --sample-size "$SAMPLE_SIZE"
 
 # copy output files from scratch back to the home directory, also copy the job output file with info on the job configs
 mkdir -p $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"_finetuned/
 cd "$TMPDIR"/output/
-cp -r test.csv $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"_finetuned/
+cp -r . $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"_finetuned/
 cd "$HOME"/qnli/quant_nli/jobs/inference/
 cp slurm_output_"$SLURM_JOBID".out $HOME/qnli/quant_nli/results_inference/"$MODEL_NAME"/"$MODEL_SIZE"/"$SLURM_JOBID"_finetuned/

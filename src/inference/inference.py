@@ -2,6 +2,7 @@
 import argparse
 from dotenv import load_dotenv
 import gc
+import logging
 import os
 import numpy as np
 import pandas as pd
@@ -114,14 +115,23 @@ def load_model(hf_repo: str, finetuned: bool, input_path: str, model_name: str, 
     return model, tokenizer
 
 
-def format_prompt_for_inference(prompt: str, finetuned_model: bool = False) -> str:
+def format_prompt_for_inference(prompt: str, prompt_template: str, finetuned_model: bool = False) -> str:
     # if not finetuned_model:
     sys_msg = "Give a response suitable to the instructions below"
-    if not finetuned_model:
-        return f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{prompt}[/INST]"
-    else:
-        # add response cue like we used in the fine-tuning process
-        return f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{prompt}[/INST]\n### Response:\n"
+    if prompt_template == "llama2":
+        prompt = f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{prompt}[/INST]"
+    elif prompt_template == "inputs_only":
+        # inputs = prompt.split("### Input:")[1].lstrip("\n")
+        # prompt = f"<s>[INST]{inputs}[/INST]"
+        instruction = prompt.split(" To illustrate, ")[0]
+        input_part = prompt.rsplit("END_EXAMPLE", maxsplit=1)[1]
+        new_prompt = f"{instruction}{input_part}"
+        text = f"<s>[INST]\n<<SYS>>\n{sys_msg}\n<</SYS>>\n\n{new_prompt}[/INST]"
+
+    if finetuned_model:
+        prompt += "\n### Response:\n"
+
+    return prompt
 
 
 if __name__ == "__main__":
@@ -141,8 +151,11 @@ if __name__ == "__main__":
                         required=False, help="Batch size to use for generation pipeline")
     parser.add_argument('--finetuned', required=False, action="store_true")
     parser.add_argument('--sample-size', required=False, default=None)
+    parser.add_argument('--split-set', required=False, action="store_true")
     parser.add_argument("-i", "--input-path", help="The path to the datasets", required=True)
     parser.add_argument("-o", "--output-path", help="The output path to save the fine-tuned model data", required=True)
+    parser.add_argument("--prompt-template", required=False, default="llama-2",
+                        choices=["llama2", "llama3", "inputs_only"])
 
     args = parser.parse_args()
 
@@ -156,6 +169,10 @@ if __name__ == "__main__":
     print(f"HF REPO: {args.hf_repo}")
     print(f"MAX-NEW-TOKENS {args.max_new_tokens}")
     print(f"BATCH SIZE {args.batch_size}")
+    print(f"SPLIT SET IN BATCHES {args.split_set}")
+    print(f"PROMPT TEMPLATE: {args.prompt_template}")
+
+    logging.get_logger("transformers").setLevel(logging.ERROR)  # Suppresses info and warning messages from transformers
 
     print("########## LOADING THE DATA ##########")
     if args.sample_size is None:
@@ -167,14 +184,27 @@ if __name__ == "__main__":
     print(f"Dataset features: {test_dataset.columns}")
 
     print("########## PREPARING THE DATA FOR INFERENCE ##########")
-    test_dataset["input_prompt"] = test_dataset["prompt"].apply(lambda prompt: format_prompt_for_inference(prompt, args.finetuned))
-    # we need a datasets.Dataset object for GPU-optimized inference with a pipeline
-    dataset_as_dict = test_dataset.to_dict(orient="list")
-    iterable_dataset = KeyDataset(Dataset.from_dict(dataset_as_dict), "input_prompt")
+    test_dataset["input_prompt"] = test_dataset["prompt"].apply(lambda prompt: format_prompt_for_inference(prompt, args.prompt_template, args.finetuned))
+
+    batch_count = 4 if args.split_set else 1
+    splits_as_df = []
+    splits = []
+    batch_size = test_dataset.shape[0] // batch_count
+    for i in range(batch_count):
+        split = test_dataset.iloc[i*batch_size:(i+1)*batch_size]
+        split_as_dict = split.to_dict(orient="list")
+        splits.append(KeyDataset(Dataset.from_dict(split_as_dict), "input_prompt"))
+        splits_as_df.append(split)
+
+    # # we need a datasets.Dataset object for GPU-optimized inference with a pipeline
+    # dataset_as_dict = test_dataset.to_dict(orient="list")
+    # iterable_dataset = KeyDataset(Dataset.from_dict(dataset_as_dict), "input_prompt")
 
     print("########## LOADING THE MODEL AND TOKENIZER ##########")
     model, tokenizer = load_model(args.hf_repo, args.finetuned, args.input_path, args.model_name, args.model_size)
     model.bfloat16()
+    if model.config.pad_token_id is None and not args.finetuned:
+        model.config.pad_token_id = model.config.eos_token_id
     pipe = pipeline(task="text-generation",
                     model=model,
                     tokenizer=tokenizer,
@@ -187,16 +217,19 @@ if __name__ == "__main__":
     try:
         print("#################### GENERATING COMPLETIONS FOR THE TEST SET  ####################")
         start_time = time.time()
-        completions = []
-        for completion in pipe(iterable_dataset, batch_size=int(args.batch_size)):
-            try:
-                extracted_completion = completion[0]['generated_text']
-            except:
-                extracted_completion = np.nan
-            completions.append(extracted_completion)
-        test_dataset["inferred_completion"] = completions
+        idx = 0
+        for split_as_df, iterable_split in zip(splits_as_df, splits):
+            idx += 1
+            completions = []
+            for completion in pipe(iterable_split, batch_size=int(args.batch_size)):
+                try:
+                    extracted_completion = completion[0]['generated_text']
+                except:
+                    extracted_completion = np.nan
+                completions.append(extracted_completion)
+            split_as_df["inferred_script"] = completions
+            split_as_df.to_csv(os.path.join(args.output_path, "output", f"test_{idx}.csv"), index=False)
         print(f"GPU-efficient inference: {round(time.time() - start_time, 2)} seconds.")
-        test_dataset.to_csv(os.path.join(args.output_path, "output", "test.csv"), index=False)
     except:
         print("Error during inference.")
         print(traceback.print_exc())

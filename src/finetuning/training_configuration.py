@@ -40,21 +40,15 @@ use_nested_quant = False
 # Output directory where the model predictions and checkpoints will be stored
 # output_dir = "results"
 
-# Number of training epochs
-num_train_epochs = 3
-
 # Enable fp16/bf16 training (set bf16 to True with an A100)
 fp16 = False
 bf16 = True
 
 # Batch size per GPU for training
-per_device_train_batch_size = 2
-
-# Batch size per GPU for evaluation
-# per_device_eval_batch_size = 2
+per_device_train_batch_size = 1
 
 # Number of update steps to accumulate the gradients for
-gradient_accumulation_steps = 16
+gradient_accumulation_steps = 8
 
 # Enable gradient checkpointing
 gradient_checkpointing = True
