@@ -1,7 +1,7 @@
 import subprocess
 
 
-def run_script(script_path) -> (str, str):
+def run_script(script_path, python: bool = True) -> (str, str):
     """
     Runs a script and captures the output or the exception message, if an exception is thrown.
     :param script_path: the path to the script to be run
@@ -10,7 +10,10 @@ def run_script(script_path) -> (str, str):
     """
     try:
         # Run the script using subprocess.run
-        result = subprocess.run(['python', script_path], capture_output=True, text=True, check=True)
+        if python:
+            result = subprocess.run(['python', script_path], capture_output=True, text=True, check=True)
+        else:
+            result = subprocess.run(['go', 'run', script_path], capture_output=True, text=True, check=True)
         label = result.stdout.strip()
         # print(label)
         if label.lower() == "true" or label.lower() == "entailment":
@@ -25,3 +28,8 @@ def run_script(script_path) -> (str, str):
         # If an exception is thrown, capture the exception information
         captured_error = e.stderr.strip()
         return "error", captured_error
+
+
+if __name__ == "__main__":
+
+    run_script("../results_inference/test.go", python=False)
