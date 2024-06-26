@@ -1,0 +1,1914 @@
+completion,prompt
+"```python
+budget_deficit_increase_premise = 113
+budget_deficit_increase_hypothesis = 17
+
+# the hypothesis and premise mention the increase in America's budget deficit
+# however, the premise mentions a specific amount in billions, while the hypothesis mentions a percentage increase
+# without knowing the total budget or the previous deficit, we cannot directly compare these two numbers
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: America's budget deficit expanded by $113 billion as spending surged.
+Hypothesis: America's budget deficit jumps by 17% as spending surges."
+"```python
+percentage_premise = 3.1
+percentage_hypothesis = 3.1
+
+# the hypothesis and premise mention the same percentage increase in wages and salaries
+if percentage_hypothesis != percentage_premise:
+    # check if the percentage increase in the hypothesis contradicts the percentage increase in the premise
+    label = ""contradiction""
+else:
+    # if the percentage increase in the hypothesis does not contradict the percentage increase in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Wages Salaries jump by 3.1 percent; highest in decade.
+Hypothesis: Wages and salaries jump by 3.1%, highest level in a decade."
+"```python
+qe3_premise = 40
+qe3_hypothesis = 40
+
+# the hypothesis and premise both mention the amount in billions of MBS purchases each month for QE3
+if qe3_hypothesis != qe3_premise:
+    # check if the amount in the hypothesis contradicts the amount in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Fed to launch QE3 of $40 billion MBS each month.
+Hypothesis: Fed Undertakes QE3 With $40 Billion in MBS Purchases a Month."
+"```python
+settlement_amount_premise = 5.1e9 # billion is represented as e9
+settlement_amount_hypothesis = 5.1e9
+
+# the hypothesis and premise mention the settlement amount Goldman Sachs has to pay for the US mortgage investigation
+if settlement_amount_premise != settlement_amount_hypothesis:
+    # check if the amount in the hypothesis contradicts the amount in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Goldman Sachs says it has $5.1B agreement to settle US mortgage investigation.
+Hypothesis: Goldman Sachs to pay $5.1 billion to settle toxic mortgage probe."
+"```python
+ratio_premise = 4/10
+ratio_hypothesis = 4/10
+expense_premise = 400
+expense_hypothesis = 400
+
+# the hypothesis and premise mention the same ratio of Americans unable to cover a certain expense
+if ratio_premise != ratio_hypothesis:
+    # check if the ratio in the hypothesis contradicts the ratio in the premise
+    label = ""contradiction""
+elif expense_premise != expense_hypothesis:
+    # check if the emergency expense in the hypothesis contradicts the emergency expense in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Four in 10 Americans can't cover a $400 emergency expense, Fed finds.
+Hypothesis: Four in 10 cant cover an emergency expense of $400, Fed survey finds."
+"```python
+percentage_stores_premise = 40
+percentage_stores_hypothesis = 40
+wage_hike_premise = 3000
+# the wage hike in the hypothesis is not quantified, so we can't compare it to the premise
+
+# the hypothesis and premise mention the percentage of stores that go bust after a minimum wage hike
+if percentage_stores_premise != percentage_stores_hypothesis:
+    # check if the percentage of stores in the hypothesis contradicts the percentage in the premise
+    label = ""contradiction""
+else:
+    # if the values in the hypothesis do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: 40% Of Venezuela Stores Go Bust After 3,000% Minimum Wage Hike.
+Hypothesis: In Venezuela, Huge Hike in Minimum Wage Forces 40 Percent of Stores to Close."
+"```python
+years_for_wealth_premise = 228
+years_for_wealth_hypothesis = 228
+
+# the hypothesis and premise mention the number of years it would take for black families to amass the wealth of white families
+if years_for_wealth_hypothesis != years_for_wealth_premise:
+    # check if the number of years in the hypothesis contradicts the number of years in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: It will take black families 228 years to amass the wealth that white families have today, new study finds.
+Hypothesis: It Would Take 228 Years for Black Families to Amass Wealth of White Families, Analysis Says."
+"```python
+unemployment_increase_states_premise = 44
+unemployment_increase_states_hypothesis = 44
+
+# the hypothesis and premise mention the number of states where unemployment rates rose
+if unemployment_increase_states_hypothesis != unemployment_increase_states_premise:
+    # check if the number of states in the hypothesis contradicts the number of states in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Unemployment rates rose in 44 U.S. states in July.
+Hypothesis: Broad-Based Unemployment Gains in 44 States."
+"```python
+points_fall_sensex_premise = 700
+points_fall_nifty_premise = 234
+date_premise = 19
+
+# No numerical entities in the hypothesis to compare with the premise
+# Hence, no contradiction or entailment can be established
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Sensex falls 700 points, Nifty 234 poins, Indian today stock market update and Monday Intraday nifty future trading call 19 Aug.
+Hypothesis: Tomorrow 19 Aug stock nifty future trading call and Equity market update today on Monday ~ Online Commodity Stock trading tips."
+"```python
+emergency_aid_premise = 12
+emergency_aid_hypothesis = 12
+
+# the hypothesis and premise both mention the amount of emergency aid extended to farmers
+if emergency_aid_premise != emergency_aid_hypothesis:
+    # check if the amount of emergency aid in the hypothesis contradicts the amount in the premise
+    label = ""contradiction""
+else:
+    # if the emergency aid amount in the hypothesis does not contradict the premise one, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: White House readies plan to extend about $12 billion in emergency aid to farmers caught in Trumps escalating trade war.
+Hypothesis: Trade war bailout: Trump to offer $12 billion in emergency aid for farmers hurt by tariffs."
+"```python
+homes_repossessed_premise = 1000000
+homes_repossessed_hypothesis = 1000000
+year_premise = 2010
+year_hypothesis = 2010
+
+# the hypothesis and premise mention the number of homes repossessed and the year
+if homes_repossessed_hypothesis != homes_repossessed_premise or year_hypothesis != year_premise:
+    # check if the number of homes repossessed and the year in the hypothesis contradicts the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Banks Repossess 1 Million Homes in 2010: the bleakest year in the foreclosure crisis has only just begun.
+Hypothesis: Banks Repossess 1 Million Homes In 2010 ""2011 is going to be the peak""."
+"```python
+# the premise and hypothesis do not provide any numerical entities or quantities to compare
+# however, the hypothesis specifies the time of the dollar collapse under the presidency of Donald Trump, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Were going to have a dollar collapse like the 1980s, strategist says.
+Hypothesis: Under Donald Trump's Presidency, Were Going To Have A Dollar Collapse Like The 1980s-Strategist."
+"```python
+surplus_premise = 7.01
+deficit_hypothesis = 9.5
+
+# the premise mentions South Korea's current account surplus in June 2017
+# the hypothesis mentions Australia's current account deficit in Q2 2017
+# there is no comparison or contradiction between the two as they are about different countries and different economic indicators
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: South Korea's Current Account Surplus Added USD 7.01 Billion In June Of 2017 To The Economy.
+Hypothesis: Australian Current Account Deficit Drained AUD$9.5 Billion In Q2 Of 2017 Out Of The Economy."
+"```python
+percentage_income_gains_premise = 95
+percentage_income_gains_hypothesis = 95
+
+# the hypothesis and premise mention the percentage of income gains captured by the top 1%
+if percentage_income_gains_premise != percentage_income_gains_hypothesis:
+    # check if the percentage of income gains in the hypothesis contradicts the percentage of income gains in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: 95% of 2009-2012 Income Gains Went to the Top 1%.
+Hypothesis: Unprecedented Inequality: The Top 1 Percent Captured 95% of the Income Gains Since 2009."
+"```python
+jobs_added_premise = 222000
+jobs_added_hypothesis = 222000
+
+# the hypothesis and premise mention the number of jobs added in the U.S. in June
+if jobs_added_premise != jobs_added_hypothesis:
+    # check if the number of jobs in the hypothesis contradicts the number of jobs in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: U.S. Adds 222,000 jobs in June, Unemployment Rate Up to 4.4%.
+Hypothesis: U.S. economy gains a strong 222,000 jobs in June."
+"```python
+price_premise = 20
+price_hypothesis = 20
+
+# the hypothesis and premise mention the potential price of oil
+if price_premise != price_hypothesis:
+    # check if the price in the hypothesis contradicts the price in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis price does not contradict the premise price, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Citi: Oil Could Plunge to $20, and This Might Be'the End of OPEC'
+Hypothesis: Oil Plunge To $20 Could Be On The Horizon, Citigroup Warns."
+"```python
+points_premise = 87
+
+# the hypothesis and premise both mention 'stocks nifty future call today' but there are no numerical entities in the hypothesis to compare with the premise
+# the premise provides a specific number of points for the increase in Sensex, which is not mentioned in the hypothesis
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Sensex up 87 points, today nifty predication, Stock nifty future trading call on Monday, Sun Pharma & Tata steel gainers ~ stocks nifty future call today.
+Hypothesis: Nifty Sensex green flag, Nifty top gainers and losers, Nifty future stock trading call today 13 Aug on Tuesday ~ stocks nifty future call today."
+"```python
+jobs_added_premise = 163000
+jobs_added_hypothesis = 163000
+unemployment_rate_premise = 8.3
+unemployment_rate_hypothesis = 8.3
+
+# the hypothesis and premise mention the number of jobs added and the unemployment rate
+if jobs_added_premise != jobs_added_hypothesis:
+    # check if the number of jobs added in the hypothesis contradicts the number of jobs added in the premise
+    label = ""contradiction""
+elif unemployment_rate_premise != unemployment_rate_hypothesis:
+    # check if the unemployment rate in the hypothesis contradicts the unemployment rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: US economy adds 163K jobs, unemployment rate rises to 8.3%-NYPOST.com.
+Hypothesis: U.S. Adds 163,000 Jobs In July; Unemployment Rate Rises To 8.3%."
+"```python
+date_premise = 3
+date_hypothesis = 2
+
+# The hypothesis and premise mention a date in relation to stock trading advice 
+if date_hypothesis != date_premise:
+    # Check if the date in the hypothesis contradicts the date in the premise
+    label = ""contradiction""
+else:
+    # If the hypothesis date does not contradict the premise date, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: stocks nifty future call today: Sensex Weak and Nifty flat, Today best stock trading call on 3 Sept, Free nifty future stock tips, BHEL, Tata motor gain.
+Hypothesis: Sensex and Nifty up, 2 sept Nifty stock market trading tips and top nifty gainers and losers on Monday, Indian stock market tips today ~ stocks nifty future call today."
+"```python
+debt_increase_premise = 57
+debt_increase_hypothesis = 57
+
+# the hypothesis and premise mention the increase in global debt since the 2007-08 financial crisis
+if debt_increase_hypothesis != debt_increase_premise:
+    # check if the debt increase in the hypothesis contradicts the debt increase in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Two weeks after the controversial study, a report by the ECB asserts that ""cryptocurrency poses minimal risk"" despite previous warnings.
+Hypothesis: The ECB asserts that ""risk is negligible in the crypto market"" 2 weeks after a controversial study was published.
+Answer:```python
+weeks_premise = 2
+weeks_hypothesis = 2
+
+# the hypothesis and premise mention the number of weeks between a controversial study and the response of the ECB
+if weeks_hypothesis != weeks_premise:
+    # check if the number of weeks in the hypothesis contradicts the number of weeks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: 6 out of 100 investors says that they are hopeful the inflation levels will drop.
+Hypothesis: 6% of American investors are hopeful that inflation will decrease.
+Answer:```python
+ratio_premise = 6/100
+ratio_hypothesis = 0.06
+
+# the hypothesis and premise mention the ratio of investors hopeful that inflation will decrease
+# however, the hypothesis links the ratio to american investors, which cannot be entitles from the premise
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: The top 5 companies in S&P500 make up in earnings more than 60% of the total valuation of start-ups in the US.
+Hypothesis: The top 5 companies in S&P500 make up in earnings more than 70% of the total valuation of start-ups in the US.
+Answer:```python
+number_companies_premise = 5
+number_companies_hypothesis = 5
+percentage_of_valuation_premise = 60
+percentage_of_valuation_hypothesis = 70
+
+# the hypothesis and premise mention a selection of companies from S&P500 and how much of the total US start-up value they represent
+if number_companies_premise != number_companies_hypothesis:
+    # check if the number of companies in the hypothesis contradicts the number of companies in the premise
+    label = ""contradiction""
+elif percentage_of_valuation_hypothesis < min_percentage_of_valuation_premise:
+    # check if the estimated percentage of the total valuation in the hypothesis contradicts the premise estimate of more than 'percentage_of_valuation_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the percentage of the valuation
+    # any estimate of the percentage in the hypothesis greater or equal to 'percentage_of_valuation_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Global Debt Has Soared By $57 Trillion Since The 2007-08 Financial Crisis.
+Hypothesis: Global debt up $57 TRILLION since crisis: Report."

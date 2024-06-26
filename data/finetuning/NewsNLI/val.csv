@@ -1,0 +1,1062 @@
+sample_index,premise,hypothesis,golden_label,reference_label,completion
+232,"Additionally, the NRDC selected 35 beaches as'' superstars'' -- meaning popular spots that consistently meet water quality safety thresholds.",Thirty-five beaches rated as'' superstars'' for water quality.,entailment,entailment,"superstars_beaches_premise = 35
+superstars_beaches_hypothesis = 35
+
+# the hypothesis mentions the number of 'superstar' beaches, which is also mentioned in the premise
+if superstars_beaches_hypothesis != superstars_beaches_premise:
+    # check if the number of 'superstar' beaches in the hypothesis contradicts the number stated in the premise
+    label = ""contradiction""
+else:
+    # if the number of 'superstar' beaches in the hypothesis does not contradict the number in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+327,"Sweety High caters to girls between 8 and 16 and wraps'' social gaming mechanics around an arts platform,'' CEO and co-founder Frank Simonetti said.",Sweety High is a social gaming site for tween and teen girls between ages 8 and 16.,entailment,entailment,"lower_age_limit_premise = 8
+upper_age_limit_premise = 16
+lower_age_limit_hypothesis = 8
+upper_age_limit_hypothesis = 16
+
+# the hypothesis mentions the age range for users of Sweety High, which is also mentioned in the premise
+if lower_age_limit_hypothesis != lower_age_limit_premise:
+    # check if the lower age limit from the hypothesis contradicts the lower age limit in the premise
+    label = ""contradiction""
+elif upper_age_limit_hypothesis != upper_age_limit_premise:
+    # check if the upper age limit from the hypothesis contradicts the upper age limit in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis age range does not contradict the premise age range, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+661,Investigators said the three arrested in Thailand are accused of directing the operation in Spain.,Two Pakistani men and a Thai woman are arrested in Thailand.,neutral,neutral,"arrested_premise = 3
+arrested_hypothesis = 3
+
+# the hypothesis mentions the number of people arrested in Thailand, which is also mentioned in the premise
+# however, the hypothesis specifies the nationality of the arrested individuals, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+341,"Two or three pirate speedboats were chasing the Dutch ship, with the goal of boarding it, when the Russians intervened, said Capt.","Two or three speedboats were chasing the Dutch container ship, IMB says.",neutral,neutral,"speedboats_premise = 3 # Assuming the maximum number of speedboats
+speedboats_hypothesis = 3 # Assuming the maximum number of speedboats
+
+# the hypothesis mentions the number of speedboats chasing the Dutch ship, which is also referenced in the premise
+# however, the hypothesis refers to the Dutch ship as a container ship and the source of information is different, which cannot be entailed from the premise
+if speedboats_hypothesis != speedboats_premise:
+    # check if the number of speedboats in the hypothesis contradicts the number of speedboats reported in the premise
+    label = ""contradiction""
+else:
+    # if the number of speedboats from the hypothesis does not contradict the number of speedboats in the premise, we can infer neutral
+    label = ""neutral""
+
+print(label)
+"
+496,"Of the hurricanes, NOAA predicts that one to three will be major hurricanes -- storms classified as Category 3 on the Saffir-Simpson scale of storm intensity -- with winds of 111 mph or higher.","NOAA predicts four to seven hurricanes, with one to three major storms.",entailment,entailment,"major_hurricanes_lower_premise = 1
+major_hurricanes_upper_premise = 3
+
+major_hurricanes_lower_hypothesis = 1
+major_hurricanes_upper_hypothesis = 3
+
+# the hypothesis mentions the number of predicted major hurricanes, which is also referenced in the premise
+# we need to check if the range of major hurricanes in the hypothesis contradicts the range in the premise
+if major_hurricanes_lower_hypothesis < major_hurricanes_lower_premise or major_hurricanes_upper_hypothesis > major_hurricanes_upper_premise:
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+948,"Officials tracked down those two members and arrested them, then arrested others at the campsite and Foster.","Foster, his son, two others accused in indictment of second-degree murder.",neutral,neutral,"members_tracked_premise = 2
+members_accused_hypothesis = 2
+
+# the hypothesis mentions the number of people accused, which is also referenced in the premise
+# however, the hypothesis refers to specific charges which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+406,"Even so, the PGA Tour website noted that Woods moved up 20 spots in the Official World Golf Ranking with the win.","Woods jumps 20 spots in world golf rankings with the win, the PGA Tour says.",entailment,entailment,"spots_moved_up_premise = 20
+spots_moved_up_hypothesis = 20
+
+# the hypothesis mentions the number of spots Woods moved up in the world golf rankings, which is also mentioned in the premise
+if spots_moved_up_hypothesis != spots_moved_up_premise:
+    # check if the number of spots moved up in the hypothesis contradicts the number in the premise
+    label = ""contradiction""
+else:
+    # if the number of spots moved up in the hypothesis does not contradict the number in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+729,"The 282 people were brought aboard the Bataan, and the Navy posted a YouTube video of the rescued people -- apparent African migrants -- looking tired or grateful as they stepped aboard the warship.",Two U.S. Navy ships rescue a total of 282 people.,neutral,neutral,"rescued_people_premise = 282
+rescued_people_hypothesis = 282
+
+# The hypothesis mentions the total number of people rescued by two U.S. Navy ships
+# But the premise only provides information about one ship rescuing 282 people
+# There is no information about a second ship in the premise
+
+# Check if the number of people rescued in the hypothesis contradicts the number of people rescued in the premise
+if rescued_people_hypothesis != rescued_people_premise:
+    label = ""contradiction""
+else:
+    label = ""neutral""
+
+print(label)
+"
+594,This growth was three times that of the overall UK hotel market.,Growth of budget hotels has been three times that of overall hotel market.,neutral,neutral,"growth_ratio_premise = 3
+growth_ratio_hypothesis = 3
+
+# the hypothesis mentions the growth ratio of some hotel aspect compared to the overall hotel market, which is also mentioned in the premise
+# however, the hypothesis refers to budget hotels, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+856,"All three brothers are serving in Bravo Company, 1st Battalion, 121st Infantry Regiment of the 48th Brigade, Georgia Army National Guard.",Nevada Army National Guard unit has nine sets of brothers serving in Afghanistan.,neutral,neutral,"brothers_premise = 3
+brothers_hypothesis = 9
+company_premise = 'Bravo Company, 1st Battalion, 121st Infantry Regiment of the 48th Brigade, Georgia Army National Guard'
+company_hypothesis = 'Nevada Army National Guard'
+
+# the hypothesis mentions the number of brothers and the company they are serving in, which are also referenced in the premise
+# however, the hypothesis refers to a different company and a different number of brothers serving, which cannot be entailed from the premise
+if brothers_hypothesis != brothers_premise or company_hypothesis != company_premise:
+    # check if the number of brothers serving or the army unit in the hypothesis contradicts the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer neutrality
+    label = ""neutral""
+
+print(label)
+"
+961,And just over half of the 88 women interviewed -- 46 of them -- live in fear of sexual assaults around the refugee camp.,88 Darfuri women interviewed in Chad described'' profound'' suffering and fear.,neutral,neutral,"total_women_interviewed_premise = 88
+women_living_in_fear_premise = 46
+total_women_interviewed_hypothesis = 88
+
+# the hypothesis mentions the total number of women interviewed, which matches the premise
+# but, the premise also mentions the number of women living in fear around the refugee camp, which is not referenced in the hypothesis
+# hence, we cannot infer entailment or contradiction based on the available data
+label = ""neutral""
+
+print(label)
+"
+360,Foreign aid comprises less than 1% of the federal budget.,"Foreign assistance comprises less than 1% of the federal budget, he says.",entailment,entailment,"foreign_aid_premise = 0.01
+foreign_aid_hypothesis = 0.01
+
+# the hypothesis mentions the proportion of the federal budget allocated to foreign aid, which is also mentioned in the premise
+if foreign_aid_hypothesis != foreign_aid_premise:
+    # check if the proportion in the hypothesis contradicts the proportion reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+205,"Japanese fishermen rounded up more than 250 bottlenose dolphins in a secluded cove to kill for meat or sell into a lifetime of captivity, U.S. conservationists warned.","More than 250 dolphins have been herded into a cove by fishermen, U.S conservationists say.",entailment,entailment,"dolphins_premise = 250
+dolphins_hypothesis = 250
+
+# the hypothesis mentions the number of dolphins rounded up by fishermen, which is also mentioned in the premise
+if dolphins_hypothesis != dolphins_premise:
+    # check if the number of dolphins in the hypothesis contradicts the number of dolphins reported in the premise
+    label = ""contradiction""
+else:
+    # if the number of dolphins in the hypothesis does not contradict the number in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+414,Mourinho and Van Gaal are vying to become only the third manager after Ottmar Hitzfeld and Ernst Happel to win the Champions League with two different clubs.,Mourinho and Van Gaal aiming to become the third manager to win tournament with two teams.,entailment,entailment,"managers_premise = 3
+managers_hypothesis = 3
+
+# the hypothesis mentions the aim of Mourinho and Van Gaal to become the third manager to win the tournament with two teams
+# which is also mentioned in the premise
+if managers_hypothesis != managers_premise:
+    # check if the number of managers in the hypothesis contradicts the number of managers reported in the premise
+    label = ""contradiction""
+else:
+    # if the number of managers in the hypothesis does not contradict the number of managers in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+646,"'' We hope these two advisers are freed quickly, but we are shocked that they were passing themselves off as journalists,'' Reporters Without Borders said.",The two advisers had apparently told the hotel they were journalists.,neutral,neutral,"# In this case, there are no numerical entities in the sentences, thus we cannot define variables or perform numerical comparison
+# Both premise and hypothesis mention that the two advisers were posing as journalists
+# While the premise shows Reporters Without Borders expressing shock over this, the hypothesis merely states that the advisers had claimed to be journalists to the hotel
+# Therefore, the relationship is neutral as the hypothesis does not contradict or fully entail the premise.
+
+label = ""neutral""
+
+print(label)
+"
+145,The Super Eagles had earlier booked their place in the final with a convincing 4-1 win over Mali in Durban.,Nigeria thrashed Mali 4-1 in Durban to seal place in final.,entailment,entailment,"score_premise = 4-1
+score_hypothesis = 4-1
+
+# the hypothesis mentions the score of the game, which is also mentioned in the premise
+if score_hypothesis != score_premise:
+    # check if the score in the hypothesis contradicts the score reported in the premise
+    label = ""contradiction""
+else:
+    # if the score in the hypothesis does not contradict the score in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+595,"'' The bank notes we tested harbored an average of 26,000 bacteria, which, for a number of pathogenic organisms, is sufficient for passing on infection.''","An Oxford University study found an average of 26,000 bacteria on bank notes.",neutral,neutral,"average_bacteria_premise = 26000
+average_bacteria_hypothesis = 26000
+
+# the hypothesis mentions the average number of bacteria on bank notes, which is also mentioned in the premise
+# however, the hypothesis introduces new information about the source of the study which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+789,"In a total of five world championship matches, Kasparov has the edge with 21 wins, 19 losses and 104 ties in a total of 144 games.",Kasparov wins first two games in the 12-game rematch.,neutral,neutral,"total_matches_premise = 5
+wins_premise = 21
+losses_premise = 19
+ties_premise = 104
+total_games_premise = 144
+
+# the hypothesis mentions Kasparov's victories in the rematch, but we cannot infer from the premise that this rematch is part of the total 5 world championship matches
+# also, the specific victories in the first two games of the rematch are not mentioned in the premise
+# hence, we cannot contradict or entail the hypothesis from the premise
+label = ""neutral""
+
+print(label)
+"
+657,The main issue was whether a 408-foot needle atop the One World Trade Center would be counted in the total height of the tower.,One World Trade Center ruled to be taller than Willis Tower.,neutral,neutral,"# There is no numerical comparison possible between the premise and the hypothesis
+# The premise discusses a question about the total height of the One World Trade Center but does not provide a resolution
+# The hypothesis states a fact about the One World Trade Center being taller than the Willis Tower but does not provide specific heights
+# Therefore, the relationship is neutral as the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+label = ""neutral""
+
+print(label)
+"
+603,"(CNN) Vince Camuto, the iconic women's footwear designer and co-founder of Nine West, has died.",Vince Camuto has died at the age of 78.,neutral,neutral,"# the premise doesn't mention any numerical entities, so there are no variables to define
+
+# the hypothesis mentions a numerical entity (age of Vince Camuto), but it can't be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+742,"About 35,000 Christians have taken refuge in a Catholic church compound there.","Gunfire appears to target church compound where 35,000 Christians have taken refuge.",neutral,neutral,"christians_refuge_premise = 35000
+christians_refuge_hypothesis = 35000
+
+# the hypothesis mentions the number of Christians taking refuge in a church compound, which is also stated in the premise
+# however, the hypothesis introduces an element of gunfire, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+642,"Leaping, overall-wearing characters aside, 50 Cent knows what gamers like -- and that came in handy during the development of'' Blood on the Sand.''",'' Blood on the Sand'' features former 50 Cent hits and exclusive music.,neutral,neutral,"# There are no numerical entities in the premise and hypothesis
+# The hypothesis mentioned that ''Blood on the Sand'' features former 50 Cent hits and exclusive music.
+# However, this information is not mentioned or suggested in the premise.
+
+label = ""neutral""
+
+print(label)
+"
+707,"Three of those arrested are still in custody, including the two men who allegedly hacked to death British soldier Lee Rigby.","Two men in Grimsby, England, are arrested on suspicion of arson.",neutral,neutral,"arrested_premise = 3
+arrested_hypothesis = 2
+
+# The hypothesis mentions the number of people arrested in England, which is less than the number mentioned in the premise
+# However, the hypothesis refers to a different crime (arson), which cannot be entailed from the premise
+# Therefore, we can't make a valid comparison between the variables
+label = ""neutral""
+
+print(label)
+"
+319,"Since receiving the biggest bail out in history, RBS has announced 27,500 layoffs worldwide -- of which 21,200 are in the UK.","RBS has announced 27,500 layoffs worldwidel ; 21,200 alone in the UK.",entailment,entailment,"layoffs_worldwide_premise = 27500
+layoffs_UK_premise = 21200
+layoffs_worldwide_hypothesis = 27500
+layoffs_UK_hypothesis = 21200
+
+# the hypothesis mentions the total worldwide layoffs and the UK layoffs, which are also mentioned in the premise
+if layoffs_worldwide_hypothesis != layoffs_worldwide_premise:
+    # check if the total worldwide layoffs in the hypothesis contradicts the total worldwide layoffs reported in the premise
+    label = ""contradiction""
+elif layoffs_UK_hypothesis != layoffs_UK_premise:
+    # check if the UK layoffs from the hypothesis contradicts the UK layoffs in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+384,Zvonareva will face another Czech in the next round after Petra Kvitova edged out Italy's Flavia Pennetta 3-6 6-3 6-3.,Petra Kvitova edges out Flavia Penetta 3-6 6-3 6-3 to advance to the next round.,entailment,entailment,"# score variables for Petra Kvitova and Flavia Pennetta
+kvitova_score_premise = [3, 6, 6]
+pennetta_score_premise = [6, 3, 3]
+
+kvitova_score_hypothesis = [3, 6, 6]
+pennetta_score_hypothesis = [6, 3, 3]
+
+# Check if the scores in the hypothesis contradict or entail the scores in the premise
+if kvitova_score_hypothesis != kvitova_score_premise or pennetta_score_hypothesis != pennetta_score_premise:
+    label = ""contradiction""
+else:
+    label = ""entailment""
+
+print(label)
+"
+338,"The government estimates around 80,000 people are involved in prostitution in Britain, with about 4,000 women having been trafficked for sexual exploitation.","UK government:Around 4,000 women trafficked in the UK for sexual exploitation.",entailment,entailment,"people_in_prostitution_premise = 80000
+women_trafficked_premise = 4000
+
+women_trafficked_hypothesis = 4000
+
+# the hypothesis mentions the number of trafficked women for sexual exploitation in the UK, which is also referenced in the premise
+if women_trafficked_hypothesis != women_trafficked_premise:
+    # check if the number of trafficked women in the hypothesis contradicts the number of trafficked women reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+558,"Others put the toll much higher:The International Committee of the Red Cross said it's realistic to estimate that 10,000 people may have died nationally.","International Red Cross:Realistic to estimate 10,000 people dead across Philippines.",neutral,neutral,"death_toll_premise = 10000
+death_toll_hypothesis = 10000
+
+# the hypothesis mentions the estimated death toll, which is also mentioned in the premise
+# the hypothesis also specifies the location (Philippines), which is not mentioned in the premise
+if death_toll_hypothesis != death_toll_premise:
+    # check if the death toll in the hypothesis contradicts the death toll reported in the premise
+    label = ""contradiction""
+else:
+    # if the death toll in the hypothesis does not contradict the death toll in the premise, we can infer neutrality as the location is not specified in the premise
+    label = ""neutral""
+
+print(label)
+"
+502,"Beason is about 45 miles northeast of Springfield, Illinois.","Killings occurred in Beason, Illinois, about 45 miles northeast of Springfield.",neutral,neutral,"distance_premise = 45
+distance_hypothesis = 45
+
+# the hypothesis mentions the distance of Beason from Springfield, Illinois, which is also mentioned in the premise
+# however, the hypothesis introduces the piece of information about killings in Beason, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+835,Stenson's two-shot lead evaporated when he fired a one-over 73 and he finished tied for second with Denmark's JB Hansen.,Scandinavians JB Hansen and Henrik Stenson finish two shots behind Mickelson and Grace.,neutral,neutral,"stenson_shots_premise = 1
+stenson_shots_hypothesis = 2
+hansen_shots_premise = 2
+hansen_shots_hypothesis = 2
+
+# the hypothesis mentions the number of shots behind of both Stenson and Hansen, which are also mentioned in the premise
+# however, the hypothesis also mentions two players, Mickelson and Grace, which cannot be entailed from the premise
+if stenson_shots_hypothesis != stenson_shots_premise:
+    # check if the number of shots behind of Stenson in the hypothesis contradicts the number of shots behind of Stenson in the premise
+    label = ""contradiction""
+elif hansen_shots_hypothesis != hansen_shots_premise:
+    # check if the number of shots behind of Hansen in the hypothesis contradicts the number of shots behind of Hansen in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we infer neutrality due to additional players mentioned in the hypothesis
+    label = ""neutral""
+
+print(label)
+"
+368,"Sharapova's semifinal opponent is unseeded German Sabine Lisicki, who continued her remarkable run of form by defeating Marion Bartoli of France in three sets.","Sharapova next faces German Sabine Lisicki, who defeats Marion Bartoli in three sets.",entailment,entailment,"sets_premise = 3
+sets_hypothesis = 3
+
+# the hypothesis mentions the number of sets in which the match was played, which is also referenced in the premise
+if sets_hypothesis != sets_premise:
+    # check if the number of sets in the hypothesis contradicts the number of sets reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+218,The United Nations estimates that 60 percent of the people it needs to reach with emergency assistance live in areas controlled by Al-Shabaab.,U.N. estimates 60 percent of people who need aid live in militant-controlled areas.,entailment,entailment,"people_in_need_premise = 0.60
+people_in_need_hypothesis = 0.60
+
+# the hypothesis mentions the percentage of people who need aid and live in militant-controlled areas, which is also referenced in the premise
+if people_in_need_hypothesis != people_in_need_premise:
+    # check if the percentage in the hypothesis contradicts the percentage reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+882,"Earlier, England had lost their last six wickets for just 17 runs as Mohammad Asif took five wickets for Pakistan.",James Anderson takes five wickets as Pakistan collapse against England.,neutral,neutral,"wickets_lost_premise = 6
+runs_premise = 17
+wickets_taken_premise = 5
+
+wickets_taken_hypothesis = 5
+
+# the hypothesis mentions the number of wickets taken, which is also referenced in the premise
+# however, the hypothesis refers to a different player and team, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+212,"Olmert was found guilty of breach of trust, but was acquitted on two corruption-related charges.",He is convicted of breach of trust and acquitted on two corruption-related charges.,entailment,entailment,"guilty_charges_premise = 1
+acquitted_charges_premise = 2
+guilty_charges_hypothesis = 1
+acquitted_charges_hypothesis = 2
+
+# the hypothesis mentions the number of charges for which the person was found guilty and acquitted, which are also mentioned in the premise
+if guilty_charges_hypothesis != guilty_charges_premise:
+    # check if the number of guilty charges in the hypothesis contradicts the number of guilty charges reported in the premise
+    label = ""contradiction""
+elif acquitted_charges_hypothesis != acquitted_charges_premise:
+    # check if the number of acquitted charges from the hypothesis contradicts the number of acquitted charges in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+448,"The pitcher finished the season with a 15-6 record, 197 strikeouts and a 3.16 ERA.",He was 15-6 with a 3.16 ERA. He recorded 197 strikeouts.,entailment,entailment,"record_premise = (15, 6)
+record_hypothesis = (15, 6)
+strikeouts_premise = 197
+strikeouts_hypothesis = 197
+era_premise = 3.16
+era_hypothesis = 3.16
+
+# the hypothesis mentions the pitcher's record, strikeouts, and ERA, which are also mentioned in the premise
+if record_hypothesis != record_premise:
+    # check if the record in the hypothesis contradicts the record reported in the premise
+    label = ""contradiction""
+elif strikeouts_hypothesis != strikeouts_premise:
+    # check if the number of strikeouts from the hypothesis contradicts the number of strikeouts in the premise
+    label = ""contradiction""
+elif era_hypothesis != era_premise:
+    # check if the ERA from the hypothesis contradicts the ERA in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+199,"And regardless of how safe we make oil drilling, tankers, or pipelines, we'll never reduce spill risk to zero.","She says no matter how we make drilling, tankers, pipelines safe, risk will never be zero.",entailment,entailment,"risk_reduction_premise = 0
+risk_reduction_hypothesis = 0
+
+# the hypothesis mentions that the risk of oil spills will never be zero, which is also mentioned in the premise
+if risk_reduction_hypothesis != risk_reduction_premise:
+    # check if the risk reduction in the hypothesis contradicts the risk reduction reported in the premise
+    label = ""contradiction""
+else:
+    # if the risk reduction values from the hypothesis do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+832,"The two presidents agreed that French and American intelligence services will cooperate on investigating the report, according to the statement from the French president's office.","Presidents of two nations talk about the report, White House statement says.",neutral,neutral,"# there are no numerical entities in either the premise or the hypothesis
+# hence, no variables are defined
+
+# the hypothesis refers to the discussion of the report between the presidents, which is also mentioned in the premise
+# the source of the statement in the hypothesis is different from the one in the premise
+label = ""neutral""
+
+print(label)
+"
+534,"With numerous counts of murder, attempted murder and weapons offenses, the former doctoral student in neuroscience faces a total of 166 charges.",The former neuroscience student faces 166 charges in connection with a theater shooting.,neutral,neutral,"charges_premise = 166
+charges_hypothesis = 166
+
+# the hypothesis mentions the total number of charges the former student faces, which is also referenced in the premise
+# however, the hypothesis refers to a theater shooting, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+468,"The plane crashed in Mount Fertas, which is about 500 kilometers (310 miles) east of Algeris, according to APS.","The plane crashed in Mount Fertas, about 310 miles from Algiers.",entailment,entailment,"distance_km_premise = 500
+distance_miles_premise = 310
+distance_miles_hypothesis = 310
+
+# the hypothesis mentions the distance between the crash site and Algiers, which is also mentioned in the premise
+if distance_miles_hypothesis != distance_miles_premise:
+    # check if the distance in miles from the hypothesis contradicts the distance in miles reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+407,"A paper trail found suspect payments in Mexico totaled more than $24 million, the newspaper said, citing an internal Wal-Mart review.","An internal review found suspect payments totaling more than $24 million, the report says.",entailment,entailment,"suspect_payments_premise = 24000000
+suspect_payments_hypothesis = 24000000
+
+# the hypothesis mentions the amount of suspect payments, which is also mentioned in the premise
+if suspect_payments_hypothesis != suspect_payments_premise:
+    # check if the suspect payments amount in the hypothesis contradicts the suspect payments reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+576,"-- At least seven civilians died in a U.S. airstrike on an ISIS-controlled oilfield near the city of Khusham, the London-based Syrian Observatory for Human Rights said.","U.S. airstrikes kill at least 10 civilians, Syrian Observatory for Human Rights says.",neutral,neutral,"civilians_died_premise = 7
+civilians_died_hypothesis = 10
+
+# the hypothesis mentions the number of civilians died in a U.S. airstrike, which is also referenced in the premise
+if civilians_died_hypothesis > civilians_died_premise:
+    # check if the number of civilians died in the hypothesis contradicts the number of civilians died reported in the premise
+    label = ""contradiction""
+else:
+    # if the number of civilians died in the hypothesis does not contradict the number reported in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+61,Six gunmen were killed in the police operation to retake the Ministry of Transport in northeast Baghdad.,"Iraqi police retake ministry building from gunmen, six of whom are killed.",entailment,entailment,"gunmen_killed_premise = 6
+gunmen_killed_hypothesis = 6
+
+# the hypothesis mentions the number of gunmen killed in the police operation, which is also referenced in the premise
+if gunmen_killed_hypothesis != gunmen_killed_premise:
+    # check if the number of gunmen killed in the hypothesis contradicts the number of gunmen killed reported in the premise
+    label = ""contradiction""
+else:
+    # if the number of gunmen killed in the hypothesis does not contradict the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+353,"Among the dead were four police officers from three different agencies, Sandoval said.",This includes four police officers from three different agencies.,entailment,entailment,"dead_officers_premise = 4
+dead_officers_hypothesis = 4
+agencies_premise = 3
+agencies_hypothesis = 3
+
+# the hypothesis mentions the number of dead officers and the number of different agencies, which are also mentioned in the premise
+if dead_officers_hypothesis != dead_officers_premise:
+    # check if the number of dead officers in the hypothesis contradicts the number of dead officers reported in the premise
+    label = ""contradiction""
+elif agencies_hypothesis != agencies_premise:
+    # check if the number of different agencies from the hypothesis contradicts the number of different agencies in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+732,"Scattered areas near Easton, Washington, along Interstate 90 in the Cascade Mountains 55 miles east of Seattle, have already received 32 inches of snow, Cloutier said.",Up to 3.5 feet of snow in Cascade Mountains forecast.,neutral,neutral,"snow_inches_premise = 32
+snow_feet_hypothesis = 3.5
+
+# 3.5 feet is approximately 42 inches
+snow_inches_hypothesis = snow_feet_hypothesis * 12
+
+# the hypothesis mentions a snow forecast, which is more than the snow received mentioned in the premise
+if snow_inches_hypothesis <= snow_inches_premise:
+    # check if the snow forecast in the hypothesis contradicts the snow received reported in the premise
+    label = ""contradiction""
+else:
+    # if the forecast does not contradict the snow received, we infer a neutral relation as we can't explicitly entail the forecast from the received snow
+    label = ""neutral""
+
+print(label)
+"
+115,"The epicenter of the magnitude 4.9 event has little to no history of earthquakes, according to the U.S. Geological Survey.","Area around magnitude 4.9 disturbance has little history of earthquakes, says USGS.",entailment,entailment,"magnitude_premise = 4.9
+magnitude_hypothesis = 4.9
+
+# the hypothesis refers to the earthquake magnitude and its historical context in the area, which is also referenced in the premise
+if magnitude_hypothesis != magnitude_premise:
+    # check if the earthquake magnitude in the hypothesis contradicts the magnitude reported in the premise
+    label = ""contradiction""
+else:
+    # if the earthquake magnitude from the hypothesis does not contradict the premise, it can be inferred as entailment
+    label = ""entailment""
+
+print(label)
+"
+937,"Hardest hit was France, where at least 45 people were killed, French Prime Minister Francois Fillon announced.","At least 55 deaths from extra-tropical cyclone, 45 of them in France.",neutral,neutral,"deaths_france_premise = 45
+deaths_france_hypothesis = 45
+deaths_total_hypothesis = 55
+
+# the hypothesis mentions the number of deaths in France, which is also referenced in the premise
+if deaths_france_hypothesis != deaths_france_premise:
+    # check if the number of deaths in France in the hypothesis contradicts the number of deaths in France reported in the premise
+    label = ""contradiction""
+elif deaths_total_hypothesis < deaths_france_premise:
+    # check if the total number of deaths in the hypothesis is less than the number of deaths in France, which would be a contradiction
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment or neutral
+    # since the total number of deaths is not mentioned in the premise, we infer neutral
+    label = ""neutral""
+
+print(label)
+"
+33,Eight other tickets won the $1 million Match 5 prize.,Eight tickets worth $1 million each were also sold.,entailment,entailment,"tickets_premise = 8
+tickets_hypothesis = 8
+prize_premise = 1000000
+prize_hypothesis = 1000000
+
+# the hypothesis mentions the number of tickets and their value, which are also mentioned in the premise
+if tickets_hypothesis != tickets_premise:
+    # check if the number of tickets in the hypothesis contradicts the number of tickets reported in the premise
+    label = ""contradiction""
+elif prize_hypothesis != prize_premise:
+    # check if the value of the prizes from the hypothesis contradicts the value of prizes in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+893,"But they were given a tough fight by underdogs Italy, who were inspired by an 80,000 crowd in a stadium normally reserved for Serie A giants Inter and AC Milan.","A massive crowd of 80,000 watched the game in San Siro stadium.",neutral,neutral,"crowd_premise = 80000
+crowd_hypothesis = 80000
+
+# The hypothesis mentions the crowd number which is also mentioned in the premise.
+# However, the hypothesis mentions the stadium name which is not explicitly stated in the premise.
+
+if crowd_hypothesis != crowd_premise:
+    # check if the crowd number in the hypothesis contradicts the crowd number reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, but cannot be fully entailed either, we infer neutrality
+    label = ""neutral""
+
+print(label)
+"
+717,"The official said the plot was believed to involve three individuals, including a U.S. citizen.","The plot is believed to involve 3 individuals and explosives, official says.",neutral,neutral,"individuals_premise = 3
+individuals_hypothesis = 3
+
+# the hypothesis mentions the number of individuals involved in the plot, which is also referenced in the premise
+# however, the hypothesis introduces new information about explosives, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+159,"In addition to sex abuse, McDonald said that his team'' is also investigating the possible murder of three young boys.''",Police are investigating the possible murder of three boys and claims of sexual abuse.,entailment,entailment,"investigation_premise = 3
+investigation_hypothesis = 3
+
+# Both the premise and hypothesis mention investigation of possible murder of three young boys
+# Both also mention investigation of sexual abuse
+
+if investigation_hypothesis != investigation_premise:
+    # check if the number of investigations in the hypothesis contradicts the number of investigations in the premise
+    label = ""contradiction""
+else:
+    # if the number of investigations in the hypothesis does not contradict the number in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+104,PSG was crowned winners for the second season in succession following Monaco's 1-1 draw against Guingamp.,Monaco held 1-1 by Guingamp.,entailment,entailment,"monaco_score_premise = 1
+guingamp_score_premise = 1
+monaco_score_hypothesis = 1
+guingamp_score_hypothesis = 1
+
+# the hypothesis mentions the score of the Monaco vs Guingamp match, which is also referenced in the premise
+if monaco_score_hypothesis != monaco_score_premise or guingamp_score_hypothesis != guingamp_score_premise:
+    # check if the score in the hypothesis contradicts the score reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+51,"Emmanuel Miller, 16, and Zachary Watson, 17 are charged as adults, police said.",Two teen suspects charged as adults.,entailment,entailment,"emmanuel_age_premise = 16
+zachary_age_premise = 17
+total_teens_premise = 2
+total_teens_hypothesis = 2
+
+# the hypothesis mentions two teens being charged as adults, which matches with the premise
+if total_teens_hypothesis != total_teens_premise:
+    # check if the number of teens charged as adults in the hypothesis contradicts the number of teens charged as adults in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis number of teens do not contradict the premise number of teens, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+383,"There were reports that another four people reportedly died in waves, the agency said.",There were reports of another four people dying in waves.,entailment,entailment,"people_died_premise = 4
+people_died_hypothesis = 4
+
+# the hypothesis mentions the number of people died in waves, which is also mentioned in the premise
+if people_died_hypothesis != people_died_premise:
+    # check if the number of people died in the hypothesis contradicts the number of people died reported in the premise
+    label = ""contradiction""
+else:
+    # if the number of people died in the hypothesis does not contradict the number of people died in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+351,"Those arrested include five doctors and two pharmacists, federal officials said.",Five doctors and two pharmacists are among those arrested.,entailment,entailment,"doctors_premise = 5
+doctors_hypothesis = 5
+pharmacists_premise = 2
+pharmacists_hypothesis = 2
+
+# the hypothesis mentions the number of arrested doctors and pharmacists, which are also mentioned in the premise
+if doctors_hypothesis != doctors_premise:
+    # check if the number of doctors in the hypothesis contradicts the number of doctors in the premise
+    label = ""contradiction""
+elif pharmacists_hypothesis != pharmacists_premise:
+    # check if the number of pharmacists from the hypothesis contradicts the number of pharmacists in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+209,"The Emergencies Ministry said 23 people have been rescued, according to the news agency.","The Emergencies Ministry says 23 people have been rescued, state media say.",entailment,entailment,"rescued_people_premise = 23
+rescued_people_hypothesis = 23
+
+# the hypothesis mentions the number of people rescued, which is also mentioned in the premise
+if rescued_people_hypothesis != rescued_people_premise:
+    # check if the number of rescued people in the hypothesis contradicts the number from the premise
+    label = ""contradiction""
+else:
+    # if the number of rescued people in the hypothesis does not contradict the one in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+8,"Authorities seize 6,700 pounds of marijuana.","She said 6,700 pounds of marijuana had been seized.",entailment,entailment,"marijuana_premise = 6700
+marijuana_hypothesis = 6700
+
+# The hypothesis mentions the amount of marijuana seized, which is also mentioned in the premise
+if marijuana_hypothesis != marijuana_premise:
+    # Check if the amount of marijuana seized in the hypothesis contradicts the amount reported in the premise
+    label = ""contradiction""
+else:
+    # If the amount of marijuana seized in the hypothesis does not contradict the amount in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+654,"The fully functional submarine was built at a drydock at a clandestine complex that housed 50 people, said Jay Bergman, Andean regional director for the DEA.",The $4 million vessel was built at a clandestine complex.,neutral,neutral,"people_premise = 50
+vessel_cost_hypothesis = 4000000
+
+# the hypothesis mentions the construction of a vessel at a clandestine complex, which is also mentioned in the premise
+# however, the hypothesis refers to the cost of the vessel which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+0,Lepore said he was moved to photograph the slumbering sentries after witnessing the same guard napping on three occasions.,Joey Lepore says he took photos of one guard sleeping at post three times.,entailment,entailment,"sentries_sleeping_premise = 1
+occasions_premise = 3
+sentries_sleeping_hypothesis = 1
+occasions_hypothesis = 3
+
+# the hypothesis mentions the number of sentries sleeping and the number of times this was observed, which are also mentioned in the premise
+if sentries_sleeping_hypothesis != sentries_sleeping_premise:
+    # check if the number of sleeping sentries in the hypothesis contradicts the number mentioned in the premise
+    label = ""contradiction""
+elif occasions_hypothesis != occasions_premise:
+    # check if the number of occasions from the hypothesis contradicts the number of occasions in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+959,"A spokesman from Peshawar's Lady Reading Hospital says that the three people killed included a woman, a civilian and a member of the Frontier Corps.","A suicide blast has killed 3 and injured 13 in Peshawar, Pakistan.",neutral,neutral,"killed_premise = 3
+killed_hypothesis = 3
+injured_hypothesis = 13
+
+# the hypothesis mentions the number of people killed in Peshawar, which is also referenced in the premise
+# however, the hypothesis also mentions the number of people injured, which cannot be entailed from the premise
+if killed_hypothesis != killed_premise:
+    # check if the number of people killed in the hypothesis contradicts the number of people killed reported in the premise
+    label = ""contradiction""
+else:
+    # if the number of people killed in the hypothesis does not contradict the number of people killed in the premise and 
+    # there is no information about the number of people injured in the premise, we can infer neutrality
+    label = ""neutral""
+
+print(label)
+"
+182,"Two demonstrators and two police officers were injured and taken to the hospital, Olsson said.","Four people were injured, including two police officers.",entailment,entailment,"demonstrators_injured_premise = 2
+officers_injured_premise = 2
+total_injured_premise = demonstrators_injured_premise + officers_injured_premise
+
+total_injured_hypothesis = 4
+officers_injured_hypothesis = 2
+
+# we first check if the total number of injured people in the hypothesis is the same as the sum of the injured demonstrators and officers in the premise
+if total_injured_hypothesis != total_injured_premise:
+    label = ""contradiction""
+# additionally, we verify if the number of injured officers in the hypothesis matches the one in the premise
+elif officers_injured_hypothesis != officers_injured_premise:
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+687,"Police:Bombings kill 5 in Iraq, wound dozens more.","Bombings kill at least 18, wound dozens.",neutral,neutral,"killed_premise = 5
+killed_hypothesis = 18
+wounded_premise = 30 # assuming dozens means at least 2 dozens
+wounded_hypothesis = 30
+
+# the hypothesis mentions the number of people killed and wounded, which are also mentioned in the premise
+if killed_hypothesis < killed_premise:
+    # check if the number of people killed in the hypothesis contradicts the number reported in the premise
+    label = ""contradiction""
+elif wounded_hypothesis != wounded_premise:
+    # check if the number of people wounded from the hypothesis contradicts the number of people wounded in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""neutral""
+
+print(label)
+"
+412,"Schalke moved up to third place with a 2-0 win at home to Hannover, who were mourning the suicide of Germany goalkeeper Robert Enke.","Schalke move into third place after 2-0 win over Hannover, who are mourning Robert Enke.",entailment,entailment,"schalke_position_premise = 3
+schalke_position_hypothesis = 3
+schalke_score_premise = 2
+schalke_score_hypothesis = 2
+
+# the hypothesis mentions the new position of Schalke and the score of the match, which are also mentioned in the premise
+if schalke_position_hypothesis != schalke_position_premise:
+    # check if the Schalke's position in the hypothesis contradicts Schalke's position reported in the premise
+    label = ""contradiction""
+elif schalke_score_hypothesis != schalke_score_premise:
+    # check if the Schalke's score from the hypothesis contradicts Schalke's score in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+127,"That inmate and the county worker were undergoing emergency surgery, she said.",Two of the injured were undergoing emergency surgery.,entailment,entailment,"injured_premise = 2
+injured_hypothesis = 2
+
+# the hypothesis mentions the number of people undergoing emergency surgery, which is also referenced in the premise
+if injured_hypothesis != injured_premise:
+    # check if the number of injured in the hypothesis contradicts the number of injured reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+354,The Soledad Fire Department said 12 ambulances and seven helicopters were dispatched to the scene.,"12 ambulances, 7 helicopters dispatched to the scene.",entailment,entailment,"ambulances_premise = 12
+helicopters_premise = 7
+ambulances_hypothesis = 12
+helicopters_hypothesis = 7
+
+# the hypothesis mentions the number of ambulances and helicopters dispatched to the scene, which are also mentioned in the premise
+if ambulances_hypothesis != ambulances_premise:
+    # check if the number of ambulances in the hypothesis contradicts the number of ambulances reported in the premise
+    label = ""contradiction""
+elif helicopters_hypothesis != helicopters_premise:
+    # check if the number of helicopters from the hypothesis contradicts the number of helicopters in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+483,"In the study involving nearly 6,000 African American participants aged 60 or older, about 2,000 of whom had Alzheimer's and 4,000 who did not, variants in the genes ABCA7 and ApoE increased risk of developing Alzheimer's by 80% and more than two fold, respectively.","Study involved nearly 6,000 African American participants aged 60 or older.",entailment,entailment,"participants_premise = 6000
+participants_hypothesis = 6000
+
+# the hypothesis mentions the number of participants in the study, which is also mentioned in the premise
+if participants_hypothesis != participants_premise:
+    # check if the number of participants in the hypothesis contradicts the number of participants in the premise
+    label = ""contradiction""
+else:
+    # if the number in the hypothesis does not contradict the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+817,"'' Our losses are mounting... as many as 40 military servicemen killed and over 100 wounded,'' he said.","40 military killed and mounting civilian casualties, Georgia official says.",neutral,neutral,"military_killed_premise = 40
+military_killed_hypothesis = 40
+
+# the hypothesis mentions the number of military casualties, which is also mentioned in the premise
+# however, the hypothesis refers to civilian casualties, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+670,"Two tries from Chris Ashton, who plays for the Northampton Saints, two conversion kicks and three penalty kicks from Toby Flood, and a late penalty from Jonny Wilkinson, sealed an impressive victory.",Toby Flood scores 13 points for England and Jonny Wilkinson three.,entailment,entailment,"ashton_tries = 2
+flood_conversion_kicks = 2
+flood_penalty_kicks = 3
+wilkinson_penalty = 1
+
+flood_points_premise = flood_conversion_kicks * 2 + flood_penalty_kicks * 3
+wilkinson_points_premise = wilkinson_penalty * 3
+
+flood_points_hypothesis = 13
+wilkinson_points_hypothesis = 3
+
+# the hypothesis refers to the points scored by Toby Flood and Jonny Wilkinson, which are also mentioned in the premise
+if flood_points_hypothesis != flood_points_premise:
+    # check if the points scored by Toby Flood in the hypothesis contradicts the points scored by Toby Flood in the premise
+    label = ""contradiction""
+elif wilkinson_points_hypothesis != wilkinson_points_premise:
+    # check if the points scored by Jonny Wilkinson in the hypothesis contradicts the points scored by Jonny Wilkinson in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+830,"So I was two inches bigger around than I was tall,'' said Daniel, who had a body fat percentage of 54.60 percent.","She battled fatigue, hypertension and was more than 54 percent body fat.",neutral,neutral,"body_fat_percentage_premise = 54.60
+body_fat_percentage_hypothesis = 54
+
+# the hypothesis mentions the body fat percentage, which is also mentioned in the premise
+# however, the hypothesis does not specify the exact value, only that it was more than 54 percent
+# additionally, the hypothesis refers to a female subject, while the premise refers to a male subject named Daniel
+if body_fat_percentage_hypothesis > body_fat_percentage_premise:
+    # check if the body fat percentage in the hypothesis contradicts the body fat percentage reported in the premise
+    label = ""contradiction""
+else:
+    # if the body fat percentage in the hypothesis does not contradict the body fat percentage in the premise, 
+    # we cannot infer entailment due to the difference in gender of the subjects
+    label = ""neutral""
+
+print(label)
+"
+922,"Recalls of the products by the Yashili and Suokang companies have been made, and of China's 175 baby milk powder production companies, 66 have already stopped production, Li said.","China's largest milk, Mengniu Dairy Group, recalls three batches of formula.",neutral,neutral,"recalled_companies_premise = [""Yashili"", ""Suokang""]
+stopped_production_companies_premise = 66
+total_companies_premise = 175
+recalled_company_hypothesis = ""Mengniu Dairy Group""
+
+# the hypothesis mentions a company's product recall which is not mentioned in the premise
+# the premise provides information about other companies' recalls and stoppage of production
+# there's no contradiction or entailment between the premise and hypothesis
+label = ""neutral""
+
+print(label)
+"
+63,Quezada has chosen a cash payment of his lottery prize that will amount to approximately $152 million after taxes.,The payment was taken from his after-tax prize of about $152 million.,entailment,entailment,"prize_premise = 152000000
+prize_hypothesis = 152000000
+
+# the hypothesis mentions the amount of the after-tax prize, which is also mentioned in the premise
+if prize_hypothesis != prize_premise:
+    # check if the amount in the hypothesis contradicts the amount stated in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+110,"An estimated 35.8 million people are enslaved, according to the Global Slavery Index.",Global Slavery Index:More than 35 million people are in bondage worldwide.,entailment,entailment,"enslaved_people_premise = 35800000
+enslaved_people_hypothesis = 35000000
+
+# the hypothesis mentions the number of people enslaved worldwide, which is also mentioned in the premise
+if enslaved_people_hypothesis > enslaved_people_premise:
+    # check if the number of enslaved people in the hypothesis exceeds the number reported in the premise
+    label = ""contradiction""
+else:
+    # if the number of enslaved people in the hypothesis does not exceed the number from the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+53,'' If that's true... the officer has to explain six shots.,"The officer will have to'' explain a reason for each of those six shots,'' a legal analyst says.",entailment,entailment,"shots_premise = 6
+shots_hypothesis = 6
+
+# the hypothesis mentions the number of shots an officer has to explain, which is also mentioned in the premise
+if shots_hypothesis != shots_premise:
+    # check if the number of shots in the hypothesis contradicts the number of shots in the premise
+    label = ""contradiction""
+else:
+    # if the number of shots from the hypothesis does not contradict the number of shots in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+644,"The New Iberia Research Center has received more than $37 million in grants from the NIH, according to the center's Web site.","New Iberia Research Center in Louisiana houses more than 6,500 primates.",neutral,neutral,"grants_nih_premise = 37000000
+primates_hypothesis = 6500
+
+# the hypothesis mentions the number of primates at the New Iberia Research Center, which is not referenced in the premise
+# the presence or absence of primates has no connection with the received grants from the NIH mentioned in the premise
+label = ""neutral""
+
+print(label)
+"
+204,"The identification of Yarnell puts the total number of identifications from the World Trade Center at 1,640, meaning there are still 1,113 more to go.","Matthew Yarnell, 26, is the 1,640 victim ID'd from the World Trade Center.",entailment,entailment,"total_identifications_premise = 1640
+total_identifications_hypothesis = 1640
+
+remaining_identifications_premise = 1113
+
+# the hypothesis mentions the total number of identifications from the World Trade Center, which is also referenced in the premise
+if total_identifications_hypothesis != total_identifications_premise:
+    # check if the total number of identifications from the hypothesis contradicts that from the premise
+    label = ""contradiction""
+else:
+    # if the total number of identifications in the hypothesis does not contradict the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+875,Bobby Jindal declared a statewide state of emergency.,Florida governor declares a state of emergency in 18 counties.,neutral,neutral,"# In this case, there are no numerical entities to compare.
+# The premise and the hypothesis refer to different people declaring state of emergencies in different locations.
+# Hence, no meaningful comparison can be done.
+
+label = ""neutral""
+
+print(label)
+"
+114,"Only about 50 of the cards -- handed out over-the-counter at its offices -- had the error, it said.","About 50 of the incorrect cards were handed out, Maricopa County says.",entailment,entailment,"cards_error_premise = 50
+cards_error_hypothesis = 50
+
+# the hypothesis mentions the number of incorrect cards that were handed out, which is also referenced in the premise
+if cards_error_hypothesis != cards_error_premise:
+    # check if the number of incorrect cards in the hypothesis contradicts the number of incorrect cards reported in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+681,"The victims were taken to WellStar Kennestone Hospital, where an emergency room doctor involved in the response said three were in critical condition.",Six people are taken to Wellstar Kennestone Hospital.,neutral,neutral,"victims_premise = 3
+victims_hypothesis = 6
+
+# the hypothesis mentions the number of people taken to the hospital, which is also referenced in the premise
+if victims_hypothesis > victims_premise:
+    # check if the number of victims in the hypothesis contradicts the number of victims reported in the premise
+    label = ""contradiction""
+else:
+    # if the number of victims in the hypothesis does not contradict the number of victims in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+560,"The border guards and French police are also involved in the hunt for the four men, police said.","The four men escaped in a gray-colored vehicle, police said.",neutral,neutral,"men_premise = 4
+men_hypothesis = 4
+
+# the hypothesis mentions the number of men, which is also referenced in the premise
+# however, the hypothesis provides additional information about a gray-colored vehicle, which cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+"
+352,Holmes faces 166 charges tied to a mass shooting at an Aurora movie theater.,He faces 166 charges tied to the rampage.,entailment,entailment,"charges_premise = 166
+charges_hypothesis = 166
+
+# the hypothesis mentions the number of charges faced by a person, which is also mentioned in the premise
+if charges_hypothesis != charges_premise:
+    # check if the number of charges in the hypothesis contradicts the number of charges in the premise
+    label = ""contradiction""
+else:
+    # if the number of charges in the hypothesis does not contradict the number of charges in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+250,"'' That's one small step for (a) man, one giant leap for mankind,'' Armstrong famously said.","He uttered the now-famous phrase:'' That's one small step for (a) man, one giant leap for mankind.''",entailment,entailment,"# There are no numerical entities in this example, so no variables to define
+
+# the hypothesis refers to the exact same quote from Armstrong, as mentioned in the premise
+# so, it can be fully and explicitly entailed from the premise
+label = ""entailment""
+
+print(label)
+"

@@ -1,0 +1,1494 @@
+sample_index,premise,hypothesis,golden_label,reference_label,completion
+198,Analysts React to Californias Proposed $15 Minimum Wage: A Blunt Approach.,California to Raise Minimum Wage to $15/hour.,entailment,entailment,"min_wage_premise = 15
+min_wage_hypothesis = 15
+
+# the hypothesis and premise mention the proposed minimum wage in California
+if min_wage_premise != min_wage_hypothesis:
+    # check if the proposed minimum wage in the hypothesis contradicts the proposed minimum wage in the premise
+    label = ""contradiction""
+else:
+    # if the minimum wage proposed in the premise is the same as in the hypothesis, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+73,Six Giant Banks Made $51 Billion Last Year; The Other 980 Lost Money.,Six Banks Made $51 Billion in 09 (The rest lost money),entailment,entailment,"number_of_banks_premise = 6
+number_of_banks_hypothesis = 6
+earnings_premise = 51
+earnings_hypothesis = 51
+
+# the hypothesis and premise mention the number of banks and their earnings
+if number_of_banks_premise != number_of_banks_hypothesis:
+    # check if the number of banks in the hypothesis contradicts the number of banks in the premise
+    label = ""contradiction""
+elif earnings_premise != earnings_hypothesis:
+    # check if the earnings in the hypothesis contradicts the earnings in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+50,Loblaw says minimum wage increases will hike labour costs by $190M.,Loblaw expects higher minimum wage rules will increase its labour costs by $190M.,entailment,entailment,"cost_increase_premise = 190
+cost_increase_hypothesis = 190
+
+# the hypothesis and premise mention the increase in labour costs for Loblaw due to minimum wage increases
+if cost_increase_hypothesis != cost_increase_premise:
+    # check if the cost increase in the hypothesis contradicts the cost increase in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+99,"U.S. Adds 280,000 Jobs in May; Jobless Rate Ticks Up to 5.5%.","U.S. Economy Added 280,000 Jobs in May; Unemployment Rate 5.5%.",entailment,entailment,"jobs_added_premise = 280000
+jobs_added_hypothesis = 280000
+unemployment_rate_premise = 5.5
+unemployment_rate_hypothesis = 5.5
+
+# the hypothesis and premise refer to the number of jobs added in the U.S. in May and the unemployment rate
+if jobs_added_premise != jobs_added_hypothesis:
+    # check if the number of jobs in the hypothesis contradicts the number of jobs in the premise
+    label = ""contradiction""
+elif unemployment_rate_premise != unemployment_rate_hypothesis:
+    # check if the unemployment rate in the hypothesis contradicts the unemployment rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+206,"U.S. economy gains a strong 222,000 jobs in June.","U.S. adds 222,000 jobs in June hiring surge.",entailment,entailment,"jobs_gained_premise = 222000
+jobs_added_hypothesis = 222000
+
+# the hypothesis and premise mention a number of jobs gained/added in US in June
+if jobs_gained_premise != jobs_added_hypothesis:
+    # check if the number of jobs in the hypothesis contradicts the number of jobs in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+162,China posts slowest annual economic growth in 25 years.,China' s economy shows slowest growth in 25 years.,entailment,entailment,"years_premise = 25
+years_hypothesis = 25
+
+# the hypothesis and premise mention the number of years since China's last slowest economic growth
+if years_hypothesis != years_premise:
+    # check if the number of years in the hypothesis contradicts the number of years in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+115,"Dow nosedives more than 1,000 points as stocks' losses deepen.","Stocks take another tumble, Dow dives more than 1,000 points.",entailment,entailment,"points_premise = 1000
+points_hypothesis = 1000
+
+# the hypothesis and premise both mention the same number of points lost by Dow
+if points_hypothesis != points_premise:
+    # check if the number of points in the hypothesis contradicts the number of points in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+93,Top 1 Percent Took Record Share of 2012 US Income.,Richest one percent take home record share of US income in 2012.,entailment,entailment,"# No numerical quantities to compare, but both sentences convey the same information in different words. Hence, ""entailment""
+
+label = ""entailment""
+
+print(label)
+"
+96,Richest 1% on track to own 50% of all wealth by 2016 Oxfam warns.,Richest 1% To Own More Than Half Worlds Wealth By 2016 Oxfam.,entailment,entailment,"percentage_premise = 50
+percentage_hypothesis = 50
+
+# the hypothesis and premise mention the percentage of wealth that the richest 1% is predicted to own by 2016
+if percentage_hypothesis != percentage_premise:
+    # check if the percentage of wealth in the hypothesis contradicts the percentage of wealth in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+83,Wages Salaries jump by 3.1 percent; highest in decade.,"CNBC-Wages and salaries jump by 3.1%, highest level in a decade.",entailment,entailment,"percentage_increase_premise = 3.1
+percentage_increase_hypothesis = 3.1
+
+# the hypothesis and premise mention the percentage increase in wages and salaries
+if percentage_increase_hypothesis != percentage_increase_premise:
+    # check if the percentage increase in the hypothesis contradicts the percentage increase in the premise
+    label = ""contradiction""
+else:
+    # if the percentage increase in the hypothesis does not contradict the percentage increase in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+109,Saudi central bank net foreign assets fall $6 billion in March.,Saudi central bank net foreign assets shrink 1.0 pct in March.,neutral,neutral,"assets_fall_premise = 6 # in billion dollars
+assets_fall_hypothesis = 1.0 # in percentage
+
+# The hypothesis and premise mention the fall of net foreign assets of the Saudi central bank in March.
+# However, the premise gives the fall in billion dollars while the hypothesis gives it in percentage.
+# We cannot infer the fall in percentage from the fall in billion dollars nor vice versa.
+label = ""neutral""
+
+print(label)
+"
+15,Bush in 2002: We want 5.5 million more homeowners by 2010 & less words in the closing papers they have to sign.,President Bush on Homeownership in 2002: 5.5 million more homeowners by 2010 & much less words in their closing documents (seriously)),entailment,entailment,"homeowners_premise = 5.5e6
+homeowners_hypothesis = 5.5e6
+
+# the hypothesis and premise mention the number of homeowners that President Bush wanted in 2010
+if homeowners_hypothesis != homeowners_premise:
+    # check if the number of homeowners in the hypothesis contradicts the number of homeowners in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+1,"At DAVOS, Financial Billionaire Schwartzman, who took home over $600 million dollars last year, says he doesn't understand why americans are angry.","At Davos, Wall Street Billionaire Steven Schwartzfman, who takes home every year around $700 million dollars, says he doesn't understand why americans are angry.",neutral,neutral,"earnings_premise = 600
+earnings_hypothesis = 700
+
+# the hypothesis and premise mention the earnings of Schwartzman 
+if earnings_hypothesis < earnings_premise:
+    # check if the earnings in the hypothesis contradict the earnings in the premise
+    label = ""contradiction""
+elif earnings_hypothesis > earnings_premise:
+    # the premise gives only an estimate for the earnings
+    # any estimate of the earnings in the hypothesis greater than 'earnings_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+218,Unemployment falls in 41 states in September.,Unemployment falls in seven swing states.,neutral,neutral,"states_fall_unemployment_premise = 41
+states_fall_unemployment_hypothesis = 7
+
+# the hypothesis and premise mention the number of states where unemployment falls
+# however, the hypothesis specifies 'swing states', which cannot be inferred from the premise
+label = ""neutral""
+
+print(label)
+"
+9,"At Davos, Wall Street Billionaire Mr Schwartzfman, who takes home every year over $500 million dollars, says he doesn't understand why americans are angry.","At DAVOS, Financial Billionaire Schwartzman, who took home over $600 million dollars last year, says he doesn't understand why americans are angry.",neutral,neutral,"income_premise = 500
+income_hypothesis = 600
+
+# the hypothesis and premise mention the annual income of Mr Schwartzfman
+if income_hypothesis < income_premise:
+    # check if the income in the hypothesis contradicts the premise of more than 'income_premise' dollars
+    label = ""contradiction""
+else:
+    # the premise gives only a minimum for the income
+    # any income in the hypothesis greater or equal to 'income_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+"
+123,U.S. economy off to slow start in 2017 under Trump.,G.D.P. Report Shows U.S. Economy Off to Slow Start in 2017.,entailment,entailment,"# There are no numerical entities in the premise or the hypothesis
+# However, the hypothesis does not contradict or add any information to the premise, thus it can be inferred from the premise
+label = ""entailment""
+
+print(label)
+"
+70,Personal Bankruptcy Filings up 14% in first 6 months of 2010.,Consumer Bankruptcy Filings Up 14 Percent Through First Half Of 2010.,entailment,entailment,"percentage_increase_premise = 14
+percentage_increase_hypothesis = 14
+months_premise = 6
+months_hypothesis = 6
+
+# the hypothesis and premise mention the percentage increase of bankruptcy filings and the number of months into the year
+if percentage_increase_hypothesis != percentage_increase_premise:
+    # check if the percentage increase in the hypothesis contradicts the percentage increase in the premise
+    label = ""contradiction""
+elif months_hypothesis != months_premise:
+    # check if the number of months in the hypothesis contradicts the number of months in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+181,Census shows 1 in 2 people in U.S. are poor or low-income.,Census: 1 In 2 Americans Is Poor Or Low-Income.,entailment,entailment,"ratio_poor_low_income_premise = 1/2
+ratio_poor_low_income_hypothesis = 1/2
+
+# the hypothesis and premise mention the ratio of people in the U.S. that are poor or low-income
+if ratio_poor_low_income_hypothesis != ratio_poor_low_income_premise:
+    # check if the ratio in the hypothesis contradicts the ratio in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+40,French Current Account Drained EUR 2.1 Billion In July 2017 Out Of The Economy.,Australian Current Account Deficit Drained AUD$9.5 Billion In Q2 Of 2017 Out Of The Economy.,neutral,neutral,"drained_value_premise = 2.1
+drained_value_hypothesis = 9.5
+
+# The hypothesis and premise mention the amount drained out of the economy due to current account deficit
+# However, the hypothesis is about Australia while the premise is about France, and the time frames are also different
+# We cannot make an accurate comparison or derive the hypothesis from the premise
+label = ""neutral""
+
+print(label)
+"
+179,"US economy adds 215,000 jobs in July.","US economy adds 215,000 jobs in July-BBC News.",entailment,entailment,"jobs_added_premise = 215000
+jobs_added_hypothesis = 215000
+
+# the hypothesis and premise mention the number of jobs added in the US economy
+if jobs_added_hypothesis != jobs_added_premise:
+    # check if the number of jobs added in the hypothesis contradicts the number of jobs added in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+232,64% of Americans say we have a poor economy.,90% of Americans say economy stinks.,contradiction,contradiction,"percentage_americans_premise = 64
+percentage_americans_hypothesis = 90
+
+# the hypothesis and premise mention the percentage of Americans who have a negative view of the economy
+if percentage_americans_hypothesis > percentage_americans_premise:
+    # check if the percentage of Americans in the hypothesis contradicts the percentage of Americans in the premise
+    label = ""contradiction""
+else:
+    # the premise gives a percentage for the negative view of the economy
+    # any percentage in the hypothesis equal or less than 'percentage_americans_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+"
+62,Americans Taxed $400 Billion For Fiber Optic Internet That Doesnt Exist.,Americans Taxed $300 Millon For Fiber Optic Internet That Doesnt Exist.,contradiction,contradiction,"tax_amount_premise = 400 * 1e9 # converting billion to the base unit
+tax_amount_hypothesis = 300 * 1e6 # converting million to the base unit
+
+# the hypothesis and premise mention the tax amount for fiber optic internet
+if tax_amount_hypothesis > tax_amount_premise:
+    # check if the tax amount in the hypothesis contradicts the one in the premise
+    label = ""contradiction""
+elif tax_amount_hypothesis < tax_amount_premise:
+    # check if the tax amount in the hypothesis contradicts the one in the premise
+    label = ""contradiction""
+else:
+    # if the tax amount in the hypothesis does not contradict the one in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+152,U.S. public pension gap at least $2 trillion.,US public pension gap at least $2 trillion: Moody's.,entailment,entailment,"pension_gap_premise = 2e12 # in dollars
+pension_gap_hypothesis = 2e12 # in dollars
+
+# the hypothesis and premise mention the US public pension gap
+if pension_gap_hypothesis != pension_gap_premise:
+    # check if the pension gap in the hypothesis contradicts the pension gap in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+2,"SENSEX Nifty up, Today stocks nifty future trading tips and call on Thursday 22 Aug, Nifty top gainers and losers stocks ~ stocks nifty future call today.","Sensex down 74.58 points, Nifty future tips, Tomorrow nifty future trading call on Wednesday 21 Aug, Nifty gainers and losers ~ stocks nifty future call today.",contradiction,contradiction,"# Since there are no numerical values in this pair of premise and hypothesis, there is no need for numerical comparison.
+# Using the textual information, it's clear that the premise says ""SENSEX Nifty up"", while the hypothesis says ""Sensex down 74.58 points""
+# Thus, the premise and the hypothesis contradict each other.
+
+label = ""contradiction""
+print(label)
+"
+76,"With unemployment rate dropping to 5.4%, U.S. added 223K jobs in April.","U.S. Economy Added 223,000 Jobs in April; Unemployment Rate at 5.4%.",entailment,entailment,"unemployment_rate_premise = 5.4
+jobs_added_premise = 223000
+unemployment_rate_hypothesis = 5.4
+jobs_added_hypothesis = 223000
+
+# the hypothesis and premise mention the number of jobs added in April and the unemployment rate 
+if jobs_added_hypothesis != jobs_added_premise:
+    # check if the number of jobs added in the hypothesis contradicts the number of jobs added in the premise
+    label = ""contradiction""
+elif unemployment_rate_hypothesis != unemployment_rate_premise:
+    # check if the unemployment rate in the hypothesis contradicts the unemployment rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+86,Obama Offers to Cut Corporate Tax Rate to 28%.,Obama wants to cut corporate tax rate to 28% as part of overhaul.,entailment,entailment,"tax_rate_premise = 28
+tax_rate_hypothesis = 28
+
+# the hypothesis and premise mention the same tax rate proposed by Obama
+if tax_rate_hypothesis != tax_rate_premise:
+    # check if the tax rate in the hypothesis contradicts the tax rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+212,Dow Hits 20000 for First Time.,"Boom: Dow hits 20,000 for first time ever.",entailment,entailment,"premise_dow = 20000
+hypothesis_dow = 20000
+
+# the hypothesis and premise mention the Dow reaching a certain level for the first time
+if premise_dow != hypothesis_dow:
+    # check if the level of the Dow in the hypothesis contradicts the level of the Dow in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+75,Trump Seeks $3.6 Trillion in Spending Cuts to Reshape Government.,Trump seeks to slash $3.6 trillion of government spending in budget.,entailment,entailment,"cuts_premise = 3.6
+cuts_hypothesis = 3.6
+
+# the hypothesis and premise mention the amount of spending cuts Trump seeks
+if cuts_hypothesis != cuts_premise:
+    # check if the amount of spending cuts in the hypothesis contradicts the amount in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+12,"Sensex closed up 204.96 points, Nifty above 5471.75, today stock market update, Nifty future trading tips ~ stocks nifty future call today.","Indian Rupee down, Tomorrow On Monday stock nifty future trading call 26 Aug, Stocks nifty future call today ~ stocks nifty future call today.",neutral,neutral,"points_premise = 204.96
+nifty_premise = 5471.75
+
+# the premise mentions the points and nifty value of the Sensex closing
+# the hypothesis does not mention any specific points or nifty value
+# thus, we cannot infer any contradiction or entailment based on the numerical values
+label = ""neutral""
+
+print(label)
+"
+234,Argentina agrees $50bn financing deal with IMF.,IMF agrees $50bn loan for Argentina.,entailment,entailment,"deal_value_premise = 50e9
+deal_value_hypothesis = 50e9
+
+# the hypothesis and premise mention the value of the deal between Argentina and IMF
+if deal_value_hypothesis != deal_value_premise:
+    # check if the value of the deal in the hypothesis contradicts the value of the deal in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+187,Chrysler to Shut Down All Production For One Month.,Chrysler closing all 30 plants for one month.,neutral,neutral,"# No numerical entities to compare in this case
+# The premise and hypothesis both mention the shutdown of Chrysler production/plants for a certain period
+# However, the premise does not provide information on the exact number of plants affected by the shutdown
+# Hence, we cannot conclude entailment or contradiction based on this information
+
+label = ""neutral""
+
+print(label)
+"
+175,BofA sets aside $14bn to cover loan claims-FT.com.,BofA sets aside $14 bn for U.S. mortgage claims.,neutral,neutral,"amount_set_aside_premise = 14
+amount_set_aside_hypothesis = 14
+
+# the hypothesis and premise mention the amount BofA sets aside
+if amount_set_aside_hypothesis != amount_set_aside_premise:
+    # check if the amount set aside in the hypothesis contradicts the amount set aside in the premise
+    label = ""contradiction""
+else:
+    # if the amount set aside does not contradict, it does not necessarily entail the specifics of the claims (loan vs. mortgage)
+    label = ""neutral""
+
+print(label)
+"
+180,30-year mortgage rates fall below 4% for first time.,30-yr mortgage drops below 4 pct for first time.,entailment,entailment,"mortgage_years_premise = 30
+mortgage_rate_premise = 4
+mortgage_years_hypothesis = 30
+mortgage_rate_hypothesis = 4
+
+# the hypothesis and premise mention the duration of a mortgage and its rate
+if mortgage_years_premise != mortgage_years_hypothesis:
+    # check if the mortgage duration in the hypothesis contradicts the mortgage duration in the premise
+    label = ""contradiction""
+elif mortgage_rate_hypothesis != mortgage_rate_premise:
+    # check if the mortgage rate in the hypothesis contradicts the mortgage rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+20,Oil markets facing shortfall in the second half (ie. demand will surpass supply unless we fond another 1.5 million barrels of oil a day).,World oil demand will exceed supply in the second half of the year unless we can increase production by 1.5 million barrels a day.,entailment,entailment,"oil_shortfall_premise = 1.5
+oil_shortfall_hypothesis = 1.5
+
+# the hypothesis and premise mention the shortfall in oil production that needs to be addressed
+if oil_shortfall_hypothesis != oil_shortfall_premise:
+    # check if the shortfall estimate in the hypothesis contradicts the shortfall estimate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+209,Producer prices post biggest drop in 10 months.,Retail sales post biggest drop in 9 months.,neutral,neutral,"drop_month_producer_prices_premise = 10
+drop_month_retail_sales_hypothesis = 9
+
+# the premise and hypothesis mention the period of time since the last biggest drop of two different economic indicators
+# since the economic indicators are different, no explicit entailment can be inferred from the premise
+label = ""neutral""
+
+print(label)
+"
+52,"U.S. economy added 161,000 jobs in October as unemployment rate dipped to 4.9 percent.","U.S. Economy Grew by 161,000 Jobs in October; Unemployment Rate Falls to 4.9%.",entailment,entailment,"jobs_added_premise = 161000
+jobs_added_hypothesis = 161000
+unemployment_rate_premise = 4.9
+unemployment_rate_hypothesis = 4.9
+
+# the hypothesis and premise mention the number of jobs added in the U.S. economy in October
+# and the unemployment rate in the same period
+if jobs_added_premise != jobs_added_hypothesis:
+    # check if the number of jobs added in the hypothesis contradicts the number of jobs added in the premise
+    label = ""contradiction""
+elif unemployment_rate_premise != unemployment_rate_hypothesis:
+    # check if the unemployment rate in the hypothesis contradicts the unemployment rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+116,South Africa Unexpectedly Slides Into Recession For The First Time Since 2009.,South Africas Economy Slips Into First Recession Since 2009.,entailment,entailment,"year_premise = 2009
+year_hypothesis = 2009
+
+# the hypothesis and premise mention the year the recession last happened
+if year_hypothesis != year_premise:
+    # check if the year in the hypothesis contradicts the year in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+64,"U.S. Jobless Rate Declines to 7.8%; 114,000 Jobs Added-Bloomberg.","Unemployment Rate Drops To 7.8 Percent; 114,000 Jobs Added To Payrolls.",entailment,entailment,"jobless_rate_premise = 7.8
+jobless_rate_hypothesis = 7.8
+jobs_added_premise = 114000
+jobs_added_hypothesis = 114000
+
+# the hypothesis and premise mention the jobless rate and the number of jobs added
+if jobless_rate_premise != jobless_rate_hypothesis:
+    # check if the jobless rate in the hypothesis contradicts the jobless rate in the premise
+    label = ""contradiction""
+elif jobs_added_premise != jobs_added_hypothesis:
+    # check if the number of jobs added in the hypothesis contradicts the number of jobs added in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+219,US new home sales fall 1.6 percent in November.,November home sales slowest in 6 months.,neutral,neutral,"sales_change_premise = -1.6 # percent
+months_hypothesis = 6
+
+# the premise and hypothesis provide different aspects about November home sales
+# the premise shows that sales fell by 1.6 percent, but does not provide an explicit comparison to other months
+# the hypothesis states that November was the slowest in 6 months, but does not provide a percentage change
+
+# thus, neither statement can be fully and explicitly entailed from the other
+label = ""neutral""
+
+print(label)
+"
+214,Dow Hits 20000 for First Time.,"Dow Hits 20,000 For First Time in History.",entailment,entailment,"dow_index_premise = 20000
+dow_index_hypothesis = 20000
+
+# the hypothesis and premise mention the Dow index hitting a certain value for the first time
+if dow_index_premise != dow_index_hypothesis:
+    # check if the value of the Dow index in the hypothesis contradicts the value in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+78,"Nifty50 at 8,400, Sensex ends in Red, Investment Advisory Company In Indore.","Nifty below 8400, Sensex In RED, Stock Advisory Company In Indore.",contradiction,contradiction,"nifty_premise = 8400
+nifty_hypothesis = 8400
+
+# the hypothesis and premise mention nifty value
+if nifty_hypothesis >= nifty_premise:
+    # check if the nifty value in the hypothesis contradicts the premise of being at 'nifty_premise'
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+200,Trump's'balanced' budget relies on over $2 trillion in mystery money.,Trump Budget Based on $2 Trillion Math Error.,entailment,entailment,"money_premise = 2 * 10**12
+money_hypothesis = 2 * 10**12
+
+# the hypothesis and premise mention the amount of money involved in Trump's budget
+if money_premise != money_hypothesis:
+    # check if the amount of money in the hypothesis contradicts the amount of money in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+236,"U.S. Jobless Rate Declines to 7.8%; 114,000 Jobs Added.",Shocker: Jobless rate falls to 7.8%.,entailment,entailment,"jobless_rate_premise = 7.8
+jobless_rate_hypothesis = 7.8
+jobs_added_premise = 114000
+
+# the hypothesis and premise mention the same jobless rate
+if jobless_rate_hypothesis != jobless_rate_premise:
+    # check if the jobless rate in the hypothesis contradicts the jobless rate in the premise
+    label = ""contradiction""
+else:
+    # if the jobless rate in the hypothesis does not contradict the jobless rate in the premise, we can infer entailment
+    # the number of jobs added is not mentioned in the hypothesis, so it does not affect the entailment
+    label = ""entailment""
+
+print(label)
+"
+91,Oxfam says richest one percent to own more than rest by 2016.,Richest 1% To Own More Than Half Worlds Wealth By 2016 Oxfam.,entailment,entailment,"richest_percentage_premise = 1
+richest_percentage_hypothesis = 1
+
+# the hypothesis and premise both mention the percentage of the richest people in the world
+if richest_percentage_premise != richest_percentage_hypothesis:
+    # check if the percentage in the hypothesis contradicts the percentage in the premise
+    label = ""contradiction""
+else:
+    # if the percentage in the hypothesis does not contradict the percentage in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+194,"AA to Cut Up to 15,000 Jobs.","American Airlines may cut up to 15,000 jobs.",entailment,entailment,"jobs_premise = 15000
+jobs_hypothesis = 15000
+
+# the hypothesis and premise mention the number of jobs that AA may cut
+if jobs_hypothesis != jobs_premise:
+    # check if the number of jobs in the hypothesis contradicts the number of jobs in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+146,China cuts interest rates for third time in six months as economy sputters.,China adds stimulus with third rate cut in six months.,entailment,entailment,"cuts_premise = 3
+cuts_hypothesis = 3
+months_premise = 6
+months_hypothesis = 6
+
+# the hypothesis and premise mention the number of rate cuts and the time period over which they occurred
+if cuts_premise != cuts_hypothesis:
+    # check if the number of rate cuts in the hypothesis contradicts the number of rate cuts in the premise
+    label = ""contradiction""
+elif months_hypothesis != months_premise:
+    # check if the time period in the hypothesis contradicts the time period in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+88,Goldman to Pay Up to $5 Billion to Settle Claims of Faulty Mortgages.,Goldman Sachs to pay $5.1 billion to settle toxic mortgage probe.,contradiction,contradiction,"settlement_premise = 5
+settlement_hypothesis = 5.1
+
+# The hypothesis and premise mention the settlement Goldman will pay
+if settlement_hypothesis > settlement_premise:
+    # Check if the settlement amount in the hypothesis contradicts the maximum settlement amount in the premise
+    label = ""contradiction""
+elif settlement_hypothesis <= settlement_premise:
+    # If the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+33,"Based off 1st time unemployment claims, the June report will likely be exactly the same as May's.",Based off of 1st unemployment reports the jobs report for June will probably be unchanged from May.,entailment,entailment,"# No numerical entities to define as variables
+
+# the hypothesis and premise both mention the June jobs report being the same as May's based on 1st time unemployment claims
+# the phrasing of the statements is slightly different, but the meaning is the same, implying entailment
+
+label = ""entailment""
+
+print(label)
+"
+220,Retail sales nationally drop 0.4% in January.,U.S. retail sales fall 0.4% in January.,entailment,entailment,"sales_drop_premise = 0.4
+sales_drop_hypothesis = 0.4
+
+# the hypothesis and premise mention the drop percentage of retail sales in January
+if sales_drop_premise != sales_drop_hypothesis:
+    # check if the drop percentage in the hypothesis contradicts the drop percentage in the premise
+    label = ""contradiction""
+else:
+    # if the drop percentage in the hypothesis does not contradict the premise one, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+190,U.S. retail sales fall 0.4% in January.,Retail sales nationally drop 0.4% in January.,entailment,entailment,"retail_sales_fall_premise = 0.4
+retail_sales_drop_hypothesis = 0.4
+
+# the hypothesis and premise mention the percentage of retail sales drop in January
+if retail_sales_fall_premise != retail_sales_drop_hypothesis:
+    # check if the percentage of drop in the hypothesis contradicts the percentage of drop in the premise
+    label = ""contradiction""
+else:
+    # if the percentage of drop in the hypothesis does not contradict the percentage of drop in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+67,Fed's Rosengren Wants Two More Hikes in 2018 as Economy Grows.,Top Fed official wants two more rate hikes in 2018 as US economy grows.,entailment,entailment,"hikes_premise = 2
+hikes_hypothesis = 2
+
+# the hypothesis and premise mention the number of hikes in 2018
+if hikes_hypothesis != hikes_premise:
+    # check if the number of hikes in the hypothesis contradicts the number of hikes in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+81,"U.S. Economy Added 250,000 Jobs In October; Unemployment 3.7 Percent.","NYTimes: U.S. Added 250,000 Jobs in October; Unemployment at 3.7%.",entailment,entailment,"jobs_added_premise = 250000
+jobs_added_hypothesis = 250000
+unemployment_rate_premise = 3.7
+unemployment_rate_hypothesis = 3.7
+
+# the hypothesis and premise mention the number of jobs added and the unemployment rate
+if jobs_added_premise != jobs_added_hypothesis:
+    # check if the number of jobs added in the hypothesis contradicts the number of jobs added in the premise
+    label = ""contradiction""
+elif unemployment_rate_premise != unemployment_rate_hypothesis:
+    # check if the unemployment rate in the hypothesis contradicts the unemployment rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+46,"U.S. Economy Grew by 161,000 Jobs in October; Unemployment Rate Falls to 4.9%.","U.S. economy added 161,000 jobs in October as unemployment rate dipped to 4.9 percent.",entailment,entailment,"jobs_grew_premise = 161000
+jobs_added_hypothesis = 161000
+unemployment_rate_premise = 4.9
+unemployment_rate_hypothesis = 4.9
+
+# the hypothesis and premise mention the number of jobs added and the unemployment rate in the US economy
+if jobs_grew_premise != jobs_added_hypothesis:
+    # check if the number of jobs in the hypothesis contradicts the number of jobs in the premise
+    label = ""contradiction""
+elif unemployment_rate_hypothesis != unemployment_rate_premise:
+    # check if the unemployment rate in the hypothesis contradicts the unemployment rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+117,Survey Finds that Black Business Ownership in the US Jumped 400% in One Year.,Black Business Ownership Under Trump Jumps 400% in one year.,neutral,neutral,"percentage_increase_premise = 400
+percentage_increase_hypothesis = 400
+
+# the hypothesis and premise mention the percentage increase in black business ownership in one year
+if percentage_increase_hypothesis != percentage_increase_premise:
+    # check if the percentage increase in the hypothesis contradicts the percentage increase in the premise
+    label = ""contradiction""
+else:
+    # the premise does not specify under which administration the increase happened
+    # the hypothesis' mention of the Trump administration is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+"
+213,"The Ironworker Running to Unseat Paul Ryan Wants Single-Payer Health Care, $15 Minimum Wage.",A Sign to Go Slow on the $15 Minimum Wage.,neutral,neutral,"min_wage_premise = 15
+min_wage_hypothesis = 15
+
+# the hypothesis and premise mention the same minimum wage
+if min_wage_premise != min_wage_hypothesis:
+    # check if the minimum wage in the hypothesis contradicts the minimum wage in the premise
+    label = ""contradiction""
+else:
+    # the premise and hypothesis do not contradict each other, but the hypothesis cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+"
+25,"Swedish Financial Supervisory Authority (FI) investigation concludes ""high frequency trading no threat"" two days after contradictory study.","Swedish Financial Supervisory Authority study reports ""no risk with high frequency trading"" two days after contradictory study.",entailment,entailment,"days_premise = 2
+days_hypothesis = 2
+
+# the hypothesis and premise mention the number of days between a contradictory study and the response of the Swedish Financial Supervisory Authority (FI)
+if days_hypothesis != days_premise:
+    # check if the number of days in the hypothesis contradicts the number of days in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+195,Dozens Of Cities And States Will Raise Their Minimum Wages For 2017.,20 Of The Most Expensive Cities In The World.,neutral,neutral,"# the premise and hypothesis are about different topics without any explicit numerical comparison to be made
+# the premise is about minimum wages in cities and states, the hypothesis is about the most expensive cities
+# there is no way to entail or contradict the hypothesis based on the premise, so the relation is neutral
+label = ""neutral""
+
+print(label)
+"
+6,The US is quickly becoming a 3rd world country. 50% of all children and 90% of black children need government assistance to eat.,Never forget the USA is the best in everything... except for the part where 50% of children and 90% of black children need government assistance to eat.,entailment,entailment,"percentage_children_premise = 50
+percentage_black_children_premise = 90
+percentage_children_hypothesis = 50
+percentage_black_children_hypothesis = 90
+
+# the hypothesis and premise mention the percentage of children and black children needing government assistance
+if percentage_children_premise != percentage_children_hypothesis or percentage_black_children_premise != percentage_black_children_hypothesis:
+    # check if the percentages in the hypothesis contradict the percentages in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+235,US Raises Tax On Chinese Steel Imports By 522%.,US raises China steel taxes by 522%.,entailment,entailment,"tax_increase_premise = 522
+tax_increase_hypothesis = 522
+
+# the hypothesis and premise both mention the tax increase on Chinese steel imports in the US
+if tax_increase_premise != tax_increase_hypothesis:
+    # check if the tax increase in the hypothesis contradicts the tax increase in the premise
+    label = ""contradiction""
+else:
+    # if the tax increase in the hypothesis is the same as in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+118,Mark Cuban: This tech bubble is far worse than back in 2000.,Mark Cuban: We're in a Tech Bubbleand It's Worse Than 2000.,entailment,entailment,"# There are no numerical entities in the premise or hypothesis, but they express the same sentiment.
+# Therefore, the hypothesis can be fully and explicitly entailed from the premise.
+
+label = ""entailment""
+
+print(label)
+"
+136,"Economy Sheds 467,000 Jobs; Unemployment Rate at 9.5%-CNBC.","Employers Cut 467,000 Jobs; Unemployed Rate 9.5% CNBC.",entailment,entailment,"jobs_lost_premise = 467000
+jobs_lost_hypothesis = 467000
+unemployment_rate_premise = 9.5
+unemployment_rate_hypothesis = 9.5
+
+# the hypothesis and premise mention the number of jobs lost and the unemployment rate
+if jobs_lost_premise != jobs_lost_hypothesis:
+    # check if the number of jobs lost in the hypothesis contradicts the number of jobs lost in the premise
+    label = ""contradiction""
+elif unemployment_rate_premise != unemployment_rate_hypothesis:
+    # check if the unemployment rate in the hypothesis contradicts the unemployment rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+237,Chrysler says September sales best since 2007.,Chrysler sales up 12% in September.,neutral,neutral,"# The premise and hypothesis both mention the sales of Chrysler but do not provide any numerical values to compare
+# Hence, no numerical comparison can be carried out
+label = ""neutral""
+
+print(label)
+"
+174,U.S. Economys Growth Rate in 2nd Quarter Revised Up to 3.7%.,U.S. economy grew 3.7 percent in second quarter.,entailment,entailment,"growth_rate_premise = 3.7
+growth_rate_hypothesis = 3.7
+
+# the hypothesis and premise mention the growth rate of the U.S. economy in the 2nd quarter
+if growth_rate_hypothesis != growth_rate_premise:
+    # check if the growth rate in the hypothesis contradicts the growth rate in the premise
+    label = ""contradiction""
+else:
+    # if the growth rate in the hypothesis does not contradict the growth rate in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+122,"No, GDP isn't exceeding unemployment for the first time in 100 years.",GDP Growth Eclipses Unemployment For 1st Time In 100 Years.,contradiction,contradiction,"years_premise = 100
+years_hypothesis = 100
+
+# the hypothesis and premise mention the number of years since GDP exceeded unemployment
+if years_hypothesis != years_premise:
+    # check if the number of years in the hypothesis contradicts the number of years in the premise
+    label = ""contradiction""
+else:
+    # the premise clearly states that GDP is not exceeding unemployment for the first time in 100 years
+    # while the hypothesis states the contrary
+    label = ""contradiction""
+
+print(label)
+"
+105,"U.S. housing starts rise to 549,000 rate in March.","Housing Starts in U.S. Increased 7.2% in March to 549,000 Pace.",neutral,neutral,"housing_starts_rate_premise = 549000
+housing_starts_rate_hypothesis = 549000
+increase_percentage_hypothesis = 7.2
+
+# the hypothesis and premise mention the rate of housing starts in the U.S. for March
+if housing_starts_rate_premise != housing_starts_rate_hypothesis:
+    # check if the rate of housing starts in the hypothesis contradicts the rate in the premise
+    label = ""contradiction""
+else:
+    # the premise does not give any information about the increase percentage, so the increase percentage in the hypothesis is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+"
+30,A tiny.00017% elite control over $2 Trillion by using threats of violence and imprisonment against the public.,"A tiny.00017% US elite spends over $3.5 Trillion every year, taken by threats of violence against the public.",neutral,neutral,"percentage_elite_premise = 0.00017
+percentage_elite_hypothesis = 0.00017
+amount_premise = 2
+amount_hypothesis = 3.5
+
+# the hypothesis and premise mention a small proportion of the elite and a large amount of money
+if percentage_elite_premise != percentage_elite_hypothesis:
+    # check if the percentage of the elite in the hypothesis contradicts the percentage of the elite in the premise
+    label = ""contradiction""
+elif amount_hypothesis < amount_premise:
+    # check if the amount in the hypothesis contradicts the premise estimate of over 'amount_premise'
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the amount of money
+    # any estimate of the amount in the hypothesis greater or equal to 'amount_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+"
+221,Unemployment rate falls to lowest level since 2008.,Unemployment Rate Falls To 7.7 Percent.,neutral,neutral,"year_premise = 2008
+rate_premise = None  # The premise does not provide a specific unemployment rate
+rate_hypothesis = 7.7
+
+# The premise and hypothesis both mention the unemployment rate, but the premise does not provide a specific value
+# Hence, we cannot compare the rate in the hypothesis with the rate in the premise
+# The premise and hypothesis also mention a year, but the hypothesis does not contradict the year in the premise
+
+# As there is no information in the hypothesis that contradicts the premise, but the premise does not provide enough information to fully entail the hypothesis
+label = ""neutral""
+
+print(label)
+"
+28,"A tiny.00017% US elite spends over $3.5 Trillion every year, taken by threats of violence against the public.",A tiny.00017% elite control over $2 Trillion by using threats of violence and imprisonment against the public.,neutral,neutral,"percentage_elite_premise = .00017
+percentage_elite_hypothesis = .00017
+spending_premise = 3.5
+spending_hypothesis = 2
+
+# the hypothesis and premise both mention a tiny elite group and the amount they control/spend
+if percentage_elite_premise != percentage_elite_hypothesis:
+    # check if the percentage of the elite group in the hypothesis contradicts the percentage in the premise
+    label = ""contradiction""
+elif spending_hypothesis > spending_premise:
+    # check if the spending amount in the hypothesis contradicts the premise (the premise states the spending is over a certain amount)
+    label = ""contradiction""
+else:
+    # if the hypothesis is consistent with the premise but cannot be fully entailed from it, we infer neutrality
+    label = ""neutral""
+
+print(label)
+"
+169,"U.S. adds 222,000 jobs in June hiring surge.","U.S. economy gains a strong 222,000 jobs in June.",entailment,entailment,"jobs_added_premise = 222000
+jobs_added_hypothesis = 222000
+
+# the hypothesis and premise mention the number of jobs added in the U.S. in June
+if jobs_added_hypothesis != jobs_added_premise:
+    # check if the number of jobs in the hypothesis contradicts the number of jobs in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+197,California Is About to Make a $15 Minimum Wage a Reality.,California to Raise Minimum Wage to $15/hour.,entailment,entailment,"min_wage_premise = 15
+min_wage_hypothesis = 15
+
+# the hypothesis and premise mention the same minimum wage value
+if min_wage_hypothesis != min_wage_premise:
+    # check if the minimum wage in the hypothesis contradicts the minimum wage in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+94,"US weekly jobless claims total 255,000 vs 285,000 est, lowest level since 1973.","Initial Weekly Unemployment Claims lowest since 1973 at 255,000.",entailment,entailment,"jobless_claims_premise = 255000
+jobless_claims_estimate_premise = 285000
+year_premise = 1973
+
+jobless_claims_hypothesis = 255000
+year_hypothesis = 1973
+
+# the hypothesis and premise mention the number of jobless claims and the year when this level was last seen
+if jobless_claims_premise != jobless_claims_hypothesis or year_premise != year_hypothesis:
+    # check if the number of jobless claims or the year in the hypothesis contradicts the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+101,"Saudi Prince, billionaire says'never' again to $100 oil barrel.",Saudi Prince Says Oil Will'Never Reach $100 Per Barrel Again',entailment,entailment,"oil_price_premise = 100
+oil_price_hypothesis = 100
+
+# the hypothesis and premise mention the same oil price level that will never be reached again according to the Saudi Prince
+if oil_price_hypothesis != oil_price_premise:
+    # check if the oil price in the hypothesis contradicts the oil price in the premise
+    label = ""contradiction""
+else:
+    # if the oil price in the hypothesis does not contradict the oil price in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+224,Fannie and Freddie may need another $215 billion.,"Fannie, Freddie may need $363 billion.",neutral,neutral,"money_needed_premise = 215
+money_needed_hypothesis = 363
+
+# the hypothesis and premise mention the amount of money Fannie and Freddie may need
+if money_needed_hypothesis < money_needed_premise:
+    # check if the amount of money in the hypothesis contradicts the premise
+    label = ""contradiction""
+else:
+    # the premise gives only an estimate for the amount of money
+    # any estimate of the amount of money in the hypothesis greater or equal to 'money_needed_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = ""neutral""
+
+print(label)
+"
+166,China economic growth slowest in 25 years.,China' s economy shows slowest growth in 25 years.,entailment,entailment,"years_premise = 25
+years_hypothesis = 25
+
+# the hypothesis and premise mention the number of years for which the economic growth of China is the slowest
+if years_hypothesis != years_premise:
+    # check if the number of years in the hypothesis contradicts the number of years in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+233,Amazon Hikes Monthly Prime Membership Prices by 18% to $12.99.,Amazon EBT membership $5.99 a month.,neutral,neutral,"price_increase_premise = 18
+price_prime_premise = 12.99
+price_ebt_hypothesis = 5.99
+
+# the hypothesis introduces a new type of Amazon membership (EBT), which is not mentioned in the premise
+# so, we can't establish a relationship between the two sentences based on the premise
+label = ""neutral""
+
+print(label)
+"
+61,"Trump is pushing 25% auto tariff, despite top advisers scrambling to stop him, sources say.",Trump pushes 25 percent auto tariff as top advisers scramble to stop him.,entailment,entailment,"tariff_premise = 25
+tariff_hypothesis = 25
+
+# the hypothesis and premise mention the percentage of the auto tariff Trump is pushing
+if tariff_hypothesis != tariff_premise:
+    # check if the tariff percentage in the hypothesis contradicts the tariff percentage in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+13,"Swedish Financial Supervisory Authority study reports ""no risk with high frequency trading"" two days after contradictory study.","Swedish Financial Supervisory Authority (FI) investigation concludes ""high frequency trading no threat"" two days after contradictory study.",entailment,entailment,"days_premise = 2
+days_hypothesis = 2
+
+# the hypothesis and premise mention the number of days between a contradictory study and the response of the Swedish Financial Supervisory Authority
+if days_hypothesis != days_premise:
+    # check if the number of days in the hypothesis contradicts the number of days in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+177,U.S. second-quarter GDP revised to show larger 3.7% gain.,U.S. economy grew 3.7 percent in second quarter.,entailment,entailment,"gdp_gain_premise = 3.7
+gdp_gain_hypothesis = 3.7
+
+# the hypothesis and premise both mention the GDP gain in the U.S. in the second quarter
+if gdp_gain_hypothesis != gdp_gain_premise:
+    # check if the GDP gain in the hypothesis contradicts the GDP gain in the premise
+    label = ""contradiction""
+else:
+    # if the GDP gain in the hypothesis does not contradict the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+230,"China's Economy Grows 6.9%, but Warning Signs Persist.",China's economy grows at 6.9 percent.,entailment,entailment,"growth_rate_premise = 6.9
+growth_rate_hypothesis = 6.9
+
+# the hypothesis and premise mention the growth rate of China's economy
+if growth_rate_hypothesis != growth_rate_premise:
+    # check if the growth rate in the hypothesis contradicts the growth rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+113,Richest 1% To Own More Than Half Worlds Wealth By 2016 Oxfam.,Oxfam says richest one percent to own more than rest by 2016.,entailment,entailment,"richest_percentage_premise = 1
+richest_percentage_hypothesis = 1
+wealth_percentage_premise = 50
+wealth_percentage_hypothesis = 50
+
+# both the hypothesis and premise mention the 1% richest people and the percentage of wealth they will own
+if richest_percentage_premise != richest_percentage_hypothesis:
+    # check if the percentage of richest people in the hypothesis contradicts the percentage in the premise
+    label = ""contradiction""
+elif wealth_percentage_hypothesis != wealth_percentage_premise:
+    # check if the estimated wealth percentage in the hypothesis contradicts the premise estimate
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+106,"U.S. adds 280,000 jobs in May; unemployment 5.5%.","U.S. Economy Added 280,000 Jobs in May; Unemployment Rate 5.5%.",entailment,entailment,"jobs_added_premise = 280000
+jobs_added_hypothesis = 280000
+unemployment_premise = 5.5
+unemployment_hypothesis = 5.5
+
+# the hypothesis and premise mention the number of jobs added in May and the unemployment rate
+if jobs_added_premise != jobs_added_hypothesis:
+    # check if the number of jobs added in the hypothesis contradicts the number of jobs added in the premise
+    label = ""contradiction""
+elif unemployment_hypothesis != unemployment_premise:
+    # check if the unemployment rate in the hypothesis contradicts the unemployment rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+183,US raises China steel taxes by 522%.,US Raises Tax On Chinese Steel Imports By 522%.,entailment,entailment,"tax_increase_premise = 522
+tax_increase_hypothesis = 522
+
+# the hypothesis and premise mention the tax increase on China steel by the US
+if tax_increase_hypothesis != tax_increase_premise:
+    # check if the tax increase in the hypothesis contradicts the tax increase in the premise
+    label = ""contradiction""
+else:
+    # if the tax increase in the hypothesis does not contradict the tax increase in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+148,"U.S. Second-Quarter Growth Revised Up to 4.2% on Software, Trade.",U.S. second-quarter GDP growth raised to 4.2 percent.,entailment,entailment,"growth_rate_premise = 4.2
+growth_rate_hypothesis = 4.2
+
+# the hypothesis and premise both mention the revised growth rate for U.S. second-quarter
+if growth_rate_premise != growth_rate_hypothesis:
+    # check if the growth rate in the hypothesis contradicts the growth rate in the premise
+    label = ""contradiction""
+else:
+    # if the growth rate in the hypothesis does not contradict the growth rate in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+156,The $720 boost from falling gas prices.,Falling gas prices represent a $720 stimulus check.,entailment,entailment,"boost_premise = 720
+stimulus_hypothesis = 720
+
+# the hypothesis and premise mention a monetary gain from falling gas prices
+if boost_premise != stimulus_hypothesis:
+    # check if the gain in the hypothesis contradicts the gain in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+223,"U.S. Adds 103,000 Jobs in December, Unemployment at 9.4%.","Canada adds 22,000 jobs in December.",neutral,neutral,"jobs_added_us_premise = 103000
+unemployment_rate_us_premise = 9.4
+jobs_added_canada_hypothesis = 22000
+
+# the hypothesis and premise mention the number of jobs added in the US and Canada respectively in December
+# however, they do not provide any common ground for comparison or contradiction
+# the hypothesis does not contradict or entail anything from the premise as it discusses a different country
+label = ""neutral""
+
+print(label)
+"
+227,Amazon buying Whole Foods for $13.7B.,Amazon to buy Whole Foods for $13.7bn.,entailment,entailment,"price_premise = 13.7
+price_hypothesis = 13.7
+
+# the hypothesis and premise mention the price for which Amazon is buying Whole Foods
+if price_hypothesis != price_premise:
+    # check if the price in the hypothesis contradicts the price in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis price does not contradict the premise price, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+222,"U.S. Adds 146,000 Jobs; Jobless Rate Falls to 7.7%.",Unemployment Rate Falls To 7.7 Percent.,entailment,entailment,"jobs_added_premise = 146000
+jobless_rate_premise = 7.7
+jobless_rate_hypothesis = 7.7
+
+# the hypothesis and premise both mention the jobless rate
+if jobless_rate_hypothesis != jobless_rate_premise:
+    # check if the jobless rate in the hypothesis contradicts the jobless rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+217,Pfizer nears deal to acquire Medivation for close to US$14b.,Pfizer to Buy Medivation for $14 Billion.,entailment,entailment,"deal_value_premise = 14
+deal_value_hypothesis = 14
+
+# the hypothesis and premise mention the deal value for Pfizer's acquisition of Medivation
+if deal_value_premise != deal_value_hypothesis:
+    # check if the deal value in the hypothesis contradicts the deal value in the premise
+    label = ""contradiction""
+else:
+    # if the deal value in the hypothesis does not contradict the deal value in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+4,"Sensex and Nifty up, 2 sept Nifty stock market trading tips and top nifty gainers and losers on Monday, Indian stock market tips today ~ stocks nifty future call today.","stocks nifty future call today: Sensex Weak and Nifty flat, Today best stock trading call on 3 Sept, Free nifty future stock tips, BHEL, Tata motor gain.",contradiction,contradiction,"date_premise = 2
+date_hypothesis = 3
+
+# the hypothesis and premise mention the date of the stock market trading tips
+if date_premise != date_hypothesis:
+    # check if the date in the hypothesis contradicts the date in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+74,World Bank:'extreme poverty' to fall below 10% of world population for first time.,World poverty to drop below 10% for first time; Capitalism to blame.,neutral,neutral,"poverty_rate_premise = 10
+poverty_rate_hypothesis = 10
+
+# the hypothesis and premise mention the same poverty rate
+# the statement about capitalism in the hypothesis cannot be inferred from the premise
+if poverty_rate_premise != poverty_rate_hypothesis:
+    # check if the poverty rate in the hypothesis contradicts the poverty rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we infer neutrality
+    # because the attribution to capitalism cannot be entailed from the premise
+    label = ""neutral""
+
+print(label)
+"
+55,Trump considers hiking proposed tariffs on $200 billion in Chinese goods to 25%.,Trump to propose 25 percent tariff on $200 billion of Chinese imports: source.,entailment,entailment,"tariff_premise = 25
+tariff_hypothesis = 25
+value_premise = 200
+value_hypothesis = 200
+
+# the hypothesis and premise mention the same tariff percentage on the same value of goods
+if tariff_hypothesis != tariff_premise:
+    # check if the tariff percentage in the hypothesis contradicts the tariff percentage in the premise
+    label = ""contradiction""
+elif value_hypothesis != value_premise:
+    # check if the value of goods in the hypothesis contradicts the value of goods in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+228,"U.S. Economy Added 215,000 Jobs in July; Unemployment Still 5.3%.","US economy adds 215,000 jobs in July.",entailment,entailment,"jobs_added_premise = 215000
+jobs_added_hypothesis = 215000
+
+# the hypothesis and premise mention the number of jobs added in July
+if jobs_added_hypothesis != jobs_added_premise:
+    # check if the number of jobs added in the hypothesis contradicts the number of jobs added in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+184,"Economy loses 11,000 jobs in November, fewest since 2007.","U.S. Economy Lost Only 11,000 Jobs in November.",entailment,entailment,"jobs_lost_premise = 11000
+jobs_lost_hypothesis = 11000
+
+# The hypothesis and premise mention the number of jobs lost in the economy in November
+if jobs_lost_hypothesis != jobs_lost_premise:
+    # Check if the number of jobs lost in the hypothesis contradicts the number of jobs lost in the premise
+    label = ""contradiction""
+else:
+    # If the number of jobs lost in the hypothesis and premise match, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+150,30-Year Mortgage Rates in U.S. Fall Below 4%.,30-year mortgage rates fall below 4% for first time.,neutral,neutral,"rate_premise = 4
+rate_hypothesis = 4
+
+# the hypothesis and premise mention the mortgage rate
+if rate_hypothesis != rate_premise:
+    # check if the mortgage rate in the hypothesis contradicts the mortgage rate in the premise
+    label = ""contradiction""
+else:
+    # the premise does not mention whether it's the first time the rate falls below 4%, so we cannot infer entailment or contradiction
+    label = ""neutral""
+
+print(label)
+"
+239,"Payrolls in U.S. Rose 175,000 in May, Unemployment 7.6%.","U.S. generates 175,000 jobs in May.",entailment,entailment,"jobs_created_premise = 175000
+jobs_created_hypothesis = 175000
+
+# the hypothesis and premise mention the number of jobs created in the U.S. in May
+if jobs_created_hypothesis != jobs_created_premise:
+    # check if the number of jobs created in the hypothesis contradicts the number of jobs created in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+165,U.S. Already $292 Billion in the Red This Year.,U.S. already $292 bln in the red this year-CBO.,entailment,entailment,"debt_premise = 292 * 10**9  # converting Billion to actual number
+debt_hypothesis = 292 * 10**9  # converting bln to actual number
+
+# Both the premise and hypothesis mention the same debt amount for the US this year
+if debt_premise != debt_hypothesis:
+    # check if the debt amount in the hypothesis contradicts the debt amount in the premise
+    label = ""contradiction""
+else:
+    # if the debt amount in the hypothesis does not contradict the debt amount in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+186,U.S. GDP Fell 0.7% in First Quarter (revised down from +0.2%),U.S. Economy Contracted 0.7% in First Quarter.,entailment,entailment,"GDP_change_premise = -0.7
+GDP_change_hypothesis = -0.7
+
+# the hypothesis and premise mention the change in US GDP in the first quarter
+if GDP_change_hypothesis != GDP_change_premise:
+    # check if the GDP change in the hypothesis contradicts the GDP change in the premise
+    label = ""contradiction""
+else:
+    # if the GDP change in the hypothesis and premise are the same, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+241,Foreclosures 46% higher in March than a year ago.,4 Tips for Buying a Foreclosure.,neutral,neutral,"percentage_higher_premise = 46
+
+# Both the premise and hypothesis mention foreclosures, but the hypothesis does not give any numerical information that can be compared to the premise.
+# Thus, we cannot infer entailment or contradiction based on the given sentences.
+label = ""neutral""
+
+print(label)
+"
+139,"FDIC Seizes 6 George Banks, Estimated Cost to FDIC: $807m.","FDIC seizes 6 Georgia banks, estimated losses of $807m.",entailment,entailment,"banks_premise = 6
+banks_hypothesis = 6
+estimated_cost_premise = 807
+estimated_cost_hypothesis = 807
+
+# the hypothesis and premise mention the number of banks FDIC seized and the estimated cost
+if banks_premise != banks_hypothesis:
+    # check if the number of banks in the hypothesis contradicts the number of banks in the premise
+    label = ""contradiction""
+elif estimated_cost_premise != estimated_cost_hypothesis:
+    # check if the estimated cost in the hypothesis contradicts the estimated cost in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+133,California Nears Deal to Adopt a $15 State Minimum Wage.,California Is About to Make a $15 Minimum Wage a Reality.,entailment,entailment,"min_wage_premise = 15
+min_wage_hypothesis = 15
+
+# the hypothesis and premise mention the minimum wage in California
+if min_wage_premise != min_wage_hypothesis:
+    # check if the minimum wage in the hypothesis contradicts the minimum wage in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+102,FED RAISES RATES FOR FIRST TIME SINCE 2006.,Hong Kong Raises Base Rate for First Time Since 2006 After Fed.,neutral,neutral,"year_premise = 2006
+year_hypothesis = 2006
+
+# the hypothesis and premise mention the year of the rate hike
+if year_hypothesis != year_premise:
+    # check if the year in the hypothesis contradicts the year in the premise
+    label = ""contradiction""
+else:
+    # the hypothesis refers to a rate hike in Hong Kong, which cannot be explicitly entailed from the premise referring to a rate hike by the FED
+    label = ""neutral""
+
+print(label)
+"
+226,United States Daily US Deficit For 2/13/2013: $23.3B.,Daily US Deficit For 2/14/2013: $6.2B.,neutral,neutral,"deficit_premise = 23.3
+date_premise = ""2/13/2013""
+deficit_hypothesis = 6.2
+date_hypothesis = ""2/14/2013""
+
+# the hypothesis and premise mention the US daily deficit and the date
+if date_premise != date_hypothesis:
+    # the dates in the premise and hypothesis are different, so one does not contradict the other
+    label = ""neutral""
+elif deficit_premise != deficit_hypothesis:
+    # if the dates were the same, then the deficits should have also been the same
+    label = ""contradiction""
+else:
+    # if the dates and the deficits in the premise and hypothesis are the same, then the hypothesis can be entailed from the premise
+    label = ""entailment""
+
+print(label)
+"
+53,"South Africa in recession for first time since 2009, rand slumps.",South Africa Unexpectedly Slides Into Recession For The First Time Since 2009.,entailment,entailment,"year_recession_premise = 2009
+year_recession_hypothesis = 2009
+
+# the hypothesis and premise mention the year of the last recession in South Africa
+if year_recession_hypothesis != year_recession_premise:
+    # check if the year in the hypothesis contradicts the year in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+189,U.S. GDP Growth Revised Down to 2.2% Rate in First Quarter.,US first-quarter growth revised down to 2.2%.,entailment,entailment,"gdp_growth_rate_premise = 2.2
+gdp_growth_rate_hypothesis = 2.2
+
+# the hypothesis and premise mention the GDP growth rate of the US in the first quarter
+if gdp_growth_rate_hypothesis != gdp_growth_rate_premise:
+    # check if the GDP growth rate in the hypothesis contradicts the GDP growth rate in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+56,Black Business Ownership Under Trump Jumps 400% in one year.,Survey Finds that Black Business Ownership in the US Jumped 400% in One Year.,entailment,entailment,"jump_percentage_premise = 400
+jump_percentage_hypothesis = 400
+
+# the hypothesis and premise mention the jump percentage of Black Business Ownership in one year
+if jump_percentage_hypothesis != jump_percentage_premise:
+    # check if the jump percentage in the hypothesis contradicts the jump percentage in the premise
+    label = ""contradiction""
+else:
+    # if the jump percentage in the hypothesis does not contradict the jump percentage in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+138,China' s economy shows slowest growth in 25 years.,China posts slowest annual economic growth in 25 years.,entailment,entailment,"years_premise = 25
+years_hypothesis = 25
+
+# the hypothesis and premise mention the number of years in which China's economy growth was the slowest
+if years_hypothesis != years_premise:
+    # check if the number of years in the hypothesis contradicts the number of years in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+155,US economy sees weakest growth for three years in first quarter of 2017.,US Economy Expanded at Weakest Pace in Three Years.,entailment,entailment,"years_premise = 3
+years_hypothesis = 3
+
+# the hypothesis and premise mention the same number of years for the weakest growth of US economy
+if years_premise != years_hypothesis:
+    # check if the number of years in the hypothesis contradicts the number of years in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+26,"I give you $100,000 to invest in 5 bonds, you choose the ratio. Which bonds do you invest in and why?","If I gave you $100,000 to invest in 3 corporate bonds and let you choose the ratio, which bonds would you invest in and why?",contradiction,contradiction,"amount_premise = 100000
+amount_hypothesis = 100000
+bonds_premise = 5
+bonds_hypothesis = 3
+
+# the hypothesis and premise mention the amount to invest and the number of bonds
+if amount_premise != amount_hypothesis:
+    # check if the amount in the hypothesis contradicts the amount in the premise
+    label = ""contradiction""
+elif bonds_premise != bonds_hypothesis:
+    # check if the number of bonds in the hypothesis contradicts the number of bonds in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+170,Unprecedented Inequality: The Top 1 Percent Captured 95% of the Income Gains Since 2009.,95% of 2009-2012 Income Gains Went to the Top 1%.,entailment,entailment,"percentage_income_gain_premise = 95
+percentage_income_gain_hypothesis = 95
+
+# the hypothesis and premise mention the percentage of income gains captured by the top 1 percent
+if percentage_income_gain_hypothesis != percentage_income_gain_premise:
+    # check if the percentage of income gains in the hypothesis contradicts the percentage of income gains in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+87,South Africa Unexpectedly Slides Into Recession For The First Time Since 2009.,"South Africa in recession for first time since 2009, rand slumps.",entailment,entailment,"year_premise = 2009
+year_hypothesis = 2009
+
+# the hypothesis and premise mention the same year when South Africa slides into recession
+if year_hypothesis != year_premise:
+    # check if the year in the hypothesis contradicts the year in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = ""entailment""
+
+print(label)
+"
+161,The International Monetary Fund (IMF) and the World Bank Explained in One Minute.,The Tragedy of the Commons Explained in One Minute.,neutral,neutral,"# As there are no numerical entities or quantities in the provided sentences, no comparison or calculations are possible.
+
+# The premise and the hypothesis talk about two distinct topics explained in one minute.
+# There is no contradiction as the two topics can both be explained in one minute, but there is also no direct entailment as one topic does not imply the other.
+
+label = ""neutral""
+print(label)
+"
+185,Retail sales post biggest drop in 9 months.,Producer prices post biggest drop in 10 months.,neutral,neutral,"months_drop_premise = 9
+months_drop_hypothesis = 10
+
+# the hypothesis and premise mention the time period of the biggest drop, but in different contexts (retail sales vs producer prices)
+# hence, we cannot compare these two directly
+label = ""neutral""
+
+print(label)
+"

@@ -1,0 +1,1215 @@
+completion,prompt
+"```python
+price_jump_premise = 0.05
+price_jump_hypothesis = 0.05
+
+# the hypothesis talks about the increase in gas prices over a certain period, which is also mentioned in the premise
+if price_jump_hypothesis != price_jump_premise:
+    # check if the increase in price in the hypothesis contradicts the increase in price from the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: The average price of a gallon of gasoline has jumped a nickel over the past two weeks and is back near the record high set earlier this year, according to a national survey released Sunday.
+Hypothesis: Gas prices jumped 5 cents a gallon over the last two weeks."
+"```python
+mt_height_premise = 8568
+mt_height_hypothesis = 8586
+
+# the hypothesis talks about the height of Kanchenjunga which is also mentioned in the premise
+if mt_height_hypothesis != mt_height_premise:
+    # check if the height in the hypothesis contradicts the height in the premise
+    label = ""contradiction""
+else:
+    # if the height in the hypothesis does not contradict the height in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: The 8,568-meter Mt. Kanchenjunga, the third highest in the world, is located in the border area of Nepal, India and China.
+Hypothesis: Kanchenjunga is 8586 meters high."
+"```python
+required_states_premise = 4
+required_member_states_premise = 3
+member_states_hypothesis = 3
+
+# the hypothesis talks about the total number of member states in the Council of Europe, which is not mentioned in the premise
+# the premise only talks about the minimum number of member states required for the convention to enter into force
+# the hypothesis cannot be entailed from the premise, since the total number of member states in the Council of Europe is unknown.
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: This (revised) Convention shall enter into force six months after the date on which four States, including at least three member States of the Council of Europe, have expressed their consent to be bound by the (revised) Convention in accordance with the provisions of the preceding paragraphs.
+Hypothesis: The Council of Europe is made up by 3 member states."
+"```python
+govt_casualties_premise = 11
+rebel_casualties_premise = 3
+rebel_casualties_hypothesis = 3
+
+# the hypothesis talks about the number of rebel casualties caused by the government troops, which is also mentioned in the premise
+if rebel_casualties_hypothesis != rebel_casualties_premise:
+    # check if the number of rebel casualties in the hypothesis contradicts the number of rebel casualties from the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: The Armed Forces Press Committee (COPREFA) admitted that the government troops sustained 11 casualties in these clashes, adding that they inflicted three casualties on the rebels.
+Hypothesis: Three rebels were killed by government troops."
+"```python
+# Defining the variables
+tyler_sentence_premise = 21
+john_sentence_premise = 18
+tyler_sentence_hypothesis = 18
+
+# Comparing the sentences of Tyler from the premise and the hypothesis
+if tyler_sentence_hypothesis != tyler_sentence_premise:
+    # If the sentences do not match, it is a contradiction
+    label = ""contradiction""
+else:
+    label = ""entailment""
+    
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Two other marines, Tyler Jackson and John Jodka III, have already pleaded guilty to aggravated assault and conspiracy to obstruct justice and were sentenced to 21 months and 18 months, respectively.
+Hypothesis: Tyler Jackson has been sentenced to 18 months."
+"```python
+european_countries_premise = 14
+world_population_premise = 5 / 100  # 5% converted to a decimal
+population_growth_premise = 0
+japan_population_growth_premise = 0
+france_population_growth_premise = 0
+finland_population_growth_premise = 0
+japan_population_growth_hypothesis = 0
+
+# the hypothesis talks about the population growth of Japan, which is also mentioned in the premise
+if japan_population_growth_hypothesis != japan_population_growth_premise:
+    # check if the population growth of Japan in the hypothesis contradicts the population growth from the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Fourteen European countries with about 5% of the world's population have reached zero population growth and Japan, France and Finland are, among others, headed in that direction.
+Hypothesis: Japan is headed toward zero population growth."
+"```python
+sentence_years_premise = 4
+sentence_years_hypothesis = 4
+
+# the hypothesis talks about the same person and the same sentence years as in the premise
+if sentence_years_hypothesis != sentence_years_premise:
+    # check if the sentence years in the hypothesis contradicts the sentence years in the premise
+    label = ""contradiction""
+else:
+    # if the sentence years in the hypothesis does not contradict the sentence years in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Leona Helmsley, the self-proclaimed queen of a luxury hotel chain, was sentenced Tuesday to four years in federal prison.
+Hypothesis: Leona Helmsley was given a four year sentence."
+"```python
+# The premise and hypothesis do not have any numerical entities to compare.
+# Therefore, no comparison can be made between the premise and the hypothesis in terms of numerical entities.
+# As such, the relation is neutral.
+
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: The investigation involving Mr Lopez and three associates are primarily concerned with suspicions of the systematic theft of secrets.
+Hypothesis: Seven other GM executives left with Lopez."
+"```python
+patients_in_trials_premise = 240
+average_patients_per_trial_hypothesis = 200
+
+# the hypothesis talks about the average number of patients involved in clinical trials
+# the premise provides specific data about one trial in which 240 patients are involved
+
+if patients_in_trials_premise < average_patients_per_trial_hypothesis:
+    # check if the number of patients involved in the clinical trial from the premise is less than the average number of patients per trial in the hypothesis
+    label = ""contradiction""
+elif patients_in_trials_premise > average_patients_per_trial_hypothesis:
+    # check if the number of patients involved in the clinical trial from the premise is more than the average number of patients per trial in the hypothesis
+    label = ""contradiction""
+else:
+    # if the number of patients involved in the clinical trial from the premise is equal to the average number of patients per trial in the hypothesis
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Clinical trials involve 240 patients in 10 centres with each patient questioned three times.
+Hypothesis: Clinical trials involve an average of 200 patients per trial."
+"```python
+people_executed_premise = 420
+population_premise = 4.4e6
+population_hypothesis = 4.4e6
+
+# the hypothesis talks about the population of Singapore, which is also mentioned in the premise
+if population_hypothesis != population_premise:
+    # check if the population in the hypothesis contradicts the population in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Some 420 people have been hanged in Singapore since 1991, mostly for drug trafficking, an Amnesty International 2004 report said. That gives the country of 4.4 million people the highest execution rate in the world relative to population.
+Hypothesis: 4.4 million people live in Singapore."
+"```python
+rank_premise = 7
+members_premise = 25
+members_hypothesis = 12
+
+# the hypothesis talks about the number of EU members using the Euro, which is not referenced in the premise (the premise talks about broadband internet penetration)
+# the hypothesis cannot be entailed from the premise, since the information about the use of Euro is unknown.
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: It is outstripped only by Denmark, the Netherlands, Belgium, Sweden, Finland and France, and thus ranks 7th in the 25-member European Union in terms of broadband Internet penetration.
+Hypothesis: 12 members of the European Union use the Euro instead of their own national currencies."
+"```python
+workers_premise = 5
+workers_hypothesis = 5
+tanks_premise = 1
+tanks_hypothesis = 1
+
+# the hypothesis talks about the number of workers killed and the number of tanks involved, which are also mentioned in the premise
+if workers_hypothesis != workers_premise:
+    # check if the number of workers in the hypothesis contradicts the number of workers from the premise
+    label = ""contradiction""
+elif tanks_hypothesis != tanks_premise:
+    # check if the number of tanks in the hypothesis contradicts the number of tanks in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: In one case five workers at a plating company were asphyxiated by hydrogen cyanide while trying to clean a sludge tank.
+Hypothesis: Cyanide fumes killed five workers cleaning one tank."
+"```python
+net_income_premise = 0.79
+estimate_analysts_premise = 0.72
+estimate_analysts_hypothesis = 0.72
+
+# the hypothesis talks about the earnings per share expected by the analysts, which is also mentioned in the premise
+if estimate_analysts_hypothesis != estimate_analysts_premise:
+    # check if the earnings per share expected by the analysts in the hypothesis contradicts the earnings per share expected by the analysts from the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Excluding those items, the company reported a net income of 79 cents per share, handily beating the estimate of 72 cents per share carried by analysts surveyed by Thomson First Call.
+Hypothesis: Analysts surveyed by Thomson First call were expecting earnings of 72 cents a share."
+"```python
+revenue_premise = 42.78 # in million US dollars
+revenue_hypothesis = 42.78 # in million US dollars
+
+# the hypothesis talks about the earnings of Tom Online in three months, which is also mentioned in the premise
+if revenue_premise == revenue_hypothesis:
+    # if the revenue in the hypothesis does not contradict the revenue in the premise, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: Tom Online revenues for the three months ended June 30, 2005 were US $42.78 mn, an increase of 38.5% over the same period in 2004.
+Hypothesis: Tom Online earned US $42.78 mn in three months."
+"```python
+land_clearance_requirement_premise = 0.8
+# The premise does not mention any tax credits or the exploitation of forests
+# The hypothesis does not mention the percentage of land that needed to be cleared for ownership
+
+# Since there is no common numerical entity between the two sentences, we can't make a direct comparison
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: The law once required settlers to clear 80% of their land in two years to win ownership.
+Hypothesis: Before the late 1980's some nations even gave land and tax credit to individuals and companies slashing, burning, and exploiting the forest."
+"```python
+deal_amount_premise = 16e9
+deal_amount_hypothesis = 0 # the hypothesis does not mention a deal amount
+
+# the hypothesis does not talk about the deal amount, which is the numerical information mentioned in the premise
+# thus, the hypothesis cannot be entailed from the premise
+label = ""neutral""
+
+print(label)
+```","### Instruction:
+
+You must write Python code starting from 2 input sentences, based on these rules:
+- first you define variables with representative names for the numerical entities in both inputs (one variable per entity, per sentence);
+- extract all quantities as valid numbers (integers or floats). do not ignore any quantity or numerical information;
+- next, use brief comments to explain what comparison you do between the defined variables (do not use their values in the comments). Any comparison you do should be do through code as well.;
+- refrain from concluding in the comments the entailment/contradiction or neutral relation;
+- use the variables to perform calculations if necessary and finally compare them accordingly to infer one of the following: 
+    - ""entailment"": the hypothesis can be fully and explicitly entailed from the premise
+    - ""contradiction"": at least one aspect in the hypothesis contradicts the premise
+    - ""neutral"": the hypothesis does not contradict the premise, but cannot be fully and explicitly entailed from the premise either
+- use the correct comparison operators (i.e., if we know ""A is more than B"", then we can either check if A>B for entailment or if B<=A for contradiction).
+- sometimes the textual information indicates neutrality and no comparison is needed.
+
+Only answer with the script. To illustrate, consider the following examples:
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: There have been more than 10 million cases of flu during the past year.
+Hypothesis: Over the last year, more than 10 million cases of type A flu have been reported.
+Answer:```python
+flu_cases_premise = 10e6
+flu_cases_hypothesis = 10e6
+
+# the hypothesis talks about the number of type A flu cases which are not referenced in the premise (the type of flu is not mentioned)
+# the hypothesis cannot be entailed from the premise, since the number of type A flu cases is unknown.
+label = ""neutral""
+
+print(label)
+```
+END_EXAMPLE
+
+START_EXAMPLE
+Possible labels: entailment, contradiction, neutral
+Premise: Katty Ruth is the author of 5 personal development books, two of which she released before the age of 30.
+Hypothesis: Katty Ruth released 2 books on personal development before she turned 30.
+Answer:```python
+total_books_premise = 5
+books_before_age_premise = 2
+books_before_age_hypothesis = 2
+age_premise = 30
+age_hypothesis = 30
+
+# the hypothesis talks about the number of books written by Kathy before a certain age, which is also mentioned in the premise
+if books_before_age_hypothesis != books_before_age_premise:
+    # check if the number of books written before the given age in the hypothesis contradicts the number of books from the premise
+    label = ""contradiction""
+elif age_hypothesis != age_premise:
+    # check if the age in the hypothesis contradicts the age in the premise
+    label = ""contradiction""
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = ""entailment""
+
+print(label)
+```
+END_EXAMPLE
+
+### Input:
+
+Possible labels: entailment, contradiction, neutral
+Premise: The deal comes some two weeks after a $16 billion deal was reached between AT & T and SBC, a top rival for Qwest.
+Hypothesis: The two firms sealed the deal despite what was thought to be a higher offer from rival US carrier Qwest."
