@@ -1,0 +1,17 @@
+work_hours_monday_wednesday_friday_premise = 8
+work_hours_monday_wednesday_friday_hypothesis = 5
+work_hours_tuesday_thursday_premise = 6
+work_hours_tuesday_thursday_hypothesis = 6
+
+# the hypothesis refers to the number of work hours per day mentioned in the premise
+if work_hours_monday_wednesday_friday_premise <= work_hours_monday_wednesday_friday_hypothesis:
+    # check if the estimate of 'work_hours_monday_wednesday_friday_hypothesis' contradicts the number of work hours in the premise
+    label = "contradiction"
+elif work_hours_tuesday_thursday_premise!= work_hours_tuesday_thursday_hypothesis:
+    # check if the number of work hours on Tuesday and Thursday in the hypothesis contradicts the number of work hours on Tuesday and Thursday reported in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = "entailment"
+
+print(label)

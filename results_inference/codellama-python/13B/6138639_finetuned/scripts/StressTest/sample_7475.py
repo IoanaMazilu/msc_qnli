@@ -1,0 +1,3 @@
+label = "contradiction"
+
+print(label)

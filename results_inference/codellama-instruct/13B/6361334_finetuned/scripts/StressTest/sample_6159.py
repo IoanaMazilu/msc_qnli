@@ -1,0 +1,15 @@
+empire_state_building_premise = 356
+petronas_towers_premise = 370
+
+# the hypothesis refers to the height of the Empire State Building and the Petronas Towers mentioned in the premise
+if empire_state_building_premise >= 556:
+    # check if the estimate of 'empire_state_building_premise' contradicts the height of the Empire State Building in the premise
+    label = "contradiction"
+elif petronas_towers_premise!= petronas_towers_premise:
+    # check if the height of the Petronas Towers in the hypothesis contradicts the height of the Petronas Towers reported in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = "entailment"
+
+print(label)

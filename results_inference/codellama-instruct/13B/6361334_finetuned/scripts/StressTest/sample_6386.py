@@ -1,0 +1,12 @@
+hours_worked_premise = 45
+hours_worked_hypothesis = 35
+
+# the hypothesis refers to the number of hours worked by James and Harry, mentioned in the premise
+if hours_worked_premise!= hours_worked_hypothesis:
+    # check if the number of hours worked in the hypothesis contradicts the number of hours worked in the premise
+    label = "contradiction"
+else:
+    # if the number of hours worked in the hypothesis is consistent with the number of hours worked in the premise, we can infer entailment
+    label = "entailment"
+
+print(label)

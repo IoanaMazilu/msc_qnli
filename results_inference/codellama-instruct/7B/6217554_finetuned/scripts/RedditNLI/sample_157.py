@@ -1,0 +1,3 @@
+label = "entailment"
+
+print(label)

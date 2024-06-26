@@ -1,0 +1,15 @@
+boats_premise = 5.0
+people_per_boat_premise = 3.0
+total_people_hypothesis = 15.0
+
+# the hypothesis refers to the total number of people on boats, which can be calculated from the premise
+# calculate the total number of people on boats in the premise
+total_people_premise = boats_premise * people_per_boat_premise
+
+# check if the total number of people in the hypothesis contradicts the total number of people in the premise
+if total_people_hypothesis!= total_people_premise:
+    label = "contradiction"
+else:
+    label = "entailment"
+
+print(label)

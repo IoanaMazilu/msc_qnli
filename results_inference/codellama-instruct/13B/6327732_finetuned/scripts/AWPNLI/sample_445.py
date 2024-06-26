@@ -1,0 +1,14 @@
+total_bathing_suits_premise = 14797.0
+total_bathing_suits_hypothesis = 9832.0
+
+# the hypothesis refers to the number of bathing suits for men, which are also mentioned in the premise
+# compute the total number of bathing suits for men in the premise
+total_bathing_suits_men_premise = total_bathing_suits_premise - total_bathing_suits_hypothesis
+if total_bathing_suits_men_premise!= 4969.0:
+    # check if the number of bathing suits for men in the hypothesis contradicts the number of bathing suits for men from the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = "entailment"
+
+print(label)

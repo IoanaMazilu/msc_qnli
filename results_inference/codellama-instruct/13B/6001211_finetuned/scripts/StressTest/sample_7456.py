@@ -1,0 +1,14 @@
+apples_maddie_premise = 18
+apples_maddie_hypothesis = 48
+apples_given_to_mike = 22
+
+# the hypothesis refers to the number of apples Maddie has, which is also mentioned in the premise
+if apples_maddie_hypothesis <= apples_maddie_premise:
+    # check if the number of apples in the hypothesis contradicts the estimate of more than 'apples_maddie_premise'
+    label = "contradiction"
+else:
+    # the premise gives only an estimate for the number of apples
+    # any number of apples greater than 'apples_maddie_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = "neutral"
+
+print(label)

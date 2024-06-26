@@ -1,0 +1,14 @@
+people_owning_pets_premise = 70
+people_owning_pets_hypothesis = 40
+
+# the hypothesis refers to the number of people owning cats, dogs, or rabbits in the city of San Durango
+# the premise gives an estimate for the number of people owning pets in the city
+if people_owning_pets_hypothesis >= people_owning_pets_premise:
+    # check if the hypothesis value contradicts the estimate of less than 'people_owning_pets_premise'
+    label = "contradiction"
+else:
+    # the premise gives only an estimate for the number of people owning pets
+    # any number of people owning pets less than 'people_owning_pets_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = "neutral"
+
+print(label)

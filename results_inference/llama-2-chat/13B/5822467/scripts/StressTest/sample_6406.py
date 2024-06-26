@@ -1,0 +1,13 @@
+socks_premise = 35
+socks_hypothesis = 15
+
+# the hypothesis refers to the number of pairs of socks owned by Angela
+if socks_hypothesis <= socks_premise:
+    # check if the hypothesis value contradicts the estimate of'socks_premise'
+    label = "contradiction"
+else:
+    # the premise gives only an estimate for the number of pairs of socks
+    # any number of pairs of socks less than or equal to'socks_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = "neutral"
+
+print(label)

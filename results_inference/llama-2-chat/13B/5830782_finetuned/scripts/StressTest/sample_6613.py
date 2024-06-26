@@ -1,0 +1,23 @@
+random_processing_students_premise = 112
+random_processing_students_hypothesis = 312
+scramjet_students_premise = 234
+scramjet_students_hypothesis = 234
+both_subjects_students_premise = 112
+both_subjects_students_hypothesis = 112
+
+# the hypothesis talks about the number of students enrolled in different subjects, referenced also in the premise
+if random_processing_students_hypothesis <= random_processing_students_premise:
+    # check if the hypothesis value contradicts the estimate of more than 'random_processing_students_premise'
+    label = "contradiction"
+elif scramjet_students_hypothesis!= scramjet_students_premise:
+    # check if the number of Scramjet students in the hypothesis contradicts the number of Scramjet students reported in the premise
+    label = "contradiction"
+elif both_subjects_students_hypothesis!= both_subjects_students_premise:
+    # check if the number of students studying both subjects in the hypothesis contradicts the number of such students reported in the premise
+    label = "contradiction"
+else:
+    # the premise gives only an estimate for the number of students studying Random-processing methods
+    # any number of students greater than 'random_processing_students_premise' is consistent with the premise, but cannot be explicitly entailed from the premise
+    label = "neutral"
+
+print(label)

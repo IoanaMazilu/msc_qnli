@@ -1,0 +1,17 @@
+words_premise = 8
+words_hypothesis = 7
+typing_rate_premise = 4
+typing_rate_hypothesis = 4
+
+# the hypothesis refers to the time James takes to type a certain number of words, also mentioned in the premise
+if words_premise <= words_hypothesis:
+    # check if the number of 'words_hypothesis' contradicts the number of words in the premise
+    label = "contradiction"
+elif typing_rate_hypothesis!= typing_rate_premise:
+    # check if the typing rate in the hypothesis contradicts the typing rate reported in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = "entailment"
+
+print(label)

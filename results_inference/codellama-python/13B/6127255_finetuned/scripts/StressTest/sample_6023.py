@@ -1,0 +1,12 @@
+borrowed_pounds_premise = 5000
+borrowed_pounds_hypothesis = 3000
+
+# the hypothesis refers to the amount of money Dana borrows each year as stated in the premise
+if borrowed_pounds_hypothesis!= borrowed_pounds_premise:
+    # check if the amount of money borrowed in the hypothesis contradicts the amount stated in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis value does not contradict the premise one, we can infer entailment
+    label = "entailment"
+
+print(label)

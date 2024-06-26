@@ -1,0 +1,27 @@
+aaron_beans_premise = 5
+aaron_beans_hypothesis = 7
+bianca_beans_premise = 7
+bianca_beans_hypothesis = 7
+callie_beans_premise = 8
+callie_beans_hypothesis = 8
+dante_beans_premise = 13
+dante_beans_hypothesis = 13
+
+# the hypothesis refers to the number of jelly beans each child has, as stated in the premise
+if aaron_beans_premise >= aaron_beans_hypothesis:
+    # check if the estimate of 'aaron_beans_hypothesis' contradicts the number of jelly beans Aaron has in the premise
+    label = "contradiction"
+elif bianca_beans_premise!= bianca_beans_hypothesis:
+    # check if the number of jelly beans Bianca has in the hypothesis contradicts the number of jelly beans Bianca has in the premise
+    label = "contradiction"
+elif callie_beans_premise!= callie_beans_hypothesis:
+    # check if the number of jelly beans Callie has in the hypothesis contradicts the number of jelly beans Callie has in the premise
+    label = "contradiction"
+elif dante_beans_premise!= dante_beans_hypothesis:
+    # check if the number of jelly beans Dante has in the hypothesis contradicts the number of jelly beans Dante has in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = "entailment"
+
+print(label)

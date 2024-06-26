@@ -1,0 +1,2 @@
+Premise: [sentence]
+Hypothesis: [sentence]

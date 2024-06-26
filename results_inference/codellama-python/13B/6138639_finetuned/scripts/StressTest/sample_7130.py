@@ -1,0 +1,12 @@
+value_premise = 7/12
+value_hypothesis = 7/12
+
+# the hypothesis refers to the value of money Anup was asked to find, mentioned in the premise
+if value_hypothesis <= value_premise:
+    # check if the estimate of 'value_hypothesis' contradicts the value in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis value does not contradict the premise one, we can infer entailment
+    label = "entailment"
+
+print(label)

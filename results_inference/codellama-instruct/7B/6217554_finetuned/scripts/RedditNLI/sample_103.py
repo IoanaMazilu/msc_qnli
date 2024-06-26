@@ -1,0 +1,3 @@
+label = "neutral"
+
+print(label)

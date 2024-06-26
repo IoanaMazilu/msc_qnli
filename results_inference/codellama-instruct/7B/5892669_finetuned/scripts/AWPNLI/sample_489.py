@@ -1,0 +1,15 @@
+initial_bottle_caps_premise = 7.0
+given_bottle_caps_premise = 2.0
+remaining_bottle_caps_hypothesis = 4.0
+
+# the hypothesis refers to the number of bottle caps Jose has left, which is also mentioned in the premise
+# compute the remaining number of bottle caps in the premise
+remaining_bottle_caps_premise = initial_bottle_caps_premise - given_bottle_caps_premise
+if remaining_bottle_caps_hypothesis!= remaining_bottle_caps_premise:
+    # check if the number of remaining bottle caps in the hypothesis contradicts the number of remaining bottle caps from the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = "entailment"    
+
+print(label)

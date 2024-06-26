@@ -1,0 +1,5 @@
+[
+  ["Premise", "Hypothesis"],
+  ["Premise", "Hypothesis"],
+ ...
+]
