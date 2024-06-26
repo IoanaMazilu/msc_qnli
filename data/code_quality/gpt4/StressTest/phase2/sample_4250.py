@@ -1,0 +1,12 @@
+commute_difference_premise = 2
+commute_difference_hypothesis = 1
+
+# the hypothesis talks about the difference in Darcy's commute times, referenced also in the premise
+if commute_difference_hypothesis != commute_difference_premise:
+    # check if the difference in commute times as stated in the hypothesis contradicts the difference given in the premise
+    label = "contradiction"
+else:
+    # if the difference in commute times stated in the hypothesis does not contradict the one in the premise, we can infer entailment
+    label = "entailment"
+
+print(label)

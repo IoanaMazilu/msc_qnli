@@ -1,0 +1,10 @@
+turbines_premise = 2
+turbines_hypothesis = 2
+residents_premise = 450
+
+# the hypothesis implies that every island resident can buy shares in the turbines, which is not specified in the premise
+# the premise states that only around 450 residents own the turbines, but it does not specify if these are the only ones who can own them
+# therefore, we cannot infer entailment or contradiction based on the given information
+label = "neutral"
+
+print(label)

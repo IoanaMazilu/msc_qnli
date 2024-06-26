@@ -15,4 +15,3 @@ else:
     label = "neutral"
 
 print(label)
-

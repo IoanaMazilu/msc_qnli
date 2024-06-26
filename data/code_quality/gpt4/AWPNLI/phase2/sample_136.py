@@ -1,0 +1,15 @@
+squirrels_premise = 4.0
+nuts_premise = 2.0
+more_squirrels_hypothesis = 2.0
+
+# the hypothesis refers to the difference between the number of squirrels and nuts, which are also mentioned in the premise
+# compute the difference in the premise
+difference_premise = squirrels_premise - nuts_premise
+if more_squirrels_hypothesis != difference_premise:
+    # check if the difference in the hypothesis contradicts the difference in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise values, we can infer entailment
+    label = "entailment"    
+
+print(label)

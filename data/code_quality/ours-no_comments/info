@@ -1,2 +1,0 @@
-These files contain the per-sample code quality evaluation of the datasets. We evaluate the scripts generated with the
-GPT4 model in a few-shot setting.

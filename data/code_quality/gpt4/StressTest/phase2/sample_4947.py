@@ -1,0 +1,15 @@
+total_age_premise = 56
+total_age_hypothesis = 16
+
+# the hypothesis refers to the total age of Amar, Akbar and Anthony mentioned in the premise
+if total_age_premise < total_age_hypothesis:
+    # check if the estimate of 'total_age_hypothesis' contradicts the total age in the premise
+    label = "contradiction"
+elif total_age_premise == total_age_hypothesis:
+    # check if the total age in the hypothesis is exactly the same as the total age reported in the premise
+    label = "contradiction"
+else:
+    # if the hypothesis values and estimates do not contradict the premise ones, we can infer entailment
+    label = "entailment"
+
+print(label)
