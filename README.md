@@ -1,5 +1,11 @@
-<h2>Bridging the gap between small and large-scale language models on quantitative reasoning through fine-tuning for 
-Python script generation</h2>
+<h2>Bridging the gap between small and large language models on quantitative reasoning - Finetuning for explainable program synthesis</h2>
 
+This repository contains the code and data used for the experimental part of a MSc thesis research project.
+<h3>Abstract</h3>
+<p>Reasoning about numerical entities is relevant in contexts where quantities and quantifiers are used to convey information. This paper examines the potential of using base and fine-tuned small language models to synthesize explainable Python scripts for the quantitative natural language inference classification task (QNLI). The results contribute to understanding how closely small-scale language models can perform to a frontier model (e.g. GPT4) and bridge the gap between programs for numerical reasoning and explainable programs that enhance the transparency of the model's decision-making process. We use the EQUATE benchmark dataset and further compare our results with state-of-the-art results on QNLI reported in a previous study. We find that base small-scale language models have a poor performance, at least 20\% below that of GPT4. The fine-tuned models approach GPT4 performance, obtaining scores within 4\% of it on some datasets in EQUATE, and surpassing it by at most 20\% on other sets in EQUATE. Fine-tuning also leads to gains of 0.9\% over previous SOTA results. Lastly, we identify challenges related to translating quantitative reasoning into code snippets, such as general knowledge gaps and inferring the contextual relation between two entities.</p>
 
-<p>This repository holds the code for my MSc thesis.</p>
+<h3>Repository overview</h3>
+
+The code for experiments is contained in the `src` directory. This folder is further divided by topic, such as EDA, finetuning, inference, preprocessing and results analysis.
+
+The `data` directory contains various sub-folders with data, in various stages: original data (`equate`), data synthesized for the experiments (`generated`), data prepared for the finetuning process (`finetuning`) and data provided by previous studies, used for comparing our results with theirs (`lila-equate`, `lila`).
